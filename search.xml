@@ -2916,7 +2916,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 顯示電量百分比</title>
+    <title>Ubuntu 18 如何顯示電量百分比？</title>
     <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
     <content><![CDATA[<span id="more"></span>
 <img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
@@ -2927,7 +2927,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <p>當我興奮的開始觀察各個角落時，突然發現，畫面右上角好像怪怪的。<br>
 ㄟ不是！怎麼沒有顯示電量百分比！ <s>我一整個就不爽了。</s></p>
 <p>於是我開始查看設定，試圖尋找「顯示電池百分比」的相關設定項，但逛遍所有地方始終找不到，想到當初剛開始使用 Ubuntu 好像也遇過一次這樣的問題，模糊的印象中記得是要額外安裝個什麼的。<br>
-於是開始上網搜尋關於 Ubuntu 顯示電池百分比的文章，結果發現似乎很少人討論到？出現的都是一些「如何查詢 Ubuntu 電池信息」的文章，後來想到好像… 是跟 gnome 有關？<br>
+記得好像… 跟 gnome 有關？<br>
 ：「喔，他媽的，想到了。」</p>
 <h3 id="正式開始"><a class="markdownIt-Anchor" href="#正式開始">#</a> 正式開始</h3>
 <p>更新套件</p>
@@ -2944,6 +2944,94 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一招啟動 Windows 10 「終極效能」！讓你的電腦瞬間活起來！</title>
+    <url>/2021/04/06/Windows10-Ultimate-Performance/</url>
+    <content><![CDATA[你還不知道 Windows 10 的「終極效能」模式嗎？嫌電腦變慢不如試試這個！
+<hr>
+<h2 id="什麼是ultimate-performance-終極效能"><a class="markdownIt-Anchor" href="#什麼是ultimate-performance-終極效能">#</a> 什麼是「<strong>Ultimate Performance (終極效能)</strong>」</h2>
+<p>微軟在 <strong>Windows 10’s April 2018 Update</strong> 中添加了「<strong> <code>Ultimate Performance (終極效能)</code> </strong>」這樣一個模式，最初該更新被命名為「<strong>Spring Creators Update</strong>」，也正式從 <strong>Win-10 1803</strong> 版本後開始可以使用該模式。</p>
+<hr>
+<p><strong>Ultimate Performance (終極效能)</strong> 是一種「<strong>電源計劃</strong>」。<br>
+可能有些人早就知道，Windows 10 提供我們選擇<strong>電源計劃</strong>的功能，在 <strong>Power Options (電源選項)</strong> 中，沒意外一般的電腦只會出現最多三種選項，分別是：</p>
+<ul>
+<li><strong> <code>Balanced (平衡)</code> </strong>: 讓為你自動調整效能，使耗電與效能平衡。</li>
+<li><strong> <code>Power Saver (省電)</code> </strong>: 降低系統的效能以節省電源。 (通常是筆記型電腦處於低電量時系統自動開啟)</li>
+<li><strong> <code>High Performance (高效能)</code> </strong>: 消耗更多的電力，讓系統發揮更高的效能。</li>
+</ul>
+<p>而 <strong>Ultimate Performance (終極效能)</strong> 則是比 <strong>High Performance (高效能)</strong> 模式的效能來的<strong>更強</strong>。<br>
+欸？可是沒看到 <strong>Ultimate Performance (終極效能)</strong> 呀？<br>
+別急，因為這個模式預設是給  <code>Windows 10 Pro</code>  使用的，其他版本的用戶是需要 <code>手動開啟</code> 的！</p>
+<hr>
+<h2 id="開啟-ultimate-performance-終極效能"><a class="markdownIt-Anchor" href="#開啟-ultimate-performance-終極效能">#</a> 開啟 <strong>Ultimate Performance (終極效能)</strong></h2>
+<h3 id="step-1-開啟-powerline"><a class="markdownIt-Anchor" href="#step-1-開啟-powerline">#</a> Step. 1 開啟 Powerline</h3>
+<ol>
+<li>
+<p>按下左下角的 <strong>Windows</strong> 圖示叫出 <code>選單</code> 。<br>
+(你也可以按下鍵盤的 <strong> <code>Win</code> </strong> 鍵，如下圖，大概在左邊的 <code>Ctrl</code>  與 <code>Alt</code>  旁邊)<br>
+<img src="win-key.jpg" alt="" height="300px"><br>
+ 這是選單的樣子:<br>
+<img src="win-menu.png" alt=""></p>
+</li>
+<li>
+<p>當選單跳出時，請<strong>直接</strong>在鍵盤輸入「<strong> <code>powershell</code> </strong>」。(ps. 注意<strong>輸入法</strong>要調整成<strong>英文</strong>)<br>
+<a href="https://zh.wikipedia.org/wiki/Windows_PowerShell"><img src="powershell-logo.png" alt="" title="圖取自 Wiki 維基百科" align="left" width="30px"></a> 正常來說會找到這樣的 Logo，並寫著「<strong>Power Shell</strong>」字樣的程式:</p>
+</li>
+<li>
+<p>對它點擊  <code>滑鼠右鍵</code>  &gt;  <code>以系統管理員身份執行</code> 。<br>
+<img src="win-searching-powershell.png" alt=""><br>
+沒意外應該會出現類似這樣 <code>籃底白字</code> 的視窗 (注意左上角應該要出現 <code>系統管理員</code> 字樣):<br>
+<img src="powershell.png" alt=""></p>
+</li>
+</ol>
+<h3 id="step-2-輸入指令"><a class="markdownIt-Anchor" href="#step-2-輸入指令">#</a> Step. 2 輸入指令</h3>
+<p>首先複製以下這段指令:</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powercfg <span class="literal">-duplicatescheme</span> e9a42b02<span class="literal">-d5df</span><span class="literal">-448d</span><span class="literal">-aa00</span><span class="literal">-03f14749eb61</span></span><br></pre></td></tr></table></figure>
+<p>接著到剛剛的 <code>Power Shell</code>  視窗中，按下 <code>滑鼠右鍵</code> 貼上後按下 <code>Enter</code> 。</p>
+<p><img src="powershell-command.png" alt=""></p>
+<p>如果看到系統回應你如上圖的資訊，<br>
+那麼恭喜你成功 <code>激活</code>  <strong>Ultimate Performance (終極效能)</strong> 模式！</p>
+<p>但注意！這時候 <code>還沒啟動</code> 它。</p>
+<p>如果系統沒有回應該訊息，那或許是 <strong> <code>指令輸入錯誤</code> </strong> ，請再確認輸入是否正確。<br>
+並且請確認 <strong> <code>Power Shell</code> </strong> 是以 <strong> <code>管理員身份開啟</code> </strong> 。<br>
+如果以上都做到了，還是不能，那很有可能是<strong>電腦版本不支援</strong>這個模式，前面有說到，電腦的版本必須是 <strong> <code>1803 以上</code> </strong> 。</p>
+<hr>
+<h3 id="step-3-啟動-ultimate-performance-終極效能"><a class="markdownIt-Anchor" href="#step-3-啟動-ultimate-performance-終極效能">#</a> Step. 3 啟動 <strong>Ultimate Performance (終極效能)</strong></h3>
+<ol>
+<li>
+<p>跟剛剛一樣，在按下 <strong> <code>Win</code> </strong> 鍵叫出 <code>選單</code> 後，<strong>直接</strong>在鍵盤輸入「<strong> <code>control</code> </strong>」。<br>
+如果右方有出現「<strong> <code>電源選項</code> </strong>」則直接點選，並跳至<a href="#%E6%9C%89%E5%87%BA%E7%8F%BE%E9%9B%BB%E6%BA%90%E9%81%B8%E9%A0%85%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%87%B3%E9%80%99%E8%A3%A1">步驟 3-4</a><br>
+ 沒有出現的話就點擊 <strong> <code>控制台</code> </strong> :<br>
+<img src="win-search-control.png" alt=""></p>
+</li>
+<li>
+<p>點選「<strong> <code>硬體與音效</code> </strong>」<br>
+<img src="control.png" alt=""></p>
+</li>
+<li>
+<p>點選「<strong> <code>電源選項</code> </strong>」<br>
+<img src="control-hardware-and-printer.png" alt=""></p>
+</li>
+<li>
+<h4 id="有出現電源選項直接跳至這裡"><a class="markdownIt-Anchor" href="#有出現電源選項直接跳至這裡">#</a> 有出現電源選項直接跳至這裡</h4>
+</li>
+</ol>
+<p>在這裡就可以看到下方出現「<strong> <code>終極效能</code> </strong>」的選項了！直接選取即可。<br>
+(ps. 如果沒出現選項，那可能是被隱藏了，請點選右方按鈕)<br>
+<img src="battery-option.png" alt=""></p>
+<hr>
+<h2 id="完成"><a class="markdownIt-Anchor" href="#完成">#</a> 完成</h2>
+<p>這麼一來就完成了！<br>
+但注意唷，建議如果沒有這個需求的朋友們平時不要開著這個模式，這會導致沒必要的耗電 (夏天電費很貴 QQ)</p>
+<p>最後，如果這篇文章有幫助到你，那也請不吝嗇轉發分享給你的朋友們看唷！</p>
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Windows 10</tag>
       </tags>
   </entry>
   <entry>
