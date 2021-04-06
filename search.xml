@@ -974,6 +974,17 @@ b.  <code>sudo yum install git2u</code></p>
 直接  <code>git add</code>  &gt;  <code>git commit</code>  &gt;  <code>git push</code>  ！<br>
 回到 Github Repository 就可以發現成功被推送了。</p>
 <hr>
+<h2 id="如何取消-lfs"><a class="markdownIt-Anchor" href="#如何取消-lfs">#</a> 如何取消 LFS ？</h2>
+<ul>
+<li>刪除單個檔案<br>
+如果你是要刪除 <code>單個檔案</code> ，那麼就需要麻煩點到「<strong> <code>.gitattributes</code> </strong>」這個檔案中去刪除單筆資料，使 Github 知道該檔案不用再被 LFS 給追蹤。</li>
+<li>移除全部 (不使用 LFS 了)<br>
+ 你需要使用指令「<strong> <code>git lfs uninstall</code> </strong>」，如果你是較舊的版本則是使用指令「<strong> <code>git lfs uninit</code> </strong>」來刪除該 Repository 中的 LFS 。<br>
+另外也請確保檔案「<strong> <code>.gitattributes</code> </strong>」不再被追蹤。(建議如果不需要，請直接下 ** <code>git rm .gitattributes</code> ** 刪除它)</li>
+</ul>
+<p>範例:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs uninstall</span><br><span class="line">git rm .gitattributes</span><br><span class="line">git add .</span><br><span class="line">git commit <span class="string">&quot;Uninstall LFS&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料">#</a> 參考資料</h2>
 <p>《Git Large File Storage》<a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a><br>
 《Cover Image》<a href="https://git-lfs.github.com/images/graphic.gif">https://git-lfs.github.com/images/graphic.gif</a></p>
