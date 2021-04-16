@@ -553,15 +553,24 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 <h3 id="可能觸發-xss-的先決條件"><a class="markdownIt-Anchor" href="#可能觸發-xss-的先決條件">#</a> 可能觸發 XSS 的先決條件</h3>
 <p>一般來說，XSS 大多發生在「<a href="https://zh.wikipedia.org/wiki/%E5%8B%95%E6%85%8B%E7%B6%B2%E9%A0%81"><strong>動態網頁</strong></a>」而不是「<a href="https://wiki.mbalib.com/zh-tw/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5" title="wiki.mbalib.com"><strong>靜態網頁</strong></a>」，在此簡單解釋一下兩者差異，有興趣了解更深入者自行點選連結觀看。你可以這麼想像<strong>動態</strong>與<strong>靜態</strong>網頁：</p>
 <ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8"><strong>伺服器 (Server)</strong></a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8"><strong>伺服器 (Server)</strong></a>
+<ul>
 <li>翻譯：就如同一個「櫃台服務人員」展示著自家的商品，而 <a href="https://en.wikipedia.org/wiki/Client_(computing)"><strong>用戶端 (Client)</strong></a>，就是圍觀的顧客。</li>
 <li>原意：顧名思義為提供某特定服務的主機，而 <strong>用戶端 (Client)</strong> 則是使用這項服務的人。</li>
-<li><strong>靜態網頁</strong></li>
+</ul>
+</li>
+<li><strong>靜態網頁</strong>
+<ul>
 <li>翻譯：「服務人員」照著公司的流程介紹自家商品，不與顧客有任何的對話跟交流 (<strong>即使顧客提問也不給予回應</strong>)。</li>
 <li>原意：<strong>伺服器 (Server)</strong> 向 <strong>用戶端 (Client)</strong> 單向的展示服務，不接受任何來自 <strong>用戶端 (Client)</strong> 的請求 (<strong>連線請求例外</strong>)。</li>
-<li><strong>動態網頁</strong></li>
+</ul>
+</li>
+<li><strong>動態網頁</strong>
+<ul>
 <li>翻譯：「服務人員」在<strong>有限的範圍</strong>內，回答顧客的提問，或接受展示顧客所要求的內容。</li>
 <li>原意：<strong>伺服器 (Server)</strong> 具有接受及自定義處理封包請求的能力，能與 <strong>用戶端 (Client)</strong> 擁有<strong>雙向</strong>的互動。</li>
+</ul>
+</li>
 </ul>
 <p>常見的狀況是 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> 或者 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/Active_Server_Pages"><strong>ASP</strong></a> 等，都是在有「 <strong><a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF">網頁後端</a>語言</strong> 」並且該網站處理封包不當的情況下發生。</p>
 <hr>
@@ -1240,7 +1249,7 @@ a.  <code>curl -s https://setup.ius.io/ | sudo bash</code> <br>
 b.  <code>sudo yum install git2u</code></p>
 </blockquote>
 <blockquote>
-<p>如果你想，你也可以自己夠原代碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
+<p>如果你想，你也可以自己建構原始碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
 </blockquote>
 <h4 id="step-2-安裝-git-lfs"><a class="markdownIt-Anchor" href="#step-2-安裝-git-lfs">#</a> Step. 2 安裝 <strong>git-lfs</strong></h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash</span><br><span class="line">sudo yum install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
@@ -3383,10 +3392,16 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <h3 id="宏觀-macrocosm-與-微觀-microcosm-世界"><a class="markdownIt-Anchor" href="#宏觀-macrocosm-與-微觀-microcosm-世界">#</a> <strong>宏觀 (Macrocosm)</strong> 與 <strong>微觀 (Microcosm)</strong> 世界</h3>
 <blockquote>
 <ul>
-<li>宏觀 (Macrocosm)</li>
+<li>宏觀 (Macrocosm)
+<ul>
 <li>肉眼所能看見的物體稱為「 <strong>宏觀物體</strong> 」，在宏觀的空間裡，發生的所有現象稱為「 <strong>宏觀現象</strong> 」，則「 <strong>宏觀世界</strong> 」為「 <strong>宏觀物體</strong> 」及「 <strong>宏觀現象</strong> 」之總稱。</li>
-<li>微觀 (Microcosm)</li>
+</ul>
+</li>
+<li>微觀 (Microcosm)
+<ul>
 <li>渺小至肉眼所不能看見的物體稱為「 <strong>微觀物體</strong> 」，在微觀的空間裡，發生的所有現象稱為「 <strong>微觀現象</strong> 」，則「 <strong>微觀世界</strong> 」為「 <strong>微觀物體</strong> 」及「 <strong>微觀現象</strong> 」之總稱。</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 <hr>
