@@ -542,6 +542,84 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
       </categories>
   </entry>
   <entry>
+    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
+    <url>/2020/01/24/Cross-Site-Scripting(Advanced)/</url>
+    <content><![CDATA[<p>上一篇「 <strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
+<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
+<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
+<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
+<hr>
+<h3 id="script標籤失效"><a class="markdownIt-Anchor" href="#script標籤失效">#</a> &lt;script&gt; 標籤失效！？</h3>
+<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
+加強上次模擬的貼文系統：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="variable">$content</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
+有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
+很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
+<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
+「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
+<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
+利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="keyword">while</span>(strpos(<span class="variable">$title</span>, <span class="string">&quot;&lt;script&gt;&quot;</span>))&#123;</span><br><span class="line">	<span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$title</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
+<hr>
+<h3 id="自動觸發-onload"><a class="markdownIt-Anchor" href="#自動觸發-onload">#</a> 自動觸發 Onload</h3>
+<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
+例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(1)&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Click Me!&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
+<input type="button" onclick="alert(1)" value="Click Me!"><br>
+在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
+<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
+<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
+的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
+<p>那就在推薦各位幾個常見的方式。</p>
+<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;alert(1)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
+<hr>
+<h3 id="想看圖片我給你看alert"><a class="markdownIt-Anchor" href="#想看圖片我給你看alert">#</a> 想看圖片？我給你看 Alert！</h3>
+<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
+<p>理論上… 沒錯。<br>
+但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
+<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
+很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
+例如你運行該語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- something --&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
+而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
+現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">xss</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
+而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
+<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
+這就是 HTML 的容錯性！</p>
+<hr>
+<h3 id="那該如何預防"><a class="markdownIt-Anchor" href="#那該如何預防">#</a> 那該如何預防！？</h3>
+<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
+<p>另外，在此呼籲一個重要的觀念！<br>
+請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
+這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
+因為要擋的東西太多了！<br>
+如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
+我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
+]]></content>
+      <categories>
+        <category>Trick (技術講解)</category>
+        <category>Web</category>
+        <category>Pen-Test</category>
+        <category>XSS (Cross-Site-Scripting)</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>SecurityFlaw (安全漏洞)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
     <url>/2020/01/24/Cross-Site-Scripting/</url>
     <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
@@ -644,84 +722,6 @@ function my_script(){
 <p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
 透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
 <p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
-]]></content>
-      <categories>
-        <category>Trick (技術講解)</category>
-        <category>Web</category>
-        <category>Pen-Test</category>
-        <category>XSS (Cross-Site-Scripting)</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>SecurityFlaw (安全漏洞)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
-    <url>/2020/01/24/Cross-Site-Scripting(Advanced)/</url>
-    <content><![CDATA[<p>上一篇「 <strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
-<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
-<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
-<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
-<hr>
-<h3 id="script標籤失效"><a class="markdownIt-Anchor" href="#script標籤失效">#</a> &lt;script&gt; 標籤失效！？</h3>
-<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
-加強上次模擬的貼文系統：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="variable">$content</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
-有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
-很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
-<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
-「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
-<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
-利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="keyword">while</span>(strpos(<span class="variable">$title</span>, <span class="string">&quot;&lt;script&gt;&quot;</span>))&#123;</span><br><span class="line">	<span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$title</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
-<hr>
-<h3 id="自動觸發-onload"><a class="markdownIt-Anchor" href="#自動觸發-onload">#</a> 自動觸發 Onload</h3>
-<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
-例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(1)&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Click Me!&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
-<input type="button" onclick="alert(1)" value="Click Me!"><br>
-在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
-<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
-<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
-的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
-<p>那就在推薦各位幾個常見的方式。</p>
-<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;alert(1)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
-<hr>
-<h3 id="想看圖片我給你看alert"><a class="markdownIt-Anchor" href="#想看圖片我給你看alert">#</a> 想看圖片？我給你看 Alert！</h3>
-<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
-<p>理論上… 沒錯。<br>
-但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
-<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
-很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
-例如你運行該語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- something --&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
-而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
-現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">xss</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
-而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
-<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
-這就是 HTML 的容錯性！</p>
-<hr>
-<h3 id="那該如何預防"><a class="markdownIt-Anchor" href="#那該如何預防">#</a> 那該如何預防！？</h3>
-<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
-<p>另外，在此呼籲一個重要的觀念！<br>
-請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
-這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
-因為要擋的東西太多了！<br>
-如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
-我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
         <category>Trick (技術講解)</category>
@@ -926,6 +926,130 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
       </tags>
   </entry>
   <entry>
+    <title>Github 檔案太大無法推送！？安裝「Git-LFS」馬上解決！</title>
+    <url>/2021/03/28/Git-LFS/</url>
+    <content><![CDATA[<p>使用 git push 推送檔案到 Github 上時，被告知<strong>檔案太大</strong>無法推送！？馬上教你怎麼解決！</p>
+<span id="more"></span>
+<hr>
+<h2 id="報錯"><a class="markdownIt-Anchor" href="#報錯">#</a> 報錯</h2>
+<p>當你嘗試使用  <code>git push</code>  推送超過 <code>100 MB</code>  的檔案時，沒意外就會收到這樣的錯誤。<br>
+這是因為 Github <strong>一個檔案最大上傳限制</strong>就是 <code>100 MB</code> 。(ps. 分開上傳可以，但不能同個檔案 100 MB)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ remote: error: GH001: Large files detected.</span><br><span class="line">$ remote: error: Trace: xxxxxxxxxxxxxxxxxxxx</span><br><span class="line">$ remote: error: See http://git.io/iEPt8g <span class="keyword">for</span> more information.</span><br><span class="line">$ remote: error: File xxxxxxxxxxxxx is 101.00 MB; this exceeds GitHub<span class="string">&#x27;s file size limit of 100 MB</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="安裝-git-lfs-解決"><a class="markdownIt-Anchor" href="#安裝-git-lfs-解決">#</a> 安裝 Git-LFS 解決！</h2>
+<p>為此 Github 也提供解決方法 - 「<strong>Large File Storage</strong>」。</p>
+<h3 id="debian-and-ubuntu"><a class="markdownIt-Anchor" href="#debian-and-ubuntu">#</a> Debian and Ubuntu</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span><br><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="mac-osx"><a class="markdownIt-Anchor" href="#mac-osx">#</a> Mac OSX</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="rhelcentos"><a class="markdownIt-Anchor" href="#rhelcentos">#</a> RHEL/CentOS</h3>
+<h4 id="step-1-安裝-git-182"><a class="markdownIt-Anchor" href="#step-1-安裝-git-182">#</a> Step. 1 安裝 git &gt;= <strong>1.8.2</strong></h4>
+<blockquote>
+<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>5</code>  或  <code>7</code>  (而不是  <code>6</code> ) 的話：<br>
+a. 可以<a href="https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">按這裡</a>安裝 (如果是 CentOS 那麼你只需要執行  <code>sudo yum install epel-release</code> )<br>
+b.  <code>sudo yum install git</code></p>
+</blockquote>
+<blockquote>
+<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>6</code> <br>
+a.  <code>curl -s https://setup.ius.io/ | sudo bash</code> <br>
+b.  <code>sudo yum install git2u</code></p>
+</blockquote>
+<blockquote>
+<p>如果你想，你也可以自己建構原始碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
+</blockquote>
+<h4 id="step-2-安裝-git-lfs"><a class="markdownIt-Anchor" href="#step-2-安裝-git-lfs">#</a> Step. 2 安裝 <strong>git-lfs</strong></h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash</span><br><span class="line">sudo yum install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="windows"><a class="markdownIt-Anchor" href="#windows">#</a> Windows</h3>
+<h4 id="step-1-下載安裝檔"><a class="markdownIt-Anchor" href="#step-1-下載安裝檔">#</a> Step. 1 下載安裝檔</h4>
+<p>可以從 <a href="https://github.com/git-lfs/git-lfs/releases">https://github.com/git-lfs/git-lfs/releases</a> 選擇你要的版本進行下載。</p>
+<h4 id="step-2-執行安裝檔"><a class="markdownIt-Anchor" href="#step-2-執行安裝檔">#</a> Step. 2 執行安裝檔</h4>
+<h4 id="step-3-在-cmd-或者-git-bash-執行-git-lfs-install"><a class="markdownIt-Anchor" href="#step-3-在-cmd-或者-git-bash-執行-git-lfs-install">#</a> Step. 3 在 CMD 或者 Git-Bash 執行  <code>git lfs install</code></h4>
+<hr>
+<h2 id="開始使用"><a class="markdownIt-Anchor" href="#開始使用">#</a> 開始使用</h2>
+<blockquote>
+<p>在下 git 指令時，你只需要將追蹤大檔案 (超過 100 MB) 的指令  <code>git add</code>  改成  <code>git lfs track</code> 。<br>
+舉例來說，如果要追蹤副檔名為 <code>.psd</code>  的大檔案，那請使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs track <span class="string">&quot;*.psd&quot;</span></span><br></pre></td></tr></table></figure>
+<p>而<strong>不是</strong>  <code>git add &quot;*.psd&quot;</code>  ！</p>
+</blockquote>
+<blockquote>
+<p>並且確保檔案  <code>.gitattributes</code>  有被追蹤。 (這是用來告知 github 此為大型檔案的文件)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .gitattributes</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>之後呢？後面的指令都是一樣的。<br>
+直接  <code>git add</code>  &gt;  <code>git commit</code>  &gt;  <code>git push</code>  ！<br>
+回到 Github Repository 就可以發現成功被推送了。</p>
+<hr>
+<h2 id="如何取消-lfs"><a class="markdownIt-Anchor" href="#如何取消-lfs">#</a> 如何取消 LFS ？</h2>
+<ul>
+<li>刪除單個檔案<br>
+如果你是要刪除 <code>單個檔案</code> ，那麼就需要麻煩點到「<strong> <code>.gitattributes</code> </strong>」這個檔案中去刪除單筆資料，使 Github 知道該檔案不用再被 LFS 給追蹤。</li>
+<li>移除全部 (不使用 LFS 了)<br>
+ 你需要使用指令「<strong> <code>git lfs uninstall</code> </strong>」，如果你是較舊的版本則是使用指令「<strong> <code>git lfs uninit</code> </strong>」來刪除該 Repository 中的 LFS 。<br>
+另外也請確保檔案「<strong> <code>.gitattributes</code> </strong>」不再被追蹤。(建議如果不需要，請直接下 <strong> <code>git rm .gitattributes</code> </strong> 刪除它)</li>
+</ul>
+<p>範例:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs uninstall</span><br><span class="line">git rm .gitattributes</span><br><span class="line">git add .</span><br><span class="line">git commit <span class="string">&quot;Uninstall LFS&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料">#</a> 參考資料</h2>
+<p>《Git Large File Storage》<a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a><br>
+《Cover Image》<a href="https://git-lfs.github.com/images/graphic.gif">https://git-lfs.github.com/images/graphic.gif</a></p>
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>匿名交友 — HeyMandi 網頁版 XSS</title>
+    <url>/2019/12/22/HeyMandi%E7%B6%B2%E9%A0%81%E7%89%88XSS/</url>
+    <content><![CDATA[<span id="more"></span>
+<hr>
+<h4 id="id"><a class="markdownIt-Anchor" href="#id">#</a> ID</h4>
+<p>《ZDID》ZD-2018-01160</p>
+<hr>
+<h4 id="content"><a class="markdownIt-Anchor" href="#content">#</a> Content</h4>
+<p>受測單位：HeyMandi<br>
+ 風險評估：低<br>
+漏洞類型：預存式跨站腳本攻擊 (Stored Cross-Site Scripting)<br>
+ 通報時間：2018/10/18</p>
+<hr>
+<h4 id="payload"><a class="markdownIt-Anchor" href="#payload">#</a> PayLoad</h4>
+<p><s>https://chat.heymandi.com/chat</s></p>
+<hr>
+<h4 id="describe"><a class="markdownIt-Anchor" href="#describe">#</a> Describe</h4>
+<p>若聊天室內的雙方都是使用 HeyMandi APP，又或者雙方都是使用 Web 版的話，則不會觸發該漏洞。<br>代碼被執行的問題發生在攻擊方為 APP 版，受攻擊方為網頁版的情境下 (網址：https://chat.heymandi.com/chat)。</p>
+<img src="01.jpeg" style="width:50%;">
+<p>在此情境下 APP 方所發送的文字內涵有的 Script 並<strong>不會</strong>被有效過濾，因此語法可在另一端，也就是 Web 端上被執行。</p>
+<img src="02.jpeg" style="width:90%;">
+<p>滲透的一開始 (上圖)，測試代碼 &quot;<strong> <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> </strong>&quot;，而結果是該代碼並不會被執行，但<strong> Script 標籤的確有被植入成功</strong>。</p>
+<img src="03.jpeg" style="width:50%;">
+<p>因此將代碼換成了 &quot;<strong> <code>&lt;img src=&quot;&quot; onerror=alert(1)&gt;</code> </strong>&quot; 做第二次測試。</p>
+<img src="04.jpeg" style="width:50%;">
+<p>結果成功的執行出 alert 腳本。(如上圖)<br>
+ 另外包含 &quot;<strong> <code>&lt;h1&gt;</code> </strong>&quot;、&quot;<strong> <code>&lt;b&gt;</code> </strong>&quot; 等標籤，經測試也是可被執行的，以及其他大量未測試的語法，都可能含有被執行的風險。</p>
+<hr>
+<h4 id="repair"><a class="markdownIt-Anchor" href="#repair">#</a> Repair</h4>
+<p>在 Web 端傳送至 APP 端的語法會被轉為 HTML 編碼，<br>
+同理可將 APP 端傳送至 Web 端的語法也轉為 HTML 編碼以達到過濾語法的效果。</p>
+<p>防護原則：<br>
+<a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
+]]></content>
+      <categories>
+        <category>Security-Flaw (安全漏洞)</category>
+        <category>我的通報</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>ReportedFromMe (我的通報)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>你可能不知道的進階 Google 搜尋技巧 - Google Hacking</title>
     <url>/2021/03/05/Google-Hacking/</url>
     <content><![CDATA[<p>用了 Google 的搜尋引擎這麼久，你是否知道這些技巧？這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
@@ -1036,50 +1160,6 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
       </categories>
       <tags>
         <tag>Google</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>匿名交友 — HeyMandi 網頁版 XSS</title>
-    <url>/2019/12/22/HeyMandi%E7%B6%B2%E9%A0%81%E7%89%88XSS/</url>
-    <content><![CDATA[<span id="more"></span>
-<hr>
-<h4 id="id"><a class="markdownIt-Anchor" href="#id">#</a> ID</h4>
-<p>《ZDID》ZD-2018-01160</p>
-<hr>
-<h4 id="content"><a class="markdownIt-Anchor" href="#content">#</a> Content</h4>
-<p>受測單位：HeyMandi<br>
- 風險評估：低<br>
-漏洞類型：預存式跨站腳本攻擊 (Stored Cross-Site Scripting)<br>
- 通報時間：2018/10/18</p>
-<hr>
-<h4 id="payload"><a class="markdownIt-Anchor" href="#payload">#</a> PayLoad</h4>
-<p><s>https://chat.heymandi.com/chat</s></p>
-<hr>
-<h4 id="describe"><a class="markdownIt-Anchor" href="#describe">#</a> Describe</h4>
-<p>若聊天室內的雙方都是使用 HeyMandi APP，又或者雙方都是使用 Web 版的話，則不會觸發該漏洞。<br>代碼被執行的問題發生在攻擊方為 APP 版，受攻擊方為網頁版的情境下 (網址：https://chat.heymandi.com/chat)。</p>
-<img src="01.jpeg" style="width:50%;">
-<p>在此情境下 APP 方所發送的文字內涵有的 Script 並<strong>不會</strong>被有效過濾，因此語法可在另一端，也就是 Web 端上被執行。</p>
-<img src="02.jpeg" style="width:90%;">
-<p>滲透的一開始 (上圖)，測試代碼 &quot;<strong> <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> </strong>&quot;，而結果是該代碼並不會被執行，但<strong> Script 標籤的確有被植入成功</strong>。</p>
-<img src="03.jpeg" style="width:50%;">
-<p>因此將代碼換成了 &quot;<strong> <code>&lt;img src=&quot;&quot; onerror=alert(1)&gt;</code> </strong>&quot; 做第二次測試。</p>
-<img src="04.jpeg" style="width:50%;">
-<p>結果成功的執行出 alert 腳本。(如上圖)<br>
- 另外包含 &quot;<strong> <code>&lt;h1&gt;</code> </strong>&quot;、&quot;<strong> <code>&lt;b&gt;</code> </strong>&quot; 等標籤，經測試也是可被執行的，以及其他大量未測試的語法，都可能含有被執行的風險。</p>
-<hr>
-<h4 id="repair"><a class="markdownIt-Anchor" href="#repair">#</a> Repair</h4>
-<p>在 Web 端傳送至 APP 端的語法會被轉為 HTML 編碼，<br>
-同理可將 APP 端傳送至 Web 端的語法也轉為 HTML 編碼以達到過濾語法的效果。</p>
-<p>防護原則：<br>
-<a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
-]]></content>
-      <categories>
-        <category>Security-Flaw (安全漏洞)</category>
-        <category>我的通報</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>ReportedFromMe (我的通報)</tag>
       </tags>
   </entry>
   <entry>
@@ -1215,86 +1295,6 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
         <tag>Deep Web (深網)</tag>
         <tag>Dark Web (暗網)</tag>
         <tag>Tor (洋蔥路由)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github 檔案太大無法推送！？安裝「Git-LFS」馬上解決！</title>
-    <url>/2021/03/28/Git-LFS/</url>
-    <content><![CDATA[<p>使用 git push 推送檔案到 Github 上時，被告知<strong>檔案太大</strong>無法推送！？馬上教你怎麼解決！</p>
-<span id="more"></span>
-<hr>
-<h2 id="報錯"><a class="markdownIt-Anchor" href="#報錯">#</a> 報錯</h2>
-<p>當你嘗試使用  <code>git push</code>  推送超過 <code>100 MB</code>  的檔案時，沒意外就會收到這樣的錯誤。<br>
-這是因為 Github <strong>一個檔案最大上傳限制</strong>就是 <code>100 MB</code> 。(ps. 分開上傳可以，但不能同個檔案 100 MB)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ remote: error: GH001: Large files detected.</span><br><span class="line">$ remote: error: Trace: xxxxxxxxxxxxxxxxxxxx</span><br><span class="line">$ remote: error: See http://git.io/iEPt8g <span class="keyword">for</span> more information.</span><br><span class="line">$ remote: error: File xxxxxxxxxxxxx is 101.00 MB; this exceeds GitHub<span class="string">&#x27;s file size limit of 100 MB</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="安裝-git-lfs-解決"><a class="markdownIt-Anchor" href="#安裝-git-lfs-解決">#</a> 安裝 Git-LFS 解決！</h2>
-<p>為此 Github 也提供解決方法 - 「<strong>Large File Storage</strong>」。</p>
-<h3 id="debian-and-ubuntu"><a class="markdownIt-Anchor" href="#debian-and-ubuntu">#</a> Debian and Ubuntu</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span><br><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="mac-osx"><a class="markdownIt-Anchor" href="#mac-osx">#</a> Mac OSX</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="rhelcentos"><a class="markdownIt-Anchor" href="#rhelcentos">#</a> RHEL/CentOS</h3>
-<h4 id="step-1-安裝-git-182"><a class="markdownIt-Anchor" href="#step-1-安裝-git-182">#</a> Step. 1 安裝 git &gt;= <strong>1.8.2</strong></h4>
-<blockquote>
-<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>5</code>  或  <code>7</code>  (而不是  <code>6</code> ) 的話：<br>
-a. 可以<a href="https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">按這裡</a>安裝 (如果是 CentOS 那麼你只需要執行  <code>sudo yum install epel-release</code> )<br>
-b.  <code>sudo yum install git</code></p>
-</blockquote>
-<blockquote>
-<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>6</code> <br>
-a.  <code>curl -s https://setup.ius.io/ | sudo bash</code> <br>
-b.  <code>sudo yum install git2u</code></p>
-</blockquote>
-<blockquote>
-<p>如果你想，你也可以自己建構原始碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
-</blockquote>
-<h4 id="step-2-安裝-git-lfs"><a class="markdownIt-Anchor" href="#step-2-安裝-git-lfs">#</a> Step. 2 安裝 <strong>git-lfs</strong></h4>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash</span><br><span class="line">sudo yum install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="windows"><a class="markdownIt-Anchor" href="#windows">#</a> Windows</h3>
-<h4 id="step-1-下載安裝檔"><a class="markdownIt-Anchor" href="#step-1-下載安裝檔">#</a> Step. 1 下載安裝檔</h4>
-<p>可以從 <a href="https://github.com/git-lfs/git-lfs/releases">https://github.com/git-lfs/git-lfs/releases</a> 選擇你要的版本進行下載。</p>
-<h4 id="step-2-執行安裝檔"><a class="markdownIt-Anchor" href="#step-2-執行安裝檔">#</a> Step. 2 執行安裝檔</h4>
-<h4 id="step-3-在-cmd-或者-git-bash-執行-git-lfs-install"><a class="markdownIt-Anchor" href="#step-3-在-cmd-或者-git-bash-執行-git-lfs-install">#</a> Step. 3 在 CMD 或者 Git-Bash 執行  <code>git lfs install</code></h4>
-<hr>
-<h2 id="開始使用"><a class="markdownIt-Anchor" href="#開始使用">#</a> 開始使用</h2>
-<blockquote>
-<p>在下 git 指令時，你只需要將追蹤大檔案 (超過 100 MB) 的指令  <code>git add</code>  改成  <code>git lfs track</code> 。<br>
-舉例來說，如果要追蹤副檔名為 <code>.psd</code>  的大檔案，那請使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs track <span class="string">&quot;*.psd&quot;</span></span><br></pre></td></tr></table></figure>
-<p>而<strong>不是</strong>  <code>git add &quot;*.psd&quot;</code>  ！</p>
-</blockquote>
-<blockquote>
-<p>並且確保檔案  <code>.gitattributes</code>  有被追蹤。 (這是用來告知 github 此為大型檔案的文件)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .gitattributes</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>之後呢？後面的指令都是一樣的。<br>
-直接  <code>git add</code>  &gt;  <code>git commit</code>  &gt;  <code>git push</code>  ！<br>
-回到 Github Repository 就可以發現成功被推送了。</p>
-<hr>
-<h2 id="如何取消-lfs"><a class="markdownIt-Anchor" href="#如何取消-lfs">#</a> 如何取消 LFS ？</h2>
-<ul>
-<li>刪除單個檔案<br>
-如果你是要刪除 <code>單個檔案</code> ，那麼就需要麻煩點到「<strong> <code>.gitattributes</code> </strong>」這個檔案中去刪除單筆資料，使 Github 知道該檔案不用再被 LFS 給追蹤。</li>
-<li>移除全部 (不使用 LFS 了)<br>
- 你需要使用指令「<strong> <code>git lfs uninstall</code> </strong>」，如果你是較舊的版本則是使用指令「<strong> <code>git lfs uninit</code> </strong>」來刪除該 Repository 中的 LFS 。<br>
-另外也請確保檔案「<strong> <code>.gitattributes</code> </strong>」不再被追蹤。(建議如果不需要，請直接下 <strong> <code>git rm .gitattributes</code> </strong> 刪除它)</li>
-</ul>
-<p>範例:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs uninstall</span><br><span class="line">git rm .gitattributes</span><br><span class="line">git add .</span><br><span class="line">git commit <span class="string">&quot;Uninstall LFS&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料">#</a> 參考資料</h2>
-<p>《Git Large File Storage》<a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a><br>
-《Cover Image》<a href="https://git-lfs.github.com/images/graphic.gif">https://git-lfs.github.com/images/graphic.gif</a></p>
-]]></content>
-      <categories>
-        <category>Note (技巧分享)</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -3590,6 +3590,163 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
       <tags>
         <tag>Hacker (駭客)</tag>
         <tag>Anonymous (匿名者)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>詳細解說 Encode 編碼、Encrypt 加密、Hash 雜湊 的概念｜不要再搞混了！</title>
+    <url>/2021/04/20/Encode-Encrypt-Hash/</url>
+    <content><![CDATA[Encode (編碼)、Encrypt (加密)、Hash (雜湊) 一直令許多新手們搞混，雖然說可能運算後的結果看起來都是一串亂碼，但原理及使用場合卻天差地遠，千萬不要再分不清處了！
+<hr>
+<h2 id="encode-編碼"><a class="markdownIt-Anchor" href="#encode-編碼">#</a> Encode (編碼)</h2>
+<p>在計算機中，需要儲存大量資料，而這些資料基於各國的語言不同，可能是基本的 <code>英文</code> 或是博大精深的 <code>中文</code> ，中文又分 <code>簡體</code> 、 <code>繁體</code> ，甚至是由右至左書寫的 <code>阿拉伯文</code> 等。</p>
+<p>雖然各種國家的文字零零種種非常多，尤其中文數量更是大的驚人，但這些文字對計算機來說都只是「<strong>字元</strong>」，更精確來說都只是機器語言，也就是常聽見的「<strong>0</strong>、<strong>1</strong>」，所以儲存上並難不倒它，問題就出在，如何 <code>顯示</code> 給使用者觀看？</p>
+<blockquote>
+<h3 id="ascii"><a class="markdownIt-Anchor" href="#ascii">#</a> ASCII</h3>
+<p>舉例剛開始美國人使用的編碼「<strong> <code>ASCII</code> </strong>」，全名「<strong> <code>American Standard Code for Information Interchange (美國資訊交換標準代碼)</code> </strong>」，主要是用來顯示基本的  <code>阿拉伯數字</code> 、 <code>26 個英文字母(大小寫)</code> 、 <code>英式標點符號</code> 。但這很快就使得在其他語系的國家顯示上出現問題，例如 <code>西歐語言</code> 就無法套用在  <code>ASCII</code>  上。</p>
+<p><a href="https://zh.wikipedia.org/wiki/ASCII#/media/File:USASCII_code_chart.png"><img src="USASCII_code_chart.png" alt="1968年版ASCII編碼速見表｜圖源自 Wiki 維基百科"></a></p>
+<p>雖然後來也使用  <code>EASCII</code>  解決了部分西歐語言的顯示問題，但還是有著各式各樣的語言在顯示上有問題，這也是導致為什麼會有那麼多種編碼的原因之一，儘管有著這麼多的編碼，但也出現了一個新的問題「如何統一」？直到「<strong> <code>Unicode</code> </strong>」被發明。</p>
+</blockquote>
+<blockquote>
+<h3 id="unicode-utf"><a class="markdownIt-Anchor" href="#unicode-utf">#</a> Unicode (UTF)</h3>
+<p>「 <code>Unicode</code> 」簡稱「 <code>UTF</code> 」又稱「 <code>萬國碼</code> 、 <code>統一碼</code> 」，是一種被大家公認的標準編碼。<br>
+它最大的優點在於，該編碼納入了世界上大部分的文字系統，也就是將那些 <code>雜亂的編碼</code> 給 <code>統整</code> 了，所以其實它其實是一種「 <code>編碼集</code> 」，這也就使得計算機能夠更簡單方便的呈現和處理文字。</p>
+</blockquote>
+<p>說了這麼多，你可能已經發現，<strong>名詞</strong>「 <code>Encode (編碼)</code> 」其實就只是在指 <code>資料的格式</code> ，放在<strong>動詞</strong>上解釋就只是 <code>轉換資料格式的過程</code> 。因此，編碼僅僅只是將<strong>文字轉換成不同格式</strong>做儲存、顯示等，並<strong>無</strong>實質上的<strong>安全作用</strong>。</p>
+<hr>
+<h2 id="decode解碼"><a class="markdownIt-Anchor" href="#decode解碼">#</a> Decode (解碼)</h2>
+<p>基本上就是將 Encode (編碼) 過後的資料做 <code>反向編碼</code> 的動作。<br>
+其實從字面上意思也不難理解「<strong>編</strong>」與「<strong>解</strong>」所表達的含意，就像是 <code>加工</code> 與 <code>還原</code> 般。</p>
+<hr>
+<h2 id="encrypt-加密"><a class="markdownIt-Anchor" href="#encrypt-加密">#</a> Encrypt (加密)</h2>
+<blockquote>
+<p>基於資料的 <code>隱私</code> 及 <code>安全</code> 性考量，在許多時候我們不得將資料給加密以確保資料內容不被輕易讀取。<br>
+但要特別在此聲明的一點是，這裡所指的「 <code>Encrypt (加密)</code> 」並<strong>非</strong>是大家常使用的「帳號、密碼」系統。</p>
+<p>以往我們不希望他人讀取自己較私人的訊息時，我們會在這些資料被讀取前請求驗證身份，舉例將檔案放在保險箱中，若是密碼不正確則無法開啟保險箱，藉此達到資料不被讀取的安全功能。<br>
+理論上沒問題，但這其實有個致命的缺點… 如果鎖被破壞呢？</p>
+</blockquote>
+<p>萬一有些方法能破壞這些鎖，進而達到<strong>不用輸入密碼也能存取</strong>的動作，那這種加密豈不是失去作用了。</p>
+<blockquote>
+<p>會導致這樣的原因主要是因為，這些聲稱加密的檔案其實並沒有被真正的「<strong>加密運算</strong>」，只是在外層加上了一道防護而已。而安全的加密應該是連同裡面的資料進行改變，這麼一來若是無法有相對應的金鑰，則無法解密資料。</p>
+</blockquote>
+<p>可以想像成  <code>Encrypt (加密)</code>  就是將  <code>Encode (編碼)</code>  中融入了  <code>Key (密鑰)</code>  及 <a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%B3%95"> <code>Algorithm (演算法)</code> </a> 的元素，使  <code>Key (密鑰)</code>  參與了這整個利用  <code>Algorithm (演算法)</code>  轉換格式的過程，因此若是缺少  <code>Key (密鑰)</code>  是無法反推算原始含意的。</p>
+<p>而加密的方式有成千上萬中種，大致上可以分成兩類，分別是「 <code>Symmetric-key algorithm (對稱加密)</code> 」及「 <code>Public-key Cryptography (非對稱加密)</code> 」。<br>
+對這部份想更深入了解的朋友可以看看我之前寫的文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Symmetric-key Algorithm (對稱加密)">Symmetric-key Algorithm (對稱加密)</a></strong>」及「<strong><a href="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Public-key Cryptography (非對稱加密)">Public-key Cryptography (非對稱加密)</a></strong>」。</p>
+<hr>
+<h2 id="decrypt-解密"><a class="markdownIt-Anchor" href="#decrypt-解密">#</a> Decrypt (解密)</h2>
+<p>指對於「 <code>Encrypt (加密)</code> 」過的檔案使用對應的  <code>Key(密鑰)</code>  進行反運算以得出<strong>原本內容</strong>的過程。</p>
+<hr>
+<h2 id="hash-雜湊"><a class="markdownIt-Anchor" href="#hash-雜湊">#</a> Hash (雜湊)</h2>
+<p>相較於上述的  <code>Encode (編碼)</code>  及  <code>Encrypt (加密)</code>  來說， <code>Hash (雜湊)</code>  算是個特別的存在。<br>
+直接道出重點的話就是「<strong>Hash (雜湊) 是不可逆的</strong>」。</p>
+<blockquote>
+<h3 id="可逆性-reversibility"><a class="markdownIt-Anchor" href="#可逆性-reversibility">#</a> 可逆性 (Reversibility)</h3>
+<p>顧名思義就是可以<strong>逆向回朔原始狀態</strong>的意思。與其相反的詞為「<strong>不可逆性 (Irreversible)</strong>」。<br>
+好比上述的「 <code>Encode (編碼)</code> 」，基本上各式各樣的<strong>編碼方式</strong>及<strong>編碼對應表</strong>在網絡上都可以搜尋的到，也就表示任何人都可以對這些編碼進行解碼的動作，因為方法是公開的。(當然，自創的編碼例外)<br>
+ 再者，「 <code>Encrypt (加密)</code> 」也可以被持有「 <code>Key (密鑰)</code> 」者透過「 <code>Decrypt (解密)</code> 」的動作還原出原始的含意。<br>
+這些可以被成功<strong>回朔至原始含意</strong>的都代表含有 <strong> <code>可逆性 (Reversibility)</code> </strong>。</p>
+</blockquote>
+<blockquote>
+<h3 id="不可逆性-irreversible"><a class="markdownIt-Anchor" href="#不可逆性-irreversible">#</a> 不可逆性 (Irreversible)</h3>
+<p>與上述的 <code>可逆性 (Reversibility)</code>  擁有相反性質，表示 <code>無法單純透過字串或亂碼追朔其原始含意</code> 。<br>
+ <code>Hash (雜湊)</code>  就是這樣的存在。</p>
+</blockquote>
+<p>那麼是如何做到 <strong>不可逆性 (Irreversible)</strong> 的呢？</p>
+<blockquote>
+<h3 id="破壞性的運算"><a class="markdownIt-Anchor" href="#破壞性的運算">#</a> 破壞性的運算</h3>
+<p>有著 <code>可逆性 (Reversibility)</code>  的主要原因是因為其內容依舊被「 <code>完整的保留</code> 」，只是換了種儲存方式而已。但 <code>Hash (雜湊)</code>  則不會如此，也就是說 Hash (雜湊) 會將原始的資料給破壞保存。</p>
+</blockquote>
+<blockquote>
+<p>舉個例子，我們都知道的<strong>除法</strong>。<br>
+除法「<strong> <code>16 / 8</code> </strong>」會等於「<strong> <code>2</code> </strong>」，若試問你「<strong> <code>X / 8</code> </strong>」結果為「<strong> <code>2</code> </strong>」，你依然能透過「<strong> <code>2 * 8</code> </strong>」得出 「<strong> <code>X</code> </strong> = <strong> <code>16</code> </strong>」，因為「<strong> <code>除法</code> </strong>」可以被理解成是「<strong> <code>乘法的反運算</code> </strong>」。</p>
+<p>這個道理大家都懂，那麼若是 <code>取餘數</code> 呢？(或說是 <code>取模數</code> )<br>
+ 舉例「<strong> <code>16 Mod 4</code> </strong>」會是「<strong> <code>0</code> </strong>」，因為 <strong> <code>16</code> </strong> 能被 <strong> <code>4</code> </strong> 整除。<br>
+而「<strong> <code>16 Mod 5</code> </strong>」則會是「<strong> <code>1</code> </strong>」，問題來了，若試問你「<strong> <code>X Mod 5</code> </strong>」結果為「<strong> <code>1</code> </strong>」，你能推出「<strong> <code>X</code> </strong>」的值嗎？<br>
+這可能的值將趨近<strong>無限多種</strong>，你<strong>無法</strong>光靠<strong>保留下來的資訊</strong>推算原始內容，因此就可以達到 <strong>不可逆性 (Irreversible)</strong> 的效果。</p>
+</blockquote>
+<p>這只是其中一個簡單的例子，而 <strong>Hash (雜湊)</strong> 中含有各種類似的概念以確保運算後的結果<strong>不能被反推</strong>。<br>
+並且 Hash (雜湊) 有著特點，就是當輸入的內容相差了哪怕只有一點，也會導致雜湊結果截然不同。</p>
+<p>舉例「 <code>alpaca blog</code> 」的  <code>SHA-256</code>  雜湊為「 <code>58e93956c3cc49342b607a931e4fd60e37518d7f21f29e1dfc968d4be98c976a</code> 」。那在後面加個小點變成「 <code>alpaca blog.</code> 」的  <code>SHA-256</code>  會是長怎樣呢？<br>
+答案是「 <code>3e445a9b450005d71ce28992d24871ddd5bcf5495a6eb52d3fe91f594cf3c35d</code> 」。<br>
+完全不同的結果，若要分析破解雜湊值根本無跡可尋。</p>
+<p>但也因此，其實雜湊是「 <code>可能會重複</code> 」的！<br>
+畢竟即使擁有「 <code>2^256+1</code> 」種可能性的  <code>SHA-256</code>  也不能裝下第「 <code>2^256+2</code> 」種輸入還不產出重複的輸出結果吧！<br>
+只是 <code>很難</code> 找到重複的兩筆資料，因為實在是<strong>太多種可能性</strong>了！<br>
+即使找到了，但也 <code>很難是有意義的資料</code> ，通常是 <code>亂碼</code> ，這也可以使<strong>人為修改幾乎成為不可能的事情</strong>。</p>
+<p>(ps. 許多雜湊是不論輸入的字串長度多長，輸出的長度皆相同的。舉例「 <code>SHA-256</code> 」就是輸出  <code>256 bits</code> ，大小寫英文及數字，字元長度為「 <code>64</code> 」，而  <code>MD5</code>  則固定輸出  <code>128 bits</code> ，大小寫英文及數字，字元長度為「 <code>32</code> 」。)</p>
+<p>大致上都了解雜湊的特性了<br>
+那麼問題來了，什麼情況下我們會需要將資料  <code>Hash (雜湊)</code>  ？<br>
+既然不能被還原，那要那串雜湊過後的亂碼有什麼用？</p>
+<hr>
+<h2 id="驗證資料完整性"><a class="markdownIt-Anchor" href="#驗證資料完整性">#</a> 驗證資料完整性</h2>
+<p>由於基本上很難找到兩筆有意義的重複雜湊值，因此就可以透過此方式來驗證檔案的完整性。</p>
+<p>舉例「<strong>虛擬貨幣</strong>」就使用這點來驗證每筆交易的<strong>可信度</strong>，又或者你可能在下載某些檔案時，就曾看過官方在該檔案旁標示的「 <code>識別亂碼</code> 」，就是使用雜湊的原理。<br>
+常見的雜湊就有「 <code>SHA-1</code> 、 <code>SHA-256</code> 、 <code>MD5</code> 」等。</p>
+<p>每個在計算機上的「 <code>File (檔案)</code> 」不論是  <code>mp3</code> 、 <code>mp4</code> 、 <code>txt</code> 、 <code>jpg</code> 、 <code>png</code> 、 <code>gif</code>  等，對電腦來說都只是一串很長的 <code>文字</code> ，更精確來說都只是  <code>0</code>  與  <code>1</code> 。<br>
+既然如此，那麼我們就可以將檔案進行 <code>雜湊運算</code> ！</p>
+<p>有什麼用處？</p>
+<p>試想一下，是否曾經聽過駭客入侵網站後，將原有的檔案<strong>竄改</strong>加入病毒使他人下載並執行到加工過的檔案的事件。若是有個機制能<strong>檢測檔案是否遭到竄改</strong>，但過程又<strong>不必要去比對整個完整的檔案內容</strong> (太耗資源)，該怎麼做？<br>
+看看上面的 <strong>Hash (雜湊)</strong> 特性，就不難理解它可以有效的做到這點。</p>
+<p>官方在釋出檔案的同時，附上一段該檔案的 <code>雜湊值</code> 及 <code>雜湊演算法</code> ，使用者下載了該檔案後，可以自己將檔案再次經過雜湊後 <code>比對是否跟官方所附上的雜湊值一致</code> ，若<strong>不一致表示該檔案被竄改</strong>過！</p>
+<p>例如 <a href="https://"><strong>bitcoin.org</strong></a> 網站提供大家下載「 <code>bitcoin core</code> 」比特幣錢包。<br>
+並且付上了對於檔案的數字簽名。<br>
+內容大致上長這樣：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-----BEGIN PGP SIGNED MESSAGE-----</span><br><span class="line">Hash: SHA256</span><br><span class="line"></span><br><span class="line">43416854330914992bbba2d0e9adf2a6fff4130be9af8ae2ef1186e743d9a3fe  bitcoin-0.21.0-aarch64-linux-gnu.tar.gz</span><br><span class="line">f028af308eda45a3c4c90f9332f96b075bf21e3495c945ebce48597151808176  bitcoin-0.21.0-arm-linux-gnueabihf.tar.gz</span><br><span class="line">695fb624fa6423f5da4f443b60763dd1d77488bfe5ef63760904a7b54e91298d  bitcoin-0.21.0-osx64.tar.gz</span><br><span class="line">6223fd23d07133a6bfa2aa3d2554a09dc1d790d28ce67b0085d3fdcc1c126e05  bitcoin-0.21.0-osx.dmg</span><br><span class="line">f8b2adfeae021a672effbc7bd40d5c48d6b94e53b2dd660f787340bf1a52e4e9  bitcoin-0.21.0-riscv64-linux-gnu.tar.gz</span><br><span class="line">1a91202c62ee49fb64d57a52b8d6d01cd392fffcbef257b573800f9289655f37  bitcoin-0.21.0.tar.gz</span><br><span class="line">54050748ef4d4f000ea1ece472491b3e5fd546efc74ed52119354b2893f6624b  bitcoin-0.21.0-win64-setup.exe</span><br><span class="line">1d0052c4ce80227fb6d0bc1c4e673ba21033e219c1f935d25f130ef7f43360d4  bitcoin-0.21.0-win64.zip</span><br><span class="line">da7766775e3f9c98d7a9145429f2be8297c2672fe5b118fd3dc2411fb48e0032  bitcoin-0.21.0-x86_64-linux-gnu.tar.gz</span><br><span class="line">-----BEGIN PGP SIGNATURE-----</span><br><span class="line">Version: GnuPG v1.4.11 (GNU&#x2F;Linux)</span><br><span class="line"></span><br><span class="line">iQIcBAEBCAAGBQJgADqTAAoJEJDIAZ42wulkjtkQAJwlSTDinKsxZIMky3MeVhwB</span><br><span class="line">CmxxYiMLPQA8bwgxyc4RaTxUrqL2oExPOtfcDzcR1WbQe12niG40N&#x2F;2yrtf66lG9</span><br><span class="line">KbSsQD6nKat9B3mCk9&#x2F;jNkJHWmq5JJbOyfRs2mex75Lj7UHaPPrqh2rMfEewljed</span><br><span class="line">kHkDuaqeqYlTAh981WqLD+l5jnpQZqBSrcz3YTTvXWd7xKfFSVzqF&#x2F;tD4CQFrPX2</span><br><span class="line">9b2BLzA&#x2F;u+29Z3s+zio1l5c7fikNDd404T5U&#x2F;y+NMOyCmgT4eiDGLQPlEpoGNq3w</span><br><span class="line">GYU7FNZUO9xXeatx4PI8qiq5mIK46UwfPUTeruTzNrHsME7YioUa87uSYKM8jqwP</span><br><span class="line">FSnbhYoUqCB&#x2F;wPaKZwEF+2WzG88yj2+PzalVt8cnjRnTQ77COtHJqs8AjLWnVACF</span><br><span class="line">LluplM16xyiLn0FWkrEHyi5HlI+X+cqIiTtehojMBXIkHugIYMnT5XB9llh5OWXg</span><br><span class="line">Bp1UGupojLXYuMNF5R6cU5Iq+xJjbUiQ&#x2F;PDm38MBlFlQ9RzRCYyZpMYZE3K9p789</span><br><span class="line">jpjdYdMPtzkYlIKD87S89JtE1s6i&#x2F;SkTPhebyu&#x2F;328rqkqnNKSCHnuB7Fy2iEKJj</span><br><span class="line">5kLs&#x2F;LjY8yxSMuGeNl6LhWGKVZKy0AS&#x2F;BztSHr2jgThfhN1BemFRcViSvcXhMeNw</span><br><span class="line">ka8Z9KLt&#x2F;N0ziabBexAw</span><br><span class="line">&#x3D;bi4p</span><br><span class="line">-----END PGP SIGNATURE-----</span><br></pre></td></tr></table></figure>
+<p>在第二行的位置，官方標示了「 <code>Hash 方式為 SHA256</code> 」，接著就列出了各個檔案的 <code>雜湊值</code> 供大家驗證，可是該文檔也是可能受到偽造的，那怎麼辦？<br>
+還記得前面所說的「 <code>非對稱加密</code> 」嗎？在此情境當中被用在了「 <code>數字簽名</code> 」，並且將簽章寫在文檔最後，也就是最後那串很長的亂碼。</p>
+<p>官方將前面的整段「 <code>BEGIN PGP SIGNED MESSAGE</code>  與  <code>-----BEGIN PGP SIGNATURE-----</code>  中間」的內容給簽章成「 <code>-----BEGIN PGP SIGNATURE-----</code>  與  <code>-----END PGP SIGNATURE-----</code>  中間」的那串亂碼了！你只需要使用官方提供的公鑰便可以驗證這一切的資訊是否源自官方。</p>
+<p>萬一駭客 <code>更改了檔案</code> ，則無法通過該文檔的  <code>Hash (雜湊)</code>  驗證，若駭客連該文檔一起修改，將 <code>檔案對應的雜湊值</code> 也更改了，但由於駭客 <code>沒有官方所釋出的公鑰所對應的私鑰</code> ，因此也 <code>無法對修改後的訊息進行官方簽章</code> 。</p>
+<hr>
+<h2 id="hash-雜湊-其實可以被破解"><a class="markdownIt-Anchor" href="#hash-雜湊-其實可以被破解">#</a> Hash (雜湊) 其實可以被破解？</h2>
+<p>雜湊也並非無敵，它只是盡量的避免了原文被修改成有其他 <code>有意義的內容</code> ，藉此達到降低被欺騙的可能而已。<br>
+有些網站標榜能破解 Hash (雜湊)，那其實是利用大數據來進行「 <code>暴力破解 (Brute-force attack)</code>  又稱 <a href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB"> <code>窮舉攻擊 (Exhaustive attack)</code> </a>」或者「<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8"> <code>彩虹表 (Rainbow Table)</code> </a>」。</p>
+<ul>
+<li>暴力破解 (Brute-force attack)<br>
+ 暴力破解其實就是以「 <code>窮舉</code> 」的方式來找出該雜湊值對應的明文，因此需要嘗試許多種的可能性，也非常耗時，通常<strong>不</strong>太會真正的<strong>窮舉</strong>，畢竟可能性太多了。<br>
+假設我們是要利用該方法來找出某一串「 <code>已知是人工輸入的密碼的雜湊值</code> 」的明文，那只要我們可以 <code>收集許多常見密碼的列表</code> ，就可以使用這些列表來嘗試，萬一該密碼有在列表中，就可以<strong>成功找到比對一致的結果</strong>。而這種方式依賴的那個 <code>裝著許多待比對的字串的檔案</code> 我們稱它為「 <code>字典檔</code> 」。<br>
+將字典檔中的各項可能結果使用腳本或特定程式一個個的雜湊後，再去比對是否有與欲破解的雜湊值有相符結果，若沒有則繼續嘗試下一筆資料，若成功批配，則表示該項就是 (幾乎是) 該雜湊值的原文，同時我們也稱這兩筆資料「 <code>發生碰撞</code> 」。</li>
+<li>彩虹表 (Rainbow Table)<br>
+ 嚴格來說也算是一種暴力破解的方式，但在某些時候效率比暴力破解更高。<br>
+通常是指將雜湊的公式 <code>逆向運算回推</code> 所預先計算好的表。在密碼學打滾的人一定都知道這個！<br>
+關於彩虹表的原理解釋將對較複雜，簡單來說就是…
+<blockquote>
+<p>假設原本的雜湊函式為  <code>H</code> ，則創建一個與其對應的相反函式  <code>R</code>  又稱「 <code>歸約函式 (Reduction function)</code> 」。函式  <code>R</code>  可以將利用函式  <code>H</code>  所計算出的雜湊值反算回 <code>與原本格式類似</code> 的 <code>明文</code> 的 <code>亂碼</code> ，這裡也可以理解成是將這 <code>雜湊值</code>  Hash 成  <code>新雜湊值</code> ，而這個 <code>新雜湊值</code> 格式是 <code>明文格式</code> 。就這樣持續的經過  <code>R 運算</code> 、 <code>H 運算</code> 、 <code>R 運算</code> 、 <code>H 運算</code> … 形成了一條很長的鏈，由於這條鏈的結果是必然的，因此只需要對該鏈的 <code>初始節點</code> 及 <code>末端節點</code> 儲存即可。<br>
+假設原文為「 <code>aaaaaa</code> 」在經過  <code>H 運算</code>  之後雜湊值為「 <code>281DAF40</code> 」，則我們將該雜湊值用  <code>R 運算</code>  得出一個反雜湊值為「 <code>sgfnyd</code> 」之後再進行一次  <code>H 運算</code>  得出「 <code>920ECF10</code> 」再進行  <code>R 運算</code>  得出「 <code>kiebgt</code> 」，之後將這條鏈存入表中 (只存頭尾節點)。過程如下圖：</p>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/bbacb4ee3811ce261fa6023c6de90718e22c7b49"><img src="01.png" alt="圖源自 Wiki 維基百科"></a><br>
+若 <code>欲破解的雜湊值</code> 所運算出的 <code>雜湊鏈</code> 中的 <code>任意節點</code> 與 <code>表中</code> 的 <code>某項末端節點</code> 發生 <code>碰撞</code> ，就可以由該鏈的 <code>初始節點</code> 開始嘗試重建對應的雜湊鏈。<br>
+延續剛剛的情境，假設 <code>欲破解的雜湊值</code> 為「 <code>920ECF10</code> 」，在使用  <code>R 運算</code>  後得出「 <code>kiebgt</code> 」。</p>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/6f221f7b41880f40014bb8a62c238fc393dfaa7b"><img src="02.png" alt="圖源自 Wiki 維基百科"></a><br>
+我們發現該值出現在表中，於是我們將該鏈的 <code>初始節點</code> 開始進行  <code>H 及 R 運算</code>  直到找出「 <code>920ECF10</code> 」為止，若成功找到，則表示該鏈中的「 <code>920ECF10</code> 」的 <code>前個節點</code> 便是解，即為下圖的「 <code>sgfnyd</code> 」。</p>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1f95ab4100e23af7fa96fa7f3f71c28edeb7a17"><img src="03.png" alt="圖源自 Wiki 維基百科"></a><br>
+但由於剛剛說過，雜湊是可能會重複的，因此在此情境中，即便「 <code>kiebgt</code> 」在表中的 <code>某項末節點</code> 被找到，但也<strong>可能發生</strong>當你嘗試利用該鏈的 <code>初始節點</code> 開始進行運算後，也無法找到「 <code>920ECF10</code> 」的狀況，對此我們稱作「 <code>誤報 (False alarm)</code> 」，接著只需要跳過該次批配，繼續做運算嘗試找出下個配對即可。<br>
+舉例上述情境可能在「 <code>FB107E70</code>  (不同的雜湊值)」進行  <code>R 運算</code>  後得出「 <code>kiebgt</code>  (有著一樣的雜湊)」。</p>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/7e3220acb1fc2552f863e5fc14eaf76fa269ec37"><img src="04.png" alt="圖源自 Wiki 維基百科"></a></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="總結"><a class="markdownIt-Anchor" href="#總結">#</a> 總結</h2>
+<p>只能說現在在資訊安全上真的衍生出了許多方法，這些方法能有著許多優點，但同時也能帶來許多危機。<br>
+在寫這篇文章時，寫著寫著突然發現好像重心著重在  <code>Hash (雜湊)</code>  的部份太多了，造成各位在觀看時可能有點失去平衡，真的很抱歉，但這也是因為我希望將<strong>較完整的資訊</strong>帶給各位。</p>
+<p>文章內容較為繁瑣，也有些許離題。資料都是自己的知識及  <code>Wiki 維基百科</code>  的輔助！<br>
+若內容有誤請不吝嗇通知我，非常感謝！</p>
+<p>另外喜歡這篇文章也別忘了分享給你身邊的朋友觀看！</p>
+<hr>
+<h2 id="參考資料"><a class="markdownIt-Anchor" href="#參考資料">#</a> 參考資料</h2>
+<p>《<strong>Wiki 維基百科 - ASCII</strong>》<a href="https://zh.wikipedia.org/wiki/ASCII">https://zh.wikipedia.org/wiki/ASCII</a><br>
+《<strong>Wiki 維基百科 - Unicode</strong>》 <a href="https://zh.wikipedia.org/wiki/Unicode">https://zh.wikipedia.org/wiki/Unicode</a><br>
+《<strong>Wiki 維基百科 - SHA-2</strong>》<a href="https://zh.wikipedia.org/wiki/SHA-2">https://zh.wikipedia.org/wiki/SHA-2</a><br>
+《<strong>Wiki 維基百科 - MD5</strong>》<a href="https://zh.wikipedia.org/wiki/MD5">https://zh.wikipedia.org/wiki/MD5</a><br>
+《<strong>Wiki 維基百科 - 蠻力攻擊</strong>》<a href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB">https://zh.wikipedia.org/wiki/ 蛮力攻击</a><br>
+《<strong>Wiki 維基百科 - 彩虹表</strong>》<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8">https://zh.wikipedia.org/wiki/ 彩虹表</a></p>
+]]></content>
+      <categories>
+        <category>Concept (概念分享)</category>
+      </categories>
+      <tags>
+        <tag>Cyber Security (網絡安全)</tag>
+        <tag>Cryptography (密碼學)</tag>
+        <tag>Public-key Cryptography (非對稱加密)</tag>
+        <tag>Digital Signature (數位簽章)</tag>
       </tags>
   </entry>
   <entry>
