@@ -3603,7 +3603,7 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 <blockquote>
 <h3 id="ascii"><a class="markdownIt-Anchor" href="#ascii">#</a> ASCII</h3>
 <p>舉例剛開始美國人使用的編碼「<strong> <code>ASCII</code> </strong>」，全名「<strong> <code>American Standard Code for Information Interchange (美國資訊交換標準代碼)</code> </strong>」，主要是用來顯示基本的  <code>阿拉伯數字</code> 、 <code>26 個英文字母(大小寫)</code> 、 <code>英式標點符號</code> 。但這很快就使得在其他語系的國家顯示上出現問題，例如 <code>西歐語言</code> 就無法套用在  <code>ASCII</code>  上。</p>
-<p><a href="https://zh.wikipedia.org/wiki/ASCII#/media/File:USASCII_code_chart.png"><img src="USASCII_code_chart.png" alt="1968年版ASCII編碼速見表｜圖源自 Wiki 維基百科"></a></p>
+<p><a href="https://zh.wikipedia.org/wiki/ASCII#/media/File:USASCII_code_chart.png"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="USASCII_code_chart.png" alt="1968年版ASCII編碼速見表｜圖源自 Wiki 維基百科"></a></p>
 <p>雖然後來也使用  <code>EASCII</code>  解決了部分西歐語言的顯示問題，但還是有著各式各樣的語言在顯示上有問題，這也是導致為什麼會有那麼多種編碼的原因之一，儘管有著這麼多的編碼，但也出現了一個新的問題「如何統一」？直到「<strong> <code>Unicode</code> </strong>」被發明。</p>
 </blockquote>
 <blockquote>
@@ -3684,7 +3684,7 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 <p>每個在計算機上的「 <code>File (檔案)</code> 」不論是  <code>mp3</code> 、 <code>mp4</code> 、 <code>txt</code> 、 <code>jpg</code> 、 <code>png</code> 、 <code>gif</code>  等，對電腦來說都只是一串很長的 <code>文字</code> ，更精確來說都只是  <code>0</code>  與  <code>1</code> 。<br>
 既然如此，那麼我們就可以將檔案進行 <code>雜湊運算</code> ！</p>
 <p>有什麼用處？</p>
-<p>試想一下，是否曾經聽過駭客入侵網站後，將原有的檔案<strong>竄改</strong>加入病毒使他人下載並執行到加工過的檔案的事件。若是有個機制能<strong>檢測檔案是否遭到竄改</strong>，但過程又<strong>不必要去比對整個完整的檔案內容</strong> (太耗資源)，該怎麼做？<br>
+<p>試想一下，是否曾經聽過駭客入侵網站後，將原有的檔案<strong>竄改</strong>加入病毒使他人下載並執行到被加工檔案的事件。若是有個機制能<strong>檢測檔案是否遭到竄改</strong>，但過程又<strong>不必要去比對整個檔案的內容</strong> (太耗效能資源)，該怎麼做？<br>
 看看上面的 <strong>Hash (雜湊)</strong> 特性，就不難理解它可以有效的做到這點。</p>
 <p>官方在釋出檔案的同時，附上一段該檔案的 <code>雜湊值</code> 及 <code>雜湊演算法</code> ，使用者下載了該檔案後，可以自己將檔案再次經過雜湊後 <code>比對是否跟官方所附上的雜湊值一致</code> ，若<strong>不一致表示該檔案被竄改</strong>過！</p>
 <p>例如 <a href="https://"><strong>bitcoin.org</strong></a> 網站提供大家下載「 <code>bitcoin core</code> 」比特幣錢包。<br>
@@ -3709,17 +3709,17 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 通常是指將雜湊的公式 <code>逆向運算回推</code> 所預先計算好的表。在密碼學打滾的人一定都知道這個！<br>
 關於彩虹表的原理解釋將對較複雜，簡單來說就是…
 <blockquote>
-<p>假設原本的雜湊函式為  <code>H</code> ，則創建一個與其對應的相反函式  <code>R</code>  又稱「 <code>歸約函式 (Reduction function)</code> 」。函式  <code>R</code>  可以將利用函式  <code>H</code>  所計算出的雜湊值反算回 <code>與原本格式類似</code> 的 <code>明文</code> 的 <code>亂碼</code> ，這裡也可以理解成是將這 <code>雜湊值</code>  Hash 成  <code>新雜湊值</code> ，而這個 <code>新雜湊值</code> 格式是 <code>明文格式</code> 。就這樣持續的經過  <code>R 運算</code> 、 <code>H 運算</code> 、 <code>R 運算</code> 、 <code>H 運算</code> … 形成了一條很長的鏈，由於這條鏈的結果是必然的，因此只需要對該鏈的 <code>初始節點</code> 及 <code>末端節點</code> 儲存即可。<br>
+<p>假設原本的雜湊函式為  <code>H</code> ，則創建一個與其對應的相反函式  <code>R</code>  又稱「 <code>歸約函式 (Reduction function)</code> 」。函式  <code>R</code>  可以將利用函式  <code>H</code>  所計算出的雜湊值反算回 <code>與原本格式類似的亂碼</code> ，這裡也可以理解成是將這 <code>雜湊值</code>  Hash 成  <code>新雜湊值</code> ，而這個 <code>新雜湊值</code> 格式是 <code>類似原文的格式</code> 。就這樣持續的經過  <code>R 運算</code> 、 <code>H 運算</code> 、 <code>R 運算</code> 、 <code>H 運算</code> … 形成了一條很長的鏈，由於這條鏈的結果是必然的，因此只需要對該鏈的 <code>初始節點</code> 及 <code>末端節點</code> 儲存即可。<br>
 假設原文為「 <code>aaaaaa</code> 」在經過  <code>H 運算</code>  之後雜湊值為「 <code>281DAF40</code> 」，則我們將該雜湊值用  <code>R 運算</code>  得出一個反雜湊值為「 <code>sgfnyd</code> 」之後再進行一次  <code>H 運算</code>  得出「 <code>920ECF10</code> 」再進行  <code>R 運算</code>  得出「 <code>kiebgt</code> 」，之後將這條鏈存入表中 (只存頭尾節點)。過程如下圖：</p>
-<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/bbacb4ee3811ce261fa6023c6de90718e22c7b49"><img src="01.png" alt="圖源自 Wiki 維基百科"></a><br>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/bbacb4ee3811ce261fa6023c6de90718e22c7b49"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.png" alt="圖源自 Wiki 維基百科"></a><br>
 若 <code>欲破解的雜湊值</code> 所運算出的 <code>雜湊鏈</code> 中的 <code>任意節點</code> 與 <code>表中</code> 的 <code>某項末端節點</code> 發生 <code>碰撞</code> ，就可以由該鏈的 <code>初始節點</code> 開始嘗試重建對應的雜湊鏈。<br>
 延續剛剛的情境，假設 <code>欲破解的雜湊值</code> 為「 <code>920ECF10</code> 」，在使用  <code>R 運算</code>  後得出「 <code>kiebgt</code> 」。</p>
-<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/6f221f7b41880f40014bb8a62c238fc393dfaa7b"><img src="02.png" alt="圖源自 Wiki 維基百科"></a><br>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/6f221f7b41880f40014bb8a62c238fc393dfaa7b"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02.png" alt="圖源自 Wiki 維基百科"></a><br>
 我們發現該值出現在表中，於是我們將該鏈的 <code>初始節點</code> 開始進行  <code>H 及 R 運算</code>  直到找出「 <code>920ECF10</code> 」為止，若成功找到，則表示該鏈中的「 <code>920ECF10</code> 」的 <code>前個節點</code> 便是解，即為下圖的「 <code>sgfnyd</code> 」。</p>
-<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1f95ab4100e23af7fa96fa7f3f71c28edeb7a17"><img src="03.png" alt="圖源自 Wiki 維基百科"></a><br>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1f95ab4100e23af7fa96fa7f3f71c28edeb7a17"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="03.png" alt="圖源自 Wiki 維基百科"></a><br>
 但由於剛剛說過，雜湊是可能會重複的，因此在此情境中，即便「 <code>kiebgt</code> 」在表中的 <code>某項末節點</code> 被找到，但也<strong>可能發生</strong>當你嘗試利用該鏈的 <code>初始節點</code> 開始進行運算後，也無法找到「 <code>920ECF10</code> 」的狀況，對此我們稱作「 <code>誤報 (False alarm)</code> 」，接著只需要跳過該次批配，繼續做運算嘗試找出下個配對即可。<br>
 舉例上述情境可能在「 <code>FB107E70</code>  (不同的雜湊值)」進行  <code>R 運算</code>  後得出「 <code>kiebgt</code>  (有著一樣的雜湊)」。</p>
-<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/7e3220acb1fc2552f863e5fc14eaf76fa269ec37"><img src="04.png" alt="圖源自 Wiki 維基百科"></a></p>
+<p><a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/7e3220acb1fc2552f863e5fc14eaf76fa269ec37"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="04.png" alt="圖源自 Wiki 維基百科"></a></p>
 </blockquote>
 </li>
 </ul>
