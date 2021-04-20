@@ -155,7 +155,7 @@ gtag('config', 'UA-175176544-1');
 <h3 id="對稱加密所無法解決的難題"><a class="markdownIt-Anchor" href="#對稱加密所無法解決的難題">#</a> <strong>對稱加密</strong>所無法解決的難題</h3>
 <p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
 <p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
 <hr>
 <h3 id="public-key-cryptography-非對稱加密"><a class="markdownIt-Anchor" href="#public-key-cryptography-非對稱加密">#</a> Public-key Cryptography (非對稱加密)</h3>
 <p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
@@ -167,12 +167,12 @@ gtag('config', 'UA-175176544-1');
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
 <ul>
 <li><strong>釋出公鑰</strong><br>
 將公鑰交給對方，用於給對方在之後進行解密使用。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
 <ul>
 <li><strong>加密、解密</strong>
 <ul>
@@ -182,11 +182,11 @@ gtag('config', 'UA-175176544-1');
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
 <ul>
 <li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
 <hr>
 <h3 id="運用"><a class="markdownIt-Anchor" href="#運用">#</a> 運用</h3>
 <p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>

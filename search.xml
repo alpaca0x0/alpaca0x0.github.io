@@ -87,7 +87,7 @@ he is best known to the general public for his mass–energy equivalence formula
     <url>/2020/02/05/Cicada3301/</url>
     <content><![CDATA[<p><strong>2012 年</strong> 初，「 <strong>Cicada 3301</strong> 」的名聲開始傳開，而該神秘組織招收高智商成員的背後到底有什麼陰謀？</p>
 <span id="more"></span>
-<img src="/2020/02/05/Cicada3301/title.jpg" class="" title="取自網絡，Cicada 3301 留下的訊息。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/title.jpg" class="" title="取自網絡，Cicada 3301 留下的訊息。">
 <hr>
 <h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
 <p>如果你並不是資訊領域的人，也不是<a href="https://zh.wikipedia.org/wiki/%E9%83%BD%E5%B8%82%E5%82%B3%E8%AA%AA"><strong>都市傳說</strong></a>或<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>的愛好者，那你可能沒聽過「 <strong>Cicada 3301</strong> 」。關於該組織的資訊量少之又少，不少人想盡各種方法要撈出他們的資訊，但結果總是徒勞。</p>
@@ -98,37 +98,37 @@ he is best known to the general public for his mass–energy equivalence formula
 <h3 id="起源"><a class="markdownIt-Anchor" href="#起源">#</a> 起源</h3>
 <p><strong>2012 年 1 月 4 日</strong>，知名的美國貼圖論壇「<a href="https://zh.wikipedia.org/wiki/4chan"><strong>4chan</strong></a>」上，有個自稱「 <strong>3301</strong> 」的人張貼了如下圖的貼文，一張檔名為「 <strong>final.jpg</strong> 」的圖片，裡面寫著黑底白字的訊息，其內容為：<br>
 「 <strong>Hello. We are looking for highly intelligent individuals. To find them, we have devised a test.There is a message hidden in the image.Find it, and it will lead you on the road to finding us. We look forward to meeting the few that will make it all the wat through. - 3301<br><em>(哈囉，我們正在尋找擁有高智商的人。為了找到這些人，我們設計了一道測試題。這張圖中隱藏著一個訊息。找到它，它將會帶領你找到我們。我們期待與這些少數人見面。祝你好運。 - 3301)</em></strong> 」。</p>
-<img src="/2020/02/05/Cicada3301/first_post.jpg" class="" title="Cicada 3301在4Chan留下了第一則訊息。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/first_post.jpg" class="" title="Cicada 3301在4Chan留下了第一則訊息。">
 <p>當你將該圖片使用文字編輯器開啟後，便能在最下方找到隱藏的訊息「 <strong>TIBERIVS CLAVDIVS CAESAR says “lxxt&gt;33m2mqkyv2gsq3q=w]02ntk”</strong> 」，許多有稍微聽聞過密碼學的網友看到了「 <strong>CAESAR</strong> 」應該都會直接想到「<a href="https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC"><strong>Caesar Cipher (凱薩密碼)</strong></a>」，將該訊息中的亂碼「 <strong>lxxt&gt;33m2mqkyv2gsq3q=w]02ntk</strong> 」對照 <a href="https://zh.wikipedia.org/wiki/ASCII"><strong>ASCII Code (美國資訊交換標準代碼)</strong></a> 後透過 <strong>Caesar Cipher (凱薩密碼)</strong> 便可推回網址「 <strong>http://i.imgur.com/m9sYK.jpg</strong> 」，網址導向到了一張以「<a href="https://zh.wikipedia.org/wiki/JPEG"><strong>JPG</strong></a>」為副檔名的圖片 (如下圖)。其內容為：<br>
 「 <em><strong>WOOPS, Just decoys this way.Looks Like you can’t guess how to get the message out. (噢！這是個圈套。看起來你好像無法找到訊息囉。</strong></em>」</p>
-<img src="/2020/02/05/Cicada3301/01.jpg" class="" title="圖片中隱藏的網址所導向的圖片。可愛鴨子 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/01.jpg" class="" title="圖片中隱藏的網址所導向的圖片。可愛鴨子 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
 <p>該訊息讓人覺得自己找錯位置了，當時不少人在這邊卡關，總是不斷回頭尋找線索，然而其實該訊息真正在暗示你的是兩個單字「 <strong>Guess</strong> 」、「 <strong>Out</strong> 」，這兩個單字剛好可以組成一個有名的加密軟體的名稱「<a href="https://en.wikipedia.org/wiki/OutGuess"><strong>OutGuess</strong></a>」。<br>
 果不其然，當該圖片經過 OutGuess 解密後，解出了一段訊息：<br>
 「 <em><strong>Here is a book code. To find the book, and more information, go to http://www.reddit.com/r/a2e7j6ic78h0j/. 1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1. (這是 Book code。找到書，及更多資訊，訪問 http://www.reddit.com/r/a2e7j6ic78h0j/。1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1)</strong></em> 」</p>
 <p>訪問內容中的網址「 <strong>http://www.reddit.com/r/a2e7j6ic78h0j/</strong> 」後，可以看到一堆亂碼：</p>
-<img src="/2020/02/05/Cicada3301/02.png" class="" title="reddit.com">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/02.png" class="" title="reddit.com">
 <p>其中，除了亂碼外，還可以找到如下兩張圖。而這兩張圖再經過 OutGuess 解密後會出現兩則訊息，該訊息大致上是提供了「<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86"><strong>非對稱加密</strong></a>」的公鑰給各位，至於原理，在這邊怕離題就不贅述，總之你可以理解成，3301 表示將在未來使用 「 <strong>Private Key (私鑰)</strong> 」加密訊息，大家則可以使用這個訊息內所公佈的「 <strong>Public Key (公鑰)</strong> 」進行解密，進而得知 3301 所想傳達的訊息。有了這樣的機制，就不怕網路上有人偽造 3301 發送假的訊息了。(PS：該公鑰 PGP ID 為：<strong>7A35090F</strong>)</p>
 <p>有興趣了解<strong>非對稱加密</strong>的朋友可以看另一篇我的文章「<a href="../../16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)"><strong>Public-key Cryptography (非對稱加密)</strong></a>」。</p>
-<img src="/2020/02/05/Cicada3301/03.jpg" class="" title="reddit.com">
-<img src="/2020/02/05/Cicada3301/04.jpg" class="" title="reddit.com">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/03.jpg" class="" title="reddit.com">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/04.jpg" class="" title="reddit.com">
 <p>故事到了這邊聲明下，由於<strong>解密過程並非本文重點</strong>，前面只是為了讓讀者了解解密過程大約是什麼感覺，之後的過程我就隨意帶過，有興趣的可以上網搜尋相關資訊，目前 3301 所釋出的題目大致上都已經有解答出現在網絡上囉。</p>
 <p>總之在經過各道題目解密後，最後引導你打向一通電話，電話的另一頭是一段錄音，其內容為：<br>
 「 <em><strong>Very good. You have done well. There are three prime numbers associated with the original final.jpg image. 3301 is one of them. You will have to find the other two. Multiply all three of these numbers together and add a 「.com」 to find the next step. Good luck. Goodbye.<br>
 (很好，你做的非常好。有三個質數與原始的 final.jpg 圖片相關。「3301」是其中一個。你必須找到其他兩個。將三個數字相乘，然後加上「.com」來進到下一步，祝你好運，再見。)</strong></em> 」</p>
 <p>在原始的那張訊息圖片，其寬為<strong> 503 px</strong>，高為<strong> 509 px</strong>，「503」、「509」皆為質數，與 3301 相乘後，得出「 <strong>845145127</strong> 」，加上「 <strong>.com</strong> 」後訪問該網址，會看到一個像是「 <strong>蟬</strong> 」的圖片，並且下方有個倒數計時器，該圖片再使用 OutGuess 解密後，得出的訊息表示，你需要在 <strong>1 月 9 日 17:00</strong> 再次回來查看。</p>
-<img src="/2020/02/05/Cicada3301/ps_01.jpeg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/ps_01.jpeg" class="" width="3301">
 <hr>
 <p><strong>2012 年 1 月 9 日 17:00</strong>，倒數計時結束，網頁顯示出了<strong> 14</strong> 個座標，這些座標分散至<strong> 5</strong> 個國家，實際到了這些座標點後，會看到如下方圖片這樣的紙被張貼在電線杆上：</p>
-<img src="/2020/02/05/Cicada3301/05.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/06.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/07.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/08.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/05.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/06.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/07.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/08.jpg" class="" width="3301">
 <p>掃描圖上的 <a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E7%B6%AD%E7%A2%BC"><strong>二維碼</strong></a> 後，就來到了最後一步，解密後得出了一道網址「 <strong>sq6wmgv2zcsrix6t.onion</strong> 」，該網址屬於暗網網址，需要使用如「<a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E7%BD%91"><strong>Tor Browser (洋蔥瀏覽器)</strong></a>」等特殊瀏覽器來進行訪問，在大家迫不及待的訪問該位址後，網站上卻只有一句話：「 <em><strong>We want the best, not the followers. (我們只要最好，而不是跟風的人。)</strong></em> 」，這邊或許可以理解成，他們只想要前幾個甚至僅僅是第一個訪問該網址的人，要的是最快解出測試題的人。</p>
 <p>直至一個月後，3301 傳出一道如下圖的訊息，內容為：<br>
 「 <em><strong>Hello. We have now found the individuals we sought. Thus our month-long iourney ends. For now. Thank you for your dedication and effort. If you were unable to complete the test, or did not receive an emailm do not despair. There will be more opportunities like this one. Thank you all. - 3301<br>
 P.S. 1041279065871998535982789873959431895640\442510695567564373922695237268242385295908173\9834390370374475764863415203423499357108713631</strong></em> 」。</p>
 <p>其意思大約是「 <strong>哈囉。我們已經找到我們要的人了。我們長達一個月的旅程結束了。現在。感謝你的奉獻與努力。如果你沒完成測試，或者沒有收到電子郵件，請不要失望。會有更多像這樣的機會的。謝謝你們。 - 3301</strong> 」。</p>
-<img src="/2020/02/05/Cicada3301/end_post.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/end_post.jpg" class="" width="3301">
 <hr>
 <p>事情看似告一段落，然而就在隔年…</p>
 <p><strong>2013 年 1 月 4 日</strong>，3301 傳出又要招募的消息，以和去年一樣的方式釋出各種題目。</p>
@@ -138,7 +138,7 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 <h3 id="形象"><a class="markdownIt-Anchor" href="#形象">#</a> 形象</h3>
 <p>「 <strong>Cicada 3301</strong> 」的形象為下圖，一個長得很像「 <strong>蛾</strong> 」的圖案，但「 <strong>Cicada</strong> 」是「 <strong>蟬</strong> 」的意思，所以推測該圖應該是指蟬。<br>
 由於官方並沒有出面說明，所以至於為什麼是「 <strong>蟬</strong> 」，又為什麼是「 <strong>3301</strong> 」，目前無法得知。</p>
-<img src="/2020/02/05/Cicada3301/logo.jpg" class="" width="3301">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/05/Cicada3301/logo.jpg" class="" width="3301">
 <hr>
 <h3 id="目的"><a class="markdownIt-Anchor" href="#目的">#</a> 目的</h3>
 <p>釋出的訊息中指出，要找「 <strong>高智商</strong> 」的人，但該組織所找的人不僅僅是「高 <a href="https://zh.wikipedia.org/wiki/%E6%99%BA%E5%95%86"><strong>IQ (智商)</strong></a>」，因為在之後的許多測試中，題目不只 <a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6"><strong>數學</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>，還有包含像是 <a href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E6%A8%82%E7%90%86%E8%AB%96"><strong>樂理</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%8E%86%E5%8F%B2"><strong>歷史</strong></a> 等多方面的知識，如果單純只是要找聰明人，那為何還要要求要一堆藝術相關的知識？</p>
@@ -172,14 +172,14 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 基本上市面上看到的菸大多都是「 <strong>紙菸</strong> 」，成分主要為「 <strong>菸草</strong> 」，透過燃燒產生的尼古丁會進入體內，刺激腦部<a href="https://zh.wikipedia.org/wiki/%E4%B8%8B%E4%B8%98%E8%84%91"><strong>下視丘神經</strong></a>，讓人有振奮的感覺，這也正是抽菸會上癮的主要物質及原因。菸體本身前約 4 分之 3 是菸草，最後一段也就是嘴吧含的那段叫做「 <strong>濾嘴</strong> 」，主要是用於減少吸菸時入口的煙霧、焦油及燃燒時產生的懸浮粒子，但注意，即使這麼做，抽菸這個動作，仍會讓人吸入很多的焦油及懸浮粒子。外型如下圖所示 (<a href="https://blackwalnut.npust.edu.tw/archives/541">圖取自此網站</a>)。</li>
 </ul>
 </blockquote>
-<img src="/2020/02/28/Cigarette/01.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/28/Cigarette/01.jpg" class="">
 <blockquote>
 <ul>
 <li><strong>電子煙 (Electronic cigarette)</strong><br>
 「<a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E7%85%99"><strong>電子煙</strong></a>」正式名稱為「 <strong>電子物化器 (VAPE)</strong> 」，相較於紙菸較不同的是，大多數電子煙是可以重複使用的，外殼多為金屬材質，利用可充電「<a href="https://zh.wikipedia.org/wiki/%E9%8B%B0%E9%9B%A2%E5%AD%90%E8%81%9A%E5%90%88%E7%89%A9%E9%9B%BB%E6%B1%A0"><strong>離聚合物電池</strong></a>」來供電驅動霧化器，再透過加熱油艙中的 <strong>電子液 (煙油)</strong> 產生「<a href="https://zh.wikipedia.org/wiki/%E8%92%B8%E6%B0%A3"><strong>蒸氣</strong></a>」，沒錯，是「 <strong>蒸氣</strong> 」而不是「 <strong>菸</strong> 」，因為電子煙是不需要燃燒的，因此僅透過霧化器產生蒸氣。整體如下圖 (<a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E7%85%99#/media/File:2_Kit_V8-2_sigarette_elettroniche_Must500_rosso.JPG">圖取自此網站</a>)。電子煙造型有非常多種，在此不一一舉例。</li>
 </ul>
 </blockquote>
-<img src="/2020/02/28/Cigarette/02.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/28/Cigarette/02.jpg" class="">
 <blockquote>
 <ul>
 <li>
@@ -194,7 +194,7 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 </li>
 </ul>
 </blockquote>
-<img src="/2020/02/28/Cigarette/03.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/28/Cigarette/03.jpg" class="">
 <blockquote>
 <ul>
 <li><strong>水煙 (Hookah)</strong><br>
@@ -209,7 +209,7 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 </li>
 </ul>
 </blockquote>
-<img src="/2020/02/28/Cigarette/04.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/28/Cigarette/04.jpg" class="">
 <hr>
 <h3 id="那菸到底有什麼危害"><a class="markdownIt-Anchor" href="#那菸到底有什麼危害">#</a> 那菸到底有什麼危害？</h3>
 <p>以下統整出「<a href="https://beitou.tsgh.ndmctsgh.edu.tw/"><strong>三軍總醫院北投分院</strong></a>」網站上的資料做為參考。</p>
@@ -325,27 +325,27 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 <hr>
 <h3 id="clown-小丑"><a class="markdownIt-Anchor" href="#clown-小丑">#</a> Clown (小丑)</h3>
 <p><strong>Clown (小丑)</strong>，屬於一種喜劇演員，通常會在臉上化上極度誇張的裝容，與一般喜劇演員的目的一樣，會透過表演帶給其他人歡笑，<strong>最原始的的形象中</strong>，通常是在<strong>臉上打上很重的白色粉底</strong>，<strong>鼻子則是紅色的塗裝</strong>，並且<strong>嘴巴上用紅色顏料畫上大大的微笑</strong>，如下圖：</p>
-<img src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/01.jpg" class="" title="妹子小丑 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/01.jpg" class="" title="妹子小丑 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
 <p>當然，這只是<strong>最原始</strong>的小丑形象，在現今，小丑的裝容種類已經多的數不清了，甚至衍生出許多不同主題的形象，例如 <strong>傷心小丑</strong>、<strong>默劇小丑</strong> 等。<br>
 小丑的形象也不再僅僅是「帶給人們歡笑」這麼簡單。</p>
 <hr>
 <h3 id="恐怖小丑"><a class="markdownIt-Anchor" href="#恐怖小丑">#</a> 恐怖小丑</h3>
 <p>在<strong>約 2016 年</strong>後，美國出現了許多恐怖小丑的目擊事件，在 Youtube 上也有裝扮成可怕小丑整路人為題材的影片，這就不合理了，為何象徵「<strong>歡樂</strong>」的小丑會被拿去運用在象徵「<strong>恐怖</strong>」上？這就必須要提到一個知名的理論…</p>
-<img src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/02.jpg" class="" title="恐怖小丑形象示意圖">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/02.jpg" class="" title="恐怖小丑形象示意圖">
 <hr>
 <h3 id="恐怖谷理論-uncanny-valley"><a class="markdownIt-Anchor" href="#恐怖谷理論-uncanny-valley">#</a> 恐怖谷理論 (Uncanny Valley)</h3>
 <p><strong>恐怖谷理論 (Uncanny Valley)</strong>，日文為「<strong>不気味の谷現象</strong>」。</p>
 <p>「<strong>恐怖谷</strong>」一詞最早是來自一名德國的精神科醫生 <a href="https://zh.wikipedia.org/wiki/%E6%81%A9%E6%96%AF%E7%89%B9%C2%B7%E8%A9%B9%E6%B1%A0"><strong>Ernst Jentsch (恩斯特・詹池)</strong></a> 於<strong> 1906 年</strong>的一篇論文《<strong>恐怖谷心理學</strong>》中出現，該篇論文的內容在<strong> 1919 年</strong>被一名奧地利心理學家「<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%A0%BC%E8%92%99%E5%BE%B7%C2%B7%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7"><strong>Sigmund Freud (西格蒙德・佛洛伊德)</strong></a>」在論文《<strong>恐怖谷</strong>》中提起，因而成為著名的理論。</p>
 <p>而「<strong>恐怖谷理論 (Uncanny Valley)</strong>」是於<strong> 1970 年</strong>由一名日本的機器人專家 <a href="https://zh.wikipedia.org/wiki/%E6%A3%AE%E6%94%BF%E5%BC%98"><strong>森政弘</strong></a> 在《<strong>能源</strong>》雜誌中發表了一篇題為《<strong>恐怖谷</strong>》的文章中提出。該文章提出了一個假設，主要是在敘述<strong>非人物體</strong>過於<strong>接近真人</strong>的時候，便會使人感到<strong>詭異、不安，甚至覺得恐怖</strong>。</p>
 <div style="width:83%; margin:auto;">
-<img src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/1024px-Mori_Uncanny_Valley_zh.svg.jpg" class="" title="圖源自 Wiki維基百科，由森政弘提出的假设。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/1024px-Mori_Uncanny_Valley_zh.svg.jpg" class="" title="圖源自 Wiki維基百科，由森政弘提出的假设。">
 </div>
 <p>上圖中可以看到，一開始當<strong>該物體越接近真人時</strong>，人們對於該物體的<strong>好感度</strong>是<strong>上升</strong>的，然而就在<strong>相似度約為 80% ~ 90% 時</strong>，也就是極度相似於真人，但又有些缺陷讓你清楚知道它並非真人的尷尬狀態時，人們對於該物體的<strong>好感度</strong>卻像個山谷一樣<strong>急速的下降</strong>！</p>
 <hr>
 <h3 id="coulrophobia-小丑恐懼症"><a class="markdownIt-Anchor" href="#coulrophobia-小丑恐懼症">#</a> Coulrophobia (小丑恐懼症)</h3>
 <p>回到主題「<strong>Coulrophobia (小丑恐懼症)</strong>」，其實經過上述的理論，對於該症狀也不難理解了吧，<strong>小丑</strong>是<strong>真人</strong>，但由於<strong>誇張的裝容</strong>又讓自己<strong>看似假人</strong>，這種<strong>似真似假</strong>的效果正好觸發了<strong>恐怖谷理論</strong>，在加上小丑的裝容總是在微笑，看久了會讓人覺得很<strong>不真實</strong>，並且有種小丑<strong>性格被抹除</strong>的感覺，「<strong>沒有感情</strong>」這點也是造成人們對於小丑恐懼的原因之一。</p>
 <p>當然有一部分可能是受到<strong>影劇影響</strong>，畢竟有許多電影很喜歡拿小丑當題材，但總是將其塑造成了<strong>負面的形象</strong>，例如 <strong>The Last Circus (哭泣的小丑)</strong>、<strong>It: Chapter One (牠)</strong>、<strong>Clownhouse (小丑屋)</strong>、<strong>Gacy</strong>、<strong>100 Tears (一百滴眼淚)</strong> 及電影 《<strong>Bat Man (蝙蝠俠)</strong>》 中擁有極高人氣的反派角色「<strong>Joker</strong>」更是在之後推出的電影《<strong>小丑 (Joker)</strong>》中展現出了瘋狂、寫實跟精神層面的崩潰表現。</p>
-<img src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/03.jpg" class="" title="Sophia 人工智慧機器人">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/03.jpg" class="" title="Sophia 人工智慧機器人">
 ]]></content>
       <categories>
         <category>Popular-Science (科普)</category>
@@ -530,8 +530,8 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 </blockquote>
 <hr>
 <h3 id="預防口罩的選擇"><a class="markdownIt-Anchor" href="#預防口罩的選擇">#</a> 預防！口罩的選擇！</h3>
-<img src="/2020/01/30/Covid-19-Pneumonia/01.jpeg" class="" title="圖來源：中央流行疫情指揮中心">
-<img src="/2020/01/30/Covid-19-Pneumonia/02.jpeg" class="" title="圖來源：中央流行疫情指揮中心">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/01/30/Covid-19-Pneumonia/01.jpeg" class="" title="圖來源：中央流行疫情指揮中心">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/01/30/Covid-19-Pneumonia/02.jpeg" class="" title="圖來源：中央流行疫情指揮中心">
 <hr>
 <h3 id="總結"><a class="markdownIt-Anchor" href="#總結">#</a> 總結</h3>
 <p>在此強烈呼籲各位，非必要時間盡量減少外出活動，並且出席集會時須帶口罩，保護自己也保護別人。<br>
@@ -758,8 +758,8 @@ function my_script(){
 <p>不過正因為紅房的知名度太大，目前網上已經出現許多<strong>假冒</strong>的紅房出現，錢過去什麼也看不到，就我自己所知的紅房連結就有<strong>三個</strong>，而真的紅房說不定早就消失在暗網之中了。</p>
 </li>
 </ul>
-<img src="/2020/02/18/DarkWeb-FamousWeb/04.jpg" class="" title="取自網絡，可能並非真實的紅房。">
-<img src="/2020/02/18/DarkWeb-FamousWeb/05.png" class="" title="取自網絡，可能並非真實的紅房。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/04.jpg" class="" title="取自網絡，可能並非真實的紅房。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/05.png" class="" title="取自網絡，可能並非真實的紅房。">
 <hr>
 <h3 id="silk-road-絲綢之路"><a class="markdownIt-Anchor" href="#silk-road-絲綢之路">#</a> Silk Road (絲綢之路)</h3>
 <ul>
@@ -803,11 +803,11 @@ function my_script(){
 至於內容的確就是… 大量的藥物跟槍支，當我好奇搜尋「 <strong>Taiwan</strong> 」時，頁面上居然真的有一家店舖表示有提供台灣地區的服務，仔細一看不是毒品，似乎是某種強姦藥水之類的迷幻藥。</p>
 </li>
 </ul>
-<p><img src="06.jpg" alt="&quot;絲綢之路&quot;" title="取自網絡，絲綢之路上的毒品、藥物。" width="70%"><br>
-<img src="07.png" alt="&quot;絲綢之路&quot;" title="取自網絡，絲綢之路上的毒品、藥物。" width="70%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="06.jpg" alt="&quot;絲綢之路&quot;" title="取自網絡，絲綢之路上的毒品、藥物。" width="70%"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="07.png" alt="&quot;絲綢之路&quot;" title="取自網絡，絲綢之路上的毒品、藥物。" width="70%"></p>
 <hr>
 <h3 id="besa-mafia-榮耀黑手黨該服務證實是假的不過事件太有名了還是分享下"><a class="markdownIt-Anchor" href="#besa-mafia-榮耀黑手黨該服務證實是假的不過事件太有名了還是分享下">#</a> Besa Mafia (榮耀黑手黨)｜該服務證實是<strong>假的</strong>，不過事件太有名了還是分享下</h3>
-<img src="/2020/02/18/DarkWeb-FamousWeb/09.jpg" class="" title="取自網絡，Besa Mafia 網站頁面。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/09.jpg" class="" title="取自網絡，Besa Mafia 網站頁面。">
 <ul>
 <li><strong>故事 (取自網路 並 縮減內容)</strong></li>
 </ul>
@@ -815,14 +815,14 @@ function my_script(){
 <p>倫敦的業餘黑客 <strong>Monteiro</strong> 在暗網上調查了一年多，得出了一個結論，暗網的確有許多所謂的「 <strong>殺手組織</strong> 」，但大多數都只是騙子。<br>
 <strong>2016 年 2 月 20 日</strong>開始，Monteiro 調查起了一個名為「 <strong>Besa Mafia</strong> 」的僱用殺手服務，該網站自稱是<strong>阿爾巴尼亞黑幫</strong>所架設的，而「 <strong>Besa</strong> 」是阿爾巴尼亞語「 <strong>榮耀</strong> 」的意思。</p>
 </blockquote>
-<img src="/2020/02/18/DarkWeb-FamousWeb/08.png" class="" title="取自網絡，Besa Mafia 網站頁面。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/08.png" class="" title="取自網絡，Besa Mafia 網站頁面。">
 <blockquote>
 <p>Monteiro 登入 Besa Mafia 的網站，創建一個帳戶後下了訂單，並在訂單的目標攔未上填寫一個名稱「 <strong>Bob the Builder</strong> 」，這是一個虛構的人名，Monteiro 也按照要求支付了比特幣。<br>
 不久之後，Monteiro 發現殺手網站的管理員 <strong>Yura</strong> 開始拖延找藉口，說是殺手遇到交通意外，或是行動被警方發現 等，Monteiro 也開始逐漸認為該網站就是詐騙。<br>
 之後 Monteiro 進一步的調查 Besa Mafia 後發現，該組織在網絡上僱用許多寫手寫假文章吸引顧客，並且向疑似擁有殺人需求的人投放廣告。<br>
 Monteiro 找了一個黑客朋友，發起一個代號為「 <strong>蔬菜行動</strong> 」的黑客攻擊行動，打算毀掉 Besa Mafia，Monteiro 與朋友前後對 Besa Mafia 的伺服器發動了 3 次大規模的黑客攻擊，終於，Besa Mafia 的網站被癱換了，大量的用戶帳號、密碼及電子郵件都被洩漏。</p>
 </blockquote>
-<img src="/2020/02/18/DarkWeb-FamousWeb/10.jpg" class="" title="取自網絡，Besa Mafia 網站被攻擊。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/10.jpg" class="" title="取自網絡，Besa Mafia 網站被攻擊。">
 <blockquote>
 <p>然而在 Besa Mafia 的網站癱瘓後 7 個月，該網站上的暗殺名單中，一個目標真的死掉了！<br>
 經警方調查後發現，該事件是一位叫做 <strong>Stephen Allwine</strong> 的 IT 工程師，因為婚內出軌，而想雇殺手謀殺妻子 <strong>Amy Louise Allwine</strong>，後來 Stephen 發現 Besa Mafia 網站被黑掉，並且有 FBI 來家中警告他的妻子，讓他近期注意自己的安全。<br>
@@ -830,10 +830,10 @@ Monteiro 找了一個黑客朋友，發起一個代號為「 <strong>蔬菜行�
 Stephen 用 9 毫米口徑的手槍射擊妻子，並將屍體拖至臥室偽裝成是壓力太大自殺身亡，Amy Louise Allwine 於 <strong>2016 年 11 月</strong> 死在家中的臥室，然而犯罪現場遺留了許多破綻，並且 FBI 也在 Stephen 的電腦硬碟上，找到使用該網站下訂單的證據。<br>
 Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017 年 3 月</strong>大陪審團起訴他犯有<strong>一級謀殺罪</strong>。</p>
 </blockquote>
-<img src="/2020/02/18/DarkWeb-FamousWeb/11.jpg" class="" title="取自網絡，Stephen Allwine。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/11.jpg" class="" title="取自網絡，Stephen Allwine。">
 <hr>
 <h3 id="lolita-city-蘿莉塔之城"><a class="markdownIt-Anchor" href="#lolita-city-蘿莉塔之城">#</a> Lolita City (蘿莉塔之城)</h3>
-<p><img src="the-lolita-city.jpg" alt="lolita-city" title="取自網絡，Lolita City 頁面。" width="70%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="the-lolita-city.jpg" alt="lolita-city" title="取自網絡，Lolita City 頁面。" width="70%"></p>
 <p>暗網討論度最高的，除了毒品、槍枝、虐殺外，就是「 <strong>Child Porn (兒童色情)</strong> 」，圈內人簡稱為「 <strong>CP</strong> 」，對於常逛暗網的人來說這個詞絕對不陌生，而「 <strong>Lolita City (蘿莉塔之城)</strong> 」就是一個知名的 CP 論壇，每天都有著許多戀童癖會員前來光顧，與一般的色情網站一樣，有著各式各樣腥羶色的照片、影片，差別在於影片中的主角都是<strong>未成年</strong>！這些未成年年紀最小近<strong>新生兒</strong>。</p>
 <ul>
 <li><strong>自 2012 年 11 月以來</strong>，該網站提供了兒童色情視頻。</li>
@@ -843,7 +843,7 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
 如果還不知道什麼是「 <strong>Anonymous</strong> 」，趕快 <a href="../../04/Anonymous"><strong>點這裡</strong></a> 去看我的文章。</p>
 <p>那篇介紹匿名者的文章中，有提到他們於<strong> 2011 年 10 月</strong>宣佈展開名為「 <strong>Operation Darknet</strong> 」的行動，旨在打擊暗網中的兒童色情網站，所謂的兒童色情網站，主要就是指「 <strong>Lolita City</strong> 」啦，所幸 Anonymous 成功攻下伺服器，取得了 <strong>1589 名</strong> 使用者的資料，並公之於眾。<br>
 匿名者發表聲明稱該網站讓戀童癖的問題惡化，甚至會誘使他們進行<strong>誘拐、猥褻、強姦兒童</strong>。</p>
-<img src="/2020/02/18/DarkWeb-FamousWeb/anonymous_the-lolita-city.jpg" class="" title="取自網絡，Lolita City 頁面 遭受 Anonymous 攻擊。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/18/DarkWeb-FamousWeb/anonymous_the-lolita-city.jpg" class="" title="取自網絡，Lolita City 頁面 遭受 Anonymous 攻擊。">
 ]]></content>
       <categories>
         <category>Information (資訊分享)</category>
@@ -872,7 +872,7 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
 <p>那… 什麼是暗網？</p>
 <p>「 <strong>Dark Web (暗網)</strong> 」<strong>涵蓋</strong>在深網中，比起深網來說，暗網才算是真正的隱藏，不僅僅是搜尋引擎搜索不到，而是即使有了網址，也無法透過一般的瀏覽器來訪問，是深網中的<strong>底層網絡</strong>，沒錯，<strong>深網</strong>已經是在網絡世界之下的底層網絡，而這所謂的暗網則是<strong>網絡世界中底層網絡中的底層網絡</strong>！<br>
 以下這張圖或許可以讓你更了解它們之間的比例關係。</p>
-<p><img src="01.png" alt="" title="取自網絡，廣泛被用來解釋網絡層關係的冰山圖" width="85%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.png" alt="" title="取自網絡，廣泛被用來解釋網絡層關係的冰山圖" width="85%"></p>
 <p>這塊<strong>浮冰</strong>用來當作<strong>整個網絡世界</strong>，在<strong>水面上</strong>的部份為<strong>表網</strong>，約佔了整個網絡世界的 <strong>4％</strong> ，其餘在水面下的隱藏網絡皆為 <strong>Deep Web (深網)</strong> ，約佔 <strong>96％</strong> ，而涵蓋在深網中，底層的那些網絡即稱之為 <strong>Dark Web (暗網)</strong> ，約佔深網 <strong>96％</strong> 中的 <strong>6％</strong> 。</p>
 <hr>
 <h3 id="dark-web-暗網"><a class="markdownIt-Anchor" href="#dark-web-暗網">#</a> Dark Web (暗網)</h3>
@@ -882,12 +882,12 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
 <p>上述中跟各位提到暗網「 <strong>即使有了網址，也無法透過一般的瀏覽器來訪問</strong> 」，不論是表網還是一般的深網都還可以透過你所使用的 <a href="https://zh.wikipedia.org/wiki/Google_Chrome">Chrome</a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8">Firefox</a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8">Opera</a> 等一般的瀏覽器來連接伺服器，但暗網可不行。<br>
 暗網之所以能達到隱藏的效果則是因為暗網使用的是「<a href="https://zh.wikipedia.org/wiki/%E7%82%B9%E5%AF%B9%E7%82%B9%E7%BD%91%E7%BB%9C"><strong>Peer-To-Peer (對等式網絡)</strong></a>」，也就是俗稱的「 <strong>點對點</strong>、<strong>P2P</strong> 」。</p>
 <p>這邊簡單的介紹一下，一般來說正常的網絡都會有個「 <strong>中心伺服器</strong> 」(如下圖)，可以方便且快速的讓我們訪問其他站點。</p>
-<img src="/2020/02/17/DarkWeb/02.png" class="" title="取自 Wiki維基百科，中央網絡系統。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/17/DarkWeb/02.png" class="" title="取自 Wiki維基百科，中央網絡系統。">
 <hr>
 <p>而 P2P 則是<strong>無中心伺服器</strong>的，每個用戶都是一個<strong>節點</strong>，並且這些節點彼此之間是<strong>不能直接聯繫</strong>的，當某節點 A 架設一個伺服器，而某節點 B 想要訪問節點 A 時，並非直接的訪問，而是透過兩者之間的節點幫忙傳送，會透過很多層的節點後，最後才到目標，例如「B &gt; T &gt; C &gt; … &gt; Y &gt; A」。</p>
 <p>由於傳輸過程中使用多個節點，因此犧牲掉了訪問速度，如果網速不好的狀況去瀏覽暗網，真的會等到睡著… ，但多節點確實提高了反追蹤的特性，也因此暗網常常是令 <a href="https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E8%B0%83%E6%9F%A5%E5%B1%80"><strong>FBI</strong></a> 頭痛的罪犯溫床。</p>
 <p>這其實有點像是小學時，<strong>上課傳紙條</strong>的概念，當你坐在最後一排，想傳紙條給第一排的同學時，如果直接親手交給他，則很容易被老師 (執法者) 抓到，因此必須借助中間同學的幫忙，一個一個傳，等紙條到了目標手中，即使老師發現了，也很難追問是誰傳的，因為節點並非固定的，就好像學生隨時都在換座位一樣。</p>
-<img src="/2020/02/17/DarkWeb/03.png" class="" title="取自 Wiki維基百科，對等網絡系統。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/17/DarkWeb/03.png" class="" title="取自 Wiki維基百科，對等網絡系統。">
 <hr>
 <h3 id="tor-洋蔥路由"><a class="markdownIt-Anchor" href="#tor-洋蔥路由">#</a> Tor (洋蔥路由)</h3>
 <p>上述所提到的 P2P 當中，一個有名的例子就是「 <strong>Tor</strong> 」，全名「 <strong>The Onion Router</strong> 」(<strong>洋蔥路由</strong>)，為<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由軟體</a>，用戶們可以使用 Tor 連接來自全球使用者免費提供的節點。Tor 的設計原意在於<strong>保障用戶的個人隱私</strong>，以及<strong>不受監控地進行秘密通信的自由和能力</strong>。</p>
@@ -1006,6 +1006,119 @@ b.  <code>sudo yum install git2u</code></p>
       </tags>
   </entry>
   <entry>
+    <title>你可能不知道的進階 Google 搜尋技巧 - Google Hacking</title>
+    <url>/2021/03/05/Google-Hacking/</url>
+    <content><![CDATA[<p>用了 Google 的搜尋引擎這麼久，你是否知道這些技巧？這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
+<span id="more"></span>
+<hr>
+<h2 id="search-engine-搜尋引擎"><a class="markdownIt-Anchor" href="#search-engine-搜尋引擎">#</a> Search Engine (搜尋引擎)</h2>
+<p>搜尋引擎是利用 <strong>Web-Crawler (網絡爬蟲)</strong> 技術為基礎所製作的一種工具，其目的顧名思義就是用來搜索資料。</p>
+<p>搜索引擎是現代人不可沒有的一項發明，成堆的檔案、照片、音樂總是讓人需要花大把時間將其分類，一陣子沒注意，下一次在找檔案時可能就要花許多時間，直到搜尋引擎的出現。</p>
+<p>其中， Google 的搜索引擎最為出名且被廣泛運用，由於非常強大，身為<strong>名詞</strong>的「Google」如今在許多地方已經被當作<strong>動詞</strong>使用，舉例來說，現在的人總是將「<strong>上網找資料</strong>」直接稱作「<strong>上網 Google</strong>」，這也間接說明了 Google 搜索引擎的影響力。</p>
+<p>以下為你介紹關於 Google　搜尋引擎，你所可能不知道的技巧。</p>
+<hr>
+<h2 id="基礎技巧-應該很多人都知道了"><a class="markdownIt-Anchor" href="#基礎技巧-應該很多人都知道了">#</a> 基礎技巧 (應該很多人都知道了)</h2>
+<blockquote>
+<h3 id="過舊的資訊過濾"><a class="markdownIt-Anchor" href="#過舊的資訊過濾">#</a> 過舊的資訊過濾</h3>
+<p>在 Google 搜索引擎上，位於搜尋欄位右下角的「 <code>工具</code> 」按鈕，透過設定時間，可以過濾掉許多老舊、雜亂的資訊，讓你能更快速找到你要的資料。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="精準搜尋圖片"><a class="markdownIt-Anchor" href="#精準搜尋圖片">#</a> 精準搜尋圖片</h3>
+<p>在圖片搜索後，按下搜索欄位旁的「 <code>設定</code>  &gt;  <code>進階搜尋</code> 」即可過濾不必要的關鍵字，甚至可以選擇圖片<strong>比例</strong>、<strong>格式</strong>、<strong>地區</strong>、<strong>使用權</strong>等。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02-1.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02-2.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="以圖搜圖"><a class="markdownIt-Anchor" href="#以圖搜圖">#</a> 以圖搜圖</h3>
+<p>這個相信比較多人知道，不過為了還不知道的朋友還是說一下。<br>
+一般來說我們搜尋圖片都是以「<strong>關鍵字</strong>」搜尋後得到結果，但 Google 允許你使用「<strong>圖片</strong>」進行搜索。許多人盜用網美照行騙，在過去可能很難查證照片真偽，現在則只需要將圖丟上網以圖搜圖，立刻抓包！<br>
+點選圖片搜尋欄位的右方 <code>相機圖示</code> ，即可選擇要搜尋的圖片，可以使用<strong>網址</strong>或者<strong>本地上傳</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="03.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="03-1.png" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="進階技巧-google-hacking"><a class="markdownIt-Anchor" href="#進階技巧-google-hacking">#</a> 進階技巧 (Google Hacking)</h2>
+<p><strong>Google Hacking</strong> 又稱 <strong>Google Dorking</strong>，是一種利用 Google 內建的搜尋功能來找到安全漏洞或敏感資訊的技巧。許多人並不知道，Google 是可以透過許多內建的過濾器來更精準的搜索資訊的，而這些技巧也很常被用於<strong>肉搜</strong>。</p>
+<blockquote>
+<h3 id="特定標題"><a class="markdownIt-Anchor" href="#特定標題">#</a> 特定標題</h3>
+<p>可以透過「intitle:“<strong>標題</strong>” <strong>關鍵字</strong>」來搜索特定標題的網站。<br>
+舉例「intitle:“<strong>新北市</strong>” <strong>反毒</strong>」可以用來搜尋<strong>標題</strong>含有「 <code>新北市</code> 」且<strong>內容</strong>含有「 <code>反毒</code> 」的相關資訊</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="04.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="網頁內容含有特定文字"><a class="markdownIt-Anchor" href="#網頁內容含有特定文字">#</a> 網頁內容含有特定文字</h3>
+<p>可以透過「intext:“<strong>文字</strong>”」來搜索含有特定文字的網站。<br>
+舉例「intext:“<strong>麥當勞活動</strong>”」可以用來搜尋<strong>網站內容</strong>中含有「 <code>麥當勞活動</code> 」文字的頁面。(並<strong>非</strong>只是關鍵字，而是更加精確的特定文字)</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="07.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="特定網域"><a class="markdownIt-Anchor" href="#特定網域">#</a> 特定網域</h3>
+<p>透過「site:“<strong>網域</strong>” <strong>關鍵字</strong>」來搜尋基於該網域下關於該關鍵字的搜尋結果。<br>
+舉例「site:“www.dcard.tw” <strong>情侶 吵架</strong>」可以搜尋「 <code>www.dcard.tw</code> 」網站中<strong>內容</strong>含有「 <code>情侶 吵架</code> 」相關的頁面。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="05.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="含有特定文字的網址"><a class="markdownIt-Anchor" href="#含有特定文字的網址">#</a> 含有特定文字的網址</h3>
+<p>可以透過「inurl:<strong> 文字</strong>」來搜索含有該字串的網址。<br>
+舉例「inurl:<strong>login</strong>」可以用來搜尋「 <code>網址</code> 」中含有「 <code>login</code> 」的結果。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="09.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="特定檔案格式"><a class="markdownIt-Anchor" href="#特定檔案格式">#</a> 特定檔案格式</h3>
+<p>查詢特定檔案格式可以用「filetype:<strong> 格式</strong> <strong>關鍵字</strong>」來搜尋。<br>
+舉例「filetype:<strong>doc</strong> <strong>統一超商 財務報表</strong>」可以搜尋與「 <code>統一超商 財務報表</code> 」有關且為「 <code>.doc</code> 」後綴的文件。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="06.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="網頁在-google-的-cache-快取"><a class="markdownIt-Anchor" href="#網頁在-google-的-cache-快取">#</a> 網頁在 Google 的 Cache (快取)</h3>
+<p>可以透過「cache:“<strong>網域</strong>”」來搜索網站在 Google 中的緩存。<br>
+舉例「cache:“<strong>reddit.com</strong>”」可以用來搜尋「 <code>reddit.com</code> 」在 Google 中的緩存。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="08.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="單字的解釋-定義"><a class="markdownIt-Anchor" href="#單字的解釋-定義">#</a> 單字的解釋、定義</h3>
+<p>可以透過「define:<strong> 單字</strong>」來搜索關於該單字的解釋、定義。(前提是 Google 要有收入該單字)<br>
+ 舉例「define:<strong> 科普</strong>」可以用來搜尋「 <code>科普</code> 」在 Google 中解釋、定義。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="10.png" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="其他運用"><a class="markdownIt-Anchor" href="#其他運用">#</a> 其他運用</h2>
+<h3 id="混合查詢"><a class="markdownIt-Anchor" href="#混合查詢">#</a> 混合查詢</h3>
+<p>舉例「site:“<strong>i.4cdn.org</strong>” filetype:<strong>pdf</strong> intitle:<strong>test</strong>」。<br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="11.png" alt=""></p>
+<hr>
+<h3 id="強調搜尋-排除搜尋"><a class="markdownIt-Anchor" href="#強調搜尋-排除搜尋">#</a> 強調搜尋、排除搜尋</h3>
+<p>關鍵字前加上「<strong>+</strong>」可以強調搜尋，加上「<strong>-</strong>」則排除相關資訊。<br>
+舉例以下搜尋結果會顯示關於「 <code>台灣風景</code> 」的資訊，尤其「 <code>台南</code> 」，並且排除關於「 <code>台北</code> 」關鍵字的資訊。<br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="12.png" alt=""></p>
+<hr>
+<h3 id="精確搜尋"><a class="markdownIt-Anchor" href="#精確搜尋">#</a> 精確搜尋</h3>
+<p>用雙引號「<strong>&quot;</strong>」將關鍵字框起可以更加精確的搜尋。<br>
+舉例將搜尋「<strong>台大醫院</strong>」改為「<strong>“台大醫院”</strong>」<br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="13.png" alt=""></p>
+<hr>
+<h3 id="更多用法請自行上網搜尋"><a class="markdownIt-Anchor" href="#更多用法請自行上網搜尋">#</a> 更多用法請自行上網搜尋</h3>
+<p>以下附上網路上其他大大製作的表格：</p>
+<p><a href="https://i.imgur.com/MesRgnG.png"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="14.png" alt="圖源: imgur.com"></a></p>
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>匿名交友 — HeyMandi 網頁版 XSS</title>
     <url>/2019/12/22/HeyMandi%E7%B6%B2%E9%A0%81%E7%89%88XSS/</url>
     <content><![CDATA[<span id="more"></span>
@@ -1024,13 +1137,13 @@ b.  <code>sudo yum install git2u</code></p>
 <hr>
 <h4 id="describe"><a class="markdownIt-Anchor" href="#describe">#</a> Describe</h4>
 <p>若聊天室內的雙方都是使用 HeyMandi APP，又或者雙方都是使用 Web 版的話，則不會觸發該漏洞。<br>代碼被執行的問題發生在攻擊方為 APP 版，受攻擊方為網頁版的情境下 (網址：https://chat.heymandi.com/chat)。</p>
-<img src="01.jpeg" style="width:50%;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.jpeg" style="width:50%;">
 <p>在此情境下 APP 方所發送的文字內涵有的 Script 並<strong>不會</strong>被有效過濾，因此語法可在另一端，也就是 Web 端上被執行。</p>
-<img src="02.jpeg" style="width:90%;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02.jpeg" style="width:90%;">
 <p>滲透的一開始 (上圖)，測試代碼 &quot;<strong> <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> </strong>&quot;，而結果是該代碼並不會被執行，但<strong> Script 標籤的確有被植入成功</strong>。</p>
-<img src="03.jpeg" style="width:50%;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="03.jpeg" style="width:50%;">
 <p>因此將代碼換成了 &quot;<strong> <code>&lt;img src=&quot;&quot; onerror=alert(1)&gt;</code> </strong>&quot; 做第二次測試。</p>
-<img src="04.jpeg" style="width:50%;">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="04.jpeg" style="width:50%;">
 <p>結果成功的執行出 alert 腳本。(如上圖)<br>
  另外包含 &quot;<strong> <code>&lt;h1&gt;</code> </strong>&quot;、&quot;<strong> <code>&lt;b&gt;</code> </strong>&quot; 等標籤，經測試也是可被執行的，以及其他大量未測試的語法，都可能含有被執行的風險。</p>
 <hr>
@@ -1047,119 +1160,6 @@ b.  <code>sudo yum install git2u</code></p>
       <tags>
         <tag>XSS (Cross-Site-Scripting)</tag>
         <tag>ReportedFromMe (我的通報)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你可能不知道的進階 Google 搜尋技巧 - Google Hacking</title>
-    <url>/2021/03/05/Google-Hacking/</url>
-    <content><![CDATA[<p>用了 Google 的搜尋引擎這麼久，你是否知道這些技巧？這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
-<span id="more"></span>
-<hr>
-<h2 id="search-engine-搜尋引擎"><a class="markdownIt-Anchor" href="#search-engine-搜尋引擎">#</a> Search Engine (搜尋引擎)</h2>
-<p>搜尋引擎是利用 <strong>Web-Crawler (網絡爬蟲)</strong> 技術為基礎所製作的一種工具，其目的顧名思義就是用來搜索資料。</p>
-<p>搜索引擎是現代人不可沒有的一項發明，成堆的檔案、照片、音樂總是讓人需要花大把時間將其分類，一陣子沒注意，下一次在找檔案時可能就要花許多時間，直到搜尋引擎的出現。</p>
-<p>其中， Google 的搜索引擎最為出名且被廣泛運用，由於非常強大，身為<strong>名詞</strong>的「Google」如今在許多地方已經被當作<strong>動詞</strong>使用，舉例來說，現在的人總是將「<strong>上網找資料</strong>」直接稱作「<strong>上網 Google</strong>」，這也間接說明了 Google 搜索引擎的影響力。</p>
-<p>以下為你介紹關於 Google　搜尋引擎，你所可能不知道的技巧。</p>
-<hr>
-<h2 id="基礎技巧-應該很多人都知道了"><a class="markdownIt-Anchor" href="#基礎技巧-應該很多人都知道了">#</a> 基礎技巧 (應該很多人都知道了)</h2>
-<blockquote>
-<h3 id="過舊的資訊過濾"><a class="markdownIt-Anchor" href="#過舊的資訊過濾">#</a> 過舊的資訊過濾</h3>
-<p>在 Google 搜索引擎上，位於搜尋欄位右下角的「 <code>工具</code> 」按鈕，透過設定時間，可以過濾掉許多老舊、雜亂的資訊，讓你能更快速找到你要的資料。</p>
-<p><img src="01.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="精準搜尋圖片"><a class="markdownIt-Anchor" href="#精準搜尋圖片">#</a> 精準搜尋圖片</h3>
-<p>在圖片搜索後，按下搜索欄位旁的「 <code>設定</code>  &gt;  <code>進階搜尋</code> 」即可過濾不必要的關鍵字，甚至可以選擇圖片<strong>比例</strong>、<strong>格式</strong>、<strong>地區</strong>、<strong>使用權</strong>等。</p>
-<p><img src="02.png" alt=""><br>
-<img src="02-1.png" alt=""><br>
-<img src="02-2.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="以圖搜圖"><a class="markdownIt-Anchor" href="#以圖搜圖">#</a> 以圖搜圖</h3>
-<p>這個相信比較多人知道，不過為了還不知道的朋友還是說一下。<br>
-一般來說我們搜尋圖片都是以「<strong>關鍵字</strong>」搜尋後得到結果，但 Google 允許你使用「<strong>圖片</strong>」進行搜索。許多人盜用網美照行騙，在過去可能很難查證照片真偽，現在則只需要將圖丟上網以圖搜圖，立刻抓包！<br>
-點選圖片搜尋欄位的右方 <code>相機圖示</code> ，即可選擇要搜尋的圖片，可以使用<strong>網址</strong>或者<strong>本地上傳</strong>。</p>
-<p><img src="03.png" alt=""><br>
-<img src="03-1.png" alt=""></p>
-</blockquote>
-<hr>
-<h2 id="進階技巧-google-hacking"><a class="markdownIt-Anchor" href="#進階技巧-google-hacking">#</a> 進階技巧 (Google Hacking)</h2>
-<p><strong>Google Hacking</strong> 又稱 <strong>Google Dorking</strong>，是一種利用 Google 內建的搜尋功能來找到安全漏洞或敏感資訊的技巧。許多人並不知道，Google 是可以透過許多內建的過濾器來更精準的搜索資訊的，而這些技巧也很常被用於<strong>肉搜</strong>。</p>
-<blockquote>
-<h3 id="特定標題"><a class="markdownIt-Anchor" href="#特定標題">#</a> 特定標題</h3>
-<p>可以透過「intitle:“<strong>標題</strong>” <strong>關鍵字</strong>」來搜索特定標題的網站。<br>
-舉例「intitle:“<strong>新北市</strong>” <strong>反毒</strong>」可以用來搜尋<strong>標題</strong>含有「 <code>新北市</code> 」且<strong>內容</strong>含有「 <code>反毒</code> 」的相關資訊</p>
-<p><img src="04.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="網頁內容含有特定文字"><a class="markdownIt-Anchor" href="#網頁內容含有特定文字">#</a> 網頁內容含有特定文字</h3>
-<p>可以透過「intext:“<strong>文字</strong>”」來搜索含有特定文字的網站。<br>
-舉例「intext:“<strong>麥當勞活動</strong>”」可以用來搜尋<strong>網站內容</strong>中含有「 <code>麥當勞活動</code> 」文字的頁面。(並<strong>非</strong>只是關鍵字，而是更加精確的特定文字)</p>
-<p><img src="07.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="特定網域"><a class="markdownIt-Anchor" href="#特定網域">#</a> 特定網域</h3>
-<p>透過「site:“<strong>網域</strong>” <strong>關鍵字</strong>」來搜尋基於該網域下關於該關鍵字的搜尋結果。<br>
-舉例「site:“www.dcard.tw” <strong>情侶 吵架</strong>」可以搜尋「 <code>www.dcard.tw</code> 」網站中<strong>內容</strong>含有「 <code>情侶 吵架</code> 」相關的頁面。</p>
-<p><img src="05.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="含有特定文字的網址"><a class="markdownIt-Anchor" href="#含有特定文字的網址">#</a> 含有特定文字的網址</h3>
-<p>可以透過「inurl:<strong> 文字</strong>」來搜索含有該字串的網址。<br>
-舉例「inurl:<strong>login</strong>」可以用來搜尋「 <code>網址</code> 」中含有「 <code>login</code> 」的結果。</p>
-<p><img src="09.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="特定檔案格式"><a class="markdownIt-Anchor" href="#特定檔案格式">#</a> 特定檔案格式</h3>
-<p>查詢特定檔案格式可以用「filetype:<strong> 格式</strong> <strong>關鍵字</strong>」來搜尋。<br>
-舉例「filetype:<strong>doc</strong> <strong>統一超商 財務報表</strong>」可以搜尋與「 <code>統一超商 財務報表</code> 」有關且為「 <code>.doc</code> 」後綴的文件。</p>
-<p><img src="06.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="網頁在-google-的-cache-快取"><a class="markdownIt-Anchor" href="#網頁在-google-的-cache-快取">#</a> 網頁在 Google 的 Cache (快取)</h3>
-<p>可以透過「cache:“<strong>網域</strong>”」來搜索網站在 Google 中的緩存。<br>
-舉例「cache:“<strong>reddit.com</strong>”」可以用來搜尋「 <code>reddit.com</code> 」在 Google 中的緩存。</p>
-<p><img src="08.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="單字的解釋-定義"><a class="markdownIt-Anchor" href="#單字的解釋-定義">#</a> 單字的解釋、定義</h3>
-<p>可以透過「define:<strong> 單字</strong>」來搜索關於該單字的解釋、定義。(前提是 Google 要有收入該單字)<br>
- 舉例「define:<strong> 科普</strong>」可以用來搜尋「 <code>科普</code> 」在 Google 中解釋、定義。</p>
-<p><img src="10.png" alt=""></p>
-</blockquote>
-<hr>
-<h2 id="其他運用"><a class="markdownIt-Anchor" href="#其他運用">#</a> 其他運用</h2>
-<h3 id="混合查詢"><a class="markdownIt-Anchor" href="#混合查詢">#</a> 混合查詢</h3>
-<p>舉例「site:“<strong>i.4cdn.org</strong>” filetype:<strong>pdf</strong> intitle:<strong>test</strong>」。<br>
-<img src="11.png" alt=""></p>
-<hr>
-<h3 id="強調搜尋-排除搜尋"><a class="markdownIt-Anchor" href="#強調搜尋-排除搜尋">#</a> 強調搜尋、排除搜尋</h3>
-<p>關鍵字前加上「<strong>+</strong>」可以強調搜尋，加上「<strong>-</strong>」則排除相關資訊。<br>
-舉例以下搜尋結果會顯示關於「 <code>台灣風景</code> 」的資訊，尤其「 <code>台南</code> 」，並且排除關於「 <code>台北</code> 」關鍵字的資訊。<br>
-<img src="12.png" alt=""></p>
-<hr>
-<h3 id="精確搜尋"><a class="markdownIt-Anchor" href="#精確搜尋">#</a> 精確搜尋</h3>
-<p>用雙引號「<strong>&quot;</strong>」將關鍵字框起可以更加精確的搜尋。<br>
-舉例將搜尋「<strong>台大醫院</strong>」改為「<strong>“台大醫院”</strong>」<br>
-<img src="13.png" alt=""></p>
-<hr>
-<h3 id="更多用法請自行上網搜尋"><a class="markdownIt-Anchor" href="#更多用法請自行上網搜尋">#</a> 更多用法請自行上網搜尋</h3>
-<p>以下附上網路上其他大大製作的表格：</p>
-<p><a href="https://i.imgur.com/MesRgnG.png"><img src="14.png" alt="圖源: imgur.com"></a></p>
-]]></content>
-      <categories>
-        <category>Note (技巧分享)</category>
-      </categories>
-      <tags>
-        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -1185,7 +1185,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>也建議各位瀏覽暗網的裝置盡量<strong>保持乾淨</strong>，<strong>不</strong>要含有<strong>個人資訊</strong>，並且隨時做好電腦<strong>重灌</strong>的準備。</p>
 <hr>
 <h3 id="vpn-虛擬私人網路"><a class="markdownIt-Anchor" href="#vpn-虛擬私人網路">#</a> VPN (虛擬私人網路)</h3>
-<p><img src="01.jpg" alt="&quot;VPN&quot;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.jpg" alt="&quot;VPN&quot;"></p>
 <p>「 <strong>VPN</strong> 」全名「 <strong>Virtual Private Network</strong> 」，中文為「 <strong>虛擬私人網路</strong> 」。<br>
 一般連線上網是以 <strong>User (用戶端)</strong> 對 <strong>Server (伺服端)</strong> 做直接連線，當然 <strong>Server (伺服端)</strong> 可以清楚的<strong>知道誰訪問了站點</strong>，這對於瀏覽暗網來說太<strong>危險</strong>了，誰都不想在暗網上被對方查到身份。對於瀏覽暗網，我們必須著重注意自身的<strong>匿名性</strong>及<strong>安全性</strong>。</p>
 <p>為了解決 <strong> <code>User =&gt; Server</code> </strong> 的直接訪問所造成 <strong>IP 洩漏</strong>，因此在連線的過程必須加上一道保護，這道保護即為 <strong>VPN</strong> ，掛上 VPN 後的連線為 <strong> <code>User =&gt; VPN =&gt; Server</code> </strong> ，而這些<strong>中繼的 IP</strong> 遍佈在世界各地，若不考慮服務本身有漏洞，就算是<strong>警察</strong>也<strong>很難跨國調查</strong>，這大大了<strong>增加了反追蹤的難度</strong>。</p>
@@ -1195,15 +1195,15 @@ b.  <code>sudo yum install git2u</code></p>
 <p>個人推薦以下兩個 <strong>VPN</strong> 服務 — 「<a href="https://protonvpn.com/"><strong>Proton VPN</strong></a>」、「<a href="https://nordvpn.com/"><strong>Nord VPN</strong></a>」。</p>
 <hr>
 <h3 id="tor-browser-洋蔥瀏覽器"><a class="markdownIt-Anchor" href="#tor-browser-洋蔥瀏覽器">#</a> Tor Browser (洋蔥瀏覽器)</h3>
-<p><img src="02.png" alt="&quot;Tor Browser&quot;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02.png" alt="&quot;Tor Browser&quot;"></p>
 <p>在「<strong><a href="/2020/02/17/DarkWeb/" title="(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！">(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</a></strong>」這篇文章中有提到，暗網無法透過 <a href="https://zh.wikipedia.org/wiki/Google_Chrome"><strong>Chrome</strong></a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Firefox</strong></a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Opera</strong></a> 等一般的瀏覽器來訪問伺服器，必須使用像 <strong>Tor Browser</strong> 這樣的特殊瀏覽器才行。</p>
 <p>所以請先<strong>下載</strong>及<strong>安裝</strong> <a href="https://www.torproject.org/"><strong>Tor Browser</strong></a>，並且在<strong>連上 VPN 後</strong>，開啟 <strong>Tor Browser</strong>。</p>
 <p>開啟後會發現，與「<a href="https://zh.m.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>FireFox (火狐)</strong></a>」這款瀏覽器界面大同小異 (做為基底開發的)，但在瀏覽網站時，點擊網址左方，可以看到 Tor Browser 的連接狀況，從「 <strong>This browser</strong> 」到「 <strong>google.com (目的位址)</strong> 」中間經過了一些中繼點，這些中繼點一層一層的就像洋蔥的外皮般，因此才被稱作 <strong>Onion Router (洋蔥路由)</strong> 。<br>
 不過也因為<strong>經過的節點較多</strong>，相較<strong>一般瀏覽器</strong>的瀏覽<strong>速度</strong>是<strong>較慢</strong>的，若覺得這些節點<strong>速度太慢</strong>，也可以試試按下方的藍色按鈕「 <strong>New Circuit for this Site</strong> 」來<strong>更換節點</strong>。</p>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/02-01.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/09/01/How-To-Enter-The-DarkWeb/02-01.png" class="">
 <hr>
 <h3 id="注意事項"><a class="markdownIt-Anchor" href="#注意事項">#</a> 注意事項</h3>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/03.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/09/01/How-To-Enter-The-DarkWeb/03.jpg" class="">
 <p><b style="color: red; font-size: 300%;">注意！</b></p>
 <p>這些步驟很重要，請一定要確實做好。</p>
 <blockquote>
@@ -1285,7 +1285,7 @@ b.  <code>sudo yum install git2u</code></p>
 <h3 id="結語"><a class="markdownIt-Anchor" href="#結語">#</a> 結語</h3>
 <p>瀏覽暗網有一定的風險，就好像一把雙面刃。<br>
 必須再次強調<strong>本站僅做學術研討</strong>，你有<strong>絕對的權利</strong>選擇<strong>是否這麼做</strong>，並且你所做的選擇皆屬<strong>個人意願</strong>，後果須<strong>自行承擔</strong>，<strong>與本站無關</strong>。</p>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/end.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/09/01/How-To-Enter-The-DarkWeb/end.jpg" class="">
 ]]></content>
       <categories>
         <category>Information (資訊分享)</category>
@@ -1320,8 +1320,8 @@ b.  <code>sudo yum install git2u</code></p>
 <p>「 <strong>博士</strong> 」最大嫌疑人目前鎖定<strong> 25 歲</strong>的「 <strong>조주빈 (趙周彬，音譯)</strong> 」。<br>
 <strong>조주빈</strong>曾擔任某大學期刊的編輯，且否認自己是「博士」。警方從該男子家中搜出了<strong> 1.3 億韓元</strong>的現金。<br>
 截止<strong> 2020 年 3 月</strong>，已有<strong> 14 名</strong>涉案人員因「 <strong>製作兒童性剝削品</strong> 」而被捕，涉案金額估計可達<strong>數億韓元</strong>。</p>
-<img src="/2020/03/25/Korea-N-Room/01.jpg" class="" title="조주빈 (趙周彬，音譯)">
-<img src="/2020/03/25/Korea-N-Room/02.jpeg" class="" title="조주빈 (趙周彬，音譯)">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/03/25/Korea-N-Room/01.jpg" class="" title="조주빈 (趙周彬，音譯)">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/03/25/Korea-N-Room/02.jpeg" class="" title="조주빈 (趙周彬，音譯)">
 ]]></content>
       <categories>
         <category>Information (資訊分享)</category>
@@ -1335,21 +1335,21 @@ b.  <code>sudo yum install git2u</code></p>
     <url>/2020/08/07/Make-Money-Online/</url>
     <content><![CDATA[<p>網絡的盛行，越來越多人嘗試透過網絡<strong>在家工作</strong>，這不僅不必看老闆臉色，自己做自己的老闆以外，有時候甚至<strong>收益更勝過於你原本的工作</strong>也說不定呢！<br>
 以下帶你了解現今網絡賺錢常見的主流方法，讓你踏出網絡賺錢的第一步！</p>
-<img src="/2020/08/07/Make-Money-Online/cover.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/cover.png" class="">
 <span id="more"></span>
 <hr>
 <h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
 <p>以下所介紹的網賺管道並<strong>不一定適合每個人</strong>，行動前請先<strong>評估風險及自身能力</strong>。</p>
 <hr>
 <h3 id="1-電子商務-electronic-commerce"><a class="markdownIt-Anchor" href="#1-電子商務-electronic-commerce">#</a> 1. 電子商務 (Electronic Commerce)</h3>
-<img src="/2020/08/07/Make-Money-Online/01.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/01.jpg" class="">
 <p>隨著網絡的興起，「 <strong>網購</strong> 」也不再是什麼新鮮事了，諸如「 <strong>Amazon</strong>、<strong>EBay</strong>、<strong>蝦皮</strong>、<strong>露天</strong>、<strong>Yahoo！拍賣</strong>、<strong>臉書拍賣</strong> 」等網購產業的龍頭相信大家也不陌生。這類透過<strong>網際網路</strong>或<strong>電子交易</strong>相關的服務，被稱作「 <strong>Electronic Commerce (電子商務)</strong> 」，是指將<strong>傳統的商業活動</strong>給<strong>電子化</strong>及<strong>網路化</strong>。</p>
 <p>而網購的方便性在近幾年來大大提升了許多，原因主要在於「 <strong>賣家入門門檻低</strong> 」！<br>
 網購不再僅僅是 <a href="https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%94%AE"><strong>B2C</strong></a> ，也有許多是屬於 <a href="https://zh.wikipedia.org/wiki/C2C"><strong>C2C</strong></a> 的，也就是<strong>個人賣家</strong>，這並不需要成立品牌或公司，只是單純的交易。</p>
 <p>若對經營網絡商店有興趣的朋友可以嘗試看看，至於賣的商品則可以選擇少量囤貨的方式賣出，但要注意的是，這有一定的<strong>風險</strong>，或者可以嘗試賣掉家中不必要的二手物品。</p>
 <hr>
 <h3 id="2-股票-stock"><a class="markdownIt-Anchor" href="#2-股票-stock">#</a> 2. 股票 (Stock)</h3>
-<img src="/2020/08/07/Make-Money-Online/02.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/02.jpg" class="">
 <p>大家應該聽過不少人提起「 <strong>股票</strong> 」，但真正了解，並可藉此穩定持續賺取收益的人卻不在多數。很多人聽到「玩股票」第一個直覺就是覺得「 <strong>危險</strong>、<strong>風險高</strong>、<strong>會負債</strong> 」，但其實會有這樣的狀況，純粹是玩的人的<strong>心態問題</strong>！</p>
 <blockquote>
 <p>假設本金<strong> 50 萬</strong>的狀況下，若是要<strong>降低風險</strong>，大家都知道<strong>不能 ALL IN</strong>，或許在投資時會考慮以<strong> 10 萬</strong>分開投資<strong> 5 個項目</strong>。但今天假設有個你確信<strong> 99% 穩賺</strong>的投資項目出現，若是按照原本的方式投資 <strong>10%</strong> 淨賺<strong> 3 千</strong>，那麼如果將<strong> 50 萬</strong>全部拿來投資該項目，不就可以淨賺<strong> 1 萬 5 千</strong>了嗎！？對的，許多人就是在這裡選擇<strong>違背自己的限制</strong>，總歸一字「 <strong>貪</strong> 」。<br>
@@ -1358,7 +1358,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>以上說了這麼多主要就是要提醒大家，在玩股票之前，先問問自己是否有把握<strong>堅持自己的原則不貪心</strong>，投資出去的錢應該是「 <strong>即使這筆資金全數虧損，也不會對我生活造成太大影響，或者該影響是我有能力接受的</strong> 」的心態。</p>
 <hr>
 <h3 id="3-投放廣告-google-adsense"><a class="markdownIt-Anchor" href="#3-投放廣告-google-adsense">#</a> 3. 投放廣告 - Google Adsense</h3>
-<img src="/2020/08/07/Make-Money-Online/03.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/03.jpg" class="">
 <p>「 <strong>廣告</strong> 」隨處可見，常見的地方有<strong>網頁</strong>、<strong>電視新聞角落版面</strong>、<strong>街道刊板</strong>、<strong>手游</strong>等。而<strong>廣告</strong>主要目的則是增加「 <strong>曝光度</strong> 」，要記住「 <strong>有流量的地方就有收益</strong> 」，基本上這句話就是再說曝光度。</p>
 <blockquote>
 <ul>
@@ -1387,13 +1387,13 @@ b.  <code>sudo yum install git2u</code></p>
 使用方法在 <a href="https://www.youtube.com/"><strong>Youtube</strong></a> 搜尋「 <strong>Google Adsense</strong> 」就有一堆教學了！在此不多做贅述。若是看完並了解 <strong>Adsense</strong> 的服務條款後，即可開始在自己的網站投放廣告，或是連動相關服務 (ex. <a href="https://www.youtube.com/"><strong>Youtube</strong></a>、<a href="https://www.blogger.com/about/"><strong>Blogspot</strong></a> …) 來獲取<strong>廣告收益</strong>！</p>
 <hr>
 <h3 id="4-youtuber"><a class="markdownIt-Anchor" href="#4-youtuber">#</a> 4. Youtuber</h3>
-<img src="/2020/08/07/Make-Money-Online/04.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/04.jpg" class="">
 <p>知名的影音平台「 <strong>Youtube</strong> 」也是剛剛所提到「 <strong>Google Adsense</strong> 」可連動的服務之一。<strong>Youtuber</strong> 的入門門檻低，只要有心，一台智慧型手機就可以開始想題材拍影片上傳。依照目前的 <strong>Youtube 條款</strong>，你的 Youtube 頻道<strong>訂閱數</strong>必須達到 <strong>1,000 人</strong><br>
 過去 <strong>12 個月內</strong>的<strong>有效公開影片觀看時數</strong>超過 <strong>4,000 個小時</strong>即可開啟<strong>營利</strong>功能。<br>
 有了一定的知名度後，不僅僅是<strong>廣告收益</strong>，甚至開始會接到來自廠商的<strong>業配</strong>，至於什麼是「 <strong>業配</strong> 」，等等會解釋。</p>
 <hr>
 <h3 id="5-成為直播主"><a class="markdownIt-Anchor" href="#5-成為直播主">#</a> 5. 成為直播主</h3>
-<img src="/2020/08/07/Make-Money-Online/05.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/07/Make-Money-Online/05.jpg" class="">
 <p>線上直播平台早已融入整個網絡世界，不僅是「 <strong>Twitch</strong>、<strong>金剛直播</strong>、<strong>浪 Live</strong> 」等知名直播平台，另外包括「 <strong>Facebook</strong>、<strong>Youtube</strong> 」等服務也都加入了直播的功能，大陸地區的直播平台更是多到數不清！<br>
 如果你對自己<strong>與觀眾互動</strong>的<strong>臨場反應</strong>能力有信心，又或者在<strong>遊戲直播</strong>的部份，覺得自己的<strong>遊戲技術</strong>能使觀眾驚豔，甚至最直接的，<strong>顏值就高</strong>，長的帥、長的美，那麼或許「 <strong>直播主</strong> 」真的是你可以考慮的走向。<br>
 再看看剛剛所說的「 <strong>有流量的地方就有收益</strong> 」，若是你有個什麼<strong>特點</strong>能吸引觀眾前來觀看直播，並且<strong>穩定</strong>住客群，之後開始有了這些<strong>固定觀眾</strong>，漸漸的成為<strong>粉絲</strong>，這時候不僅僅是廣告收益，在有了一定的知名度後，你又解鎖了兩道收入來源 - 「 <strong>Donate</strong>、<strong>業配</strong> 」！</p>
@@ -1741,9 +1741,9 @@ b.  <code>sudo yum install git2u</code></p>
 </ul>
 </blockquote>
 <p>每個階層對於這四項管理功能的比重都有所不同：<br>
-<img src="POLC-first-line-managers.png" alt="first-line-managers" width="85%"><br>
-<img src="POLC-middle-managers.png" alt="middle-managers" width="85%"><br>
-<img src="POLC-top-managers.png" alt="top-managers" width="85%"></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="POLC-first-line-managers.png" alt="first-line-managers" width="85%"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="POLC-middle-managers.png" alt="middle-managers" width="85%"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="POLC-top-managers.png" alt="top-managers" width="85%"></p>
 <hr>
 <h1 id="管理者該具備什麼"><a class="markdownIt-Anchor" href="#管理者該具備什麼">#</a> 管理者該具備什麼？</h1>
 <blockquote>
@@ -1787,7 +1787,7 @@ b.  <code>sudo yum install git2u</code></p>
 <hr>
 <h2 id="起源"><a class="markdownIt-Anchor" href="#起源">#</a> 起源</h2>
 <p><strong>Maslow’s Hierarchy Of Needs (馬斯洛 需求層次理論)</strong> 是由一名美國心理學家 <a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%C2%B7%E9%A9%AC%E6%96%AF%E6%B4%9B"><strong>Abraham Harold Maslow</strong></a> 於 <strong>1943</strong> 年《<strong>心理學評論</strong>》的論文〈<strong>人類動機的理論 (A Theory of Human Motivation)</strong>〉 中所提出的理論。該理論屬於<strong>心理健康</strong>的理論，主張認為人類天生的需求是首先要被滿足的，隨後更進一步滿足自己，最後達成自我實現。</p>
-<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
 <hr>
 <h2 id="需求比較"><a class="markdownIt-Anchor" href="#需求比較">#</a> 需求比較</h2>
 <p>凡是人便有需求，<strong>食衣住行娛樂</strong>皆是。<br>
@@ -1795,7 +1795,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>Maslow 將這些需求進行<strong>排列</strong>、<strong>分級</strong>就形成了著名的「<strong>需求層級圖</strong>」。</p>
 <hr>
 <h2 id="需求層級"><a class="markdownIt-Anchor" href="#需求層級">#</a> 需求層級</h2>
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
 <p>這些需求被以<strong>優先需要的程度</strong> <code>高至低</code> 分別為 <code>下到上</code> 分級，及形成上圖的<strong>需求層級金字塔</strong>。<br>
 以下為生理層面的需求：</p>
 <blockquote>
@@ -1865,7 +1865,7 @@ b.  <code>sudo yum install git2u</code></p>
 起源是一個源自<a href="https://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88%E8%AE%BA"><strong> Game Theory (博奕論)</strong></a> 的數學遊戲問題，最早推測可能出自 1963 年的一個美國電視遊戲節目 - 「<strong>Let’s Make a Deal (讓我們一起交易)</strong>」，其中該節目的主人名為「<strong>Monty Hall</strong>」，故稱做「<strong>Monty-Hall Problem</strong>」。</p>
 <hr>
 <h2 id="三門遊戲"><a class="markdownIt-Anchor" href="#三門遊戲">#</a> 三門遊戲</h2>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src="01.png" alt="圖源: Wiki 維基百科"></a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="01.png" alt="圖源: Wiki 維基百科"></a></p>
 <p>在節目中，參賽者的面前會有<strong>三道關閉的門</strong>，其中一道門後有著一輛<strong>汽車</strong>，其餘兩道門後則是<strong>山羊</strong> (我也不知道為啥是山羊…)，若是參賽者選中門後為汽車的門，那麼即可贏得汽車。</p>
 <p>遊戲開始後，主持人會要求參賽者<strong>選擇一道門</strong>，不論這道門後是<strong>汽車</strong>或者<strong>山羊</strong>，主持人都會開啟 <code>參賽者所選的門之外，其餘兩道門中含有山羊的那道門</code>  (主持人是知道門後狀況的)。</p>
 <p>舉例，三道門分別為  <code>A</code> 、 <code>B</code> 、 <code>C</code>  ，參賽者選擇了  <code>C</code>  ，若是  <code>B</code> 、 <code>C</code>  門後皆為 <code>山羊</code> ，那麼主持人則會開啟  <code>B</code>  門；若是  <code>A</code> 、 <code>B</code>  門後為山羊，那麼主持人隨機選擇開啟  <code>A</code>  或  <code>B</code>  門。</p>
@@ -1924,7 +1924,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>機率為  <code>1/2</code></p>
 </blockquote>
 <p>沒錯，這道陷阱題使人容易忽略了參賽者選擇汽車那道門時，主人持人選擇刪除門的可能性是有<strong>兩種</strong>的。</p>
-<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
+<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
 <hr>
 <h2 id="結論"><a class="markdownIt-Anchor" href="#結論">#</a> 結論</h2>
 <p>這麼一來你知道為什麼了嗎？(如果還是很矇，可以再重頭看一次 XD)<br>
@@ -1956,7 +1956,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>台灣常見的機車多半為下圖的樣式，這也是大多數台灣人聽到「機車」後會想到的樣子，該機車類型被稱作「 <strong>Scooter (速克達)</strong> 」又或者叫做「 <strong>塑膠車</strong> 」，港澳地區則稱之為「 <strong>綿羊仔</strong> 」。</p>
 <p>「<em>在二十世紀初有存在，此後二次大戰後由<a href="https://zh.wikipedia.org/wiki/%E7%BE%A9%E5%A4%A7%E5%88%A9">義大利</a><a href="https://zh.wikipedia.org/wiki/%E4%BC%9F%E5%A3%AB%E7%89%8C">偉士牌</a>帶動流行起來的交通工具，是摩托車的一種。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%80%9F%E5%85%8B%E9%81%94"><strong>Wiki 維基百科</strong></a></p>
 </blockquote>
-<img src="/2020/07/20/Motorcycle/i1.jpg" class="" title="台灣路上常見的 Scooter (速克達) 機車">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/i1.jpg" class="" title="台灣路上常見的 Scooter (速克達) 機車">
 <hr>
 <ul>
 <li><strong>Motorcycle (檔車)</strong></li>
@@ -1965,7 +1965,7 @@ b.  <code>sudo yum install git2u</code></p>
 <p>檔車才是一般大家所指的「 <strong>Motorcycle</strong> 」。<br>
 與 <strong>Scooter (速克達)</strong> 最主要的差別在於「需要<strong>手動更換檔位</strong>變速 (速克達為機器自動更換)」，且速克達是以<strong>皮帶</strong>傳動，檔車則是以<strong>鏈條</strong>傳動。</p>
 </blockquote>
-<img src="/2020/07/20/Motorcycle/i2.jpg" class="" title="Motorcycle (打檔車)">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/i2.jpg" class="" title="Motorcycle (打檔車)">
 <hr>
 <br>
 <table border="0">
@@ -1974,8 +1974,8 @@ b.  <code>sudo yum install git2u</code></p>
 	<td><center><b>檔車: 鏈條傳動</b></center><br></td>
 	</tr>
 	<tr>
-		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i3.jpg" class=""></td>
-		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i4.jpg" class=""></td>
+		<td style="width: 49%;"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/i3.jpg" class=""></td>
+		<td style="width: 49%;"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/i4.jpg" class=""></td>
 	</tr>
 </table>
 <hr>
@@ -1986,26 +1986,26 @@ b.  <code>sudo yum install git2u</code></p>
 <hr>
 <center><b>
 <br>檔車: 左手離合器
-<p><img src="i5.jpg" alt="離合器" width="60%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="i5.jpg" alt="離合器" width="60%"></p>
 <p><br>檔車：右腳後煞車</p>
-<p><img src="i6.jpeg" alt="&quot;後煞車&quot;" width="60%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="i6.jpeg" alt="&quot;後煞車&quot;" width="60%"></p>
 <p><br>檔車：左腳打檔桿 升檔 (勾)</p>
-<p><img src="i7.jpeg" alt="&quot;打檔桿 升檔&quot;" width="60%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="i7.jpeg" alt="&quot;打檔桿 升檔&quot;" width="60%"></p>
 <p><br>檔車：左腳打檔桿 降檔 (踩)</p>
-<p><img src="i8.jpeg" alt="&quot;打檔桿 降檔&quot;" width="60%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="i8.jpeg" alt="&quot;打檔桿 降檔&quot;" width="60%"></p>
 <p></b></center></p>
 <hr>
 <h3 id="離合器-與-發動機"><a class="markdownIt-Anchor" href="#離合器-與-發動機">#</a> 離合器 與 發動機</h3>
 <p>了解了以上檔車的基本控制項後，就可以來開始講解離合器的作用原理，以下附上我<s>精湛的畫技下</s>產出的圖文講解。</p>
-<img src="/2020/07/20/Motorcycle/1.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/1.png" class="">
 <p>當車子還未發動時，所有零件都處於靜止狀態 (<s>會自己動你就要擔心了</s>)，車子一檔發動後，此刻發動機開始轉動，但<strong>離合器還是按壓狀態</strong> ，就會形成最<strong>左邊那張分離狀態的圖</strong> ，發動機 (褐色) 雖然在運轉，但因為離合器 (灰色) 還沒與其接合，所以離合器目前尚未開始運轉。</p>
 <p>當慢慢鬆開離合器直到與發動機<strong>部份接合</strong>時，則會形成<strong>中間那張 &quot;半離合&quot; 狀態的圖</strong> ，此刻機車也因為離合器與發動機開始有了銜接，會開始慢慢往前移動，<strong>半離合</strong>的目的是要「 <strong>&quot;慢慢的&quot; 帶動離合器去適應發動機的轉速</strong> 」。如果在轉速靜止的狀態下，直接使離合器與發動機快速銜接 (離合器放太快)，跳過 &quot;半離合&quot; 狀態，基本上會直接<strong>熄火</strong> ，這也是大多數騎檔車的人會遇到的問題之一！因為運動定律的關係，<strong>運動中的發動機無法直接帶動靜止的離合器</strong> ，會導致<strong>轉速差太多</strong>而讓發動機卡住，進而停止運作。</p>
 <p>當在半離合狀態時，正常來說機車會開始慢慢向前移動，這時候離合器開始跟發動機的轉速做磨合，當本身有一定的轉速後，這時釋放離合器，形成最右邊那張 &quot;密合&quot; 狀態的圖時，此刻發動機則會自然的帶動離合器開始運轉，起步成功！</p>
 <hr>
 <p>以下是網路上其他大大分享的圖。（<a href="http://cclinsbackyard.blogspot.com/2010/03/blog-post_25.html"><strong>圖取自此網站</strong></a>）</p>
- <center><b>離合器直接透過鏈條 (黑色虛線) 帶動輪軸。<br>將離合器接上引擎以取得動力。</b></center> <img src="/2020/07/20/Motorcycle/2.jpg" class="">
+ <center><b>離合器直接透過鏈條 (黑色虛線) 帶動輪軸。<br>將離合器接上引擎以取得動力。</b></center> <img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/2.jpg" class="">
 <hr>
-<p><br><center><b>離合器 與 發動機 轉速差</b></center><br> <img src="/2020/07/20/Motorcycle/3.jpg" class=""></p>
+<p><br><center><b>離合器 與 發動機 轉速差</b></center><br> <img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/3.jpg" class=""></p>
 <hr>
 <h3 id="打檔大齒輪-與-小齒輪"><a class="markdownIt-Anchor" href="#打檔大齒輪-與-小齒輪">#</a> 打檔｜大齒輪 與 小齒輪</h3>
 <p>在介紹打檔之前呢，必須要先說「 <strong>檔</strong> 」是用來幹麻的？</p>
@@ -2087,14 +2087,14 @@ b.  <code>sudo yum install git2u</code></p>
 有別於循環檔的地方還有，<strong>空檔是在 1 檔跟 2 檔</strong>「 <strong>中間</strong> 」，進空檔的方法則為「 <strong>小力踩</strong> 」或「 <strong>小力勾</strong> 」。</p>
 </blockquote>
 <p>以下是網路上其他大大分享的圖，看了相信會更明白的。（<a href="https://timmy.pixnet.net/blog/post/1617378-%E5%9C%8B%E9%9A%9B%E6%AA%94%E5%92%8C%E5%BE%AA%E7%92%B0%E6%AA%94%E7%9A%84%E5%B7%AE%E5%88%A5"><strong>圖取自此網站</strong></a>）</p>
-<img src="/2020/07/20/Motorcycle/4.gif" class="">
-<img src="/2020/07/20/Motorcycle/5.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/4.gif" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/07/20/Motorcycle/5.jpg" class="">
 <hr>
 <h3 id="珍奶跟雞排要放哪"><a class="markdownIt-Anchor" href="#珍奶跟雞排要放哪">#</a> 珍奶跟雞排要放哪？</h3>
 <p>這也是檔車的一大痛點，因為檔車構造的緣故，大多數檔車是「 <strong>沒有車廂</strong> 」的！</p>
 <p>有些檔車雖然有提供置物箱，但容量嘛… 大約只能放的下手機，若想加大空間，可以考慮加裝「 <strong>漢堡包</strong> 」或「 <strong>側掛包</strong> 」，攜帶的物品不多的話，也可以自己背個<strong>隨身背包</strong>上路。</p>
 <p>(P.S. <strong>側掛包</strong>有個<strong>小缺點</strong> — 後座在上下車比較麻煩)</p>
-<p><img src="bike-and-boat-motorcycle-tours-cjoPD3VRHIA-unsplash.jpg" alt="" width="70%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="bike-and-boat-motorcycle-tours-cjoPD3VRHIA-unsplash.jpg" alt="" width="70%"></p>
 <hr>
 <h3 id="結語"><a class="markdownIt-Anchor" href="#結語">#</a> 結語</h3>
 <p>以上是我個人對於打檔機車的認知及觀念講解，若有錯誤請不吝嗇私訊通知。<br>
@@ -2116,7 +2116,7 @@ b.  <code>sudo yum install git2u</code></p>
     <content><![CDATA[<p>「寫程式好難啊…」我獨自坐在電腦桌前說著，那是我國三畢業後的假期。<br>
 想想那段時間，我近三個月沒有與任何人說過話，腦裡已經被程式語言給佔領。</p>
 <span id="more"></span>
-<img src="/2020/01/06/MrL/title.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/01/06/MrL/title.jpg" class="">
 <hr>
 <h3 id="入坑"><a class="markdownIt-Anchor" href="#入坑">#</a> 入坑</h3>
 <p>我與很多小孩一樣從小不愛讀書，更是沒什麼過人的成就，當時「學校」對於我來說只是必須準時報到的「娛樂場所」，天天到學校去也是開開心心、無憂無慮，名副其實的「上課睡覺，下課尿尿」，偶爾再找點樂子闖個禍爽一下，一直是令家人及老師頭痛的問題兒童。<br>
@@ -2165,7 +2165,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/01.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/01.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2176,7 +2176,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/02.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/02.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2187,7 +2187,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/03.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/03.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2198,7 +2198,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/04.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/04.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2209,7 +2209,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/05.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/05.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2220,7 +2220,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/08.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/08.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2231,7 +2231,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/09.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/09.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2242,7 +2242,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/10.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/10.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2253,7 +2253,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/11.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/11.png" class="">
 <hr>
 <h3 id="代理信箱"><a class="markdownIt-Anchor" href="#代理信箱">#</a> 代理信箱</h3>
 <p>若是需要<strong>長期接收信件</strong>，但又<strong>不希望向對方提供自身真實的電子郵件地址</strong>，那或許可以考慮看看「<strong>代理信箱</strong>」。該服務運作原理很簡單，一般情況下，<strong>A 方</strong>寄信給 <strong>B 方</strong>為 <strong> <code>A =&gt; B</code> </strong> 直接寄送的方式，而<strong>代理</strong>信箱則是像 <strong> <code>A =&gt; 代理 =&gt; B</code> </strong> ，等同於幫你擔任<strong>中間人</strong>的角色，因此可以在不給對方真實電子郵件地址時收信。<br>
@@ -2268,7 +2268,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/06.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/06.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2279,7 +2279,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/07.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/07.png" class="">
 <hr>
 <h3 id="一次性手機號碼"><a class="markdownIt-Anchor" href="#一次性手機號碼">#</a> 一次性手機號碼</h3>
 <p>與一次性信箱同樣概念，只是是用於<strong>手機接收簡訊</strong>使用。<br>
@@ -2295,7 +2295,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/12.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/12.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2306,7 +2306,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/13.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/13.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2317,7 +2317,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/14.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/14.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2328,7 +2328,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/15.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/15.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2339,7 +2339,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/16.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/16.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2350,7 +2350,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/17.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/17.png" class="">
 <hr>
 <blockquote>
 <ul>
@@ -2361,7 +2361,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/08/21/One-Off-Service/18.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/08/21/One-Off-Service/18.png" class="">
 ]]></content>
       <categories>
         <category>Service (服務分享)</category>
@@ -2380,7 +2380,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <p>如果你還不知道誰是 <strong>Edward Joseph Snowden (愛德華・約瑟夫・史諾登)</strong> ，建議請先觀看我上一篇簡單介紹該人物的文章 - 「<strong><a href="/2020/02/27/Snowden/" title="Edward Joseph Snowden (愛德華·約瑟夫·史諾登)｜賭上自己的一生，只為揭露政府祕密監控人民的醜聞！">Edward Joseph Snowden (愛德華·約瑟夫·史諾登)｜賭上自己的一生，只為揭露政府祕密監控人民的醜聞！</a></strong>」。</p>
 <hr>
 <h3 id="prism-稜鏡計劃"><a class="markdownIt-Anchor" href="#prism-稜鏡計劃">#</a> PRISM (稜鏡計劃)</h3>
-<img src="/2020/02/27/PRISM(%E7%A8%9C%E9%8F%A1%E8%A8%88%E5%8A%83)/Stylized_eye.svg" class="" title="PRISM">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/27/PRISM(%E7%A8%9C%E9%8F%A1%E8%A8%88%E5%8A%83)/Stylized_eye.svg" class="" title="PRISM">
 <p>「 <strong>PRISM (稜鏡計劃)</strong> 」，正式名稱為「 <strong>US-984XN</strong> 」。<br>
 為一項由 <a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80"><strong>NSA (美國國家安全局)</strong></a> 自<strong> 2007 年</strong>開始實施的<strong>絕密級網絡監控計劃</strong> 。</p>
 <p>根據報導，泄露的文件中描述 PRISM 計劃能夠對<strong>即時通信</strong>和<strong>既存資料</strong>進行<strong>深度的監聽</strong> 。許可的監聽對象包括<strong>任何在美國以外地區使用參與計劃公司服務的客戶</strong> ，或是<strong>任何與國外人士通信的美國公民</strong> 。<br>
@@ -2467,11 +2467,11 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <blockquote>
 <p>首先進入這個網站「 <strong><a href="https://minepi.com">https://minepi.com</a></strong> 」<br>
 你應該會看到以下畫面：</p>
-<p><img src="download-01.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="download-01.jpg" alt="" height="600px"></p>
 <p>點擊「<strong>Download App</strong>」後會看到以下畫面：<br>
 你可以直接下載 <strong>apk</strong> 安裝，又或者到 <strong>Google Play</strong> 安裝。<br>
 (建議到 <strong>Google Play</strong> 安裝。<strong>Apple</strong> 用戶請使用 <strong>Apple Store</strong>)</p>
-<p><img src="download-02.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="download-02.jpg" alt="" height="600px"></p>
 <p>下載後安裝並開啟程式，接著我們到下一步。</p>
 </blockquote>
 <hr>
@@ -2479,20 +2479,20 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <blockquote>
 <p>可以選擇用 <strong> <code>Facebook (臉書)</code> </strong> 或者 <strong> <code>手機號碼</code> </strong> 登入。<br>
 這邊建議用 <strong> <code>手機號碼</code> </strong>：</p>
-<p><img src="signup-01-phone-login.jpg" alt="" height="500px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-01-phone-login.jpg" alt="" height="500px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>記得選擇自己<strong>地區</strong>門號的<strong>代碼</strong> (例如.<strong> 台灣 +886</strong>)，之後輸入手機號碼：</p>
-<p><img src="signup-02-phone-number.jpg" alt="" height="500px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-02-phone-number.jpg" alt="" height="500px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>之後設定密碼 (不能忘記，否則之後可能<strong>無法提款</strong>、<strong>交易</strong>)：</p>
-<p><img src="signup-03-password.jpg" alt="" height="550px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-03-password.jpg" alt="" height="550px"></p>
 <p>如果你看到如下的錯誤，則代表你的密碼不符合官方所規定的格式！<br>
 必須要  <code>8 個字以上</code> ，並且至少包含 1 個  <code>數字</code>  及 1 個  <code>小寫英文</code>  及 1 個  <code>大寫英文</code> 。</p>
-<p><img src="signup-04-password-error.jpg" alt="" style="height: 75vh;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-04-password-error.jpg" alt="" style="height: 75vh;"></p>
 </blockquote>
 <hr>
 <blockquote>
@@ -2502,7 +2502,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 另外要注意的是，英語語系的關係，「<strong> <code>First Name</code> </strong>」為「<strong> <code>名</code> </strong>」，「<strong> <code>Last Name</code> </strong>」才是「<strong> <code>姓</code> </strong>」，不要搞混了。</p>
 <p>用戶名用於  <code>邀請他人</code> 、 <code>交易</code>  等，註冊之後 <code>不得更改</code> ！請謹慎填寫<br>
 用戶名<strong>只能</strong>是  <code>小寫英文</code>  或  <code>數字</code></p>
-<p><img src="signup-05-username.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-05-username.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <h2 id="推薦人機制"><a class="markdownIt-Anchor" href="#推薦人機制">#</a> 推薦人機制</h2>
@@ -2511,85 +2511,85 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 你必須要有推薦人才可進入 Pi Network。</p>
 <p>在這邊可以填入我的推薦碼，<strong> <code>9 個「pi」</code> </strong>，馬上獲得 1 Pi 幣：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pipipipipipipipipi</span><br></pre></td></tr></table></figure>
-<p><img src="signup-06-invited.jpg" alt="" style="height: 400px;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="signup-06-invited.jpg" alt="" style="height: 400px;"></p>
 </blockquote>
 <hr>
 <h2 id="開始賺-pi-coin"><a class="markdownIt-Anchor" href="#開始賺-pi-coin">#</a> 開始賺 Pi Coin</h2>
 <blockquote>
 <p>看到這個畫面代表成功啦！<br>
 點擊「<strong>GET STARTED</strong>」繼續！</p>
-<p><img src="start-01.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="start-01.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>點擊<strong>白色</strong>「<strong>閃電</strong>」符號即可 <strong>開始挖礦</strong>：</p>
-<p><img src="start-02.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="start-02.jpg" alt="" height="600px"></p>
 <p>「<strong>閃電</strong>」變成<strong>綠色</strong>的表示正在挖礦<br>
 畫面上寫的 <strong>0.12</strong> 是指「<strong>每小時可挖 0.12 Pi Coin</strong>」。<br>
 原本的<strong>基礎速度</strong>是 <strong>0.10</strong>，因為有<strong>推薦人加成</strong>，所以加速了 <strong>25%</strong> 的速度：</p>
-<p><img src="start-03-mining.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="start-03-mining.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>螢幕最上方是你目前擁有的 Pi Coin！<br>
 你會看到已經有了 <strong>1 Pi Coin</strong>，這是因為剛剛<strong>輸入邀請碼</strong>的關係。(<strong>受邀者獎勵</strong>)</p>
-<p><img src="start-04-how-much-now.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="start-04-how-much-now.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>可以點擊該圖示觀看目前 <strong>自己 的 挖礦團隊</strong></p>
-<p><img src="team-01.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="team-01.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>剛開始應該只看得見我 (推薦人)<br>
  如果 <strong>顯示該圖示</strong> 則表示 <strong>我也正在挖礦</strong>，此刻你也享有我的  <code>算力加成</code> 。</p>
-<p><img src="team-02.jpg" alt="" style="height: 230px;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="team-02.jpg" alt="" style="height: 230px;"></p>
 </blockquote>
 <hr>
 <h2 id="填寫母語名稱-用於之後-kyc"><a class="markdownIt-Anchor" href="#填寫母語名稱-用於之後-kyc">#</a> 填寫母語名稱 (用於之後 KYC)</h2>
 <blockquote>
 <p>點擊下方 <strong> <code>Review name</code> </strong> (審核名字)</p>
-<p><img src="name-01.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-01.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>之後點擊 <strong> <code>更正</code> </strong></p>
-<p><img src="name-02.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-02.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>確認英文名稱無誤後，點擊下方的「<strong>用母語拼寫  <code>點擊這裡</code> </strong>」</p>
-<p><img src="name-03.jpg" alt="" style="height: 350px;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-03.jpg" alt="" style="height: 350px;"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>在下方母語名稱欄位中，輸入<strong>自己母語的名字</strong>，例如中文名。<br>
 並且在最下方選擇該 <strong>名字的語言</strong> 為何，</p>
-<p><img src="name-04.jpg" alt="" height="550px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-04.jpg" alt="" height="550px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>選擇該 <strong>名字的語言</strong></p>
-<p><img src="name-05.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-05.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>確認無誤後，按下  <code>提交</code></p>
-<p><img src="name-06.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-06.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>輸入自己  <code>常用</code>  的  <code>名稱</code> ，用於顯示給他人看。<br>
 又或者你可以如圖，填入<strong>英文名</strong>即可。<br>
 輸入完畢後，按下  <code>儲存</code>  即可</p>
-<p><img src="name-07.jpg" alt="" style="height: 330px;"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-07.jpg" alt="" style="height: 330px;"></p>
 </blockquote>
 <hr>
 <blockquote>
 <p>輸入自己的  <code>信箱</code> ，用於日後有需要時，驗證帳戶權限。<br>
 輸入完畢後，按下  <code>提交</code>  即可</p>
-<p><img src="name-08.jpg" alt="" height="330px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="name-08.jpg" alt="" height="330px"></p>
 </blockquote>
 <hr>
 <h2 id="security-circle-安全圈"><a class="markdownIt-Anchor" href="#security-circle-安全圈">#</a> Security Circle (安全圈)</h2>
@@ -2600,30 +2600,30 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 (當然你可以選擇加入更多人，但算力在 5 人之後不會再加成)<br>
  ps. 加入安全圈後，算力基本上會等到加入的 <strong> <code>第二週期 (48小時)</code> </strong> 後才加成。<br>
 具體操作如下：</p>
-<p><img src="security-01.jpg" alt="" height="550px"><br>
-<img src="security-02.jpg" alt="" height="550px"><br>
-<img src="security-03.jpg" alt="" height="450px"><br>
-<img src="security-04.jpg" alt="" height="250px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="security-01.jpg" alt="" height="550px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="security-02.jpg" alt="" height="550px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="security-03.jpg" alt="" height="450px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="security-04.jpg" alt="" height="250px"></p>
 </blockquote>
 <hr>
 <h2 id="其他功能"><a class="markdownIt-Anchor" href="#其他功能">#</a> 其他功能</h2>
 <blockquote>
 <h3 id="變更界面語言"><a class="markdownIt-Anchor" href="#變更界面語言">#</a> 變更界面語言</h3>
-<p><img src="language-01.jpg" alt="" height="600px"><br>
-<img src="language-02.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="language-01.jpg" alt="" height="600px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="language-02.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <blockquote>
 <h3 id="隱藏名稱"><a class="markdownIt-Anchor" href="#隱藏名稱">#</a> 隱藏名稱</h3>
-<p><img src="hide-name-01.jpg" alt="" height="600px"><br>
-<img src="hide-name-02.jpg" alt="" height="600px"><br>
-<img src="hide-name-03.jpg" alt="" height="600px"><br>
-<img src="hide-name-04.jpg" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hide-name-01.jpg" alt="" height="600px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hide-name-02.jpg" alt="" height="600px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hide-name-03.jpg" alt="" height="600px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hide-name-04.jpg" alt=""></p>
 </blockquote>
 <hr>
 <blockquote>
 <h3 id="與-pi-友聊天"><a class="markdownIt-Anchor" href="#與-pi-友聊天">#</a> 與 Pi 友聊天</h3>
-<p><img src="chat-01.jpg" alt="" height="600px"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="chat-01.jpg" alt="" height="600px"></p>
 </blockquote>
 <hr>
 <h2 id="最後"><a class="markdownIt-Anchor" href="#最後">#</a> 最後</h2>
@@ -2649,7 +2649,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <h3 id="對稱加密所無法解決的難題"><a class="markdownIt-Anchor" href="#對稱加密所無法解決的難題">#</a> <strong>對稱加密</strong>所無法解決的難題</h3>
 <p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
 <p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
 <hr>
 <h3 id="public-key-cryptography-非對稱加密"><a class="markdownIt-Anchor" href="#public-key-cryptography-非對稱加密">#</a> Public-key Cryptography (非對稱加密)</h3>
 <p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
@@ -2661,12 +2661,12 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
 <ul>
 <li><strong>釋出公鑰</strong><br>
 將公鑰交給對方，用於給對方在之後進行解密使用。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
 <ul>
 <li><strong>加密、解密</strong>
 <ul>
@@ -2676,11 +2676,11 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
 <ul>
 <li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
 <hr>
 <h3 id="運用"><a class="markdownIt-Anchor" href="#運用">#</a> 運用</h3>
 <p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
@@ -2702,7 +2702,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
     <title>RC 語音 XSS 漏洞</title>
     <url>/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/</url>
     <content><![CDATA[<span id="more"></span>
-<img src="/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/title.jpeg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/title.jpeg" class="">
 <hr>
 <h3 id="id"><a class="markdownIt-Anchor" href="#id">#</a> ID</h3>
 <p>《ZDID》ZD-2017-00589</p>
@@ -2915,7 +2915,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <strong> C 小姐</strong>在收到密文後，使用同一把密鑰「 <strong>2</strong> 」解密，<strong>加密</strong>為<strong>往後推移</strong>，<strong>解密</strong>則為<strong>往前推移</strong>，因此密文「 <strong>Jgnnq, 345</strong> 」在被<strong> C 小姐</strong>往前推移<strong> 2 次</strong>後，解密回明文的「 <strong>Hello, 123</strong> 」。</li>
 </ul>
 </blockquote>
-<img src="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="流程">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="流程">
 <p>這其中包含一個問題，為什麼<strong> A 先生</strong>與<strong> C 小姐</strong>知道怎麼使用該密鑰加密與解密，是誰規定「加密為往後推移密鑰數」及「解密為往前推移密鑰數」？</p>
 <p>其實這些密鑰的「 <strong>使用規則</strong> 」被稱作「 <strong>加密演算法 (Encryption)</strong> 」或稱「 <strong>加密法</strong> 」，<strong>加密演算法</strong>也正是決定該加密安全性的關鍵之一。因此其實在<strong> A 先生</strong>將密鑰交給<strong> C 小姐</strong>時，有偷偷說了要使用哪種加密法，這樣雙方才能正確的運用密鑰進行運算來達到加密及解密的效果。</p>
 <hr>
@@ -2939,7 +2939,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
     <title>Ubuntu 18 如何顯示電量百分比？</title>
     <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
     <content><![CDATA[<span id="more"></span>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
 <hr>
 <h3 id="幹話"><a class="markdownIt-Anchor" href="#幹話">#</a> 幹話</h3>
 <p>我本身是一位 Ubuntu 的愛好者，非常喜歡 Ubuntu 的美術設計。<br>
@@ -2956,7 +2956,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install gnome-tweaks</span><br><span class="line">$ gnome-tweaks</span><br></pre></td></tr></table></figure>
 <p>看到界面之後點選左邊欄位的「頂端列」<br>
 裡面就可以開啟顯示電池百分比的設定啦！</p>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
 ]]></content>
       <categories>
         <category>Note (技巧分享)</category>
@@ -2991,26 +2991,26 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <li>
 <p>按下左下角的 <strong>Windows</strong> 圖示叫出 <code>選單</code> 。<br>
 (你也可以按下鍵盤的 <strong> <code>Win</code> </strong> 鍵，如下圖，大概在左邊的 <code>Ctrl</code>  與 <code>Alt</code>  旁邊)<br>
-<img src="win-key.jpg" alt="" height="300px"><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="win-key.jpg" alt="" height="300px"><br>
  這是選單的樣子:<br>
-<img src="win-menu.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="win-menu.png" alt=""></p>
 </li>
 <li>
 <p>當選單跳出時，請<strong>直接</strong>在鍵盤輸入「<strong> <code>powershell</code> </strong>」。(ps. 注意<strong>輸入法</strong>要調整成<strong>英文</strong>)<br>
-<a href="https://zh.wikipedia.org/wiki/Windows_PowerShell"><img src="powershell-logo.png" alt="" title="圖取自 Wiki 維基百科" align="left" width="30px"></a> 正常來說會找到這樣的 Logo，並寫著「<strong>Power Shell</strong>」字樣的程式:</p>
+<a href="https://zh.wikipedia.org/wiki/Windows_PowerShell"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="powershell-logo.png" alt="" title="圖取自 Wiki 維基百科" align="left" width="30px"></a> 正常來說會找到這樣的 Logo，並寫著「<strong>Power Shell</strong>」字樣的程式:</p>
 </li>
 <li>
 <p>對它點擊  <code>滑鼠右鍵</code>  &gt;  <code>以系統管理員身份執行</code> 。<br>
-<img src="win-searching-powershell.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="win-searching-powershell.png" alt=""><br>
 沒意外應該會出現類似這樣 <code>籃底白字</code> 的視窗 (注意左上角應該要出現 <code>系統管理員</code> 字樣):<br>
-<img src="powershell.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="powershell.png" alt=""></p>
 </li>
 </ol>
 <h3 id="step-2-輸入指令"><a class="markdownIt-Anchor" href="#step-2-輸入指令">#</a> Step. 2 輸入指令</h3>
 <p>首先複製以下這段指令:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">powercfg <span class="literal">-duplicatescheme</span> e9a42b02<span class="literal">-d5df</span><span class="literal">-448d</span><span class="literal">-aa00</span><span class="literal">-03f14749eb61</span></span><br></pre></td></tr></table></figure>
 <p>接著到剛剛的 <code>Power Shell</code>  視窗中，按下 <code>滑鼠右鍵</code> 貼上後按下 <code>Enter</code> 。</p>
-<p><img src="powershell-command.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="powershell-command.png" alt=""></p>
 <p>如果看到系統回應你如上圖的資訊，<br>
 那麼恭喜你成功 <code>激活</code>  <strong>Ultimate Performance (終極效能)</strong> 模式！</p>
 <p>但注意！這時候 <code>還沒啟動</code> 它。</p>
@@ -3024,15 +3024,15 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <p>跟剛剛一樣，在按下 <strong> <code>Win</code> </strong> 鍵叫出 <code>選單</code> 後，<strong>直接</strong>在鍵盤輸入「<strong> <code>control</code> </strong>」。<br>
 如果右方有出現「<strong> <code>電源選項</code> </strong>」則直接點選，並跳至<a href="#%E6%9C%89%E5%87%BA%E7%8F%BE%E9%9B%BB%E6%BA%90%E9%81%B8%E9%A0%85%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%87%B3%E9%80%99%E8%A3%A1">步驟 3-4</a><br>
  沒有出現的話就點擊 <strong> <code>控制台</code> </strong> :<br>
-<img src="win-search-control.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="win-search-control.png" alt=""></p>
 </li>
 <li>
 <p>點選「<strong> <code>硬體與音效</code> </strong>」<br>
-<img src="control.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="control.png" alt=""></p>
 </li>
 <li>
 <p>點選「<strong> <code>電源選項</code> </strong>」<br>
-<img src="control-hardware-and-printer.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="control-hardware-and-printer.png" alt=""></p>
 </li>
 <li>
 <h4 id="有出現電源選項直接跳至這裡"><a class="markdownIt-Anchor" href="#有出現電源選項直接跳至這裡">#</a> 有出現電源選項直接跳至這裡</h4>
@@ -3040,7 +3040,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </ol>
 <p>在這裡就可以看到下方出現「<strong> <code>終極效能</code> </strong>」的選項了！直接選取即可。<br>
 (ps. 如果沒出現選項，那可能是被隱藏了，請點選右方按鈕)<br>
-<img src="battery-option.png" alt=""></p>
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="battery-option.png" alt=""></p>
 <hr>
 <h2 id="完成"><a class="markdownIt-Anchor" href="#完成">#</a> 完成</h2>
 <p>這麼一來就完成了！<br>
@@ -3059,7 +3059,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
     <url>/2020/01/19/XD-XVideosDownloader/</url>
     <content><![CDATA[<p>相信許多老司機對「<em><strong>Xvideos.com</strong></em>」這個網站應該不陌生，此專案「<strong>XD</strong>」全名為「<strong>Xvideos Downloader</strong>」，顧名思義就是下載 Xvideos 影片用的程式 (不需擁有 Xvideos 帳號)。同時，這也是我第一個 Python 專案。</p>
 <span id="more"></span>
-<img src="/2020/01/19/XD-XVideosDownloader/title.png" class="" title="Thank icon designer - mikicon for made the logo">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/01/19/XD-XVideosDownloader/title.png" class="" title="Thank icon designer - mikicon for made the logo">
 <hr>
 <h3 id="前言-初次接觸python"><a class="markdownIt-Anchor" href="#前言-初次接觸python">#</a> 前言 (初次接觸 Python)</h3>
 <p>近期突然想玩玩看<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E7%88%AC%E8%9F%B2"><strong>爬蟲 (Crawler)</strong></a>，也在此刻才開始接觸腳本語言 - <a href="https://zh.wikipedia.org/wiki/Python"><strong>Python (蟒蛇)</strong></a>。<br>
@@ -3070,7 +3070,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <hr>
 <h3 id="題材選擇-為什麼是xvideos"><a class="markdownIt-Anchor" href="#題材選擇-為什麼是xvideos">#</a> 題材選擇 (為什麼是 Xvideos？)</h3>
 <div style="width:50%; margin:auto;">
-<img src="/2020/01/19/XD-XVideosDownloader/xvideos_logo.png" class="" title="Xvideos logo">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/01/19/XD-XVideosDownloader/xvideos_logo.png" class="" title="Xvideos logo">
 </div>
 雖然說下定決心要學習並製作個爬蟲小工具，但我這是屬於為了「學」而「做」，而不像一般專案一樣，先有「目的」再來「做」跟「學」，所以我很煩惱...要爬什麼呢？
 我的理想是，這個專案必須是符合大眾族群，而不是單純針對工程師或者資訊領域的人，我也會希望當我把成品分享給身邊朋友們時，他們是感興趣的。
@@ -3113,7 +3113,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
     <url>/2020/09/04/XMPP/</url>
     <content><![CDATA[<p><strong>駭客猖獗</strong>的網絡世界，<strong>匿名</strong>、<strong>安全</strong>成了<strong>通訊</strong>不可或缺的必要條件！本文將為你介紹安全性極高的協定 - 「 <strong>XMPP</strong> 」</p>
 <span id="more"></span>
-<img src="/2020/09/04/XMPP/cover.jpg" class="">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/09/04/XMPP/cover.jpg" class="">
 <hr>
 <h3 id="xmpp-是什麼"><a class="markdownIt-Anchor" href="#xmpp-是什麼">#</a> XMPP 是什麼？</h3>
 <p>「 <strong>XMPP</strong> 」全名「 <strong>Extensible Messaging and Presence Protocol</strong> 」，中譯「 <strong>可延伸訊息與存在協定</strong> 」，前稱為「 <strong>Jabber</strong> 」，是一種基於 <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F"><strong>TCP/IP</strong></a> 且為<a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6"><strong>開源</strong></a>形式組織產生的<strong>網路即時通信協定</strong>，而<strong>非</strong>應用程式。</p>
@@ -3184,7 +3184,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <h3 id="何為-hacker-駭客"><a class="markdownIt-Anchor" href="#何為-hacker-駭客">#</a> 何為 <strong>Hacker (駭客)</strong> ？</h3>
 <p>實際上「<strong>駭客</strong>」所指的意思僅僅是「<strong>對計算機知識有著高度理解力的人</strong>」，屬於<strong>正向</strong>名詞。也就是說，駭客其實是包含著<strong>正義</strong>與<strong>邪惡</strong>的，我們通常習慣用各種顏色的「<strong>帽子</strong>」來稱呼：</p>
 <blockquote>
-<p><img src="hat-black.png" alt="Black Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-black.png" alt="Black Hat" width="30%"></p>
 <ul>
 <li><strong>Black Hat (黑帽)</strong>
 <ul>
@@ -3193,7 +3193,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 <hr>
-<p><img src="hat-white.png" alt="White Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-white.png" alt="White Hat" width="30%"></p>
 <ul>
 <li><strong>White Hat (白帽)</strong>
 <ul>
@@ -3202,7 +3202,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 <hr>
-<p><img src="hat-gray.png" alt="Gray Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-gray.png" alt="Gray Hat" width="30%"></p>
 <ul>
 <li><strong>Gray Hat (灰帽)</strong>
 <ul>
@@ -3214,7 +3214,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </blockquote>
 <p>如果還要再細分，那麼還可以分成：</p>
 <blockquote>
-<p><img src="hat-red.png" alt="Red Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-red.png" alt="Red Hat" width="30%"></p>
 <ul>
 <li><strong>Red Hat (紅帽)</strong>
 <ul>
@@ -3223,7 +3223,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 <hr>
-<p><img src="hat-blue.png" alt="Blue Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-blue.png" alt="Blue Hat" width="30%"></p>
 <ul>
 <li><strong>Blue Hat (藍帽)</strong>
 <ul>
@@ -3232,7 +3232,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 <hr>
-<p><img src="hat-green.png" alt="Green Hat" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-green.png" alt="Green Hat" width="30%"></p>
 <ul>
 <li><strong>Green Hat (綠帽)</strong>
 <ul>
@@ -3244,7 +3244,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <hr>
 <h3 id="其他分類"><a class="markdownIt-Anchor" href="#其他分類">#</a> 其他分類</h3>
 <blockquote>
-<p><img src="cracker.webp" alt="Cracker" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="cracker.webp" alt="Cracker" width="30%"></p>
 <ul>
 <li><strong>Cracker (劊客)</strong>
 <ul>
@@ -3253,7 +3253,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 <hr>
-<p><img src="hat-script-kiddie.png" alt="Script Kiddie" width="30%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="hat-script-kiddie.png" alt="Script Kiddie" width="30%"></p>
 <ul>
 <li><strong>Script-Kiddie (腳本小子)</strong>
 <ul>
@@ -3412,7 +3412,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <h3 id="雙縫實驗-double-slit-experiment"><a class="markdownIt-Anchor" href="#雙縫實驗-double-slit-experiment">#</a> 雙縫實驗 (Double-Slit Experiment)</h3>
 <p>下圖是雙縫實驗的示意圖 (來源 - <a href="https://zh.wikipedia.org/wiki/File:2slits_quantum.jpg">Wiki 維基百科</a>)。<br>
 在圖中可以看到將光打入一塊含有兩條縫隙的隔板中時，另一端會因為光源從兩個縫隙中跑出而分開，形成兩個分裂的光，並且在兩個光波互相干擾的情況下，牆上印照出數條明暗不一的光條。</p>
-<p><img src="2slits_quantum.jpg" alt="" title="雙縫實驗示意圖 - From Wiki" width="85%"></p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="2slits_quantum.jpg" alt="" title="雙縫實驗示意圖 - From Wiki" width="85%"></p>
 <hr>
 <h3 id="使用-單粒子-進行-雙縫實驗-double-slit-experiment"><a class="markdownIt-Anchor" href="#使用-單粒子-進行-雙縫實驗-double-slit-experiment">#</a> 使用「 <strong>單粒子</strong> 」進行「 <strong>雙縫實驗 (Double-Slit Experiment)</strong> 」</h3>
 <p>我們知道「 <strong>光</strong> 」是由「 <strong>光子</strong> 」所組成，而光子是不可再被分割的。<br>
@@ -3486,7 +3486,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/02/04/Anonymous/Anonymous_at_Scientology_in_Los_Angeles.jpg" class="" title="圖源自Wiki，出現在公眾場合的匿名者，戴著流行於漫畫書和電影《V怪客》的面具。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/04/Anonymous/Anonymous_at_Scientology_in_Los_Angeles.jpg" class="" title="圖源自Wiki，出現在公眾場合的匿名者，戴著流行於漫畫書和電影《V怪客》的面具。">
 <blockquote>
 <ul>
 <li><strong>Anonymous Logo</strong>
@@ -3496,7 +3496,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 </li>
 </ul>
 </blockquote>
-<img src="/2020/02/04/Anonymous/Anonymous_Flag.svg" class="" title="圖源自Wiki，這標誌傳達與匿名者相關的象徵意義。「無頭西裝」意象代表無領袖抵抗和匿名。">
+<img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/2020/02/04/Anonymous/Anonymous_Flag.svg" class="" title="圖源自Wiki，這標誌傳達與匿名者相關的象徵意義。「無頭西裝」意象代表無領袖抵抗和匿名。">
 <blockquote>
 <ul>
 <li><strong>象徵台詞</strong>
