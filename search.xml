@@ -3609,7 +3609,7 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 <blockquote>
 <h3 id="unicode-utf"><a class="markdownIt-Anchor" href="#unicode-utf">#</a> Unicode (UTF)</h3>
 <p>「 <code>Unicode</code> 」簡稱「 <code>UTF</code> 」又稱「 <code>萬國碼</code> 、 <code>統一碼</code> 」，是一種被大家公認的標準編碼。<br>
-它最大的優點在於，該編碼納入了世界上大部分的文字系統，也就是將那些 <code>雜亂的編碼</code> 給 <code>統整</code> 了，所以其實它其實是一種「 <code>編碼集</code> 」，這也就使得計算機能夠更簡單方便的呈現和處理文字。</p>
+它最大的優點在於，該編碼納入了世界上大部分的文字系統，也就是將那些 <code>雜亂的編碼</code> 給 <code>統整</code> 了，所以其實它是一種「 <code>編碼集</code> 」，這也就使得計算機能夠更簡單方便的呈現和處理文字。</p>
 </blockquote>
 <p>說了這麼多，你可能已經發現，<strong>名詞</strong>「 <code>Encode (編碼)</code> 」其實就只是在指 <code>資料的格式</code> ，放在<strong>動詞</strong>上解釋就只是 <code>轉換資料格式的過程</code> 。因此，編碼僅僅只是將<strong>文字轉換成不同格式</strong>做儲存、顯示等，並<strong>無</strong>實質上的<strong>安全作用</strong>。</p>
 <hr>
