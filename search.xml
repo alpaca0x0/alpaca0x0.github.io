@@ -3700,12 +3700,12 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 <p>雜湊也並非無敵，它只是盡量的避免了原文被修改成其他 <code>有意義的內容</code> ，藉此達到降低被欺騙的可能而已。<br>
 有些網站標榜能破解 Hash (雜湊)，那其實是利用大數據來進行「 <code>暴力攻擊 (Brute-force attack)</code>  又稱 <a href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB"> <code>窮舉攻擊 (Exhaustive attack)</code> </a> 或  <code>爆破</code> 」或者「<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8"> <code>彩虹表 (Rainbow Table)</code> </a>」。</p>
 <ul>
-<li>暴力破解 (Brute-force attack)<br>
- 暴力破解其實就是以「 <code>窮舉</code> 」的方式來找出該雜湊值對應的明文，因此需要嘗試許多種的可能性，也非常耗時，通常<strong>不</strong>太會真正的<strong>窮舉</strong>，畢竟可能性太多了。<br>
+<li>暴力攻擊 (Brute-force attack)<br>
+ 暴力攻擊其實就是以「 <code>窮舉</code> 」的方式來找出該雜湊值對應的明文，因此需要嘗試許多種的可能性，也非常耗時，通常<strong>不</strong>太會真正的<strong>窮舉</strong>，畢竟可能性太多了。<br>
 假設我們是要利用該方法來找出某一串「 <code>已知是人工輸入的密碼的雜湊值</code> 」的明文，那只要我們可以 <code>收集許多常見密碼的列表</code> ，就可以使用這些列表來嘗試，萬一該密碼有在列表中，就可以<strong>成功找到比對一致的結果</strong>。而這種方式依賴的那個 <code>裝著許多待比對的字串的檔案</code> 我們稱它為「 <code>字典檔</code> 」。<br>
 將字典檔中的各項可能結果使用腳本或特定程式一個個的雜湊後，再去比對是否有與欲破解的雜湊值有相符結果，若沒有則繼續嘗試下一筆資料，若成功批配，則表示該項就是 (幾乎是) 該雜湊值的原文，同時我們也稱這種雜湊過後得出相同值的狀況為「 <code>發生碰撞</code> 」。</li>
 <li>彩虹表 (Rainbow Table)<br>
- 嚴格來說也算是一種暴力破解的方式，但在某些時候效率比暴力破解更高。<br>
+ 嚴格來說也算是一種暴力攻擊的方式，但在某些時候效率比暴力攻擊更高。<br>
 通常是指將雜湊的公式 <code>逆向運算回推</code> 所預先計算好的表。在密碼學打滾的人一定都知道這個！<br>
 關於彩虹表的原理解釋相對較複雜，簡單來說就是…
 <blockquote>
