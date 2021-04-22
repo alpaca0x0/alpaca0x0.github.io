@@ -3697,17 +3697,17 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
 <p>萬一駭客 <code>更改了檔案</code> ，則無法通過該文檔的  <code>Hash (雜湊)</code>  驗證，若駭客連該文檔一起修改，將 <code>檔案對應的雜湊值</code> 也更改了，但由於駭客 <code>沒有官方所釋出的公鑰所對應的私鑰</code> ，因此也 <code>無法對修改後的訊息進行官方簽章</code> 。</p>
 <hr>
 <h2 id="hash-雜湊-其實可以被破解"><a class="markdownIt-Anchor" href="#hash-雜湊-其實可以被破解">#</a> Hash (雜湊) 其實可以被破解？</h2>
-<p>雜湊也並非無敵，它只是盡量的避免了原文被修改成有其他 <code>有意義的內容</code> ，藉此達到降低被欺騙的可能而已。<br>
-有些網站標榜能破解 Hash (雜湊)，那其實是利用大數據來進行「 <code>暴力破解 (Brute-force attack)</code>  又稱 <a href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB"> <code>窮舉攻擊 (Exhaustive attack)</code> </a>」或者「<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8"> <code>彩虹表 (Rainbow Table)</code> </a>」。</p>
+<p>雜湊也並非無敵，它只是盡量的避免了原文被修改成其他 <code>有意義的內容</code> ，藉此達到降低被欺騙的可能而已。<br>
+有些網站標榜能破解 Hash (雜湊)，那其實是利用大數據來進行「 <code>暴力攻擊 (Brute-force attack)</code>  又稱 <a href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB"> <code>窮舉攻擊 (Exhaustive attack)</code> </a> 或  <code>爆破</code> 」或者「<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8"> <code>彩虹表 (Rainbow Table)</code> </a>」。</p>
 <ul>
 <li>暴力破解 (Brute-force attack)<br>
  暴力破解其實就是以「 <code>窮舉</code> 」的方式來找出該雜湊值對應的明文，因此需要嘗試許多種的可能性，也非常耗時，通常<strong>不</strong>太會真正的<strong>窮舉</strong>，畢竟可能性太多了。<br>
 假設我們是要利用該方法來找出某一串「 <code>已知是人工輸入的密碼的雜湊值</code> 」的明文，那只要我們可以 <code>收集許多常見密碼的列表</code> ，就可以使用這些列表來嘗試，萬一該密碼有在列表中，就可以<strong>成功找到比對一致的結果</strong>。而這種方式依賴的那個 <code>裝著許多待比對的字串的檔案</code> 我們稱它為「 <code>字典檔</code> 」。<br>
-將字典檔中的各項可能結果使用腳本或特定程式一個個的雜湊後，再去比對是否有與欲破解的雜湊值有相符結果，若沒有則繼續嘗試下一筆資料，若成功批配，則表示該項就是 (幾乎是) 該雜湊值的原文，同時我們也稱這兩筆資料「 <code>發生碰撞</code> 」。</li>
+將字典檔中的各項可能結果使用腳本或特定程式一個個的雜湊後，再去比對是否有與欲破解的雜湊值有相符結果，若沒有則繼續嘗試下一筆資料，若成功批配，則表示該項就是 (幾乎是) 該雜湊值的原文，同時我們也稱這種雜湊過後得出相同值的狀況為「 <code>發生碰撞</code> 」。</li>
 <li>彩虹表 (Rainbow Table)<br>
  嚴格來說也算是一種暴力破解的方式，但在某些時候效率比暴力破解更高。<br>
 通常是指將雜湊的公式 <code>逆向運算回推</code> 所預先計算好的表。在密碼學打滾的人一定都知道這個！<br>
-關於彩虹表的原理解釋將對較複雜，簡單來說就是…
+關於彩虹表的原理解釋相對較複雜，簡單來說就是…
 <blockquote>
 <p>假設原本的雜湊函式為  <code>H</code> ，則創建一個與其對應的相反函式  <code>R</code>  又稱「 <code>歸約函式 (Reduction function)</code> 」。函式  <code>R</code>  可以將利用函式  <code>H</code>  所計算出的雜湊值反算回 <code>與原本格式類似的亂碼</code> ，這裡也可以理解成是將這 <code>雜湊值</code>  Hash 成  <code>新雜湊值</code> ，而這個 <code>新雜湊值</code> 格式是 <code>類似原文的格式</code> 。就這樣持續的經過  <code>R 運算</code> 、 <code>H 運算</code> 、 <code>R 運算</code> 、 <code>H 運算</code> … 形成了一條很長的鏈，由於這條鏈的結果是必然的，因此只需要對該鏈的 <code>初始節點</code> 及 <code>末端節點</code> 儲存即可。<br>
 假設原文為「 <code>aaaaaa</code> 」在經過  <code>H 運算</code>  之後雜湊值為「 <code>281DAF40</code> 」，則我們將該雜湊值用  <code>R 運算</code>  得出一個反雜湊值為「 <code>sgfnyd</code> 」之後再進行一次  <code>H 運算</code>  得出「 <code>920ECF10</code> 」再進行  <code>R 運算</code>  得出「 <code>kiebgt</code> 」，之後將這條鏈存入表中 (只存頭尾節點)。過程如下圖：</p>
