@@ -58,6 +58,108 @@ he is best known to the general public for his mass–energy equivalence formula
       </categories>
   </entry>
   <entry>
+    <title>CTF 競賽是什麼？</title>
+    <url>/2020/10/20/CTF/</url>
+    <content><![CDATA[<p>你是否聽過那讓<strong>駭客</strong>及<strong>資安人員</strong>都<strong>熱血沸騰</strong>的<strong> CTF</strong> 競賽</p>
+<span id="more"></span>
+<hr>
+<h3 id="ctf-capture-the-flag">CTF (Capture The Flag)</h3>
+<p><strong>CTF</strong> 全名 <strong>Capture The Flag</strong>，又稱<strong>奪旗賽</strong>，起源於 <strong>1996</strong> 年 <strong>DEFCON 世界駭客大賽</strong>，是一種基於<strong>網絡安全</strong>技術下的競技項目。<br>
+該競技主要玩家多半為<strong>網絡安全技術人員</strong>、<strong>駭客</strong>等擁有對計算機安全相關知識感興趣的人。</p>
+<hr>
+<h3 id="ctf-都在做些什麼">CTF 都在做些什麼？</h3>
+<p>如同名稱一般，是一種<strong>奪旗纇競賽</strong>。雙方或多方玩家需要拿下對手的「旗子」，率先奪旗成功方即獲勝 (不同賽式規則不同，但大同小異)。</p>
+<p>這個「<strong>旗子</strong>」通常是一串<strong>亂數</strong>或<strong>不易被猜中的文字</strong>。<br>
+你必須<strong>保護</strong>好自己隊伍的旗子以防被對手竊取，同時想辦法<strong>獲得</strong>對手的旗子，這其實有點像駭客在攻擊目標的模擬情境，其競賽目的意在「提升自我的<strong>網絡安全意識</strong>及學習如何<strong>保護自己的計算機不被駭客攻擊</strong>」。</p>
+<p>畢竟，要<strong>預防駭客</strong>，那麼你就得懂<strong>駭客的思路</strong>，若要深入的了解，「<strong>成為</strong>」是最有效的方法之一。</p>
+<p>CTF 的題目非常多元，有著眾多的領域及複雜的內容，不論是<strong>密碼學</strong>、<strong>數學</strong>、<strong>軟體工具應用</strong>及各種<strong>計算機知識</strong>都是 CTF 的家常便飯。</p>
+]]></content>
+      <categories>
+        <category>Popular-Science (科普)</category>
+      </categories>
+      <tags>
+        <tag>Cyber Security (網絡安全)</tag>
+        <tag>Hacker (駭客)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cicada 3301 (蟬 3301)｜一個至今仍充滿謎團的神秘組織</title>
+    <url>/2020/02/05/Cicada3301/</url>
+    <content><![CDATA[<p><strong>2012 年</strong> 初，「 <strong>Cicada 3301</strong> 」的名聲開始傳開，而該神秘組織招收高智商成員的背後到底有什麼陰謀？</p>
+<span id="more"></span>
+<img src="/2020/02/05/Cicada3301/title.jpg" class="" title="取自網絡，Cicada 3301 留下的訊息。">
+<hr>
+<h3 id="前言">前言</h3>
+<p>如果你並不是資訊領域的人，也不是<a href="https://zh.wikipedia.org/wiki/%E9%83%BD%E5%B8%82%E5%82%B3%E8%AA%AA"><strong>都市傳說</strong></a>或<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>的愛好者，那你可能沒聽過「 <strong>Cicada 3301</strong> 」。關於該組織的資訊量少之又少，不少人想盡各種方法要撈出他們的資訊，但結果總是徒勞。</p>
+<p>以下，本文帶你一探這神秘組織的過去。</p>
+<p>另外，在此聲明一點：<br>
+<strong>以下所展示的圖片，大多源自網絡上流傳，並非原圖，所以長寬及內容可能與原圖有些落差。</strong></p>
+<hr>
+<h3 id="起源">起源</h3>
+<p><strong>2012 年 1 月 4 日</strong>，知名的美國貼圖論壇「<a href="https://zh.wikipedia.org/wiki/4chan"><strong>4chan</strong></a>」上，有個自稱「 <strong>3301</strong> 」的人張貼了如下圖的貼文，一張檔名為「 <strong>final.jpg</strong> 」的圖片，裡面寫著黑底白字的訊息，其內容為：<br>
+「 <strong>Hello. We are looking for highly intelligent individuals. To find them, we have devised a test.There is a message hidden in the image.Find it, and it will lead you on the road to finding us. We look forward to meeting the few that will make it all the wat through. - 3301<br><em>(哈囉，我們正在尋找擁有高智商的人。為了找到這些人，我們設計了一道測試題。這張圖中隱藏著一個訊息。找到它，它將會帶領你找到我們。我們期待與這些少數人見面。祝你好運。 - 3301)</em></strong> 」。</p>
+<img src="/2020/02/05/Cicada3301/first_post.jpg" class="" title="Cicada 3301在4Chan留下了第一則訊息。">
+<p>當你將該圖片使用文字編輯器開啟後，便能在最下方找到隱藏的訊息「 <strong>TIBERIVS CLAVDIVS CAESAR says “lxxt&gt;33m2mqkyv2gsq3q=w]02ntk”</strong> 」，許多有稍微聽聞過密碼學的網友看到了「 <strong>CAESAR</strong> 」應該都會直接想到「<a href="https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC"><strong>Caesar Cipher (凱薩密碼)</strong></a>」，將該訊息中的亂碼「 <strong>lxxt&gt;33m2mqkyv2gsq3q=w]02ntk</strong> 」對照 <a href="https://zh.wikipedia.org/wiki/ASCII"><strong>ASCII Code (美國資訊交換標準代碼)</strong></a> 後透過 <strong>Caesar Cipher (凱薩密碼)</strong> 便可推回網址「 <strong>http://i.imgur.com/m9sYK.jpg</strong> 」，網址導向到了一張以「<a href="https://zh.wikipedia.org/wiki/JPEG"><strong>JPG</strong></a>」為副檔名的圖片 (如下圖)。其內容為：<br>
+「 <em><strong>WOOPS, Just decoys this way.Looks Like you can’t guess how to get the message out. (噢！這是個圈套。看起來你好像無法找到訊息囉。</strong></em>」</p>
+<img src="/2020/02/05/Cicada3301/01.jpg" class="" title="圖片中隱藏的網址所導向的圖片。可愛鴨子 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
+<p>該訊息讓人覺得自己找錯位置了，當時不少人在這邊卡關，總是不斷回頭尋找線索，然而其實該訊息真正在暗示你的是兩個單字「 <strong>Guess</strong> 」、「 <strong>Out</strong> 」，這兩個單字剛好可以組成一個有名的加密軟體的名稱「<a href="https://en.wikipedia.org/wiki/OutGuess"><strong>OutGuess</strong></a>」。<br>
+果不其然，當該圖片經過 OutGuess 解密後，解出了一段訊息：<br>
+「 <em><strong>Here is a book code. To find the book, and more information, go to http://www.reddit.com/r/a2e7j6ic78h0j/. 1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1. (這是 Book code。找到書，及更多資訊，訪問 http://www.reddit.com/r/a2e7j6ic78h0j/。1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1)</strong></em> 」</p>
+<p>訪問內容中的網址「 <strong>http://www.reddit.com/r/a2e7j6ic78h0j/</strong> 」後，可以看到一堆亂碼：</p>
+<img src="/2020/02/05/Cicada3301/02.png" class="" title="reddit.com">
+<p>其中，除了亂碼外，還可以找到如下兩張圖。而這兩張圖再經過 OutGuess 解密後會出現兩則訊息，該訊息大致上是提供了「<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86"><strong>非對稱加密</strong></a>」的公鑰給各位，至於原理，在這邊怕離題就不贅述，總之你可以理解成，3301 表示將在未來使用 「 <strong>Private Key (私鑰)</strong> 」加密訊息，大家則可以使用這個訊息內所公佈的「 <strong>Public Key (公鑰)</strong> 」進行解密，進而得知 3301 所想傳達的訊息。有了這樣的機制，就不怕網路上有人偽造 3301 發送假的訊息了。(PS：該公鑰 PGP ID 為：<strong>7A35090F</strong>)</p>
+<p>有興趣了解<strong>非對稱加密</strong>的朋友可以看另一篇我的文章「<a href="../../16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)"><strong>Public-key Cryptography (非對稱加密)</strong></a>」。</p>
+<img src="/2020/02/05/Cicada3301/03.jpg" class="" title="reddit.com">
+<img src="/2020/02/05/Cicada3301/04.jpg" class="" title="reddit.com">
+<p>故事到了這邊聲明下，由於<strong>解密過程並非本文重點</strong>，前面只是為了讓讀者了解解密過程大約是什麼感覺，之後的過程我就隨意帶過，有興趣的可以上網搜尋相關資訊，目前 3301 所釋出的題目大致上都已經有解答出現在網絡上囉。</p>
+<p>總之在經過各道題目解密後，最後引導你打向一通電話，電話的另一頭是一段錄音，其內容為：<br>
+「 <em><strong>Very good. You have done well. There are three prime numbers associated with the original final.jpg image. 3301 is one of them. You will have to find the other two. Multiply all three of these numbers together and add a 「.com」 to find the next step. Good luck. Goodbye.<br>
+(很好，你做的非常好。有三個質數與原始的 final.jpg 圖片相關。「3301」是其中一個。你必須找到其他兩個。將三個數字相乘，然後加上「.com」來進到下一步，祝你好運，再見。)</strong></em> 」</p>
+<p>在原始的那張訊息圖片，其寬為<strong> 503 px</strong>，高為<strong> 509 px</strong>，「503」、「509」皆為質數，與 3301 相乘後，得出「 <strong>845145127</strong> 」，加上「 <strong>.com</strong> 」後訪問該網址，會看到一個像是「 <strong>蟬</strong> 」的圖片，並且下方有個倒數計時器，該圖片再使用 OutGuess 解密後，得出的訊息表示，你需要在 <strong>1 月 9 日 17:00</strong> 再次回來查看。</p>
+<img src="/2020/02/05/Cicada3301/ps_01.jpeg" class="" width="3301">
+<hr>
+<p><strong>2012 年 1 月 9 日 17:00</strong>，倒數計時結束，網頁顯示出了<strong> 14</strong> 個座標，這些座標分散至<strong> 5</strong> 個國家，實際到了這些座標點後，會看到如下方圖片這樣的紙被張貼在電線杆上：</p>
+<img src="/2020/02/05/Cicada3301/05.jpg" class="" width="3301">
+<img src="/2020/02/05/Cicada3301/06.jpg" class="" width="3301">
+<img src="/2020/02/05/Cicada3301/07.jpg" class="" width="3301">
+<img src="/2020/02/05/Cicada3301/08.jpg" class="" width="3301">
+<p>掃描圖上的 <a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E7%B6%AD%E7%A2%BC"><strong>二維碼</strong></a> 後，就來到了最後一步，解密後得出了一道網址「 <strong>sq6wmgv2zcsrix6t.onion</strong> 」，該網址屬於暗網網址，需要使用如「<a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E7%BD%91"><strong>Tor Browser (洋蔥瀏覽器)</strong></a>」等特殊瀏覽器來進行訪問，在大家迫不及待的訪問該位址後，網站上卻只有一句話：「 <em><strong>We want the best, not the followers. (我們只要最好，而不是跟風的人。)</strong></em> 」，這邊或許可以理解成，他們只想要前幾個甚至僅僅是第一個訪問該網址的人，要的是最快解出測試題的人。</p>
+<p>直至一個月後，3301 傳出一道如下圖的訊息，內容為：<br>
+「 <em><strong>Hello. We have now found the individuals we sought. Thus our month-long iourney ends. For now. Thank you for your dedication and effort. If you were unable to complete the test, or did not receive an emailm do not despair. There will be more opportunities like this one. Thank you all. - 3301<br>
+P.S. 1041279065871998535982789873959431895640\442510695567564373922695237268242385295908173\9834390370374475764863415203423499357108713631</strong></em> 」。</p>
+<p>其意思大約是「 <strong>哈囉。我們已經找到我們要的人了。我們長達一個月的旅程結束了。現在。感謝你的奉獻與努力。如果你沒完成測試，或者沒有收到電子郵件，請不要失望。會有更多像這樣的機會的。謝謝你們。 - 3301</strong> 」。</p>
+<img src="/2020/02/05/Cicada3301/end_post.jpg" class="" width="3301">
+<hr>
+<p>事情看似告一段落，然而就在隔年…</p>
+<p><strong>2013 年 1 月 4 日</strong>，3301 傳出又要招募的消息，以和去年一樣的方式釋出各種題目。</p>
+<p><strong>2014 年 1 月 4 日</strong>，同樣的釋出招募消息及題目，但這次釋出題目的平台改成了 <a href="https://zh.wikipedia.org/wiki/Twitter"><strong>Twitter (推特)</strong></a> 。(<a href="https://twitter.com/1231507051321" title="Cicada 3301 Twitter帳戶"><strong>@1231507051321</strong></a>)，並且題目指向了一本由他們自己所寫的書，書中內容看似「<a href="https://zh.wikipedia.org/wiki/%E7%9B%A7%E6%81%A9%E5%AD%97%E6%AF%8D"><strong>盧恩字母</strong></a>」，也再次引起各領域的好手注意，但可惜的是，這次真的考倒大家了…</p>
+<p>關於 2014 年那本書所釋出的題目，至今僅被解出一小部份，此後，網絡上就再也沒看到 3301 所發出的消息了，或許是在等待著那本書被解密的一天吧。</p>
+<hr>
+<h3 id="形象">形象</h3>
+<p>「 <strong>Cicada 3301</strong> 」的形象為下圖，一個長得很像「 <strong>蛾</strong> 」的圖案，但「 <strong>Cicada</strong> 」是「 <strong>蟬</strong> 」的意思，所以推測該圖應該是指蟬。<br>
+由於官方並沒有出面說明，所以至於為什麼是「 <strong>蟬</strong> 」，又為什麼是「 <strong>3301</strong> 」，目前無法得知。</p>
+<img src="/2020/02/05/Cicada3301/logo.jpg" class="" width="3301">
+<hr>
+<h3 id="目的">目的</h3>
+<p>釋出的訊息中指出，要找「 <strong>高智商</strong> 」的人，但該組織所找的人不僅僅是「高 <a href="https://zh.wikipedia.org/wiki/%E6%99%BA%E5%95%86"><strong>IQ (智商)</strong></a>」，因為在之後的許多測試中，題目不只 <a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6"><strong>數學</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>，還有包含像是 <a href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E6%A8%82%E7%90%86%E8%AB%96"><strong>樂理</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%8E%86%E5%8F%B2"><strong>歷史</strong></a> 等多方面的知識，如果單純只是要找聰明人，那為何還要要求要一堆藝術相關的知識？</p>
+<p>有人開始猜測，這可能是<strong>政府相關的機構</strong>在招收人才，如 <a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80"><strong>NSA (美國國安局)</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%A4%AE%E6%83%85%E6%8A%A5%E5%B1%80"><strong>CIA (中央情報局)</strong></a> 等，用於<strong>國家的祕密用途</strong>，也有人表示，這可能是 <strong>Google</strong> 之類的大企業招收人才的手段，甚至在<a href="https://zh.wikipedia.org/wiki/%E9%99%B0%E8%AC%80%E8%AB%96"><strong>陰謀論</strong></a>的愛好者中也有人在討論，說這是來自<strong>恐怖份子</strong>的招募。</p>
+<p>由於官方並無透漏任何相關說明，<br>
+<strong>該組織的目的到目前為止還是個問號。</strong></p>
+<hr>
+<h3 id="疑惑">疑惑（？</h3>
+<p>看完上述的故事後，本人有個非常大的疑惑，我也在網上看到許多人提出相同的疑問，在此提出給大家思考看看：</p>
+<p>首先，前面經過這一大堆的測試，而最後卻僅僅是在路邊掃個 QR Code 就結束了！？ 這點很明顯是有問題的吧…<br>
+ 不過畢竟是網路流傳的訊息，多少被經過修改，就不糾結這個問題了，大家看看就好。</p>
+]]></content>
+      <categories>
+        <category>Information (資訊分享)</category>
+      </categories>
+      <tags>
+        <tag>Cicada3301</tag>
+        <tag>Cryptography (密碼學)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>菸 (Cigarette) 的種類介紹</title>
     <url>/2020/02/28/Cigarette/</url>
     <content><![CDATA[<p>「如有相關疑問，可撥打國軍菸害暨檳榔防制專線 <strong>0800-580791</strong> 或至各國軍醫院接受戒治服務。」</p>
@@ -190,108 +292,6 @@ he is best known to the general public for his mass–energy equivalence formula
       </categories>
   </entry>
   <entry>
-    <title>CTF 競賽是什麼？</title>
-    <url>/2020/10/20/CTF/</url>
-    <content><![CDATA[<p>你是否聽過那讓<strong>駭客</strong>及<strong>資安人員</strong>都<strong>熱血沸騰</strong>的<strong> CTF</strong> 競賽</p>
-<span id="more"></span>
-<hr>
-<h3 id="ctf-capture-the-flag">CTF (Capture The Flag)</h3>
-<p><strong>CTF</strong> 全名 <strong>Capture The Flag</strong>，又稱<strong>奪旗賽</strong>，起源於 <strong>1996</strong> 年 <strong>DEFCON 世界駭客大賽</strong>，是一種基於<strong>網絡安全</strong>技術下的競技項目。<br>
-該競技主要玩家多半為<strong>網絡安全技術人員</strong>、<strong>駭客</strong>等擁有對計算機安全相關知識感興趣的人。</p>
-<hr>
-<h3 id="ctf-都在做些什麼">CTF 都在做些什麼？</h3>
-<p>如同名稱一般，是一種<strong>奪旗纇競賽</strong>。雙方或多方玩家需要拿下對手的「旗子」，率先奪旗成功方即獲勝 (不同賽式規則不同，但大同小異)。</p>
-<p>這個「<strong>旗子</strong>」通常是一串<strong>亂數</strong>或<strong>不易被猜中的文字</strong>。<br>
-你必須<strong>保護</strong>好自己隊伍的旗子以防被對手竊取，同時想辦法<strong>獲得</strong>對手的旗子，這其實有點像駭客在攻擊目標的模擬情境，其競賽目的意在「提升自我的<strong>網絡安全意識</strong>及學習如何<strong>保護自己的計算機不被駭客攻擊</strong>」。</p>
-<p>畢竟，要<strong>預防駭客</strong>，那麼你就得懂<strong>駭客的思路</strong>，若要深入的了解，「<strong>成為</strong>」是最有效的方法之一。</p>
-<p>CTF 的題目非常多元，有著眾多的領域及複雜的內容，不論是<strong>密碼學</strong>、<strong>數學</strong>、<strong>軟體工具應用</strong>及各種<strong>計算機知識</strong>都是 CTF 的家常便飯。</p>
-]]></content>
-      <categories>
-        <category>Popular-Science (科普)</category>
-      </categories>
-      <tags>
-        <tag>Cyber Security (網絡安全)</tag>
-        <tag>Hacker (駭客)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cicada 3301 (蟬 3301)｜一個至今仍充滿謎團的神秘組織</title>
-    <url>/2020/02/05/Cicada3301/</url>
-    <content><![CDATA[<p><strong>2012 年</strong> 初，「 <strong>Cicada 3301</strong> 」的名聲開始傳開，而該神秘組織招收高智商成員的背後到底有什麼陰謀？</p>
-<span id="more"></span>
-<img src="/2020/02/05/Cicada3301/title.jpg" class="" title="取自網絡，Cicada 3301 留下的訊息。">
-<hr>
-<h3 id="前言">前言</h3>
-<p>如果你並不是資訊領域的人，也不是<a href="https://zh.wikipedia.org/wiki/%E9%83%BD%E5%B8%82%E5%82%B3%E8%AA%AA"><strong>都市傳說</strong></a>或<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>的愛好者，那你可能沒聽過「 <strong>Cicada 3301</strong> 」。關於該組織的資訊量少之又少，不少人想盡各種方法要撈出他們的資訊，但結果總是徒勞。</p>
-<p>以下，本文帶你一探這神秘組織的過去。</p>
-<p>另外，在此聲明一點：<br>
-<strong>以下所展示的圖片，大多源自網絡上流傳，並非原圖，所以長寬及內容可能與原圖有些落差。</strong></p>
-<hr>
-<h3 id="起源">起源</h3>
-<p><strong>2012 年 1 月 4 日</strong>，知名的美國貼圖論壇「<a href="https://zh.wikipedia.org/wiki/4chan"><strong>4chan</strong></a>」上，有個自稱「 <strong>3301</strong> 」的人張貼了如下圖的貼文，一張檔名為「 <strong>final.jpg</strong> 」的圖片，裡面寫著黑底白字的訊息，其內容為：<br>
-「 <strong>Hello. We are looking for highly intelligent individuals. To find them, we have devised a test.There is a message hidden in the image.Find it, and it will lead you on the road to finding us. We look forward to meeting the few that will make it all the wat through. - 3301<br><em>(哈囉，我們正在尋找擁有高智商的人。為了找到這些人，我們設計了一道測試題。這張圖中隱藏著一個訊息。找到它，它將會帶領你找到我們。我們期待與這些少數人見面。祝你好運。 - 3301)</em></strong> 」。</p>
-<img src="/2020/02/05/Cicada3301/first_post.jpg" class="" title="Cicada 3301在4Chan留下了第一則訊息。">
-<p>當你將該圖片使用文字編輯器開啟後，便能在最下方找到隱藏的訊息「 <strong>TIBERIVS CLAVDIVS CAESAR says “lxxt&gt;33m2mqkyv2gsq3q=w]02ntk”</strong> 」，許多有稍微聽聞過密碼學的網友看到了「 <strong>CAESAR</strong> 」應該都會直接想到「<a href="https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC"><strong>Caesar Cipher (凱薩密碼)</strong></a>」，將該訊息中的亂碼「 <strong>lxxt&gt;33m2mqkyv2gsq3q=w]02ntk</strong> 」對照 <a href="https://zh.wikipedia.org/wiki/ASCII"><strong>ASCII Code (美國資訊交換標準代碼)</strong></a> 後透過 <strong>Caesar Cipher (凱薩密碼)</strong> 便可推回網址「 <strong>http://i.imgur.com/m9sYK.jpg</strong> 」，網址導向到了一張以「<a href="https://zh.wikipedia.org/wiki/JPEG"><strong>JPG</strong></a>」為副檔名的圖片 (如下圖)。其內容為：<br>
-「 <em><strong>WOOPS, Just decoys this way.Looks Like you can’t guess how to get the message out. (噢！這是個圈套。看起來你好像無法找到訊息囉。</strong></em>」</p>
-<img src="/2020/02/05/Cicada3301/01.jpg" class="" title="圖片中隱藏的網址所導向的圖片。可愛鴨子 &#x2F;&#x2F;&#x2F; w &#x2F;&#x2F;&#x2F;">
-<p>該訊息讓人覺得自己找錯位置了，當時不少人在這邊卡關，總是不斷回頭尋找線索，然而其實該訊息真正在暗示你的是兩個單字「 <strong>Guess</strong> 」、「 <strong>Out</strong> 」，這兩個單字剛好可以組成一個有名的加密軟體的名稱「<a href="https://en.wikipedia.org/wiki/OutGuess"><strong>OutGuess</strong></a>」。<br>
-果不其然，當該圖片經過 OutGuess 解密後，解出了一段訊息：<br>
-「 <em><strong>Here is a book code. To find the book, and more information, go to http://www.reddit.com/r/a2e7j6ic78h0j/. 1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1. (這是 Book code。找到書，及更多資訊，訪問 http://www.reddit.com/r/a2e7j6ic78h0j/。1:20, 2:3, 3:5, 4:20, 5:5, 6:53, 7:1)</strong></em> 」</p>
-<p>訪問內容中的網址「 <strong>http://www.reddit.com/r/a2e7j6ic78h0j/</strong> 」後，可以看到一堆亂碼：</p>
-<img src="/2020/02/05/Cicada3301/02.png" class="" title="reddit.com">
-<p>其中，除了亂碼外，還可以找到如下兩張圖。而這兩張圖再經過 OutGuess 解密後會出現兩則訊息，該訊息大致上是提供了「<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86"><strong>非對稱加密</strong></a>」的公鑰給各位，至於原理，在這邊怕離題就不贅述，總之你可以理解成，3301 表示將在未來使用 「 <strong>Private Key (私鑰)</strong> 」加密訊息，大家則可以使用這個訊息內所公佈的「 <strong>Public Key (公鑰)</strong> 」進行解密，進而得知 3301 所想傳達的訊息。有了這樣的機制，就不怕網路上有人偽造 3301 發送假的訊息了。(PS：該公鑰 PGP ID 為：<strong>7A35090F</strong>)</p>
-<p>有興趣了解<strong>非對稱加密</strong>的朋友可以看另一篇我的文章「<a href="../../16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)"><strong>Public-key Cryptography (非對稱加密)</strong></a>」。</p>
-<img src="/2020/02/05/Cicada3301/03.jpg" class="" title="reddit.com">
-<img src="/2020/02/05/Cicada3301/04.jpg" class="" title="reddit.com">
-<p>故事到了這邊聲明下，由於<strong>解密過程並非本文重點</strong>，前面只是為了讓讀者了解解密過程大約是什麼感覺，之後的過程我就隨意帶過，有興趣的可以上網搜尋相關資訊，目前 3301 所釋出的題目大致上都已經有解答出現在網絡上囉。</p>
-<p>總之在經過各道題目解密後，最後引導你打向一通電話，電話的另一頭是一段錄音，其內容為：<br>
-「 <em><strong>Very good. You have done well. There are three prime numbers associated with the original final.jpg image. 3301 is one of them. You will have to find the other two. Multiply all three of these numbers together and add a 「.com」 to find the next step. Good luck. Goodbye.<br>
-(很好，你做的非常好。有三個質數與原始的 final.jpg 圖片相關。「3301」是其中一個。你必須找到其他兩個。將三個數字相乘，然後加上「.com」來進到下一步，祝你好運，再見。)</strong></em> 」</p>
-<p>在原始的那張訊息圖片，其寬為<strong> 503 px</strong>，高為<strong> 509 px</strong>，「503」、「509」皆為質數，與 3301 相乘後，得出「 <strong>845145127</strong> 」，加上「 <strong>.com</strong> 」後訪問該網址，會看到一個像是「 <strong>蟬</strong> 」的圖片，並且下方有個倒數計時器，該圖片再使用 OutGuess 解密後，得出的訊息表示，你需要在 <strong>1 月 9 日 17:00</strong> 再次回來查看。</p>
-<img src="/2020/02/05/Cicada3301/ps_01.jpeg" class="" width="3301">
-<hr>
-<p><strong>2012 年 1 月 9 日 17:00</strong>，倒數計時結束，網頁顯示出了<strong> 14</strong> 個座標，這些座標分散至<strong> 5</strong> 個國家，實際到了這些座標點後，會看到如下方圖片這樣的紙被張貼在電線杆上：</p>
-<img src="/2020/02/05/Cicada3301/05.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/06.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/07.jpg" class="" width="3301">
-<img src="/2020/02/05/Cicada3301/08.jpg" class="" width="3301">
-<p>掃描圖上的 <a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E7%B6%AD%E7%A2%BC"><strong>二維碼</strong></a> 後，就來到了最後一步，解密後得出了一道網址「 <strong>sq6wmgv2zcsrix6t.onion</strong> 」，該網址屬於暗網網址，需要使用如「<a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E7%BD%91"><strong>Tor Browser (洋蔥瀏覽器)</strong></a>」等特殊瀏覽器來進行訪問，在大家迫不及待的訪問該位址後，網站上卻只有一句話：「 <em><strong>We want the best, not the followers. (我們只要最好，而不是跟風的人。)</strong></em> 」，這邊或許可以理解成，他們只想要前幾個甚至僅僅是第一個訪問該網址的人，要的是最快解出測試題的人。</p>
-<p>直至一個月後，3301 傳出一道如下圖的訊息，內容為：<br>
-「 <em><strong>Hello. We have now found the individuals we sought. Thus our month-long iourney ends. For now. Thank you for your dedication and effort. If you were unable to complete the test, or did not receive an emailm do not despair. There will be more opportunities like this one. Thank you all. - 3301<br>
-P.S. 1041279065871998535982789873959431895640\442510695567564373922695237268242385295908173\9834390370374475764863415203423499357108713631</strong></em> 」。</p>
-<p>其意思大約是「 <strong>哈囉。我們已經找到我們要的人了。我們長達一個月的旅程結束了。現在。感謝你的奉獻與努力。如果你沒完成測試，或者沒有收到電子郵件，請不要失望。會有更多像這樣的機會的。謝謝你們。 - 3301</strong> 」。</p>
-<img src="/2020/02/05/Cicada3301/end_post.jpg" class="" width="3301">
-<hr>
-<p>事情看似告一段落，然而就在隔年…</p>
-<p><strong>2013 年 1 月 4 日</strong>，3301 傳出又要招募的消息，以和去年一樣的方式釋出各種題目。</p>
-<p><strong>2014 年 1 月 4 日</strong>，同樣的釋出招募消息及題目，但這次釋出題目的平台改成了 <a href="https://zh.wikipedia.org/wiki/Twitter"><strong>Twitter (推特)</strong></a> 。(<a href="https://twitter.com/1231507051321" title="Cicada 3301 Twitter帳戶"><strong>@1231507051321</strong></a>)，並且題目指向了一本由他們自己所寫的書，書中內容看似「<a href="https://zh.wikipedia.org/wiki/%E7%9B%A7%E6%81%A9%E5%AD%97%E6%AF%8D"><strong>盧恩字母</strong></a>」，也再次引起各領域的好手注意，但可惜的是，這次真的考倒大家了…</p>
-<p>關於 2014 年那本書所釋出的題目，至今僅被解出一小部份，此後，網絡上就再也沒看到 3301 所發出的消息了，或許是在等待著那本書被解密的一天吧。</p>
-<hr>
-<h3 id="形象">形象</h3>
-<p>「 <strong>Cicada 3301</strong> 」的形象為下圖，一個長得很像「 <strong>蛾</strong> 」的圖案，但「 <strong>Cicada</strong> 」是「 <strong>蟬</strong> 」的意思，所以推測該圖應該是指蟬。<br>
-由於官方並沒有出面說明，所以至於為什麼是「 <strong>蟬</strong> 」，又為什麼是「 <strong>3301</strong> 」，目前無法得知。</p>
-<img src="/2020/02/05/Cicada3301/logo.jpg" class="" width="3301">
-<hr>
-<h3 id="目的">目的</h3>
-<p>釋出的訊息中指出，要找「 <strong>高智商</strong> 」的人，但該組織所找的人不僅僅是「高 <a href="https://zh.wikipedia.org/wiki/%E6%99%BA%E5%95%86"><strong>IQ (智商)</strong></a>」，因為在之後的許多測試中，題目不只 <a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6"><strong>數學</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6"><strong>密碼學</strong></a>，還有包含像是 <a href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E6%A8%82%E7%90%86%E8%AB%96"><strong>樂理</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%8E%86%E5%8F%B2"><strong>歷史</strong></a> 等多方面的知識，如果單純只是要找聰明人，那為何還要要求要一堆藝術相關的知識？</p>
-<p>有人開始猜測，這可能是<strong>政府相關的機構</strong>在招收人才，如 <a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80"><strong>NSA (美國國安局)</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%A4%AE%E6%83%85%E6%8A%A5%E5%B1%80"><strong>CIA (中央情報局)</strong></a> 等，用於<strong>國家的祕密用途</strong>，也有人表示，這可能是 <strong>Google</strong> 之類的大企業招收人才的手段，甚至在<a href="https://zh.wikipedia.org/wiki/%E9%99%B0%E8%AC%80%E8%AB%96"><strong>陰謀論</strong></a>的愛好者中也有人在討論，說這是來自<strong>恐怖份子</strong>的招募。</p>
-<p>由於官方並無透漏任何相關說明，<br>
-<strong>該組織的目的到目前為止還是個問號。</strong></p>
-<hr>
-<h3 id="疑惑">疑惑（？</h3>
-<p>看完上述的故事後，本人有個非常大的疑惑，我也在網上看到許多人提出相同的疑問，在此提出給大家思考看看：</p>
-<p>首先，前面經過這一大堆的測試，而最後卻僅僅是在路邊掃個 QR Code 就結束了！？ 這點很明顯是有問題的吧…<br>
- 不過畢竟是網路流傳的訊息，多少被經過修改，就不糾結這個問題了，大家看看就好。</p>
-]]></content>
-      <categories>
-        <category>Information (資訊分享)</category>
-      </categories>
-      <tags>
-        <tag>Cicada3301</tag>
-        <tag>Cryptography (密碼學)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>(18+) Coulrophobia (小丑恐懼症)｜本該帶給人們歡笑的角色，卻帶來恐懼。</title>
     <url>/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/</url>
     <content><![CDATA[<p>恐懼症有非常多種，或許你曾聽過 <strong>懼高症</strong>、<strong>幽閉恐懼</strong>、<strong>社交恐懼</strong> 等，但你聽過「<strong>小丑恐懼</strong>」嗎？</p>
@@ -353,84 +353,6 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
       <tags>
         <tag>18+</tag>
         <tag>Phobia (恐懼症)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
-    <url>/2020/01/24/Cross-Site-Scripting(Advanced)/</url>
-    <content><![CDATA[<p>上一篇「 <strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
-<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
-<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
-<hr>
-<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
-<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
-加強上次模擬的貼文系統：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="variable">$content</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
-有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
-很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
-<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
-「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
-<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
-利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="keyword">while</span>(strpos(<span class="variable">$title</span>, <span class="string">&quot;&lt;script&gt;&quot;</span>))&#123;</span><br><span class="line">	<span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$title</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
-<hr>
-<h3 id="自動觸發-onload">自動觸發 Onload</h3>
-<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
-例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(1)&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Click Me!&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
-<input type="button" onclick="alert(1)" value="Click Me!"><br>
-在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
-<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
-<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
-的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
-<p>那就在推薦各位幾個常見的方式。</p>
-<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;alert(1)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
-<hr>
-<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
-<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
-<p>理論上… 沒錯。<br>
-但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
-<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
-很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
-例如你運行該語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- something --&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
-而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
-現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">xss</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
-而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
-<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
-這就是 HTML 的容錯性！</p>
-<hr>
-<h3 id="那該如何預防">那該如何預防！？</h3>
-<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
-<p>另外，在此呼籲一個重要的觀念！<br>
-請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
-這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
-因為要擋的東西太多了！<br>
-如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
-我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
-]]></content>
-      <categories>
-        <category>Trick (技術講解)</category>
-        <category>Web</category>
-        <category>Pen-Test</category>
-        <category>XSS (Cross-Site-Scripting)</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>SecurityFlaw (安全漏洞)</tag>
       </tags>
   </entry>
   <entry>
@@ -620,83 +542,196 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
       </categories>
   </entry>
   <entry>
-    <title>Github 檔案太大無法推送！？安裝「Git-LFS」馬上解決！</title>
-    <url>/2021/03/28/Git-LFS/</url>
-    <content><![CDATA[<p>使用 git push 推送檔案到 Github 上時，被告知<strong>檔案太大</strong>無法推送！？馬上教你怎麼解決！</p>
+    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
+    <url>/2020/01/24/Cross-Site-Scripting(Advanced)/</url>
+    <content><![CDATA[<p>上一篇「 <strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
 <span id="more"></span>
 <hr>
-<h2 id="報錯">報錯</h2>
-<p>當你嘗試使用  <code>git push</code>  推送超過 <code>100 MB</code>  的檔案時，沒意外就會收到這樣的錯誤。<br>
-這是因為 Github <strong>一個檔案最大上傳限制</strong>就是 <code>100 MB</code> 。(ps. 分開上傳可以，但不能同個檔案 100 MB)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ remote: error: GH001: Large files detected.</span><br><span class="line">$ remote: error: Trace: xxxxxxxxxxxxxxxxxxxx</span><br><span class="line">$ remote: error: See http://git.io/iEPt8g <span class="keyword">for</span> more information.</span><br><span class="line">$ remote: error: File xxxxxxxxxxxxx is 101.00 MB; this exceeds GitHub<span class="string">&#x27;s file size limit of 100 MB</span></span><br></pre></td></tr></table></figure>
+<h3 id="前言">前言</h3>
+<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
+<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
+<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
 <hr>
-<h2 id="安裝-git-lfs-解決">安裝 Git-LFS 解決！</h2>
-<p>為此 Github 也提供解決方法 - 「<strong>Large File Storage</strong>」。</p>
-<h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span><br><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
+<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
+加強上次模擬的貼文系統：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="variable">$content</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]));	<span class="comment">//過濾&lt;script&gt;標籤</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
+有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
+很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
+<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
+「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
+<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
+利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="keyword">while</span>(strpos(<span class="variable">$title</span>, <span class="string">&quot;&lt;script&gt;&quot;</span>))&#123;</span><br><span class="line">	<span class="variable">$title</span>=trim(str_replace(<span class="string">&quot;&lt;script&gt;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$title</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
 <hr>
-<h3 id="mac-osx">Mac OSX</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<h3 id="自動觸發-onload">自動觸發 Onload</h3>
+<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
+例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(1)&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Click Me!&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
+<input type="button" onclick="alert(1)" value="Click Me!"><br>
+在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
+<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
+<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
+的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
+<p>那就在推薦各位幾個常見的方式。</p>
+<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;alert(1)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
 <hr>
-<h3 id="rhelcentos">RHEL/CentOS</h3>
-<h4 id="step1-安裝-git-182">Step.1 安裝 git &gt;= <strong>1.8.2</strong></h4>
-<blockquote>
-<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>5</code>  或  <code>7</code>  (而不是  <code>6</code> ) 的話：<br>
-a. 可以<a href="https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">按這裡</a>安裝 (如果是 CentOS 那麼你只需要執行  <code>sudo yum install epel-release</code> )<br>
-b.  <code>sudo yum install git</code></p>
-</blockquote>
-<blockquote>
-<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>6</code> <br>
-a.  <code>curl -s https://setup.ius.io/ | sudo bash</code> <br>
-b.  <code>sudo yum install git2u</code></p>
-</blockquote>
-<blockquote>
-<p>如果你想，你也可以自己建構原始碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
-</blockquote>
-<h4 id="step2-安裝-git-lfs">Step.2 安裝 <strong>git-lfs</strong></h4>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash</span><br><span class="line">sudo yum install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
+<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
+<p>理論上… 沒錯。<br>
+但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
+<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
+很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
+例如你運行該語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- something --&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
+而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
+現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">xss</span> <span class="attr">onerror</span>=<span class="string">alert(1)</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
+而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
+<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
+這就是 HTML 的容錯性！</p>
 <hr>
-<h3 id="windows">Windows</h3>
-<h4 id="step1-下載安裝檔">Step.1 下載安裝檔</h4>
-<p>可以從 <a href="https://github.com/git-lfs/git-lfs/releases">https://github.com/git-lfs/git-lfs/releases</a> 選擇你要的版本進行下載。</p>
-<h4 id="step2-執行安裝檔">Step.2 執行安裝檔</h4>
-<h4 id="step3-在-cmd-或者-git-bash-執行-git-lfs-install">Step.3 在 CMD 或者 Git-Bash 執行  <code>git lfs install</code></h4>
-<hr>
-<h2 id="開始使用">開始使用</h2>
-<blockquote>
-<p>在下 git 指令時，你只需要將追蹤大檔案 (超過 100 MB) 的指令  <code>git add</code>  改成  <code>git lfs track</code> 。<br>
-舉例來說，如果要追蹤副檔名為 <code>.psd</code>  的大檔案，那請使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs track <span class="string">&quot;*.psd&quot;</span></span><br></pre></td></tr></table></figure>
-<p>而<strong>不是</strong>  <code>git add &quot;*.psd&quot;</code>  ！</p>
-</blockquote>
-<blockquote>
-<p>並且確保檔案  <code>.gitattributes</code>  有被追蹤。 (這是用來告知 github 此為大型檔案的文件)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .gitattributes</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>之後呢？後面的指令都是一樣的。<br>
-直接  <code>git add</code>  &gt;  <code>git commit</code>  &gt;  <code>git push</code>  ！<br>
-回到 Github Repository 就可以發現成功被推送了。</p>
-<hr>
-<h2 id="如何取消-lfs">如何取消 LFS ？</h2>
-<ul>
-<li>刪除單個檔案<br>
-如果你是要刪除 <code>單個檔案</code> ，那麼就需要麻煩點到「<strong> <code>.gitattributes</code> </strong>」這個檔案中去刪除單筆資料，使 Github 知道該檔案不用再被 LFS 給追蹤。</li>
-<li>移除全部 (不使用 LFS 了)<br>
- 你需要使用指令「<strong> <code>git lfs uninstall</code> </strong>」，如果你是較舊的版本則是使用指令「<strong> <code>git lfs uninit</code> </strong>」來刪除該 Repository 中的 LFS 。<br>
-另外也請確保檔案「<strong> <code>.gitattributes</code> </strong>」不再被追蹤。(建議如果不需要，請直接下 <strong> <code>git rm .gitattributes</code> </strong> 刪除它)</li>
-</ul>
-<p>範例:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs uninstall</span><br><span class="line">git rm .gitattributes</span><br><span class="line">git add .</span><br><span class="line">git commit <span class="string">&quot;Uninstall LFS&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<p>《Git Large File Storage》<a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a><br>
-《Cover Image》<a href="https://git-lfs.github.com/images/graphic.gif">https://git-lfs.github.com/images/graphic.gif</a></p>
+<h3 id="那該如何預防">那該如何預防！？</h3>
+<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
+<p>另外，在此呼籲一個重要的觀念！<br>
+請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
+這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
+因為要擋的東西太多了！<br>
+如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
+我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
-        <category>Note (技巧分享)</category>
+        <category>Trick (技術講解)</category>
+        <category>Web</category>
+        <category>Pen-Test</category>
+        <category>XSS (Cross-Site-Scripting)</category>
       </categories>
       <tags>
-        <tag>Github</tag>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>SecurityFlaw (安全漏洞)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
+    <url>/2020/01/24/Cross-Site-Scripting/</url>
+    <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
+<span id="more"></span>
+<hr>
+<h3 id="閱讀本文所需知識">閱讀本文所需知識</h3>
+<p>在了解 XSS 之前，建議讀者最好先具備 <a href="https://zh.wikipedia.org/wiki/HTML"><strong>HTML (超文字標記語言)</strong></a> 的基礎知識，否則可能會出現連範例都看不懂的窘境。</p>
+<hr>
+<h3 id="可能觸發-xss-的先決條件">可能觸發 XSS 的先決條件</h3>
+<p>一般來說，XSS 大多發生在「<a href="https://zh.wikipedia.org/wiki/%E5%8B%95%E6%85%8B%E7%B6%B2%E9%A0%81"><strong>動態網頁</strong></a>」而不是「<a href="https://wiki.mbalib.com/zh-tw/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5" title="wiki.mbalib.com"><strong>靜態網頁</strong></a>」，在此簡單解釋一下兩者差異，有興趣了解更深入者自行點選連結觀看。你可以這麼想像<strong>動態</strong>與<strong>靜態</strong>網頁：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8"><strong>伺服器 (Server)</strong></a>
+<ul>
+<li>翻譯：就如同一個「櫃台服務人員」展示著自家的商品，而 <a href="https://en.wikipedia.org/wiki/Client_(computing)"><strong>用戶端 (Client)</strong></a>，就是圍觀的顧客。</li>
+<li>原意：顧名思義為提供某特定服務的主機，而 <strong>用戶端 (Client)</strong> 則是使用這項服務的人。</li>
+</ul>
+</li>
+<li><strong>靜態網頁</strong>
+<ul>
+<li>翻譯：「服務人員」照著公司的流程介紹自家商品，不與顧客有任何的對話跟交流 (<strong>即使顧客提問也不給予回應</strong>)。</li>
+<li>原意：<strong>伺服器 (Server)</strong> 向 <strong>用戶端 (Client)</strong> 單向的展示服務，不接受任何來自 <strong>用戶端 (Client)</strong> 的請求 (<strong>連線請求例外</strong>)。</li>
+</ul>
+</li>
+<li><strong>動態網頁</strong>
+<ul>
+<li>翻譯：「服務人員」在<strong>有限的範圍</strong>內，回答顧客的提問，或接受展示顧客所要求的內容。</li>
+<li>原意：<strong>伺服器 (Server)</strong> 具有接受及自定義處理封包請求的能力，能與 <strong>用戶端 (Client)</strong> 擁有<strong>雙向</strong>的互動。</li>
+</ul>
+</li>
+</ul>
+<p>常見的狀況是 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> 或者 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/Active_Server_Pages"><strong>ASP</strong></a> 等，都是在有「 <strong><a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF">網頁後端</a>語言</strong> 」並且該網站處理封包不當的情況下發生。</p>
+<hr>
+<h3 id="一般使用者操作的html">一般使用者操作的 HTML</h3>
+<p>以下是一些簡單的 HTML 標籤，我們<strong>模擬</strong>輸入名稱的功能。<br>
+(特別聲明：此範例單純使用 HTML 運作，模擬的環境是<strong>假設有傳入後端的情況</strong>。)</p>
+<p>按鈕按下時，會將「使用者輸入」欄位的值傳入後端 PHP，後端再將接收到的值顯示給使用者看，這麼一來就有了<strong>雙向互動</strong>，同時後台運作是直接抓取接收到的值來顯示，這意味著<strong>沒有過濾參數</strong>。</p>
+<p><strong>後端環境</strong>、<strong>雙向互動</strong>、<strong>沒有過濾參數</strong>，再看看剛剛所說的觸發條件… 這是一個觸發的好環境啊！</p>
+<hr>
+<ul>
+<li>HTML 頁面 使用者輸入】</li>
+</ul>
+<p><input id="example_input_1" type="input" value="abc123"><input type="button" value="確定" onclick="my_script()"></p>
+<script>
+function my_script(){
+	document.getElementById('example_p_1').innerHTML='你的名字：'+document.getElementById('example_input_1').value;
+}
+</script>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;name.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;input&quot;</span> <span class="attr">name</span>=<span class="string">&quot;my_name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abc123&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>【PHP 頁面 顯示傳入值】</li>
+</ul>
+<p id="example_p_1">你的名字：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//name.php</span></span><br><span class="line"><span class="variable">$name</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;my_name&#x27;</span>];			<span class="comment">//接收參數</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;p&gt;你的名字：&quot;</span>.<span class="variable">$name</span>.<span class="string">&quot;&lt;/p&gt;&quot;</span>;	<span class="comment">//沒過濾直接顯示</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>我們放大重點來討論，也就是說我們輸入什麼，就會反應在標籤上。<br>
+當使用者輸入「 <strong>def456</strong> 」則 HTML 標籤會長這樣</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>def456<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>輸入「 <strong>ghi789</strong> 」</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>ghi789<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意！上述都是一般使用者的作法，中規中矩的按造設計者的想法去做。<br>
+但… 駭客會這麼乖嗎？</p>
+<hr>
+<h3 id="駭客操作的html">駭客操作的 HTML</h3>
+<p>人家常說調皮的小孩是聰明的，有時候換個思路，調皮點，一個漏洞就這麼發現了。<br>
+設計者要求這樣做，我就該這樣做嗎？<br>
+正常輸入「 <strong>abc123</strong> 」如此標籤：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你可以發現標籤內包著我們的語法，包著的是 &lt;p&gt; 標籤及標籤結尾 &lt;/p&gt;<br>
+ 那如果今天我們輸入「 <strong>abc123&lt;/p&gt;</strong> 」呢？</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你會發現我們所輸入的 &lt;/p&gt; 居然被解釋成標籤結尾了！？<br>
+這是否意味著我輸入什麼語法他就執行什麼語法？<br>
+那我們將輸入的參數稍做修改，改成具有影響力的語法！<br>
+輸入「 <strong>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</strong> 」</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">script</span>&gt;</span>alert(1)<span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>這則語法中的 <strong>alert(1)</strong> 是彈出警告視窗，其顯示內容為「1」<br>
+(Ps.「 <strong>alert(1)</strong> 」這是駭客們最常拿來測試 XSS 的語法)<br>
+<input type="button" value="按我觀看 Alert(1) 效果" onclick="alert(1)"></p>
+<p>隨意插入標籤？這麼一來我不就越權了嗎？</p>
+<hr>
+<h3 id="反射型-xss">反射型 XSS</h3>
+<p>上述的 XSS 稱為「反射型」，其特點為「 <strong>僅能自行觸發</strong> 」，也就是我必須先向 伺服端 (Server) 發送請求，讓它回應給我一個因為該請求而觸發 XSS 的後果，這樣的漏洞不就太沒利用價值了嗎！？因為這意味著，你只能讓自己中招，而無法實質對 伺服端 (Server) 產生傷害，或者危害到其他使用者權益，並且網頁將在重整後復原。整體來說該危害程度是許多管理者忽視且不願意花時間去處理的，但他們似乎忘了一個嚴重的問題… <a href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6"><strong>社交工程 (Social Engineering)</strong></a>。(之後會撰寫一篇關於 社交工程 (Social Engineering) 的文章。)<br>
+(更新：已發布文章「<strong><a href="/2020/01/24/Social-Engineering(%E7%A4%BE%E4%BA%A4%E5%B7%A5%E7%A8%8B)/" title="Social-Engineering (社交工程)｜你駭計算機，我駭你心">Social-Engineering (社交工程)｜你駭計算機，我駭你心</a></strong>」)</p>
+<hr>
+<h3 id="預存型-xss">預存型 XSS</h3>
+<p>該類型的 XSS 多半與 <strong>資料庫 (Database)</strong> 有著密切的關聯，上述的反射型是因為伺服端不會去儲存你的攻擊語法，所以不會發生該語法日後被再次觸發的問題，但現在要說的這種「 <strong>預存型</strong> 」就不同了。<br>
+「 <strong>預存型</strong> 」顧名思義就是伺服器將語法給紀錄下來了，並且在某些需要輸出紀錄時的場合被再次觸發到。<br>
+舉個常見的例子 - 「 <strong>貼文系統</strong> 」。以下模擬一個簡易的貼文系統 <strong>HTML + PHP + MYSQL</strong>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="variable">$content</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以清楚看到 index.html 中所輸入的欄位分別有代表文章標題的「 <strong>title</strong> 」及代表文章內容的「 <strong>content</strong> 」，並且表單傳送至 post.php 中，在 post.php 裡將標題及內容寫入資料庫。<br>
+這時候假設貼文標題打上「 <strong>abc213&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</strong> 」，內容隨意輸入「 <strong>test</strong> 」，正常來說此語法將會被成功寫入資料庫存放。</p>
+<p>既然是貼文系統，照理來說會有個輸出文章的位置 (不然貼文就沒意義了)：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// display.php</span></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM `post`;&quot;</span></span><br><span class="line"><span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$result</span>) <span class="keyword">exit</span>();</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$row</span>=mysql_fetch_row(<span class="variable">$result</span>))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$row</span>[<span class="string">&#x27;title&#x27;</span>];</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$row</span>[<span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就這樣，資料庫裡存放的 html 標籤被輸出並解釋成標籤作用了。<br>
+任何只要看得到這篇文章的人，畫面上就會彈出我們所植入的「alert (1)」。</p>
+<p>我們僅僅是用「 <strong>alert()</strong> 」來測試 XSS 而已，這還算不上是什麼危害，但是有心人士會透過其他語法來達成非法目的，例如可以利用「 <strong>document.cookie</strong> 」來獲取你的 <a href="https://zh.wikipedia.org/wiki/Cookie"><strong>Cookie</strong></a> ，很多時候明明沒有在其他地方登入過，電腦也沒有中毒，帳號卻莫名被盜，有可能就是你中了 XSS 。</p>
+<hr>
+<h3 id="總結">總結</h3>
+<p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
+透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
+<p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
+]]></content>
+      <categories>
+        <category>Trick (技術講解)</category>
+        <category>Web</category>
+        <category>Pen-Test</category>
+        <category>XSS (Cross-Site-Scripting)</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>SecurityFlaw (安全漏洞)</tag>
       </tags>
   </entry>
   <entry>
@@ -817,6 +852,157 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
         <tag>18+</tag>
         <tag>Deep Web (深網)</tag>
         <tag>Dark Web (暗網)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</title>
+    <url>/2020/02/17/DarkWeb/</url>
+    <content><![CDATA[<p>網絡盛行的年代，<strong>你真的認為你夠熟悉網絡嗎？<strong>在這龐大的網絡世界裡，有些地方你沒去過，也</strong>一輩子都不該去</strong>。本篇將會介紹你可能不知道的地下網絡 - 「 <strong>暗網</strong> 」。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>生活在一個網路充斥著生活的時代，使用網路對每個人來說已經是家常便飯，但如果我說其實你平常所能使用到的網絡及你能透過 Google 所搜尋到的<strong>所有</strong>東西都只佔了<strong>不到網絡世界的 5％</strong>，那你會好奇<strong>其他的 95％去了哪裡</strong>嗎？</p>
+<p>另外，許多人會誤會「 <strong>暗網</strong> 」是指<strong>某個網頁</strong>，但實際上這個詞是一個<strong>廣泛的分類</strong>，並<strong>非</strong>是指某個網站，至於什麼樣的網絡會被分類在暗網，以下帶你一探究竟。</p>
+<hr>
+<h3 id="深網-與-暗網-的差別"><strong>深網</strong> 與 <strong>暗網</strong> 的差別</h3>
+<p>首先，必須先強調一點，就是<strong>深網不完全等於暗網</strong>！</p>
+<p>在了解兩者差異之前，在此先提個單字 -「<a href="https://zh.wikipedia.org/wiki/%E8%A1%A8%E7%BD%91"><strong>Surface Web (表網)</strong></a>」。<br>
+「 <strong>表網</strong> 」全稱「 <strong>表層網絡</strong> 」，即一般人們使用的網絡，包括 <a href="https://zh.wikipedia.org/wiki/Facebook">Facebook</a>、<a href="https://zh.wikipedia.org/wiki/Google">Google</a>、<a href="https://zh.wikipedia.org/wiki/YouTube">Youtube</a> 等常見的知名服務，以及本站，甚至其他你在 Google 上能搜尋到的所有站點，都屬於表網。<br>
+而 <strong>Deep Web (深網)</strong> 則主要可以泛指所有在表網上<strong>搜尋不到</strong>的網絡。</p>
+<p>那… 什麼是暗網？</p>
+<p>「 <strong>Dark Web (暗網)</strong> 」<strong>涵蓋</strong>在深網中，比起深網來說，暗網才算是真正的隱藏，不僅僅是搜尋引擎搜索不到，而是即使有了網址，也無法透過一般的瀏覽器來訪問，是深網中的<strong>底層網絡</strong>，沒錯，<strong>深網</strong>已經是在網絡世界之下的底層網絡，而這所謂的暗網則是<strong>網絡世界中底層網絡中的底層網絡</strong>！<br>
+以下這張圖或許可以讓你更了解它們之間的比例關係。</p>
+<p><img src="01.png" alt="" title="取自網絡，廣泛被用來解釋網絡層關係的冰山圖" width="85%"></p>
+<p>這塊<strong>浮冰</strong>用來當作<strong>整個網絡世界</strong>，在<strong>水面上</strong>的部份為<strong>表網</strong>，約佔了整個網絡世界的 <strong>4％</strong> ，其餘在水面下的隱藏網絡皆為 <strong>Deep Web (深網)</strong> ，約佔 <strong>96％</strong> ，而涵蓋在深網中，底層的那些網絡即稱之為 <strong>Dark Web (暗網)</strong> ，約佔深網 <strong>96％</strong> 中的 <strong>6％</strong> 。</p>
+<hr>
+<h3 id="dark-web-暗網">Dark Web (暗網)</h3>
+<p>正因為有技術可以在網路上做到隱藏、匿蹤的效果，有心人士便開始浮出水面，因此暗網裡充斥著許多非法的服務，例如 <strong>毒品交易、槍支交易、僱用殺手服務、兒童色情、洗錢、邪教論壇、屠殺視頻、偽造護照服務、人口販賣</strong> 等，當然也有比較正常的服務，例如 <strong>加密信箱、匿名論壇、加密聊天</strong> 等。</p>
+<hr>
+<h3 id="p2p-對等式網絡">P2P 對等式網絡</h3>
+<p>上述中跟各位提到暗網「 <strong>即使有了網址，也無法透過一般的瀏覽器來訪問</strong> 」，不論是表網還是一般的深網都還可以透過你所使用的 <a href="https://zh.wikipedia.org/wiki/Google_Chrome">Chrome</a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8">Firefox</a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8">Opera</a> 等一般的瀏覽器來連接伺服器，但暗網可不行。<br>
+暗網之所以能達到隱藏的效果則是因為暗網使用的是「<a href="https://zh.wikipedia.org/wiki/%E7%82%B9%E5%AF%B9%E7%82%B9%E7%BD%91%E7%BB%9C"><strong>Peer-To-Peer (對等式網絡)</strong></a>」，也就是俗稱的「 <strong>點對點</strong>、<strong>P2P</strong> 」。</p>
+<p>這邊簡單的介紹一下，一般來說正常的網絡都會有個「 <strong>中心伺服器</strong> 」(如下圖)，可以方便且快速的讓我們訪問其他站點。</p>
+<img src="/2020/02/17/DarkWeb/02.png" class="" title="取自 Wiki維基百科，中央網絡系統。">
+<hr>
+<p>而 P2P 則是<strong>無中心伺服器</strong>的，每個用戶都是一個<strong>節點</strong>，並且這些節點彼此之間是<strong>不能直接聯繫</strong>的，當某節點 A 架設一個伺服器，而某節點 B 想要訪問節點 A 時，並非直接的訪問，而是透過兩者之間的節點幫忙傳送，會透過很多層的節點後，最後才到目標，例如「B &gt; T &gt; C &gt; … &gt; Y &gt; A」。</p>
+<p>由於傳輸過程中使用多個節點，因此犧牲掉了訪問速度，如果網速不好的狀況去瀏覽暗網，真的會等到睡著… ，但多節點確實提高了反追蹤的特性，也因此暗網常常是令 <a href="https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E8%B0%83%E6%9F%A5%E5%B1%80"><strong>FBI</strong></a> 頭痛的罪犯溫床。</p>
+<p>這其實有點像是小學時，<strong>上課傳紙條</strong>的概念，當你坐在最後一排，想傳紙條給第一排的同學時，如果直接親手交給他，則很容易被老師 (執法者) 抓到，因此必須借助中間同學的幫忙，一個一個傳，等紙條到了目標手中，即使老師發現了，也很難追問是誰傳的，因為節點並非固定的，就好像學生隨時都在換座位一樣。</p>
+<img src="/2020/02/17/DarkWeb/03.png" class="" title="取自 Wiki維基百科，對等網絡系統。">
+<hr>
+<h3 id="tor-洋蔥路由">Tor (洋蔥路由)</h3>
+<p>上述所提到的 P2P 當中，一個有名的例子就是「 <strong>Tor</strong> 」，全名「 <strong>The Onion Router</strong> 」(<strong>洋蔥路由</strong>)，為<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由軟體</a>，用戶們可以使用 Tor 連接來自全球使用者免費提供的節點。Tor 的設計原意在於<strong>保障用戶的個人隱私</strong>，以及<strong>不受監控地進行秘密通信的自由和能力</strong>。</p>
+<p>Tor 在傳送資料時，會對<strong>下一個節點的資料、IP 位址</strong>進行<strong>多次的加密</strong>，並隨機選擇 Tor 節點傳送，每個中繼都會對一層加密的資料進行解密，以知道資料的下一個傳送目的地，然後將剩餘的加密資料傳送給它。最後的中繼會解密最內層的加密資料，並在不會洩露或得知源 IP 位址的情況下，將原始資料發送至目標位址。</p>
+<p>一層一層的加密就好像洋蔥般，因此稱為洋蔥路由。<br>
+而基於 Tor 技術所開發的瀏覽器「 <strong>Tor Browser (Tor 瀏覽器)</strong> 」也是目前廣泛被大家使用在訪問暗網的瀏覽器。</p>
+<p><strong>20 世紀 90 年代</strong>，互連網缺乏安全性，以及用於跟蹤及監視的能力越來越明顯。<strong>1995 年</strong>，美國海軍研究實驗室 <a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E6%B5%B7%E8%BB%8D%E7%A0%94%E7%A9%B6%E5%AF%A6%E9%A9%97%E5%AE%A4"><strong>United States Naval Research Laboratory (NRL)</strong></a> 的數學家 <strong>Paul Syverson (保羅・西維森)</strong> 、電腦科學家 <strong>G. Mike Reed (邁克・里德)</strong> 及 <strong>David Goldschlag (大衛・戈爾德施拉格)</strong> 為保護美國情報通信而開發了該軟體。</p>
+<p>有個專門用於 Tor 網絡的<a href="https://zh.wikipedia.org/wiki/%E9%A1%B6%E7%BA%A7%E5%9F%9F">頂級域</a>「 <strong>.onion</strong> 」，這種域名並未被收錄在域名根區中，並不屬於實際的域名，但透過特殊的代理軟體即可訪問 .onion 的地址，例如上述的 Tor Browser (Tor 瀏覽器)。因此若是看到有人貼的網址中頂級域是「.onion」那麼通常就是隱藏網絡，需要使用特殊瀏覽器來訪問，一般的瀏覽器僅會顯示地址不存在。</p>
+<hr>
+<h3 id="bitcoin-比特幣-btc">Bitcoin (比特幣、BTC)</h3>
+<p>剛剛說到暗網中有著許多非法的交易，而這些交易當然也不可能用銀行轉帳，不然就失去了匿蹤的意義了，通常暗網上的交易都是由「<a href="https://zh.wikipedia.org/wiki/%E6%AF%94%E7%89%B9%E5%B8%81"><strong>Bitcoin (比特幣)</strong></a>」來支付的，比特幣為一種「<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E8%B4%A7%E5%B8%81"><strong>加密貨幣</strong></a>」，由於怕離題的緣故，因此就不講解相關原理了，有興趣的朋友麻煩請點擊超連結觀看或是自行搜尋相關資料。</p>
+<p>若你已經了解什麼是 Bitcoin (比特幣) 並且知道其中的原理，那麼應該也不難理解為什麼<strong>暗網中的騙子很多</strong>，主要是因為比特幣本身是沒有保障的，一切的交易僅能靠雙方對彼此的信任，再加上暗網本身的匿蹤特性，詐騙根本沒在怕被抓的。</p>
+<hr>
+<h3 id="marianas-web-馬里亞納網絡-未證實都市傳說">Mariana’s Web (馬里亞納網絡) (<strong>未證實，都市傳說</strong>)</h3>
+<p>「 <strong>Mariana’s Web (馬里亞納網絡)</strong> 」號稱是暗網的<strong>最深處</strong>，其命名也是以世界上目前發現已知最深的海溝「<a href="https://zh.wikipedia.org/wiki/%E9%A9%AC%E9%87%8C%E4%BA%9A%E7%BA%B3%E6%B5%B7%E6%B2%9F"><strong>馬里亞納海溝</strong></a>」來命名的，象徵著在這連光都透不進的海溝裡，潛下去，就再也不用想著浮出水面。</p>
+<p><strong>據說</strong></p>
+<p>進入馬里亞納網絡需要使用 <strong>量子電腦</strong> 來運算一個名為「 <strong>Polymeric Falcighol Derivation</strong> 」的數學函式，這是一種複雜的演算法 (但網路上似乎找不到該名詞相關有依據的報告)，並且使用的頂級域是「 <strong>.clos</strong> 」、「 <strong>.loky</strong> 」及「 <strong>.marianas</strong> 」。</p>
+<p>馬里亞納網絡的盡頭存放著許多世界機密，甚至有不少人認為這些機密文件中，有著可以<strong>改變世界的祕密</strong>，例如 <strong>操控時間的方法、宇宙的由來、亞特蘭提斯的祕密、外星人的相關資料</strong> 等，甚至有人說其實整個馬里亞納網絡就是一個 <strong>AI (人工智慧)</strong> 。</p>
+<p>有另外一種說法是，馬里亞納網絡的盡頭其實是一個名為「 <strong>Devil Mate (魔鬼的同伴)</strong> 」的論壇，該論壇無人道可言，論壇的管理員都是一些社會上頂尖的成功人士，這群人有著可怕的財富及權利，需要有邀請碼才得以加入會員，否則什麼內容也看不到，這些帖子通常會被隱藏或是顯示成亂碼，即便加入會員後，也無法馬上觀看內容，因為該論壇將會員分成<strong> 1～66</strong> 個等級，等級越高，所能看到的內容越多，而提升等級的唯一方法就是完成該論壇所規定的任務，他們稱作「儀式」…</p>
+<p>這些任務充滿著不人道的要求，一開始可能只是要求你<strong>生吞豬心</strong>、<strong>殺死貓狗</strong>、<strong>自殘</strong>、<strong>喝鴨血</strong>、<strong>喝處女的血</strong>，隨著等級越來越高，任務也越來越極端，開始出現例如 <strong>殺死一個人</strong>、<strong>與屍體性交</strong>、<strong>活生生的挖出某人的眼睛</strong> 等，一切任務都隨管理員的心情出題，完成任務的過程需要拍攝照片、影片回報，論壇等級提升後即可獲得獎勵，大筆的獎金及觀看更多論壇帖子的權限，而在獲得獎勵的同時，你也正在一步步的奉獻自己的靈魂給這群惡魔。</p>
+<p><strong>當然！<br>
+關於 Mariana’s Web (馬里亞納網絡) 的一切都是謠言，未證實過的，看看就好。</strong></p>
+<hr>
+<h3 id="著名的網站">著名的網站</h3>
+<p>下一篇文章中，介紹了 4 個在暗網中非常著名的網站，有些甚至到了今天，服務仍正常在運作中，歡迎觀看「<strong><a href="/2020/02/18/DarkWeb-FamousWeb/" title="(18+) 浮出水面的 4 個知名暗網">(18+) 浮出水面的 4 個知名暗網</a></strong>」。</p>
+]]></content>
+      <categories>
+        <category>Popular-Science (科普)</category>
+      </categories>
+      <tags>
+        <tag>18+</tag>
+        <tag>Deep Web (深網)</tag>
+        <tag>Dark Web (暗網)</tag>
+        <tag>Tor (洋蔥路由)</tag>
+        <tag>Bitcoin (比特幣)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github 檔案太大無法推送！？安裝「Git-LFS」馬上解決！</title>
+    <url>/2021/03/28/Git-LFS/</url>
+    <content><![CDATA[<p>使用 git push 推送檔案到 Github 上時，被告知<strong>檔案太大</strong>無法推送！？馬上教你怎麼解決！</p>
+<span id="more"></span>
+<hr>
+<h2 id="報錯">報錯</h2>
+<p>當你嘗試使用  <code>git push</code>  推送超過 <code>100 MB</code>  的檔案時，沒意外就會收到這樣的錯誤。<br>
+這是因為 Github <strong>一個檔案最大上傳限制</strong>就是 <code>100 MB</code> 。(ps. 分開上傳可以，但不能同個檔案 100 MB)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ remote: error: GH001: Large files detected.</span><br><span class="line">$ remote: error: Trace: xxxxxxxxxxxxxxxxxxxx</span><br><span class="line">$ remote: error: See http://git.io/iEPt8g <span class="keyword">for</span> more information.</span><br><span class="line">$ remote: error: File xxxxxxxxxxxxx is 101.00 MB; this exceeds GitHub<span class="string">&#x27;s file size limit of 100 MB</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="安裝-git-lfs-解決">安裝 Git-LFS 解決！</h2>
+<p>為此 Github 也提供解決方法 - 「<strong>Large File Storage</strong>」。</p>
+<h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span><br><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="mac-osx">Mac OSX</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="rhelcentos">RHEL/CentOS</h3>
+<h4 id="step1-安裝-git-182">Step.1 安裝 git &gt;= <strong>1.8.2</strong></h4>
+<blockquote>
+<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>5</code>  或  <code>7</code>  (而不是  <code>6</code> ) 的話：<br>
+a. 可以<a href="https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F">按這裡</a>安裝 (如果是 CentOS 那麼你只需要執行  <code>sudo yum install epel-release</code> )<br>
+b.  <code>sudo yum install git</code></p>
+</blockquote>
+<blockquote>
+<p>如果你的版本是 <strong>RHEL/CentOS</strong>  <code>6</code> <br>
+a.  <code>curl -s https://setup.ius.io/ | sudo bash</code> <br>
+b.  <code>sudo yum install git2u</code></p>
+</blockquote>
+<blockquote>
+<p>如果你想，你也可以自己建構原始碼。您將需要手動下載 Git-lfs rpm 並進行安裝  <code>rpm -i --nodeps git-lfs*.rpm</code> 。</p>
+</blockquote>
+<h4 id="step2-安裝-git-lfs">Step.2 安裝 <strong>git-lfs</strong></h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash</span><br><span class="line">sudo yum install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="windows">Windows</h3>
+<h4 id="step1-下載安裝檔">Step.1 下載安裝檔</h4>
+<p>可以從 <a href="https://github.com/git-lfs/git-lfs/releases">https://github.com/git-lfs/git-lfs/releases</a> 選擇你要的版本進行下載。</p>
+<h4 id="step2-執行安裝檔">Step.2 執行安裝檔</h4>
+<h4 id="step3-在-cmd-或者-git-bash-執行-git-lfs-install">Step.3 在 CMD 或者 Git-Bash 執行  <code>git lfs install</code></h4>
+<hr>
+<h2 id="開始使用">開始使用</h2>
+<blockquote>
+<p>在下 git 指令時，你只需要將追蹤大檔案 (超過 100 MB) 的指令  <code>git add</code>  改成  <code>git lfs track</code> 。<br>
+舉例來說，如果要追蹤副檔名為 <code>.psd</code>  的大檔案，那請使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs track <span class="string">&quot;*.psd&quot;</span></span><br></pre></td></tr></table></figure>
+<p>而<strong>不是</strong>  <code>git add &quot;*.psd&quot;</code>  ！</p>
+</blockquote>
+<blockquote>
+<p>並且確保檔案  <code>.gitattributes</code>  有被追蹤。 (這是用來告知 github 此為大型檔案的文件)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .gitattributes</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>之後呢？後面的指令都是一樣的。<br>
+直接  <code>git add</code>  &gt;  <code>git commit</code>  &gt;  <code>git push</code>  ！<br>
+回到 Github Repository 就可以發現成功被推送了。</p>
+<hr>
+<h2 id="如何取消-lfs">如何取消 LFS ？</h2>
+<ul>
+<li>刪除單個檔案<br>
+如果你是要刪除 <code>單個檔案</code> ，那麼就需要麻煩點到「<strong> <code>.gitattributes</code> </strong>」這個檔案中去刪除單筆資料，使 Github 知道該檔案不用再被 LFS 給追蹤。</li>
+<li>移除全部 (不使用 LFS 了)<br>
+ 你需要使用指令「<strong> <code>git lfs uninstall</code> </strong>」，如果你是較舊的版本則是使用指令「<strong> <code>git lfs uninit</code> </strong>」來刪除該 Repository 中的 LFS 。<br>
+另外也請確保檔案「<strong> <code>.gitattributes</code> </strong>」不再被追蹤。(建議如果不需要，請直接下 <strong> <code>git rm .gitattributes</code> </strong> 刪除它)</li>
+</ul>
+<p>範例:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git lfs uninstall</span><br><span class="line">git rm .gitattributes</span><br><span class="line">git add .</span><br><span class="line">git commit <span class="string">&quot;Uninstall LFS&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>《Git Large File Storage》<a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a><br>
+《Cover Image》<a href="https://git-lfs.github.com/images/graphic.gif">https://git-lfs.github.com/images/graphic.gif</a></p>
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -977,9 +1163,144 @@ Stephen 被指控犯有<strong>二級謀殺罪</strong>，然後在<strong> 2017
       </tags>
   </entry>
   <entry>
+    <title>(18+) 如何進入「暗網」？</title>
+    <url>/2020/09/01/How-To-Enter-The-DarkWeb/</url>
+    <content><![CDATA[<p>也許你聽過暗網裡的<strong>驚悚故事</strong>；<br>
+並且你非常了解其中的<strong>風險</strong>；<br>
+但你的<strong>好奇心</strong>驅使著你<strong>一探究竟</strong>；<br>
+而你正為了不知道<strong>如何進入暗網</strong>而煩惱；<br>
+那麼，這篇文章或許可以幫到你什麼。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<blockquote>
+<p><b style="color: red; font-size: 300%;">免責申明！</b><br>
+<b>本篇文章所教導的內容純屬學術研討，旨在探討「如何使用 Tor 這項技術進入隱藏網絡」，用於保障每位公民匿名上網的權利。</b><br>
+<b style="color: red;">一切利用本文所提到的技術施以犯罪行為者，皆屬個人責任，本站概不負責。</b></p>
+</blockquote>
+<hr>
+<p>本篇文章主要著重在<strong>如何進入暗網</strong>及進入暗網的<strong>注意事項</strong>，並<strong>不會</strong>有太多的<strong>介紹</strong>及<strong>原理講解</strong>。</p>
+<p>如果你還不知道「 <strong>Dark Web (暗網)</strong> 」是什麼，之前我曾寫過一篇粗略介紹暗網的文章 —「<strong><a href="/2020/02/17/DarkWeb/" title="(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！">(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</a></strong>」，建議你先了解完再考慮觀看本篇文章。</p>
+<p>另外「<strong><a href="/2020/02/18/DarkWeb-FamousWeb/" title="(18+) 浮出水面的 4 個知名暗網">(18+) 浮出水面的 4 個知名暗網</a></strong>」這篇文章也推薦給還沒看過得你，這能使你更了解暗網。</p>
+<p>也建議各位瀏覽暗網的裝置盡量<strong>保持乾淨</strong>，<strong>不</strong>要含有<strong>個人資訊</strong>，並且隨時做好電腦<strong>重灌</strong>的準備。</p>
+<hr>
+<h3 id="vpn-虛擬私人網路">VPN (虛擬私人網路)</h3>
+<p><img src="01.jpg" alt="&quot;VPN&quot;"></p>
+<p>「 <strong>VPN</strong> 」全名「 <strong>Virtual Private Network</strong> 」，中文為「 <strong>虛擬私人網路</strong> 」。<br>
+一般連線上網是以 <strong>User (用戶端)</strong> 對 <strong>Server (伺服端)</strong> 做直接連線，當然 <strong>Server (伺服端)</strong> 可以清楚的<strong>知道誰訪問了站點</strong>，這對於瀏覽暗網來說太<strong>危險</strong>了，誰都不想在暗網上被對方查到身份。對於瀏覽暗網，我們必須著重注意自身的<strong>匿名性</strong>及<strong>安全性</strong>。</p>
+<p>為了解決 <strong> <code>User =&gt; Server</code> </strong> 的直接訪問所造成 <strong>IP 洩漏</strong>，因此在連線的過程必須加上一道保護，這道保護即為 <strong>VPN</strong> ，掛上 VPN 後的連線為 <strong> <code>User =&gt; VPN =&gt; Server</code> </strong> ，而這些<strong>中繼的 IP</strong> 遍佈在世界各地，若不考慮服務本身有漏洞，就算是<strong>警察</strong>也<strong>很難跨國調查</strong>，這大大了<strong>增加了反追蹤的難度</strong>。</p>
+<p>就好像 <strong>A</strong> 想告訴 <strong>B</strong> 一件事情，同時 <strong>A</strong> 又不希望 <strong>B</strong> 知道這件事情是他說的，所以 <strong>A</strong> 選擇先告訴 <strong>C</strong> ，請 <strong>C</strong> 保密並轉達給 <strong>B</strong>。<br>
+也因為 <strong>VPN</strong> 成了與目的地<strong>連接的重要橋樑</strong>，因此必須<strong>慎選</strong>！就好比上述的情境中，<strong>C</strong> 必須是自己<strong>信任</strong>的人，反之則可能會被 <strong>B</strong> 給<strong>反追蹤</strong>，進而得知來源是 <strong>A</strong> 。</p>
+<p><strong>VPN</strong> 並<strong>非</strong>無敵，許多 VPN 的服務方會願意在收到一定程度的<strong>利益</strong>後，選擇<strong>出賣使用者的資料</strong>，又或者該服務的系統安全性低，導致<strong>遭到入侵</strong>進而<strong>洩漏使用者資料</strong>。(更多 <strong>VPN</strong> 詳細介紹請查閱 <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E7%A7%81%E4%BA%BA%E7%B6%B2%E8%B7%AF"><strong>Wiki 維基百科</strong></a>)</p>
+<p>個人推薦以下兩個 <strong>VPN</strong> 服務 — 「<a href="https://protonvpn.com/"><strong>Proton VPN</strong></a>」、「<a href="https://nordvpn.com/"><strong>Nord VPN</strong></a>」。</p>
+<hr>
+<h3 id="tor-browser-洋蔥瀏覽器">Tor Browser (洋蔥瀏覽器)</h3>
+<p><img src="02.png" alt="&quot;Tor Browser&quot;"></p>
+<p>在「<strong><a href="/2020/02/17/DarkWeb/" title="(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！">(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</a></strong>」這篇文章中有提到，暗網無法透過 <a href="https://zh.wikipedia.org/wiki/Google_Chrome"><strong>Chrome</strong></a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Firefox</strong></a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Opera</strong></a> 等一般的瀏覽器來訪問伺服器，必須使用像 <strong>Tor Browser</strong> 這樣的特殊瀏覽器才行。</p>
+<p>所以請先<strong>下載</strong>及<strong>安裝</strong> <a href="https://www.torproject.org/"><strong>Tor Browser</strong></a>，並且在<strong>連上 VPN 後</strong>，開啟 <strong>Tor Browser</strong>。</p>
+<p>開啟後會發現，與「<a href="https://zh.m.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>FireFox (火狐)</strong></a>」這款瀏覽器界面大同小異 (做為基底開發的)，但在瀏覽網站時，點擊網址左方，可以看到 Tor Browser 的連接狀況，從「 <strong>This browser</strong> 」到「 <strong>google.com (目的位址)</strong> 」中間經過了一些中繼點，這些中繼點一層一層的就像洋蔥的外皮般，因此才被稱作 <strong>Onion Router (洋蔥路由)</strong> 。<br>
+不過也因為<strong>經過的節點較多</strong>，相較<strong>一般瀏覽器</strong>的瀏覽<strong>速度</strong>是<strong>較慢</strong>的，若覺得這些節點<strong>速度太慢</strong>，也可以試試按下方的藍色按鈕「 <strong>New Circuit for this Site</strong> 」來<strong>更換節點</strong>。</p>
+<img src="/2020/09/01/How-To-Enter-The-DarkWeb/02-01.png" class="">
+<hr>
+<h3 id="注意事項">注意事項</h3>
+<img src="/2020/09/01/How-To-Enter-The-DarkWeb/03.jpg" class="">
+<p><b style="color: red; font-size: 300%;">注意！</b></p>
+<p>這些步驟很重要，請一定要確實做好。</p>
+<blockquote>
+<ul>
+<li><strong>遮蔽鏡頭</strong>
+<ul>
+<li>建議用<strong>有色膠帶貼住鏡頭</strong>，這是為了防止電腦不幸受到<strong>入侵</strong>時，保障自身<strong>隱私</strong>。</li>
+</ul>
+</li>
+<li><strong>瀏覽器視窗禁止最大化</strong>
+<ul>
+<li>在使用 Tor Browser 時，千萬<strong>不要將視窗最大化</strong>，這會使得對方可以輕易抓取你的裝置<strong>螢幕大小</strong>及<strong>部份資訊</strong>，進而透過這些資訊<strong>追蹤</strong>你的裝置。</li>
+</ul>
+</li>
+<li><strong>不使用真實資料</strong>
+<ul>
+<li>在暗網上絕對<strong>不要登入個人帳號</strong>，不論是 <strong>Google</strong>、<strong>Facebook</strong>、<strong>Instagram</strong> 等。最好連 <strong>E-Mail</strong> 也重新辦個新帳號用於暗網，並且該帳戶不在<strong>個人電腦</strong>及<strong>未連上 VPN</strong> 時登入。</li>
+</ul>
+</li>
+<li><strong>非必要時，請關閉 Javascript</strong>
+<ul>
+<li><strong>關閉網頁的 Javascript 運作</strong>可以得到更多的<strong>安全</strong>保障，當然這可能會使得<strong>網頁部份資訊無法成功載入</strong>。</li>
+</ul>
+</li>
+<li><strong>危機處理</strong>
+<ul>
+<li>一旦發現任何<strong>不對勁的狀況</strong>，請立即<strong>拔掉網絡線</strong>。</li>
+</ul>
+</li>
+<li><strong>防止詐騙</strong>
+<ul>
+<li>暗網上的交易主要是以<strong>虛擬貨幣</strong>來進行，這東西是<strong>不受政府保障</strong>的，因此暗網上的<strong>詐騙</strong>非常盛行，我敢說約 <strong>99 ％</strong> 賣家都是詐騙，例如常見的「 <strong>超低價販賣 Iphone 手機</strong> 」、「 <strong>比特幣洗錢</strong> 」、「 <strong>付費解鎖論壇資訊</strong> 」等。除非你<strong>信任</strong>該服務，並且確定該服務<strong>合法</strong>，否則請<strong>不要在暗網上消費</strong>。</li>
+<li>另外，你也必須知道「 <strong>比特幣 (或其他虛擬貨幣) 並非絕對匿名</strong> 」。除非你懂的洗錢，否則對方或許可以輕易的透過其他交易所的門路<strong>反追蹤該比特幣錢包的主人</strong>！(推薦使用<strong>冷錢包</strong>，可以更有效的預防該狀況的發生)</li>
+</ul>
+</li>
+<li><strong>不輕易相信任何人</strong>
+<ul>
+<li>請不要在暗網上輕易的信任對方。(準確來說… 表網也是)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="進入暗網">進入暗網</h3>
+<p>在暗網裡，也有個類似「<a href="https://zh.wikipedia.org/wiki/Wiki"><strong>Wiki 維基百科</strong></a>」的頁面，稱作「 <strong>The Hidden Wiki (隱藏維基)</strong> 」，又稱「 <strong>裡維基</strong> 」、「 <strong>黑暗維基</strong> 」。該頁面<strong>允許任何人匿名的編輯、提供暗網連結</strong>。</p>
+<p>由於該服務是<strong>不經審查</strong>的，這也使得該網站時常含有<strong>非法內容</strong>在內，包括<strong>網路服務</strong>、<strong>電子商務</strong>、<strong>洗錢</strong>、<strong>契約暗殺</strong>、<strong>網路攻擊</strong>、<strong>各式禁運品</strong>、<strong>人口販賣</strong>、<strong>炸藥製作</strong>、<strong>武器</strong>、<strong>毒品</strong>、<strong>假幣</strong>、<strong>偽造身分證件</strong>、<strong>偽造信用卡</strong>、<strong>麻醉藥品</strong>等，不過對暗網好奇的你… <s>不就是衝這個而來的嗎？</s> (更多 <strong>Hidden Wiki</strong> 的詳細資訊請詳閱 <a href="https://zh.wikipedia.org/wiki/The_Hidden_Wiki"><strong>Wiki 維基百科</strong></a>)</p>
+<blockquote>
+<ul>
+<li><strong>Hidden Wiki (隱藏維基)</strong> (地址非常多，可能隨時變更)
+<ul>
+<li><strong>hiddenw3s6tmzdwo.onion</strong></li>
+<li><strong>hiddenwiki7wiyzr.onion</strong></li>
+<li><strong>zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>另外推薦幾款好用的搜索引擎：</strong></p>
+<blockquote>
+<ul>
+<li><strong>Ahmia</strong>
+<ul>
+<li><a href="https://ahmia.fi/"><strong>https://ahmia.fi/</strong></a></li>
+</ul>
+</li>
+<li><strong>Not Evil</strong>
+<ul>
+<li><strong>hss3uro2hsxfogfq.onion</strong></li>
+</ul>
+</li>
+<li><strong>DuckDuckGo</strong>
+<ul>
+<li><a href="https://duckduckgo.com/"><strong>https://duckduckgo.com/</strong></a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="結語">結語</h3>
+<p>瀏覽暗網有一定的風險，就好像一把雙面刃。<br>
+必須再次強調<strong>本站僅做學術研討</strong>，你有<strong>絕對的權利</strong>選擇<strong>是否這麼做</strong>，並且你所做的選擇皆屬<strong>個人意願</strong>，後果須<strong>自行承擔</strong>，<strong>與本站無關</strong>。</p>
+<img src="/2020/09/01/How-To-Enter-The-DarkWeb/end.jpg" class="">
+]]></content>
+      <categories>
+        <category>Information (資訊分享)</category>
+      </categories>
+      <tags>
+        <tag>18+</tag>
+        <tag>Deep Web (深網)</tag>
+        <tag>Dark Web (暗網)</tag>
+        <tag>Tor (洋蔥路由)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何使用 Hexo 在 Github Pages 上部署部落格？</title>
     <url>/2021/05/15/How-to-deploy-Hexo-on-Github-Pages/</url>
-    <content><![CDATA[想要創建部落格，但又不想要一堆複雜又用不到的功能，輕盈的靜態頁面及 Git 版本控制，使用 Markdown 來撰寫文章，用 Hexo 架設部落格並發布在 Github pages 這一切就是那麼容易且方便。
+    <content><![CDATA[想要創建部落格，但又不想要一堆複雜又用不到的功能，輕盈的靜態頁面及 Git 版本控制，使用 Markdown 來撰寫文章，用 Hexo 架設部落格並發布在 Github Pages 這一切就是那麼容易且方便。
 <span id="more"></span>
 <hr>
 <h2 id="評估自己部落格的需求">評估自己部落格的需求</h2>
@@ -1139,10 +1460,10 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
 於部落格根目錄輸入以下指令安裝：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>安裝完畢後編輯設定檔「 <code>_config.yml</code> 」：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#_config.yml</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:alpaca0x0/alpaca0x0.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">dev</span></span><br><span class="line">  <span class="attr">message: Site updated:</span> &#123;&#123; <span class="string">now(&#x27;YYYY-MM-DD</span> <span class="string">HH:mm:ss&#x27;)</span> &#125;&#125;<span class="string">)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#_config.yml</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">http://github.com/alpaca0x0/alpaca0x0.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">dev</span></span><br><span class="line">  <span class="attr">message: Site updated:</span> &#123;&#123; <span class="string">now(&#x27;YYYY-MM-DD</span> <span class="string">HH:mm:ss&#x27;)</span> &#125;&#125;<span class="string">)</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>由於我們要推送至「Github Pages」，因此  <code>type</code>  設定為 「 <code>git</code> 」。</li>
-<li>其中  <code>repo</code>  為 「 <code>Repositories</code> 」，說白了就是要部署的目的地。</li>
+<li>其中  <code>repo</code>  為 「 <code>Repositories</code> 」，此指要部署的目的地。</li>
 <li>而  <code>branch</code>  則是分支，可以不做此設定 (使用預設分支)。</li>
 <li>最後  <code>message</code>  則是提交訊息，此項同樣可以不做設定。</li>
 </ul>
@@ -1156,7 +1477,8 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy <span class="comment">#或者使用縮寫 hexo d</span></span><br></pre></td></tr></table></figure>
 <p>接著輸入 Github 帳號密碼即可成功部署。<br>
 如果嫌每次都要<strong>輸入帳號密碼很麻煩</strong>，也可以使用 Github 提供的  <code>SSH</code>  方法來連接。<br>
-詳情請見 <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh"><strong>Github 官方文檔</strong></a></p>
+更據官方格式將  <code>_config.yml</code>  中的佈署設定  <code>deploy</code>  裡面的  <code>repo</code>  改為對應的  <code>SSH</code>  連結。</p>
+<p>詳情請見 <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh"><strong>Github 官方文檔</strong></a></p>
 <p>你也可以直接輸入以下指令來  <code>渲染檔案並部署站點</code> ：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 <p>這麼一來就大功告成啦～</p>
@@ -1171,141 +1493,6 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
       <tags>
         <tag>Github</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(18+) 如何進入「暗網」？</title>
-    <url>/2020/09/01/How-To-Enter-The-DarkWeb/</url>
-    <content><![CDATA[<p>也許你聽過暗網裡的<strong>驚悚故事</strong>；<br>
-並且你非常了解其中的<strong>風險</strong>；<br>
-但你的<strong>好奇心</strong>驅使著你<strong>一探究竟</strong>；<br>
-而你正為了不知道<strong>如何進入暗網</strong>而煩惱；<br>
-那麼，這篇文章或許可以幫到你什麼。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<blockquote>
-<p><b style="color: red; font-size: 300%;">免責申明！</b><br>
-<b>本篇文章所教導的內容純屬學術研討，旨在探討「如何使用 Tor 這項技術進入隱藏網絡」，用於保障每位公民匿名上網的權利。</b><br>
-<b style="color: red;">一切利用本文所提到的技術施以犯罪行為者，皆屬個人責任，本站概不負責。</b></p>
-</blockquote>
-<hr>
-<p>本篇文章主要著重在<strong>如何進入暗網</strong>及進入暗網的<strong>注意事項</strong>，並<strong>不會</strong>有太多的<strong>介紹</strong>及<strong>原理講解</strong>。</p>
-<p>如果你還不知道「 <strong>Dark Web (暗網)</strong> 」是什麼，之前我曾寫過一篇粗略介紹暗網的文章 —「<strong><a href="/2020/02/17/DarkWeb/" title="(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！">(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</a></strong>」，建議你先了解完再考慮觀看本篇文章。</p>
-<p>另外「<strong><a href="/2020/02/18/DarkWeb-FamousWeb/" title="(18+) 浮出水面的 4 個知名暗網">(18+) 浮出水面的 4 個知名暗網</a></strong>」這篇文章也推薦給還沒看過得你，這能使你更了解暗網。</p>
-<p>也建議各位瀏覽暗網的裝置盡量<strong>保持乾淨</strong>，<strong>不</strong>要含有<strong>個人資訊</strong>，並且隨時做好電腦<strong>重灌</strong>的準備。</p>
-<hr>
-<h3 id="vpn-虛擬私人網路">VPN (虛擬私人網路)</h3>
-<p><img src="01.jpg" alt="&quot;VPN&quot;"></p>
-<p>「 <strong>VPN</strong> 」全名「 <strong>Virtual Private Network</strong> 」，中文為「 <strong>虛擬私人網路</strong> 」。<br>
-一般連線上網是以 <strong>User (用戶端)</strong> 對 <strong>Server (伺服端)</strong> 做直接連線，當然 <strong>Server (伺服端)</strong> 可以清楚的<strong>知道誰訪問了站點</strong>，這對於瀏覽暗網來說太<strong>危險</strong>了，誰都不想在暗網上被對方查到身份。對於瀏覽暗網，我們必須著重注意自身的<strong>匿名性</strong>及<strong>安全性</strong>。</p>
-<p>為了解決 <strong> <code>User =&gt; Server</code> </strong> 的直接訪問所造成 <strong>IP 洩漏</strong>，因此在連線的過程必須加上一道保護，這道保護即為 <strong>VPN</strong> ，掛上 VPN 後的連線為 <strong> <code>User =&gt; VPN =&gt; Server</code> </strong> ，而這些<strong>中繼的 IP</strong> 遍佈在世界各地，若不考慮服務本身有漏洞，就算是<strong>警察</strong>也<strong>很難跨國調查</strong>，這大大了<strong>增加了反追蹤的難度</strong>。</p>
-<p>就好像 <strong>A</strong> 想告訴 <strong>B</strong> 一件事情，同時 <strong>A</strong> 又不希望 <strong>B</strong> 知道這件事情是他說的，所以 <strong>A</strong> 選擇先告訴 <strong>C</strong> ，請 <strong>C</strong> 保密並轉達給 <strong>B</strong>。<br>
-也因為 <strong>VPN</strong> 成了與目的地<strong>連接的重要橋樑</strong>，因此必須<strong>慎選</strong>！就好比上述的情境中，<strong>C</strong> 必須是自己<strong>信任</strong>的人，反之則可能會被 <strong>B</strong> 給<strong>反追蹤</strong>，進而得知來源是 <strong>A</strong> 。</p>
-<p><strong>VPN</strong> 並<strong>非</strong>無敵，許多 VPN 的服務方會願意在收到一定程度的<strong>利益</strong>後，選擇<strong>出賣使用者的資料</strong>，又或者該服務的系統安全性低，導致<strong>遭到入侵</strong>進而<strong>洩漏使用者資料</strong>。(更多 <strong>VPN</strong> 詳細介紹請查閱 <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E7%A7%81%E4%BA%BA%E7%B6%B2%E8%B7%AF"><strong>Wiki 維基百科</strong></a>)</p>
-<p>個人推薦以下兩個 <strong>VPN</strong> 服務 — 「<a href="https://protonvpn.com/"><strong>Proton VPN</strong></a>」、「<a href="https://nordvpn.com/"><strong>Nord VPN</strong></a>」。</p>
-<hr>
-<h3 id="tor-browser-洋蔥瀏覽器">Tor Browser (洋蔥瀏覽器)</h3>
-<p><img src="02.png" alt="&quot;Tor Browser&quot;"></p>
-<p>在「<strong><a href="/2020/02/17/DarkWeb/" title="(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！">(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</a></strong>」這篇文章中有提到，暗網無法透過 <a href="https://zh.wikipedia.org/wiki/Google_Chrome"><strong>Chrome</strong></a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Firefox</strong></a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>Opera</strong></a> 等一般的瀏覽器來訪問伺服器，必須使用像 <strong>Tor Browser</strong> 這樣的特殊瀏覽器才行。</p>
-<p>所以請先<strong>下載</strong>及<strong>安裝</strong> <a href="https://www.torproject.org/"><strong>Tor Browser</strong></a>，並且在<strong>連上 VPN 後</strong>，開啟 <strong>Tor Browser</strong>。</p>
-<p>開啟後會發現，與「<a href="https://zh.m.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8"><strong>FireFox (火狐)</strong></a>」這款瀏覽器界面大同小異 (做為基底開發的)，但在瀏覽網站時，點擊網址左方，可以看到 Tor Browser 的連接狀況，從「 <strong>This browser</strong> 」到「 <strong>google.com (目的位址)</strong> 」中間經過了一些中繼點，這些中繼點一層一層的就像洋蔥的外皮般，因此才被稱作 <strong>Onion Router (洋蔥路由)</strong> 。<br>
-不過也因為<strong>經過的節點較多</strong>，相較<strong>一般瀏覽器</strong>的瀏覽<strong>速度</strong>是<strong>較慢</strong>的，若覺得這些節點<strong>速度太慢</strong>，也可以試試按下方的藍色按鈕「 <strong>New Circuit for this Site</strong> 」來<strong>更換節點</strong>。</p>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/02-01.png" class="">
-<hr>
-<h3 id="注意事項">注意事項</h3>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/03.jpg" class="">
-<p><b style="color: red; font-size: 300%;">注意！</b></p>
-<p>這些步驟很重要，請一定要確實做好。</p>
-<blockquote>
-<ul>
-<li><strong>遮蔽鏡頭</strong>
-<ul>
-<li>建議用<strong>有色膠帶貼住鏡頭</strong>，這是為了防止電腦不幸受到<strong>入侵</strong>時，保障自身<strong>隱私</strong>。</li>
-</ul>
-</li>
-<li><strong>瀏覽器視窗禁止最大化</strong>
-<ul>
-<li>在使用 Tor Browser 時，千萬<strong>不要將視窗最大化</strong>，這會使得對方可以輕易抓取你的裝置<strong>螢幕大小</strong>及<strong>部份資訊</strong>，進而透過這些資訊<strong>追蹤</strong>你的裝置。</li>
-</ul>
-</li>
-<li><strong>不使用真實資料</strong>
-<ul>
-<li>在暗網上絕對<strong>不要登入個人帳號</strong>，不論是 <strong>Google</strong>、<strong>Facebook</strong>、<strong>Instagram</strong> 等。最好連 <strong>E-Mail</strong> 也重新辦個新帳號用於暗網，並且該帳戶不在<strong>個人電腦</strong>及<strong>未連上 VPN</strong> 時登入。</li>
-</ul>
-</li>
-<li><strong>非必要時，請關閉 Javascript</strong>
-<ul>
-<li><strong>關閉網頁的 Javascript 運作</strong>可以得到更多的<strong>安全</strong>保障，當然這可能會使得<strong>網頁部份資訊無法成功載入</strong>。</li>
-</ul>
-</li>
-<li><strong>危機處理</strong>
-<ul>
-<li>一旦發現任何<strong>不對勁的狀況</strong>，請立即<strong>拔掉網絡線</strong>。</li>
-</ul>
-</li>
-<li><strong>防止詐騙</strong>
-<ul>
-<li>暗網上的交易主要是以<strong>虛擬貨幣</strong>來進行，這東西是<strong>不受政府保障</strong>的，因此暗網上的<strong>詐騙</strong>非常盛行，我敢說約 <strong>99 ％</strong> 賣家都是詐騙，例如常見的「 <strong>超低價販賣 Iphone 手機</strong> 」、「 <strong>比特幣洗錢</strong> 」、「 <strong>付費解鎖論壇資訊</strong> 」等。除非你<strong>信任</strong>該服務，並且確定該服務<strong>合法</strong>，否則請<strong>不要在暗網上消費</strong>。</li>
-<li>另外，你也必須知道「 <strong>比特幣 (或其他虛擬貨幣) 並非絕對匿名</strong> 」。除非你懂的洗錢，否則對方或許可以輕易的透過其他交易所的門路<strong>反追蹤該比特幣錢包的主人</strong>！(推薦使用<strong>冷錢包</strong>，可以更有效的預防該狀況的發生)</li>
-</ul>
-</li>
-<li><strong>不輕易相信任何人</strong>
-<ul>
-<li>請不要在暗網上輕易的信任對方。(準確來說… 表網也是)</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="進入暗網">進入暗網</h3>
-<p>在暗網裡，也有個類似「<a href="https://zh.wikipedia.org/wiki/Wiki"><strong>Wiki 維基百科</strong></a>」的頁面，稱作「 <strong>The Hidden Wiki (隱藏維基)</strong> 」，又稱「 <strong>裡維基</strong> 」、「 <strong>黑暗維基</strong> 」。該頁面<strong>允許任何人匿名的編輯、提供暗網連結</strong>。</p>
-<p>由於該服務是<strong>不經審查</strong>的，這也使得該網站時常含有<strong>非法內容</strong>在內，包括<strong>網路服務</strong>、<strong>電子商務</strong>、<strong>洗錢</strong>、<strong>契約暗殺</strong>、<strong>網路攻擊</strong>、<strong>各式禁運品</strong>、<strong>人口販賣</strong>、<strong>炸藥製作</strong>、<strong>武器</strong>、<strong>毒品</strong>、<strong>假幣</strong>、<strong>偽造身分證件</strong>、<strong>偽造信用卡</strong>、<strong>麻醉藥品</strong>等，不過對暗網好奇的你… <s>不就是衝這個而來的嗎？</s> (更多 <strong>Hidden Wiki</strong> 的詳細資訊請詳閱 <a href="https://zh.wikipedia.org/wiki/The_Hidden_Wiki"><strong>Wiki 維基百科</strong></a>)</p>
-<blockquote>
-<ul>
-<li><strong>Hidden Wiki (隱藏維基)</strong> (地址非常多，可能隨時變更)
-<ul>
-<li><strong>hiddenw3s6tmzdwo.onion</strong></li>
-<li><strong>hiddenwiki7wiyzr.onion</strong></li>
-<li><strong>zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion</strong></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p><strong>另外推薦幾款好用的搜索引擎：</strong></p>
-<blockquote>
-<ul>
-<li><strong>Ahmia</strong>
-<ul>
-<li><a href="https://ahmia.fi/"><strong>https://ahmia.fi/</strong></a></li>
-</ul>
-</li>
-<li><strong>Not Evil</strong>
-<ul>
-<li><strong>hss3uro2hsxfogfq.onion</strong></li>
-</ul>
-</li>
-<li><strong>DuckDuckGo</strong>
-<ul>
-<li><a href="https://duckduckgo.com/"><strong>https://duckduckgo.com/</strong></a></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="結語">結語</h3>
-<p>瀏覽暗網有一定的風險，就好像一把雙面刃。<br>
-必須再次強調<strong>本站僅做學術研討</strong>，你有<strong>絕對的權利</strong>選擇<strong>是否這麼做</strong>，並且你所做的選擇皆屬<strong>個人意願</strong>，後果須<strong>自行承擔</strong>，<strong>與本站無關</strong>。</p>
-<img src="/2020/09/01/How-To-Enter-The-DarkWeb/end.jpg" class="">
-]]></content>
-      <categories>
-        <category>Information (資訊分享)</category>
-      </categories>
-      <tags>
-        <tag>18+</tag>
-        <tag>Deep Web (深網)</tag>
-        <tag>Dark Web (暗網)</tag>
-        <tag>Tor (洋蔥路由)</tag>
       </tags>
   </entry>
   <entry>
@@ -1434,192 +1621,6 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
       <categories>
         <category>Concept (概念分享)</category>
       </categories>
-  </entry>
-  <entry>
-    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
-    <url>/2020/01/24/Cross-Site-Scripting/</url>
-    <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
-<span id="more"></span>
-<hr>
-<h3 id="閱讀本文所需知識">閱讀本文所需知識</h3>
-<p>在了解 XSS 之前，建議讀者最好先具備 <a href="https://zh.wikipedia.org/wiki/HTML"><strong>HTML (超文字標記語言)</strong></a> 的基礎知識，否則可能會出現連範例都看不懂的窘境。</p>
-<hr>
-<h3 id="可能觸發-xss-的先決條件">可能觸發 XSS 的先決條件</h3>
-<p>一般來說，XSS 大多發生在「<a href="https://zh.wikipedia.org/wiki/%E5%8B%95%E6%85%8B%E7%B6%B2%E9%A0%81"><strong>動態網頁</strong></a>」而不是「<a href="https://wiki.mbalib.com/zh-tw/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5" title="wiki.mbalib.com"><strong>靜態網頁</strong></a>」，在此簡單解釋一下兩者差異，有興趣了解更深入者自行點選連結觀看。你可以這麼想像<strong>動態</strong>與<strong>靜態</strong>網頁：</p>
-<ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8"><strong>伺服器 (Server)</strong></a>
-<ul>
-<li>翻譯：就如同一個「櫃台服務人員」展示著自家的商品，而 <a href="https://en.wikipedia.org/wiki/Client_(computing)"><strong>用戶端 (Client)</strong></a>，就是圍觀的顧客。</li>
-<li>原意：顧名思義為提供某特定服務的主機，而 <strong>用戶端 (Client)</strong> 則是使用這項服務的人。</li>
-</ul>
-</li>
-<li><strong>靜態網頁</strong>
-<ul>
-<li>翻譯：「服務人員」照著公司的流程介紹自家商品，不與顧客有任何的對話跟交流 (<strong>即使顧客提問也不給予回應</strong>)。</li>
-<li>原意：<strong>伺服器 (Server)</strong> 向 <strong>用戶端 (Client)</strong> 單向的展示服務，不接受任何來自 <strong>用戶端 (Client)</strong> 的請求 (<strong>連線請求例外</strong>)。</li>
-</ul>
-</li>
-<li><strong>動態網頁</strong>
-<ul>
-<li>翻譯：「服務人員」在<strong>有限的範圍</strong>內，回答顧客的提問，或接受展示顧客所要求的內容。</li>
-<li>原意：<strong>伺服器 (Server)</strong> 具有接受及自定義處理封包請求的能力，能與 <strong>用戶端 (Client)</strong> 擁有<strong>雙向</strong>的互動。</li>
-</ul>
-</li>
-</ul>
-<p>常見的狀況是 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> 或者 <strong>HTML</strong> + <a href="https://zh.wikipedia.org/wiki/Active_Server_Pages"><strong>ASP</strong></a> 等，都是在有「 <strong><a href="https://zh.wikipedia.org/wiki/%E5%89%8D%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF">網頁後端</a>語言</strong> 」並且該網站處理封包不當的情況下發生。</p>
-<hr>
-<h3 id="一般使用者操作的html">一般使用者操作的 HTML</h3>
-<p>以下是一些簡單的 HTML 標籤，我們<strong>模擬</strong>輸入名稱的功能。<br>
-(特別聲明：此範例單純使用 HTML 運作，模擬的環境是<strong>假設有傳入後端的情況</strong>。)</p>
-<p>按鈕按下時，會將「使用者輸入」欄位的值傳入後端 PHP，後端再將接收到的值顯示給使用者看，這麼一來就有了<strong>雙向互動</strong>，同時後台運作是直接抓取接收到的值來顯示，這意味著<strong>沒有過濾參數</strong>。</p>
-<p><strong>後端環境</strong>、<strong>雙向互動</strong>、<strong>沒有過濾參數</strong>，再看看剛剛所說的觸發條件… 這是一個觸發的好環境啊！</p>
-<hr>
-<ul>
-<li>HTML 頁面 使用者輸入】</li>
-</ul>
-<p><input id="example_input_1" type="input" value="abc123"><input type="button" value="確定" onclick="my_script()"></p>
-<script>
-function my_script(){
-	document.getElementById('example_p_1').innerHTML='你的名字：'+document.getElementById('example_input_1').value;
-}
-</script>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;name.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;input&quot;</span> <span class="attr">name</span>=<span class="string">&quot;my_name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abc123&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>【PHP 頁面 顯示傳入值】</li>
-</ul>
-<p id="example_p_1">你的名字：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//name.php</span></span><br><span class="line"><span class="variable">$name</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;my_name&#x27;</span>];			<span class="comment">//接收參數</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;p&gt;你的名字：&quot;</span>.<span class="variable">$name</span>.<span class="string">&quot;&lt;/p&gt;&quot;</span>;	<span class="comment">//沒過濾直接顯示</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>我們放大重點來討論，也就是說我們輸入什麼，就會反應在標籤上。<br>
-當使用者輸入「 <strong>def456</strong> 」則 HTML 標籤會長這樣</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>def456<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>輸入「 <strong>ghi789</strong> 」</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>ghi789<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>注意！上述都是一般使用者的作法，中規中矩的按造設計者的想法去做。<br>
-但… 駭客會這麼乖嗎？</p>
-<hr>
-<h3 id="駭客操作的html">駭客操作的 HTML</h3>
-<p>人家常說調皮的小孩是聰明的，有時候換個思路，調皮點，一個漏洞就這麼發現了。<br>
-設計者要求這樣做，我就該這樣做嗎？<br>
-正常輸入「 <strong>abc123</strong> 」如此標籤：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>你可以發現標籤內包著我們的語法，包著的是 &lt;p&gt; 標籤及標籤結尾 &lt;/p&gt;<br>
- 那如果今天我們輸入「 <strong>abc123&lt;/p&gt;</strong> 」呢？</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>你會發現我們所輸入的 &lt;/p&gt; 居然被解釋成標籤結尾了！？<br>
-這是否意味著我輸入什麼語法他就執行什麼語法？<br>
-那我們將輸入的參數稍做修改，改成具有影響力的語法！<br>
-輸入「 <strong>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</strong> 」</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc123<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">script</span>&gt;</span>alert(1)<span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>這則語法中的 <strong>alert(1)</strong> 是彈出警告視窗，其顯示內容為「1」<br>
-(Ps.「 <strong>alert(1)</strong> 」這是駭客們最常拿來測試 XSS 的語法)<br>
-<input type="button" value="按我觀看 Alert(1) 效果" onclick="alert(1)"></p>
-<p>隨意插入標籤？這麼一來我不就越權了嗎？</p>
-<hr>
-<h3 id="反射型-xss">反射型 XSS</h3>
-<p>上述的 XSS 稱為「反射型」，其特點為「 <strong>僅能自行觸發</strong> 」，也就是我必須先向 伺服端 (Server) 發送請求，讓它回應給我一個因為該請求而觸發 XSS 的後果，這樣的漏洞不就太沒利用價值了嗎！？因為這意味著，你只能讓自己中招，而無法實質對 伺服端 (Server) 產生傷害，或者危害到其他使用者權益，並且網頁將在重整後復原。整體來說該危害程度是許多管理者忽視且不願意花時間去處理的，但他們似乎忘了一個嚴重的問題… <a href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6"><strong>社交工程 (Social Engineering)</strong></a>。(之後會撰寫一篇關於 社交工程 (Social Engineering) 的文章。)<br>
-(更新：已發布文章「<strong><a href="/2020/01/24/Social-Engineering(%E7%A4%BE%E4%BA%A4%E5%B7%A5%E7%A8%8B)/" title="Social-Engineering (社交工程)｜你駭計算機，我駭你心">Social-Engineering (社交工程)｜你駭計算機，我駭你心</a></strong>」)</p>
-<hr>
-<h3 id="預存型-xss">預存型 XSS</h3>
-<p>該類型的 XSS 多半與 <strong>資料庫 (Database)</strong> 有著密切的關聯，上述的反射型是因為伺服端不會去儲存你的攻擊語法，所以不會發生該語法日後被再次觸發的問題，但現在要說的這種「 <strong>預存型</strong> 」就不同了。<br>
-「 <strong>預存型</strong> 」顧名思義就是伺服器將語法給紀錄下來了，並且在某些需要輸出紀錄時的場合被再次觸發到。<br>
-舉個常見的例子 - 「 <strong>貼文系統</strong> 」。以下模擬一個簡易的貼文系統 <strong>HTML + PHP + MYSQL</strong>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;post.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// post.php</span></span><br><span class="line"><span class="variable">$title</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;title&#x27;</span>]);</span><br><span class="line"><span class="variable">$content</span>=trim(<span class="variable">$_POST</span>[<span class="string">&#x27;content&#x27;</span>]);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$title</span>) || <span class="keyword">empty</span>(<span class="variable">$content</span>)) <span class="keyword">exit</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;INSERT INTO `post` (`title`, `content`)</span></span><br><span class="line"><span class="string">VALUES(&#x27;<span class="subst">$title</span>&#x27;, &#x27;<span class="subst">$content</span>&#x27;);&quot;</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;貼文成功！&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以清楚看到 index.html 中所輸入的欄位分別有代表文章標題的「 <strong>title</strong> 」及代表文章內容的「 <strong>content</strong> 」，並且表單傳送至 post.php 中，在 post.php 裡將標題及內容寫入資料庫。<br>
-這時候假設貼文標題打上「 <strong>abc213&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</strong> 」，內容隨意輸入「 <strong>test</strong> 」，正常來說此語法將會被成功寫入資料庫存放。</p>
-<p>既然是貼文系統，照理來說會有個輸出文章的位置 (不然貼文就沒意義了)：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// display.php</span></span><br><span class="line"><span class="variable">$connection</span>=mysql_connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;password&quot;</span>);</span><br><span class="line">mysql_select_db(<span class="string">&quot;post&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM `post`;&quot;</span></span><br><span class="line"><span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>, <span class="variable">$connection</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$result</span>) <span class="keyword">exit</span>();</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$row</span>=mysql_fetch_row(<span class="variable">$result</span>))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$row</span>[<span class="string">&#x27;title&#x27;</span>];</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$row</span>[<span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>就這樣，資料庫裡存放的 html 標籤被輸出並解釋成標籤作用了。<br>
-任何只要看得到這篇文章的人，畫面上就會彈出我們所植入的「alert (1)」。</p>
-<p>我們僅僅是用「 <strong>alert()</strong> 」來測試 XSS 而已，這還算不上是什麼危害，但是有心人士會透過其他語法來達成非法目的，例如可以利用「 <strong>document.cookie</strong> 」來獲取你的 <a href="https://zh.wikipedia.org/wiki/Cookie"><strong>Cookie</strong></a> ，很多時候明明沒有在其他地方登入過，電腦也沒有中毒，帳號卻莫名被盜，有可能就是你中了 XSS 。</p>
-<hr>
-<h3 id="總結">總結</h3>
-<p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
-透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
-<p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
-]]></content>
-      <categories>
-        <category>Trick (技術講解)</category>
-        <category>Web</category>
-        <category>Pen-Test</category>
-        <category>XSS (Cross-Site-Scripting)</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>SecurityFlaw (安全漏洞)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>(18+) Dark Web 暗網｜人口販賣、兒童色情、殺人直播？電影情節真實上演！</title>
-    <url>/2020/02/17/DarkWeb/</url>
-    <content><![CDATA[<p>網絡盛行的年代，<strong>你真的認為你夠熟悉網絡嗎？<strong>在這龐大的網絡世界裡，有些地方你沒去過，也</strong>一輩子都不該去</strong>。本篇將會介紹你可能不知道的地下網絡 - 「 <strong>暗網</strong> 」。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>生活在一個網路充斥著生活的時代，使用網路對每個人來說已經是家常便飯，但如果我說其實你平常所能使用到的網絡及你能透過 Google 所搜尋到的<strong>所有</strong>東西都只佔了<strong>不到網絡世界的 5％</strong>，那你會好奇<strong>其他的 95％去了哪裡</strong>嗎？</p>
-<p>另外，許多人會誤會「 <strong>暗網</strong> 」是指<strong>某個網頁</strong>，但實際上這個詞是一個<strong>廣泛的分類</strong>，並<strong>非</strong>是指某個網站，至於什麼樣的網絡會被分類在暗網，以下帶你一探究竟。</p>
-<hr>
-<h3 id="深網-與-暗網-的差別"><strong>深網</strong> 與 <strong>暗網</strong> 的差別</h3>
-<p>首先，必須先強調一點，就是<strong>深網不完全等於暗網</strong>！</p>
-<p>在了解兩者差異之前，在此先提個單字 -「<a href="https://zh.wikipedia.org/wiki/%E8%A1%A8%E7%BD%91"><strong>Surface Web (表網)</strong></a>」。<br>
-「 <strong>表網</strong> 」全稱「 <strong>表層網絡</strong> 」，即一般人們使用的網絡，包括 <a href="https://zh.wikipedia.org/wiki/Facebook">Facebook</a>、<a href="https://zh.wikipedia.org/wiki/Google">Google</a>、<a href="https://zh.wikipedia.org/wiki/YouTube">Youtube</a> 等常見的知名服務，以及本站，甚至其他你在 Google 上能搜尋到的所有站點，都屬於表網。<br>
-而 <strong>Deep Web (深網)</strong> 則主要可以泛指所有在表網上<strong>搜尋不到</strong>的網絡。</p>
-<p>那… 什麼是暗網？</p>
-<p>「 <strong>Dark Web (暗網)</strong> 」<strong>涵蓋</strong>在深網中，比起深網來說，暗網才算是真正的隱藏，不僅僅是搜尋引擎搜索不到，而是即使有了網址，也無法透過一般的瀏覽器來訪問，是深網中的<strong>底層網絡</strong>，沒錯，<strong>深網</strong>已經是在網絡世界之下的底層網絡，而這所謂的暗網則是<strong>網絡世界中底層網絡中的底層網絡</strong>！<br>
-以下這張圖或許可以讓你更了解它們之間的比例關係。</p>
-<p><img src="01.png" alt="" title="取自網絡，廣泛被用來解釋網絡層關係的冰山圖" width="85%"></p>
-<p>這塊<strong>浮冰</strong>用來當作<strong>整個網絡世界</strong>，在<strong>水面上</strong>的部份為<strong>表網</strong>，約佔了整個網絡世界的 <strong>4％</strong> ，其餘在水面下的隱藏網絡皆為 <strong>Deep Web (深網)</strong> ，約佔 <strong>96％</strong> ，而涵蓋在深網中，底層的那些網絡即稱之為 <strong>Dark Web (暗網)</strong> ，約佔深網 <strong>96％</strong> 中的 <strong>6％</strong> 。</p>
-<hr>
-<h3 id="dark-web-暗網">Dark Web (暗網)</h3>
-<p>正因為有技術可以在網路上做到隱藏、匿蹤的效果，有心人士便開始浮出水面，因此暗網裡充斥著許多非法的服務，例如 <strong>毒品交易、槍支交易、僱用殺手服務、兒童色情、洗錢、邪教論壇、屠殺視頻、偽造護照服務、人口販賣</strong> 等，當然也有比較正常的服務，例如 <strong>加密信箱、匿名論壇、加密聊天</strong> 等。</p>
-<hr>
-<h3 id="p2p-對等式網絡">P2P 對等式網絡</h3>
-<p>上述中跟各位提到暗網「 <strong>即使有了網址，也無法透過一般的瀏覽器來訪問</strong> 」，不論是表網還是一般的深網都還可以透過你所使用的 <a href="https://zh.wikipedia.org/wiki/Google_Chrome">Chrome</a>、<a href="https://zh.wikipedia.org/wiki/Firefox%E7%80%8F%E8%A6%BD%E5%99%A8">Firefox</a>、<a href="https://zh.wikipedia.org/wiki/Opera%E9%9B%BB%E8%85%A6%E7%80%8F%E8%A6%BD%E5%99%A8">Opera</a> 等一般的瀏覽器來連接伺服器，但暗網可不行。<br>
-暗網之所以能達到隱藏的效果則是因為暗網使用的是「<a href="https://zh.wikipedia.org/wiki/%E7%82%B9%E5%AF%B9%E7%82%B9%E7%BD%91%E7%BB%9C"><strong>Peer-To-Peer (對等式網絡)</strong></a>」，也就是俗稱的「 <strong>點對點</strong>、<strong>P2P</strong> 」。</p>
-<p>這邊簡單的介紹一下，一般來說正常的網絡都會有個「 <strong>中心伺服器</strong> 」(如下圖)，可以方便且快速的讓我們訪問其他站點。</p>
-<img src="/2020/02/17/DarkWeb/02.png" class="" title="取自 Wiki維基百科，中央網絡系統。">
-<hr>
-<p>而 P2P 則是<strong>無中心伺服器</strong>的，每個用戶都是一個<strong>節點</strong>，並且這些節點彼此之間是<strong>不能直接聯繫</strong>的，當某節點 A 架設一個伺服器，而某節點 B 想要訪問節點 A 時，並非直接的訪問，而是透過兩者之間的節點幫忙傳送，會透過很多層的節點後，最後才到目標，例如「B &gt; T &gt; C &gt; … &gt; Y &gt; A」。</p>
-<p>由於傳輸過程中使用多個節點，因此犧牲掉了訪問速度，如果網速不好的狀況去瀏覽暗網，真的會等到睡著… ，但多節點確實提高了反追蹤的特性，也因此暗網常常是令 <a href="https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E8%B0%83%E6%9F%A5%E5%B1%80"><strong>FBI</strong></a> 頭痛的罪犯溫床。</p>
-<p>這其實有點像是小學時，<strong>上課傳紙條</strong>的概念，當你坐在最後一排，想傳紙條給第一排的同學時，如果直接親手交給他，則很容易被老師 (執法者) 抓到，因此必須借助中間同學的幫忙，一個一個傳，等紙條到了目標手中，即使老師發現了，也很難追問是誰傳的，因為節點並非固定的，就好像學生隨時都在換座位一樣。</p>
-<img src="/2020/02/17/DarkWeb/03.png" class="" title="取自 Wiki維基百科，對等網絡系統。">
-<hr>
-<h3 id="tor-洋蔥路由">Tor (洋蔥路由)</h3>
-<p>上述所提到的 P2P 當中，一個有名的例子就是「 <strong>Tor</strong> 」，全名「 <strong>The Onion Router</strong> 」(<strong>洋蔥路由</strong>)，為<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6">自由軟體</a>，用戶們可以使用 Tor 連接來自全球使用者免費提供的節點。Tor 的設計原意在於<strong>保障用戶的個人隱私</strong>，以及<strong>不受監控地進行秘密通信的自由和能力</strong>。</p>
-<p>Tor 在傳送資料時，會對<strong>下一個節點的資料、IP 位址</strong>進行<strong>多次的加密</strong>，並隨機選擇 Tor 節點傳送，每個中繼都會對一層加密的資料進行解密，以知道資料的下一個傳送目的地，然後將剩餘的加密資料傳送給它。最後的中繼會解密最內層的加密資料，並在不會洩露或得知源 IP 位址的情況下，將原始資料發送至目標位址。</p>
-<p>一層一層的加密就好像洋蔥般，因此稱為洋蔥路由。<br>
-而基於 Tor 技術所開發的瀏覽器「 <strong>Tor Browser (Tor 瀏覽器)</strong> 」也是目前廣泛被大家使用在訪問暗網的瀏覽器。</p>
-<p><strong>20 世紀 90 年代</strong>，互連網缺乏安全性，以及用於跟蹤及監視的能力越來越明顯。<strong>1995 年</strong>，美國海軍研究實驗室 <a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E6%B5%B7%E8%BB%8D%E7%A0%94%E7%A9%B6%E5%AF%A6%E9%A9%97%E5%AE%A4"><strong>United States Naval Research Laboratory (NRL)</strong></a> 的數學家 <strong>Paul Syverson (保羅・西維森)</strong> 、電腦科學家 <strong>G. Mike Reed (邁克・里德)</strong> 及 <strong>David Goldschlag (大衛・戈爾德施拉格)</strong> 為保護美國情報通信而開發了該軟體。</p>
-<p>有個專門用於 Tor 網絡的<a href="https://zh.wikipedia.org/wiki/%E9%A1%B6%E7%BA%A7%E5%9F%9F">頂級域</a>「 <strong>.onion</strong> 」，這種域名並未被收錄在域名根區中，並不屬於實際的域名，但透過特殊的代理軟體即可訪問 .onion 的地址，例如上述的 Tor Browser (Tor 瀏覽器)。因此若是看到有人貼的網址中頂級域是「.onion」那麼通常就是隱藏網絡，需要使用特殊瀏覽器來訪問，一般的瀏覽器僅會顯示地址不存在。</p>
-<hr>
-<h3 id="bitcoin-比特幣-btc">Bitcoin (比特幣、BTC)</h3>
-<p>剛剛說到暗網中有著許多非法的交易，而這些交易當然也不可能用銀行轉帳，不然就失去了匿蹤的意義了，通常暗網上的交易都是由「<a href="https://zh.wikipedia.org/wiki/%E6%AF%94%E7%89%B9%E5%B8%81"><strong>Bitcoin (比特幣)</strong></a>」來支付的，比特幣為一種「<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E8%B4%A7%E5%B8%81"><strong>加密貨幣</strong></a>」，由於怕離題的緣故，因此就不講解相關原理了，有興趣的朋友麻煩請點擊超連結觀看或是自行搜尋相關資料。</p>
-<p>若你已經了解什麼是 Bitcoin (比特幣) 並且知道其中的原理，那麼應該也不難理解為什麼<strong>暗網中的騙子很多</strong>，主要是因為比特幣本身是沒有保障的，一切的交易僅能靠雙方對彼此的信任，再加上暗網本身的匿蹤特性，詐騙根本沒在怕被抓的。</p>
-<hr>
-<h3 id="marianas-web-馬里亞納網絡-未證實都市傳說">Mariana’s Web (馬里亞納網絡) (<strong>未證實，都市傳說</strong>)</h3>
-<p>「 <strong>Mariana’s Web (馬里亞納網絡)</strong> 」號稱是暗網的<strong>最深處</strong>，其命名也是以世界上目前發現已知最深的海溝「<a href="https://zh.wikipedia.org/wiki/%E9%A9%AC%E9%87%8C%E4%BA%9A%E7%BA%B3%E6%B5%B7%E6%B2%9F"><strong>馬里亞納海溝</strong></a>」來命名的，象徵著在這連光都透不進的海溝裡，潛下去，就再也不用想著浮出水面。</p>
-<p><strong>據說</strong></p>
-<p>進入馬里亞納網絡需要使用 <strong>量子電腦</strong> 來運算一個名為「 <strong>Polymeric Falcighol Derivation</strong> 」的數學函式，這是一種複雜的演算法 (但網路上似乎找不到該名詞相關有依據的報告)，並且使用的頂級域是「 <strong>.clos</strong> 」、「 <strong>.loky</strong> 」及「 <strong>.marianas</strong> 」。</p>
-<p>馬里亞納網絡的盡頭存放著許多世界機密，甚至有不少人認為這些機密文件中，有著可以<strong>改變世界的祕密</strong>，例如 <strong>操控時間的方法、宇宙的由來、亞特蘭提斯的祕密、外星人的相關資料</strong> 等，甚至有人說其實整個馬里亞納網絡就是一個 <strong>AI (人工智慧)</strong> 。</p>
-<p>有另外一種說法是，馬里亞納網絡的盡頭其實是一個名為「 <strong>Devil Mate (魔鬼的同伴)</strong> 」的論壇，該論壇無人道可言，論壇的管理員都是一些社會上頂尖的成功人士，這群人有著可怕的財富及權利，需要有邀請碼才得以加入會員，否則什麼內容也看不到，這些帖子通常會被隱藏或是顯示成亂碼，即便加入會員後，也無法馬上觀看內容，因為該論壇將會員分成<strong> 1～66</strong> 個等級，等級越高，所能看到的內容越多，而提升等級的唯一方法就是完成該論壇所規定的任務，他們稱作「儀式」…</p>
-<p>這些任務充滿著不人道的要求，一開始可能只是要求你<strong>生吞豬心</strong>、<strong>殺死貓狗</strong>、<strong>自殘</strong>、<strong>喝鴨血</strong>、<strong>喝處女的血</strong>，隨著等級越來越高，任務也越來越極端，開始出現例如 <strong>殺死一個人</strong>、<strong>與屍體性交</strong>、<strong>活生生的挖出某人的眼睛</strong> 等，一切任務都隨管理員的心情出題，完成任務的過程需要拍攝照片、影片回報，論壇等級提升後即可獲得獎勵，大筆的獎金及觀看更多論壇帖子的權限，而在獲得獎勵的同時，你也正在一步步的奉獻自己的靈魂給這群惡魔。</p>
-<p><strong>當然！<br>
-關於 Mariana’s Web (馬里亞納網絡) 的一切都是謠言，未證實過的，看看就好。</strong></p>
-<hr>
-<h3 id="著名的網站">著名的網站</h3>
-<p>下一篇文章中，介紹了 4 個在暗網中非常著名的網站，有些甚至到了今天，服務仍正常在運作中，歡迎觀看「<strong><a href="/2020/02/18/DarkWeb-FamousWeb/" title="(18+) 浮出水面的 4 個知名暗網">(18+) 浮出水面的 4 個知名暗網</a></strong>」。</p>
-]]></content>
-      <categories>
-        <category>Popular-Science (科普)</category>
-      </categories>
-      <tags>
-        <tag>18+</tag>
-        <tag>Deep Web (深網)</tag>
-        <tag>Dark Web (暗網)</tag>
-        <tag>Tor (洋蔥路由)</tag>
-        <tag>Bitcoin (比特幣)</tag>
-      </tags>
   </entry>
   <entry>
     <title>《管理學 02》管理原則、角色分配｜管理的運作架構</title>
@@ -1800,111 +1801,6 @@ function my_script(){
       </tags>
   </entry>
   <entry>
-    <title>Maslow&#39;s Hierarchy Of Needs (馬斯洛 需求層級理論)</title>
-    <url>/2021/03/17/Maslow-s-Hierarchy-Of-Needs/</url>
-    <content><![CDATA[<p>Maslow 將心理需求與生理需求分成五個層級來探討，或許你聽過「<strong>需求層級</strong>」，但你真的了解嗎？</p>
-<span id="more"></span>
-<hr>
-<h2 id="起源">起源</h2>
-<p><strong>Maslow’s Hierarchy Of Needs (馬斯洛 需求層次理論)</strong> 是由一名美國心理學家 <a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%C2%B7%E9%A9%AC%E6%96%AF%E6%B4%9B"><strong>Abraham Harold Maslow</strong></a> 於 <strong>1943</strong> 年《<strong>心理學評論</strong>》的論文〈<strong>人類動機的理論 (A Theory of Human Motivation)</strong>〉 中所提出的理論。該理論屬於<strong>心理健康</strong>的理論，主張認為人類天生的需求是首先要被滿足的，隨後更進一步滿足自己，最後達成自我實現。</p>
-<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
-<hr>
-<h2 id="需求比較">需求比較</h2>
-<p>凡是人便有需求，<strong>食衣住行娛樂</strong>皆是。<br>
-而這些需求有<strong>輕重緩急</strong>之分，舉例「 <code>食</code> 」相較「 <code>娛樂</code> 」來的更重要，因此在滿足「 <code>食</code> 」的需求之前，「 <code>娛樂</code> 」先放一旁。又好比說「 <code>安全</code> 」與「 <code>理想</code> 」來說，當一個人面臨<strong>威脅自身安全</strong>的處境而又<strong>無法解決</strong>時，是<strong>沒</strong>有心思去<strong>思考自己的理想</strong>的，安全相對是更重要的，也正是大家常聽到的「<strong>安全第一</strong>」。</p>
-<p>Maslow 將這些需求進行<strong>排列</strong>、<strong>分級</strong>就形成了著名的「<strong>需求層級圖</strong>」。</p>
-<hr>
-<h2 id="需求層級">需求層級</h2>
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
-<p>這些需求被以<strong>優先需要的程度</strong> <code>高至低</code> 分別為 <code>下到上</code> 分級，及形成上圖的<strong>需求層級金字塔</strong>。<br>
-以下為生理層面的需求：</p>
-<blockquote>
-<h3 id="physiological-needs-生理需求">Physiological Needs (生理需求)</h3>
-<p>級別最低，在整個需求層級金字塔最底部，也就是<strong>最優先需要</strong>的層級。<br>
-其中就包括 <code>空氣</code> 、 <code>食物</code> 、 <code>水</code> 、 <code>睡眠</code> 、 <code>性</code> 等。<br>
-這些是使人能存活下去的主要條件。當不被滿足時，其他層級的需求相對不再重要，甚至可能被捨棄，像是「<a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">烏拉圭空軍 571 號班機空難</a>」事件中，遇難的 45 人中，只剩 16 名生還者，使這些生還者能夠生存的關鍵在於，他們選擇<strong>吃了其他同伴的遺體</strong>，聽起來殘忍，但也正是因為這個選擇滿足了生理需求才能活下來。</p>
-</blockquote>
-<blockquote>
-<p>「<em>倖存者的食物很少：幾塊巧克力、什錦點心和幾瓶紅酒。墜機後的幾天裡，眾人將食物分成很少的量，以免把他們微薄的補給用盡。費托還設計一種把雪融成水的辦法，他把雪放上金屬座位。用陽光把雪融掉後滴入空酒瓶。即便分配很嚴格，他們的食物還是很快地減少。白雪皚皚的山上不會有天然植物或動物存活。眾人作出集體決定，吃死去戰友的屍體。這個決定不是輕易做出的，因為大多死難者都是親密的朋友和同學。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">Wiki 維基百科</a></p>
-</blockquote>
-<blockquote>
-<h3 id="safety-needs-安全需求">Safety Needs (安全需求)</h3>
-<p>為次要需求層級，在滿足了 <strong>Physiological (生理)</strong> 層面的需求後，生物的基本生存條件就被鞏固了，但以群觀視角來說，依舊無法滿足真正「<strong>穩定的生存</strong>」。<br>
-對一般動物而言，身處的<strong>環境</strong>及自己處在<a href="https://zh.wikipedia.org/wiki/%E9%A3%9F%E7%89%A9%E9%8F%88">食物鏈</a>的哪一環決定了自己的安全條件如何。而人類不只是如此，人類還必須得面臨在人類社會中的 <code>經濟</code> 問題。<br>
-諸如 <code>人身安全</code> 、 <code>生活安穩</code> 、 <code>疾病或痛苦</code> 、 <code>威脅</code> 等，只要是影響到<strong>自身生命安全</strong>的因素，皆是屬於該層級。</p>
-</blockquote>
-<hr>
-<p>以上皆是為了「生存」的生理需求，<br>
-從這裡才開始有了心理需求：</p>
-<blockquote>
-<h3 id="love-and-belonging-needs-愛與歸屬感需求">Love And Belonging Needs (愛與歸屬感需求)</h3>
-<p>又稱「<strong>社交需求</strong>」。既然是「<strong>社交</strong>」就<strong>不</strong>會只有<strong>自己</strong>。<br>
-<strong>生理需求</strong>中所作的一切都只是<strong>為了自己</strong>，讓自己能夠活下去，但在此層級中，開始會<strong>為他人著想</strong>、<strong>付出</strong>。<br>
-開始有了 <code>親情</code> 、 <code>友誼</code> 、 <code>愛情</code> 等需求，可以為了愛付出貢獻，甚至是無私的奉獻。</p>
-</blockquote>
-<blockquote>
-<h3 id="esteem-needs-尊嚴需求">Esteem Needs (尊嚴需求)</h3>
-<p>屬於高級需求。在文明社會中，大家所追求的基本上就是該層級的相關內容。<br>
-尊嚴不只是<strong>他人對自己</strong>，也包括<strong>自己對自己</strong>，分別又稱<strong>外部尊重</strong>及<strong>內部尊重</strong>。<br>
-舉例 <code>社會地位</code> 、 <code>成就</code> 、 <code>名聲</code> 、 <code>被他人認同</code> 、 <code>被他人尊重</code> 屬於<strong>外部尊重</strong>；<br>
- <code>自我認知價值</code> 、 <code>自信(自我肯定)</code> 、 <code>自尊</code> 則屬於<strong>內部尊重</strong>。</p>
-</blockquote>
-<blockquote>
-<h3 id="need-for-self-actualization-自我實現需求">Need For Self-Actualization (自我實現需求)</h3>
-<p>為最高層級的需求。主要是指獲得更高<strong>人生境界</strong>的需求。<br>
-像是<strong>發覺自我潛能</strong>、<strong>做到自我實現</strong>等。<br>
-聽起來很複雜，但例子就在生活周遭： <code>愛護動物而選擇吃素</code> 、 <code>運動國手勤奮訓練為了超越自己</code> 、 <code>為了幫助弱勢族群而捐款</code> ，是一種衍生性需求。</p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="over-actualization-超自我實現">Over Actualization (超自我實現)</h3>
-<p>Maslow 在晚期提出的延伸理論。<br>
-當人們充分的滿足 <strong>Need For Self-Actualization (自我實現需求)</strong> 時，所出現短暫的「<strong>高峰體驗</strong>」。<br>
-可能是 <code>成就感</code> 或 <code>某種體悟</code> ，通常都是在進行或完成一件事情時，<strong>深刻體驗</strong>到的感覺，通常<strong>藝術家</strong>或是<strong>音樂家</strong>較常體會到。<br>
-「<em>一位音樂家，在演奏音樂時，所感受到的一股「忘我」的體驗。一位藝術家在畫圖時，感受不到時間的消逝，他在畫圖的每一分鐘，對他來說跟一秒一樣快，但每一秒卻活的比一個禮拜還充實。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">Wiki 維基百科</a></p>
-</blockquote>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<p>〈Wikipedia 維基百科 - 需求層級理論〉<a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">https://zh.wikipedia.org/wiki/ 需求层次理论</a></p>
-]]></content>
-      <categories>
-        <category>Popular-Science (科普)</category>
-      </categories>
-      <tags>
-        <tag>Psychology (心理學)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mr.L — 我的啟蒙者</title>
-    <url>/2020/01/06/MrL/</url>
-    <content><![CDATA[<p>「寫程式好難啊…」我獨自坐在電腦桌前說著，那是我國三畢業後的假期。<br>
-想想那段時間，我近三個月沒有與任何人說過話，腦裡已經被程式語言給佔領。</p>
-<span id="more"></span>
-<img src="/2020/01/06/MrL/title.jpg" class="">
-<hr>
-<h3 id="入坑">入坑</h3>
-<p>我與很多小孩一樣從小不愛讀書，更是沒什麼過人的成就，當時「學校」對於我來說只是必須準時報到的「娛樂場所」，天天到學校去也是開開心心、無憂無慮，名副其實的「上課睡覺，下課尿尿」，偶爾再找點樂子闖個禍爽一下，一直是令家人及老師頭痛的問題兒童。<br>
-偶然在國三畢業後的假期裡接觸了<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank">編程</a>，當初什麼也不懂，也不是特別感興趣，而且自己也先入為主的認為「這需要大量動腦的東西不適合我」，僅僅只是因為喜歡玩電腦而報考「資訊科」，想想電影裡的駭客寫程式的樣子也蠻帥的感覺。然而不知道是哪根筋作祟，這一學，居然近三個月就這麼過去了，回過神來，我忘了吃飯，忘了睡覺，幽暗的房間，只剩螢幕上滿滿來自程序錯誤的視窗以及一頭亂髮的男孩。</p>
-<h3 id="社交障礙">社交障礙</h3>
-<p>高中如願考上了資訊科，接觸了許多事物，但總是覺得少了點什麼，少的原來是能和我溝通的人。長時間的面對電腦，早讓我忘記了如何與人相處，我遇到了人生中的一大難題 — <a href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BA%A4%E6%81%90%E6%87%BC%E7%97%87" target="_blank">社交障礙</a>。我嘗試透過網路學習，結交許多圈內網友，他們熱心的與我討論所遇到的程式問題，也分享了許多有趣的資安事件，我終於在他們的幫助下解決了程式的錯誤，也好像在這樣的環境找到屬於我的一絲溫暖。日子一天天的過，學習的東西越來越難，對於從小沒有讀書習慣的我，即使再有興趣，也扛不住了，我開始厭煩、頹廢，直到… 我遇見了 Mr.L。<br>
-L 先生的資訊能力非常強大，他是一個想到什麼說什麼的人，不做作，有著一套屬於自己獨特的學習系統、邏輯及思維，但也因此，在現實生活中顯的格格不入，是個時常受到排擠的對象，但我喜歡他這樣的個性。</p>
-<h3 id="發現">發現</h3>
-<p>撿到了這樣一塊不起眼的寶石，我真很幸運。在 L 先生的陪同下，我挖掘了更深入的技術，他手把手的教導我如何以正確的心態學習，面對難題時，又該如何去應對，不得不說，對於一個從小不用功的野孩子，「學習」兩個字真的很陌生，可以說是在這個時候，我才開始與這個詞擦上邊。<br>
-然而正當我以為故事只是就此發展時，我意外的發現，L 先生不僅僅只是資訊技能強而已，在網絡的世界裡，他其實是大家口中的「駭客」，親眼目睹了他將一個網站給打掉，原本光鮮亮麗的頁面，轉眼間被置換成了搞笑的貓動圖，我驚訝的問他「你做了什麼！？」，然而他只是淡淡的回道「玩玩而已，怎麼？有興趣嗎？」，我呆呆的望著螢幕，耳機傳來 L 先生的呼喊「Yo~ 還在嗎？」，我慌忙著邊大力點頭回應道「有！我有興趣！教我！」。</p>
-<h3 id="成型">成型</h3>
-<p>一路跟著 L 先生的腳步，也希望有天能超越他，存在這麼強大的人成了我的學習動力，更何況… 誰又能想像，當初的 L 先生居然僅僅只是個國小生。</p>
-<hr>
-<p>我： 什麼！？你居然才國小！？WTF<br>
-L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀沒有直接關係。</p>
-]]></content>
-      <categories>
-        <category>Writing (文學創作)</category>
-      </categories>
-      <tags>
-        <tag>Composition (作文)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《管理學 01》組織、管理者、四大功能｜管理 與 被管理</title>
     <url>/2020/10/22/Management-Science/</url>
     <content><![CDATA[<p>為什麼學習<strong>管理學</strong>？因為在這個<strong>社會</strong>，你不是<strong>管理別人</strong>、就是<strong>被人管理</strong>！你打算怎麼選擇？</p>
@@ -2076,6 +1972,367 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </categories>
       <tags>
         <tag>Management-Science (管理學)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maslow&#39;s Hierarchy Of Needs (馬斯洛 需求層級理論)</title>
+    <url>/2021/03/17/Maslow-s-Hierarchy-Of-Needs/</url>
+    <content><![CDATA[<p>Maslow 將心理需求與生理需求分成五個層級來探討，或許你聽過「<strong>需求層級</strong>」，但你真的了解嗎？</p>
+<span id="more"></span>
+<hr>
+<h2 id="起源">起源</h2>
+<p><strong>Maslow’s Hierarchy Of Needs (馬斯洛 需求層次理論)</strong> 是由一名美國心理學家 <a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%C2%B7%E9%A9%AC%E6%96%AF%E6%B4%9B"><strong>Abraham Harold Maslow</strong></a> 於 <strong>1943</strong> 年《<strong>心理學評論</strong>》的論文〈<strong>人類動機的理論 (A Theory of Human Motivation)</strong>〉 中所提出的理論。該理論屬於<strong>心理健康</strong>的理論，主張認為人類天生的需求是首先要被滿足的，隨後更進一步滿足自己，最後達成自我實現。</p>
+<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
+<hr>
+<h2 id="需求比較">需求比較</h2>
+<p>凡是人便有需求，<strong>食衣住行娛樂</strong>皆是。<br>
+而這些需求有<strong>輕重緩急</strong>之分，舉例「 <code>食</code> 」相較「 <code>娛樂</code> 」來的更重要，因此在滿足「 <code>食</code> 」的需求之前，「 <code>娛樂</code> 」先放一旁。又好比說「 <code>安全</code> 」與「 <code>理想</code> 」來說，當一個人面臨<strong>威脅自身安全</strong>的處境而又<strong>無法解決</strong>時，是<strong>沒</strong>有心思去<strong>思考自己的理想</strong>的，安全相對是更重要的，也正是大家常聽到的「<strong>安全第一</strong>」。</p>
+<p>Maslow 將這些需求進行<strong>排列</strong>、<strong>分級</strong>就形成了著名的「<strong>需求層級圖</strong>」。</p>
+<hr>
+<h2 id="需求層級">需求層級</h2>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
+<p>這些需求被以<strong>優先需要的程度</strong> <code>高至低</code> 分別為 <code>下到上</code> 分級，及形成上圖的<strong>需求層級金字塔</strong>。<br>
+以下為生理層面的需求：</p>
+<blockquote>
+<h3 id="physiological-needs-生理需求">Physiological Needs (生理需求)</h3>
+<p>級別最低，在整個需求層級金字塔最底部，也就是<strong>最優先需要</strong>的層級。<br>
+其中就包括 <code>空氣</code> 、 <code>食物</code> 、 <code>水</code> 、 <code>睡眠</code> 、 <code>性</code> 等。<br>
+這些是使人能存活下去的主要條件。當不被滿足時，其他層級的需求相對不再重要，甚至可能被捨棄，像是「<a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">烏拉圭空軍 571 號班機空難</a>」事件中，遇難的 45 人中，只剩 16 名生還者，使這些生還者能夠生存的關鍵在於，他們選擇<strong>吃了其他同伴的遺體</strong>，聽起來殘忍，但也正是因為這個選擇滿足了生理需求才能活下來。</p>
+</blockquote>
+<blockquote>
+<p>「<em>倖存者的食物很少：幾塊巧克力、什錦點心和幾瓶紅酒。墜機後的幾天裡，眾人將食物分成很少的量，以免把他們微薄的補給用盡。費托還設計一種把雪融成水的辦法，他把雪放上金屬座位。用陽光把雪融掉後滴入空酒瓶。即便分配很嚴格，他們的食物還是很快地減少。白雪皚皚的山上不會有天然植物或動物存活。眾人作出集體決定，吃死去戰友的屍體。這個決定不是輕易做出的，因為大多死難者都是親密的朋友和同學。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">Wiki 維基百科</a></p>
+</blockquote>
+<blockquote>
+<h3 id="safety-needs-安全需求">Safety Needs (安全需求)</h3>
+<p>為次要需求層級，在滿足了 <strong>Physiological (生理)</strong> 層面的需求後，生物的基本生存條件就被鞏固了，但以群觀視角來說，依舊無法滿足真正「<strong>穩定的生存</strong>」。<br>
+對一般動物而言，身處的<strong>環境</strong>及自己處在<a href="https://zh.wikipedia.org/wiki/%E9%A3%9F%E7%89%A9%E9%8F%88">食物鏈</a>的哪一環決定了自己的安全條件如何。而人類不只是如此，人類還必須得面臨在人類社會中的 <code>經濟</code> 問題。<br>
+諸如 <code>人身安全</code> 、 <code>生活安穩</code> 、 <code>疾病或痛苦</code> 、 <code>威脅</code> 等，只要是影響到<strong>自身生命安全</strong>的因素，皆是屬於該層級。</p>
+</blockquote>
+<hr>
+<p>以上皆是為了「生存」的生理需求，<br>
+從這裡才開始有了心理需求：</p>
+<blockquote>
+<h3 id="love-and-belonging-needs-愛與歸屬感需求">Love And Belonging Needs (愛與歸屬感需求)</h3>
+<p>又稱「<strong>社交需求</strong>」。既然是「<strong>社交</strong>」就<strong>不</strong>會只有<strong>自己</strong>。<br>
+<strong>生理需求</strong>中所作的一切都只是<strong>為了自己</strong>，讓自己能夠活下去，但在此層級中，開始會<strong>為他人著想</strong>、<strong>付出</strong>。<br>
+開始有了 <code>親情</code> 、 <code>友誼</code> 、 <code>愛情</code> 等需求，可以為了愛付出貢獻，甚至是無私的奉獻。</p>
+</blockquote>
+<blockquote>
+<h3 id="esteem-needs-尊嚴需求">Esteem Needs (尊嚴需求)</h3>
+<p>屬於高級需求。在文明社會中，大家所追求的基本上就是該層級的相關內容。<br>
+尊嚴不只是<strong>他人對自己</strong>，也包括<strong>自己對自己</strong>，分別又稱<strong>外部尊重</strong>及<strong>內部尊重</strong>。<br>
+舉例 <code>社會地位</code> 、 <code>成就</code> 、 <code>名聲</code> 、 <code>被他人認同</code> 、 <code>被他人尊重</code> 屬於<strong>外部尊重</strong>；<br>
+ <code>自我認知價值</code> 、 <code>自信(自我肯定)</code> 、 <code>自尊</code> 則屬於<strong>內部尊重</strong>。</p>
+</blockquote>
+<blockquote>
+<h3 id="need-for-self-actualization-自我實現需求">Need For Self-Actualization (自我實現需求)</h3>
+<p>為最高層級的需求。主要是指獲得更高<strong>人生境界</strong>的需求。<br>
+像是<strong>發覺自我潛能</strong>、<strong>做到自我實現</strong>等。<br>
+聽起來很複雜，但例子就在生活周遭： <code>愛護動物而選擇吃素</code> 、 <code>運動國手勤奮訓練為了超越自己</code> 、 <code>為了幫助弱勢族群而捐款</code> ，是一種衍生性需求。</p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="over-actualization-超自我實現">Over Actualization (超自我實現)</h3>
+<p>Maslow 在晚期提出的延伸理論。<br>
+當人們充分的滿足 <strong>Need For Self-Actualization (自我實現需求)</strong> 時，所出現短暫的「<strong>高峰體驗</strong>」。<br>
+可能是 <code>成就感</code> 或 <code>某種體悟</code> ，通常都是在進行或完成一件事情時，<strong>深刻體驗</strong>到的感覺，通常<strong>藝術家</strong>或是<strong>音樂家</strong>較常體會到。<br>
+「<em>一位音樂家，在演奏音樂時，所感受到的一股「忘我」的體驗。一位藝術家在畫圖時，感受不到時間的消逝，他在畫圖的每一分鐘，對他來說跟一秒一樣快，但每一秒卻活的比一個禮拜還充實。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">Wiki 維基百科</a></p>
+</blockquote>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>〈Wikipedia 維基百科 - 需求層級理論〉<a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">https://zh.wikipedia.org/wiki/ 需求层次理论</a></p>
+]]></content>
+      <categories>
+        <category>Popular-Science (科普)</category>
+      </categories>
+      <tags>
+        <tag>Psychology (心理學)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Monty-Hall Problem (三門問題)｜選擇的順序改變了機率？並非如此！</title>
+    <url>/2021/03/04/MontyHall-Problem/</url>
+    <content><![CDATA[<p><strong>三分之一</strong>的機率中，可以透過<strong>更換選擇</strong>來<strong>提高機率</strong>，這是曾經讓許多人摸不著頭緒的 Monty-Hall Problem (三門問題)，你能參透其中的答案嗎？</p>
+<span id="more"></span>
+<hr>
+<h2 id="起源">起源</h2>
+<p><strong>Monty-Hall Problem</strong> 又稱<strong>三門問題</strong>、<strong>山羊問題</strong>、<strong>蒙提霍爾問題</strong>。<br>
+起源是一個源自<a href="https://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88%E8%AE%BA"><strong> Game Theory (博奕論)</strong></a> 的數學遊戲問題，最早推測可能出自 1963 年的一個美國電視遊戲節目 - 「<strong>Let’s Make a Deal (讓我們一起交易)</strong>」，其中該節目的主人名為「<strong>Monty Hall</strong>」，故稱做「<strong>Monty-Hall Problem</strong>」。</p>
+<hr>
+<h2 id="三門遊戲">三門遊戲</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src="01.png" alt="圖源: Wiki 維基百科"></a></p>
+<p>在節目中，參賽者的面前會有<strong>三道關閉的門</strong>，其中一道門後有著一輛<strong>汽車</strong>，其餘兩道門後則是<strong>山羊</strong> (我也不知道為啥是山羊…)，若是參賽者選中門後為汽車的門，那麼即可贏得汽車。</p>
+<p>遊戲開始後，主持人會要求參賽者<strong>選擇一道門</strong>，不論這道門後是<strong>汽車</strong>或者<strong>山羊</strong>，主持人都會開啟 <code>參賽者所選的門之外，其餘兩道門中含有山羊的那道門</code>  (主持人是知道門後狀況的)。</p>
+<p>舉例，三道門分別為  <code>A</code> 、 <code>B</code> 、 <code>C</code>  ，參賽者選擇了  <code>C</code>  ，若是  <code>B</code> 、 <code>C</code>  門後皆為 <code>山羊</code> ，那麼主持人則會開啟  <code>B</code>  門；若是  <code>A</code> 、 <code>B</code>  門後為山羊，那麼主持人隨機選擇開啟  <code>A</code>  或  <code>B</code>  門。</p>
+<p>到目前為止沒什麼太大問題，這時候我們探討的核心問題是…<br>
+「在主持人打開一道背後是山羊的門後，會詢問參賽者<strong>是否要更換剛剛所選的門</strong>，若是選擇換門，那麼參賽者贏得汽車的的<strong>機率是否會增加</strong>？」</p>
+<p>聽起來很荒謬對吧！換不換門，其實對於結果並不會改變才對。<br>
+但若是我告訴你，這的確會使得贏得汽車的機率提高至 <strong>2/3</strong> 呢？</p>
+<hr>
+<h2 id="驗證">驗證</h2>
+<p>為了方便探討機率，我們實際列舉所有可能性:</p>
+<blockquote>
+<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code></p>
+<ul>
+<li>不換門
+<ul>
+<li>參賽者堅持選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者堅持選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者堅持選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+</ul>
+</li>
+</ul>
+<p>由此可知，贏得 <code>汽車</code> 機率為  <code>1/3</code></p>
+<ul>
+<li>換門
+<ul>
+<li>參賽者選擇  <code>A</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>參賽者選擇  <code>B</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>參賽者選擇  <code>C</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者選擇  <code>C</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>A</code>  門，獲得 <code>山羊</code></li>
+</ul>
+</li>
+</ul>
+<p>欸？贏得 <code>汽車</code> 的機率變成  <code>1/2</code>  ！？</p>
+</blockquote>
+<p>這太不符合常理了，怎麼可能在選擇過後機率發生改變！？<br>
+別擔心，帶你繼續看下去。<br>
+但在解答之前，喜歡解題的朋友，可以先停在這邊好好思考一下。</p>
+<hr>
+<h2 id="解答">解答</h2>
+<p>其實，機率是沒有變的，一直都是  <code>1/2</code> ！<br>
+在一開始的選擇當中，三道門選一道的機率確實是  <code>1/3</code> ，但在主持人開啟一道門後 (後面是山羊的門)，這等於刪除了一道門，此刻若是再給參賽者一次選擇，這次的選擇機率將會是  <code>1/2</code> ，重點在於，我們必須將前後兩次選擇視為 <strong> <code>獨立事件</code> </strong>，真正影響參賽者贏得汽車機率的關鍵在於<strong>第二次</strong>的選擇。</p>
+<p>我們再來重新列舉一次可能性:</p>
+<blockquote>
+<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code> <br>
+並且 主持人已經開啟一道門 ( <code>第一次</code> 選擇不重要，此指的選擇是 <code>第二次</code> 選擇)</p>
+<ul>
+<li>不換門
+<ul>
+<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
+<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+</ul>
+</li>
+</ul>
+<p>機率為  <code>1/2</code></p>
+</blockquote>
+<p>沒錯，這道陷阱題使人容易忽略了參賽者選擇汽車那道門時，主人持人選擇刪除門的可能性是有<strong>兩種</strong>的。</p>
+<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
+<hr>
+<h2 id="結論">結論</h2>
+<p>這麼一來你知道為什麼了嗎？(如果還是很矇，可以再重頭看一次 XD)<br>
+ 有時候看一件事物時， <strong>第一直覺</strong> 有可能會是 <strong>錯</strong> 的，當你深信自己的第一直覺而不求證時，很容易造成如同該題目一般的狀況，一直反覆的問自己為什麼，總是不能理解為什麼機率為 <strong>1/2</strong> 。<br>
+那是因為題目一開始就告訴你機率是 <strong>1/3</strong> ，而我們在看到題目是「<strong>三道門選一道</strong>」的時候，就對此深信不已。</p>
+]]></content>
+      <categories>
+        <category>Popular-Science (科普)</category>
+      </categories>
+      <tags>
+        <tag>Mathematics (數學)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打檔機車 原理簡單講解｜看完馬上了解打檔車原理！</title>
+    <url>/2020/07/20/Motorcycle/</url>
+    <content><![CDATA[<p>檔車很帥沒錯，這也是許多人入坑的原因，但是對沒接觸過的新手來說，真的很頭痛！<br>
+以下盤點許多關於檔車新手會有的疑問…</p>
+<span id="more"></span>
+<hr>
+<h3 id="注意">注意</h3>
+<p><strong>本文內容主要為個人理解，若有錯誤請聯繫告知，感謝。</strong></p>
+<hr>
+<h3 id="速克達-與-打檔機車-的差別"><strong>速克達</strong> 與 <strong>打檔機車</strong> 的差別</h3>
+<ul>
+<li><strong>Scooter (速克達)</strong></li>
+</ul>
+<blockquote>
+<p>台灣常見的機車多半為下圖的樣式，這也是大多數台灣人聽到「機車」後會想到的樣子，該機車類型被稱作「 <strong>Scooter (速克達)</strong> 」又或者叫做「 <strong>塑膠車</strong> 」，港澳地區則稱之為「 <strong>綿羊仔</strong> 」。</p>
+<p>「<em>在二十世紀初有存在，此後二次大戰後由<a href="https://zh.wikipedia.org/wiki/%E7%BE%A9%E5%A4%A7%E5%88%A9">義大利</a><a href="https://zh.wikipedia.org/wiki/%E4%BC%9F%E5%A3%AB%E7%89%8C">偉士牌</a>帶動流行起來的交通工具，是摩托車的一種。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%80%9F%E5%85%8B%E9%81%94"><strong>Wiki 維基百科</strong></a></p>
+</blockquote>
+<img src="/2020/07/20/Motorcycle/i1.jpg" class="" title="台灣路上常見的 Scooter (速克達) 機車">
+<hr>
+<ul>
+<li><strong>Motorcycle (檔車)</strong></li>
+</ul>
+<blockquote>
+<p>檔車才是一般大家所指的「 <strong>Motorcycle</strong> 」。<br>
+與 <strong>Scooter (速克達)</strong> 最主要的差別在於「需要<strong>手動更換檔位</strong>變速 (速克達為機器自動更換)」，且速克達是以<strong>皮帶</strong>傳動，檔車則是以<strong>鏈條</strong>傳動。</p>
+</blockquote>
+<img src="/2020/07/20/Motorcycle/i2.jpg" class="" title="Motorcycle (打檔車)">
+<hr>
+<br>
+<table border="0">
+ 	<tr>
+	<td><center><b>速克達: 皮帶傳動</b></center><br></td>
+	<td><center><b>檔車: 鏈條傳動</b></center><br></td>
+	</tr>
+	<tr>
+		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i3.jpg" class=""></td>
+		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i4.jpg" class=""></td>
+	</tr>
+</table>
+<hr>
+<h3 id="煞車離合器打檔桿">煞車？離合器？打檔桿？</h3>
+<p>許多人搞不清楚「離合器」到底是什麼。<a href="https://zh.wikipedia.org/wiki/%E9%9B%A2%E5%90%88%E5%99%A8"><strong>離合器 (Clutch)</strong></a> 主要功能是用來控制將引擎動力傳遞至車軸的裝置，舉例機車的離合器來說，一般路上常見的<strong>速克達</strong>離合器是<strong>自動化</strong>讓<strong>車輛自行控制</strong> ，因此非常的方便，你只需要催油門就可以讓機車前進。</p>
+<p>但是檔車就不同了，因為<strong>檔車</strong>的離合器是<strong>手動控制</strong>的，因此檔車比起速克達多了一個「離合器控制的開關」，而這個開關通常就是設計在<strong>左邊手把前拉桿</strong> ，相當於是<strong>速克達的後煞車位置 (左煞)</strong> ，那<strong>檔車的後煞車</strong>跑去哪了？</p>
+<p><strong>檔車後煞車</strong>則是被改到了車體<strong>右方腳踏桿</strong> ，也就是說<strong>所有的煞車都在車體右方</strong> ，用<strong>右手</strong>、<strong>右腳</strong>去控制<strong>前煞車</strong>、<strong>後煞車</strong>。而<strong>左腳</strong>位置則是「 <strong>打檔桿</strong> 」，顧名思義就是配合左手的離合器用來更換檔位用的。</p>
+<hr>
+<center><b>
+<br>檔車: 左手離合器
+<p><img src="i5.jpg" alt="離合器" width="60%"></p>
+<p><br>檔車：右腳後煞車</p>
+<p><img src="i6.jpeg" alt="&quot;後煞車&quot;" width="60%"></p>
+<p><br>檔車：左腳打檔桿 升檔 (勾)</p>
+<p><img src="i7.jpeg" alt="&quot;打檔桿 升檔&quot;" width="60%"></p>
+<p><br>檔車：左腳打檔桿 降檔 (踩)</p>
+<p><img src="i8.jpeg" alt="&quot;打檔桿 降檔&quot;" width="60%"></p>
+<p></b></center></p>
+<hr>
+<h3 id="離合器-與-發動機">離合器 與 發動機</h3>
+<p>了解了以上檔車的基本控制項後，就可以來開始講解離合器的作用原理，以下附上我<s>精湛的畫技下</s>產出的圖文講解。</p>
+<img src="/2020/07/20/Motorcycle/1.png" class="">
+<p>當車子還未發動時，所有零件都處於靜止狀態 (<s>會自己動你就要擔心了</s>)，車子一檔發動後，此刻發動機開始轉動，但<strong>離合器還是按壓狀態</strong> ，就會形成最<strong>左邊那張分離狀態的圖</strong> ，發動機 (褐色) 雖然在運轉，但因為離合器 (灰色) 還沒與其接合，所以離合器目前尚未開始運轉。</p>
+<p>當慢慢鬆開離合器直到與發動機<strong>部份接合</strong>時，則會形成<strong>中間那張 &quot;半離合&quot; 狀態的圖</strong> ，此刻機車也因為離合器與發動機開始有了銜接，會開始慢慢往前移動，<strong>半離合</strong>的目的是要「 <strong>&quot;慢慢的&quot; 帶動離合器去適應發動機的轉速</strong> 」。如果在轉速靜止的狀態下，直接使離合器與發動機快速銜接 (離合器放太快)，跳過 &quot;半離合&quot; 狀態，基本上會直接<strong>熄火</strong> ，這也是大多數騎檔車的人會遇到的問題之一！因為運動定律的關係，<strong>運動中的發動機無法直接帶動靜止的離合器</strong> ，會導致<strong>轉速差太多</strong>而讓發動機卡住，進而停止運作。</p>
+<p>當在半離合狀態時，正常來說機車會開始慢慢向前移動，這時候離合器開始跟發動機的轉速做磨合，當本身有一定的轉速後，這時釋放離合器，形成最右邊那張 &quot;密合&quot; 狀態的圖時，此刻發動機則會自然的帶動離合器開始運轉，起步成功！</p>
+<hr>
+<p>以下是網路上其他大大分享的圖。（<a href="http://cclinsbackyard.blogspot.com/2010/03/blog-post_25.html"><strong>圖取自此網站</strong></a>）</p>
+ <center><b>離合器直接透過鏈條 (黑色虛線) 帶動輪軸。<br>將離合器接上引擎以取得動力。</b></center> <img src="/2020/07/20/Motorcycle/2.jpg" class="">
+<hr>
+<p><br><center><b>離合器 與 發動機 轉速差</b></center><br> <img src="/2020/07/20/Motorcycle/3.jpg" class=""></p>
+<hr>
+<h3 id="打檔大齒輪-與-小齒輪">打檔｜大齒輪 與 小齒輪</h3>
+<p>在介紹打檔之前呢，必須要先說「 <strong>檔</strong> 」是用來幹麻的？</p>
+<p>前面說到，打檔機車不像速克達的傳動方式，<strong>速克達</strong>採用的是 &quot;<strong> 皮帶</strong> &quot; 死死拖著輪軸跑的方式前進，而<strong>打檔機車</strong>則是的使用 &quot;<strong> 鏈條</strong> &quot;。鏈條兩邊連接齒輪，位於<strong>後輪輪軸那邊的齒輪大小是固定的</strong> ，我們改變的是另一端<strong>離合器那邊的齒輪大小</strong> ，<strong>檔位越小齒輪越小</strong> ，<strong>檔位越大則齒輪越大</strong>。<br>
+說到這邊應該很多人會聯想到腳踏車…<br>
+ 沒錯，基本上打檔機車換檔跟腳踏車換檔原理是一樣的 (只是腳踏車是更改後方齒輪)。</p>
+<hr>
+<p>兩個齒輪之間透過鏈條運作，當機車以「一檔」在工作時 (剛剛說的<strong>檔位越小齒輪越小</strong>)，是以<strong>離合器的小齒輪帶動後方輪軸的齒輪</strong> ，所以此刻是「 <strong>小齒輪帶大齒輪</strong> 」的狀況，說到這裡回想一下國小的物理課，當「小齒輪帶大齒輪」的情況下，<strong>小的齒輪轉一圈，帶動後方的齒輪可能只有 3 分之 1 圈</strong> ，但同時也比較<strong>輕鬆</strong> ，適合用在<strong>起步</strong>。而當行進中轉速夠快，已經快要在該檔位的極限時 (轉速高的狀態)，此時若是想要繼續提速，則需要做「 <strong>升檔</strong> 」的動作。</p>
+<p>檔位升高，齒輪變大，逐漸變成「 <strong>大齒輪帶小齒輪</strong> 」的狀況，此刻就是<strong>大的齒輪轉一圈，帶動後方齒輪可能一圈半</strong> ，處於<strong>帶動速度快</strong> ，但<strong>力量要求較大</strong> ，因此<strong>不適合使用高檔位起步</strong> ，容易因為<strong>力量要求過大</strong> ，<strong>扭力不夠</strong>的關係而<strong>熄火</strong>。而行徑中可以切換高檔位則是因為本身已經<strong>有一定的速度</strong> ，所以力量要求較大這點就可以被彌補。</p>
+<p>而「降檔」基本上就是相反，用來減速，或者需要扭力大的場合 (例如：起步、爬坡)，若新手不熟練也可以待車子停下後，在原地做降檔動作 (停下降檔是為了下一次起步的準備，剛剛說了起步適合用高扭力的低檔位)。</p>
+<hr>
+<p><b style="color: red;">※ 以下「回油」指「收油門」，「補油」指「催油門」。</b></p>
+<p><strong>升檔</strong>基本上操作為：</p>
+<p><strong> <code>回油 =&gt; 壓離合 =&gt; 升檔 =&gt; 半離合 =&gt; 放離合</code> </strong></p>
+<blockquote>
+<ul>
+<li>為什麼要先 <strong> <code>回油</code> </strong> ？
+<ul>
+<li>這是為了讓<strong>轉速下降</strong> ，以免換檔時<strong>轉速差太大</strong>。<br>
+例如<strong>一檔升二檔</strong>來說，應該是以<strong>一檔高轉</strong>接<strong>二檔低轉</strong> ，所以需要 <strong> <code>收油門</code> </strong> 來使轉速降低，也就是說這個 <strong> <code>回油</code> </strong> 是「為了下個檔位而準備」的。<br>
+若維持一樣的轉速升檔，則會變成<strong>一檔高轉</strong>接<strong>二檔高轉</strong> ，不僅會爆衝較危險以外，車體本身也會有明顯的頓挫，騎久了也很不舒服。</li>
+</ul>
+</li>
+<li>機車已經有足夠的動能了，還需要 <strong> <code>半離合</code> </strong> 嗎？
+<ul>
+<li>其實正確來說整體動作是一瞬間的，從 <strong> <code>回油</code> </strong> 到 <strong> <code>放離合</code> </strong> 完成升檔的過程只需要 <strong>0.5 秒</strong>！(如果可以盡量<strong>避免 <code>半離合</code> </strong> 時間過長，這會<strong>磨損離合器片</strong>)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>降檔</strong>基本上操作為：</p>
+<p><strong>中高速行徑中：</strong>  <strong> <code>回油 =&gt; 壓離合 =&gt; 降檔 =&gt; 半離合 =&gt; 補油 =&gt; 放離合</code> </strong></p>
+<p><strong>低速行徑中：</strong>  <strong> <code>回油 =&gt; 壓離合 =&gt; 降檔 =&gt; 半離合 =&gt; 放離合</code> </strong></p>
+<blockquote>
+<ul>
+<li>為什麼中<strong>高速行徑</strong>的情況下要 <strong> <code>補油</code> </strong> ？
+<ul>
+<li>這是因為在<strong>高檔位</strong>且<strong>具有一定的行徑速度</strong>時，<strong>後輪運轉速度快</strong> ，若是維持一樣的轉速 <strong> <code>降檔</code> </strong>  ，會造成<strong>後輪與發動機轉速差大</strong> (後輪快，發動機慢)。(退檔時避免轉速差大而 <strong> <code>補油</code> </strong>  ，就是常聽見的「<b style="color: red;">退檔補油</b>」)<br>
+ 舉例<strong>二檔降一檔</strong> ，應該是以<strong>二檔中低轉</strong>接<strong>一檔中高轉</strong> ，若是沒有在降檔後補油，則會變成<strong>二檔中低轉</strong>接<strong>一檔中低轉</strong> ，行徑間，<strong>後輪速度還維持在二檔</strong> ，卻突然降回一檔，<strong>離合器與發動機轉速差大</strong> ，<strong>卡住了離合器</strong> ，透過鏈條間接<strong>阻擋了後輪的運轉</strong> ，除了會感覺到明顯的<strong>頓挫感</strong>外，嚴重可能會導致<strong>後輪鎖死、打滑</strong>。(此指的轉速差所造成的煞車稱為「<b style="color: red;">檔煞</b>」)</li>
+<li>但若是在<strong>低速</strong>的情況下則可以<strong>省略補油</strong>的動作，維持原速即可。</li>
+<li>若是要將機車停下，也可以在完全停止後才做降檔的動作。</li>
+</ul>
+</li>
+<li>為何不直接省略 <strong> <code>回油</code> </strong>  ，退檔後補更多的油不就好了？
+<ul>
+<li>當 <strong> <code>壓離合</code> </strong> 的時候，<strong>離合器</strong>與<strong>發動機</strong>的動能是<strong>分離</strong>的，若是固定一樣的油門，在分離的一瞬間<strong>轉速</strong>會<strong>飆高</strong> ，當然你可以在退檔後做<strong>退檔補油</strong>來配合轉速，但這不但較<strong>傷車</strong> ，也更容易發生因<strong>轉速配合不當</strong>而產生的<strong>轉速差意外</strong>。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>另外，與升檔一樣，<strong>降檔</strong>的動作從 <strong> <code>回油</code> </strong> 到 <strong> <code>放離合</code> </strong> 的過程是<strong>一瞬間</strong>的。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="檔位模式">檔位模式</h3>
+<p>懂了上述的原理後，來看看市面上的打檔模式吧。<br>
+基本上檔車打檔模式分為兩種 —「 <strong>循環檔</strong> 」、「 <strong>國際檔</strong> 」。</p>
+<hr>
+<p><b style="color: red;">※ 以下都以<strong> 5 檔</strong>車來解說。</b></p>
+<p>「 <strong>循環檔</strong> 」的檔位為<strong>迴圈式</strong>的：<br>
+ <code>N &gt; 1 &gt; 2 &gt; 3 &gt; 4 &gt; 5 &gt; N &gt; 1 &gt; 2 ...</code></p>
+<blockquote>
+<ul>
+<li>欸？數字的部份大家應該都了解了，那「 <strong>N</strong> 」是什麼意思？
+<ul>
+<li><strong>N</strong> 就是「 <strong>空檔</strong> 」，空檔的時候，不管怎麼摧油門<strong>車子都是不會動的</strong> ，此刻的<strong>離合器齒輪與發動機齒輪是斷開的</strong>。基本用在要<strong>停車</strong>的時候。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<p>目前大多打檔機車為「 <strong>國際檔</strong> 」：<br>
+ <code>1 &gt; N &gt; 2 &gt; 3 &gt; 4 &gt; 5</code></p>
+<blockquote>
+<p>這種設計可以清楚看到，並不像循環檔一樣有個迴圈。<br>
+有別於循環檔的地方還有，<strong>空檔是在 1 檔跟 2 檔</strong>「 <strong>中間</strong> 」，進空檔的方法則為「 <strong>小力踩</strong> 」或「 <strong>小力勾</strong> 」。</p>
+</blockquote>
+<p>以下是網路上其他大大分享的圖，看了相信會更明白的。（<a href="https://timmy.pixnet.net/blog/post/1617378-%E5%9C%8B%E9%9A%9B%E6%AA%94%E5%92%8C%E5%BE%AA%E7%92%B0%E6%AA%94%E7%9A%84%E5%B7%AE%E5%88%A5"><strong>圖取自此網站</strong></a>）</p>
+<img src="/2020/07/20/Motorcycle/4.gif" class="">
+<img src="/2020/07/20/Motorcycle/5.jpg" class="">
+<hr>
+<h3 id="珍奶跟雞排要放哪">珍奶跟雞排要放哪？</h3>
+<p>這也是檔車的一大痛點，因為檔車構造的緣故，大多數檔車是「 <strong>沒有車廂</strong> 」的！</p>
+<p>有些檔車雖然有提供置物箱，但容量嘛… 大約只能放的下手機，若想加大空間，可以考慮加裝「 <strong>漢堡包</strong> 」或「 <strong>側掛包</strong> 」，攜帶的物品不多的話，也可以自己背個<strong>隨身背包</strong>上路。</p>
+<p>(P.S. <strong>側掛包</strong>有個<strong>小缺點</strong> — 後座在上下車比較麻煩)</p>
+<p><img src="bike-and-boat-motorcycle-tours-cjoPD3VRHIA-unsplash.jpg" alt="" width="70%"></p>
+<hr>
+<h3 id="結語">結語</h3>
+<p>以上是我個人對於打檔機車的認知及觀念講解，若有錯誤請不吝嗇私訊通知。<br>
+當然還有很多細節沒有提到，真的有興趣的朋友請再自行研究，我就不在此多做贅述。</p>
+<p>另外我必須要說一件我個人覺得<strong>非常重要</strong>的心態：</p>
+<blockquote>
+<p>機車、汽車都一樣，別想說會駕駛就好，不必管原理。<br>
+當你騎乘一個時速可達 100 公里的機械在路上奔馳，而你對它的構造渾然不知時，這不是件很恐怖的事情嗎…?</p>
+</blockquote>
+<p>這篇文章如果有幫助你更認識打檔機車的話，也別忘記分享給你身邊喜愛檔車的朋友吧！</p>
+]]></content>
+      <categories>
+        <category>Trick (技術講解)</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Mr.L — 我的啟蒙者</title>
+    <url>/2020/01/06/MrL/</url>
+    <content><![CDATA[<p>「寫程式好難啊…」我獨自坐在電腦桌前說著，那是我國三畢業後的假期。<br>
+想想那段時間，我近三個月沒有與任何人說過話，腦裡已經被程式語言給佔領。</p>
+<span id="more"></span>
+<img src="/2020/01/06/MrL/title.jpg" class="">
+<hr>
+<h3 id="入坑">入坑</h3>
+<p>我與很多小孩一樣從小不愛讀書，更是沒什麼過人的成就，當時「學校」對於我來說只是必須準時報到的「娛樂場所」，天天到學校去也是開開心心、無憂無慮，名副其實的「上課睡覺，下課尿尿」，偶爾再找點樂子闖個禍爽一下，一直是令家人及老師頭痛的問題兒童。<br>
+偶然在國三畢業後的假期裡接觸了<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank">編程</a>，當初什麼也不懂，也不是特別感興趣，而且自己也先入為主的認為「這需要大量動腦的東西不適合我」，僅僅只是因為喜歡玩電腦而報考「資訊科」，想想電影裡的駭客寫程式的樣子也蠻帥的感覺。然而不知道是哪根筋作祟，這一學，居然近三個月就這麼過去了，回過神來，我忘了吃飯，忘了睡覺，幽暗的房間，只剩螢幕上滿滿來自程序錯誤的視窗以及一頭亂髮的男孩。</p>
+<h3 id="社交障礙">社交障礙</h3>
+<p>高中如願考上了資訊科，接觸了許多事物，但總是覺得少了點什麼，少的原來是能和我溝通的人。長時間的面對電腦，早讓我忘記了如何與人相處，我遇到了人生中的一大難題 — <a href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BA%A4%E6%81%90%E6%87%BC%E7%97%87" target="_blank">社交障礙</a>。我嘗試透過網路學習，結交許多圈內網友，他們熱心的與我討論所遇到的程式問題，也分享了許多有趣的資安事件，我終於在他們的幫助下解決了程式的錯誤，也好像在這樣的環境找到屬於我的一絲溫暖。日子一天天的過，學習的東西越來越難，對於從小沒有讀書習慣的我，即使再有興趣，也扛不住了，我開始厭煩、頹廢，直到… 我遇見了 Mr.L。<br>
+L 先生的資訊能力非常強大，他是一個想到什麼說什麼的人，不做作，有著一套屬於自己獨特的學習系統、邏輯及思維，但也因此，在現實生活中顯的格格不入，是個時常受到排擠的對象，但我喜歡他這樣的個性。</p>
+<h3 id="發現">發現</h3>
+<p>撿到了這樣一塊不起眼的寶石，我真很幸運。在 L 先生的陪同下，我挖掘了更深入的技術，他手把手的教導我如何以正確的心態學習，面對難題時，又該如何去應對，不得不說，對於一個從小不用功的野孩子，「學習」兩個字真的很陌生，可以說是在這個時候，我才開始與這個詞擦上邊。<br>
+然而正當我以為故事只是就此發展時，我意外的發現，L 先生不僅僅只是資訊技能強而已，在網絡的世界裡，他其實是大家口中的「駭客」，親眼目睹了他將一個網站給打掉，原本光鮮亮麗的頁面，轉眼間被置換成了搞笑的貓動圖，我驚訝的問他「你做了什麼！？」，然而他只是淡淡的回道「玩玩而已，怎麼？有興趣嗎？」，我呆呆的望著螢幕，耳機傳來 L 先生的呼喊「Yo~ 還在嗎？」，我慌忙著邊大力點頭回應道「有！我有興趣！教我！」。</p>
+<h3 id="成型">成型</h3>
+<p>一路跟著 L 先生的腳步，也希望有天能超越他，存在這麼強大的人成了我的學習動力，更何況… 誰又能想像，當初的 L 先生居然僅僅只是個國小生。</p>
+<hr>
+<p>我： 什麼！？你居然才國小！？WTF<br>
+L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀沒有直接關係。</p>
+]]></content>
+      <categories>
+        <category>Writing (文學創作)</category>
+      </categories>
+      <tags>
+        <tag>Composition (作文)</tag>
       </tags>
   </entry>
   <entry>
@@ -2392,295 +2649,6 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
-    <title>Monty-Hall Problem (三門問題)｜選擇的順序改變了機率？並非如此！</title>
-    <url>/2021/03/04/MontyHall-Problem/</url>
-    <content><![CDATA[<p><strong>三分之一</strong>的機率中，可以透過<strong>更換選擇</strong>來<strong>提高機率</strong>，這是曾經讓許多人摸不著頭緒的 Monty-Hall Problem (三門問題)，你能參透其中的答案嗎？</p>
-<span id="more"></span>
-<hr>
-<h2 id="起源">起源</h2>
-<p><strong>Monty-Hall Problem</strong> 又稱<strong>三門問題</strong>、<strong>山羊問題</strong>、<strong>蒙提霍爾問題</strong>。<br>
-起源是一個源自<a href="https://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88%E8%AE%BA"><strong> Game Theory (博奕論)</strong></a> 的數學遊戲問題，最早推測可能出自 1963 年的一個美國電視遊戲節目 - 「<strong>Let’s Make a Deal (讓我們一起交易)</strong>」，其中該節目的主人名為「<strong>Monty Hall</strong>」，故稱做「<strong>Monty-Hall Problem</strong>」。</p>
-<hr>
-<h2 id="三門遊戲">三門遊戲</h2>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src="01.png" alt="圖源: Wiki 維基百科"></a></p>
-<p>在節目中，參賽者的面前會有<strong>三道關閉的門</strong>，其中一道門後有著一輛<strong>汽車</strong>，其餘兩道門後則是<strong>山羊</strong> (我也不知道為啥是山羊…)，若是參賽者選中門後為汽車的門，那麼即可贏得汽車。</p>
-<p>遊戲開始後，主持人會要求參賽者<strong>選擇一道門</strong>，不論這道門後是<strong>汽車</strong>或者<strong>山羊</strong>，主持人都會開啟 <code>參賽者所選的門之外，其餘兩道門中含有山羊的那道門</code>  (主持人是知道門後狀況的)。</p>
-<p>舉例，三道門分別為  <code>A</code> 、 <code>B</code> 、 <code>C</code>  ，參賽者選擇了  <code>C</code>  ，若是  <code>B</code> 、 <code>C</code>  門後皆為 <code>山羊</code> ，那麼主持人則會開啟  <code>B</code>  門；若是  <code>A</code> 、 <code>B</code>  門後為山羊，那麼主持人隨機選擇開啟  <code>A</code>  或  <code>B</code>  門。</p>
-<p>到目前為止沒什麼太大問題，這時候我們探討的核心問題是…<br>
-「在主持人打開一道背後是山羊的門後，會詢問參賽者<strong>是否要更換剛剛所選的門</strong>，若是選擇換門，那麼參賽者贏得汽車的的<strong>機率是否會增加</strong>？」</p>
-<p>聽起來很荒謬對吧！換不換門，其實對於結果並不會改變才對。<br>
-但若是我告訴你，這的確會使得贏得汽車的機率提高至 <strong>2/3</strong> 呢？</p>
-<hr>
-<h2 id="驗證">驗證</h2>
-<p>為了方便探討機率，我們實際列舉所有可能性:</p>
-<blockquote>
-<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code></p>
-<ul>
-<li>不換門
-<ul>
-<li>參賽者堅持選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者堅持選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者堅持選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-</ul>
-</li>
-</ul>
-<p>由此可知，贏得 <code>汽車</code> 機率為  <code>1/3</code></p>
-<ul>
-<li>換門
-<ul>
-<li>參賽者選擇  <code>A</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>參賽者選擇  <code>B</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>參賽者選擇  <code>C</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者選擇  <code>C</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>A</code>  門，獲得 <code>山羊</code></li>
-</ul>
-</li>
-</ul>
-<p>欸？贏得 <code>汽車</code> 的機率變成  <code>1/2</code>  ！？</p>
-</blockquote>
-<p>這太不符合常理了，怎麼可能在選擇過後機率發生改變！？<br>
-別擔心，帶你繼續看下去。<br>
-但在解答之前，喜歡解題的朋友，可以先停在這邊好好思考一下。</p>
-<hr>
-<h2 id="解答">解答</h2>
-<p>其實，機率是沒有變的，一直都是  <code>1/2</code> ！<br>
-在一開始的選擇當中，三道門選一道的機率確實是  <code>1/3</code> ，但在主持人開啟一道門後 (後面是山羊的門)，這等於刪除了一道門，此刻若是再給參賽者一次選擇，這次的選擇機率將會是  <code>1/2</code> ，重點在於，我們必須將前後兩次選擇視為 <strong> <code>獨立事件</code> </strong>，真正影響參賽者贏得汽車機率的關鍵在於<strong>第二次</strong>的選擇。</p>
-<p>我們再來重新列舉一次可能性:</p>
-<blockquote>
-<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code> <br>
-並且 主持人已經開啟一道門 ( <code>第一次</code> 選擇不重要，此指的選擇是 <code>第二次</code> 選擇)</p>
-<ul>
-<li>不換門
-<ul>
-<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
-<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-</ul>
-</li>
-</ul>
-<p>機率為  <code>1/2</code></p>
-</blockquote>
-<p>沒錯，這道陷阱題使人容易忽略了參賽者選擇汽車那道門時，主人持人選擇刪除門的可能性是有<strong>兩種</strong>的。</p>
-<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
-<hr>
-<h2 id="結論">結論</h2>
-<p>這麼一來你知道為什麼了嗎？(如果還是很矇，可以再重頭看一次 XD)<br>
- 有時候看一件事物時， <strong>第一直覺</strong> 有可能會是 <strong>錯</strong> 的，當你深信自己的第一直覺而不求證時，很容易造成如同該題目一般的狀況，一直反覆的問自己為什麼，總是不能理解為什麼機率為 <strong>1/2</strong> 。<br>
-那是因為題目一開始就告訴你機率是 <strong>1/3</strong> ，而我們在看到題目是「<strong>三道門選一道</strong>」的時候，就對此深信不已。</p>
-]]></content>
-      <categories>
-        <category>Popular-Science (科普)</category>
-      </categories>
-      <tags>
-        <tag>Mathematics (數學)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打檔機車 原理簡單講解｜看完馬上了解打檔車原理！</title>
-    <url>/2020/07/20/Motorcycle/</url>
-    <content><![CDATA[<p>檔車很帥沒錯，這也是許多人入坑的原因，但是對沒接觸過的新手來說，真的很頭痛！<br>
-以下盤點許多關於檔車新手會有的疑問…</p>
-<span id="more"></span>
-<hr>
-<h3 id="注意">注意</h3>
-<p><strong>本文內容主要為個人理解，若有錯誤請聯繫告知，感謝。</strong></p>
-<hr>
-<h3 id="速克達-與-打檔機車-的差別"><strong>速克達</strong> 與 <strong>打檔機車</strong> 的差別</h3>
-<ul>
-<li><strong>Scooter (速克達)</strong></li>
-</ul>
-<blockquote>
-<p>台灣常見的機車多半為下圖的樣式，這也是大多數台灣人聽到「機車」後會想到的樣子，該機車類型被稱作「 <strong>Scooter (速克達)</strong> 」又或者叫做「 <strong>塑膠車</strong> 」，港澳地區則稱之為「 <strong>綿羊仔</strong> 」。</p>
-<p>「<em>在二十世紀初有存在，此後二次大戰後由<a href="https://zh.wikipedia.org/wiki/%E7%BE%A9%E5%A4%A7%E5%88%A9">義大利</a><a href="https://zh.wikipedia.org/wiki/%E4%BC%9F%E5%A3%AB%E7%89%8C">偉士牌</a>帶動流行起來的交通工具，是摩托車的一種。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%80%9F%E5%85%8B%E9%81%94"><strong>Wiki 維基百科</strong></a></p>
-</blockquote>
-<img src="/2020/07/20/Motorcycle/i1.jpg" class="" title="台灣路上常見的 Scooter (速克達) 機車">
-<hr>
-<ul>
-<li><strong>Motorcycle (檔車)</strong></li>
-</ul>
-<blockquote>
-<p>檔車才是一般大家所指的「 <strong>Motorcycle</strong> 」。<br>
-與 <strong>Scooter (速克達)</strong> 最主要的差別在於「需要<strong>手動更換檔位</strong>變速 (速克達為機器自動更換)」，且速克達是以<strong>皮帶</strong>傳動，檔車則是以<strong>鏈條</strong>傳動。</p>
-</blockquote>
-<img src="/2020/07/20/Motorcycle/i2.jpg" class="" title="Motorcycle (打檔車)">
-<hr>
-<br>
-<table border="0">
- 	<tr>
-	<td><center><b>速克達: 皮帶傳動</b></center><br></td>
-	<td><center><b>檔車: 鏈條傳動</b></center><br></td>
-	</tr>
-	<tr>
-		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i3.jpg" class=""></td>
-		<td style="width: 49%;"><img src="/2020/07/20/Motorcycle/i4.jpg" class=""></td>
-	</tr>
-</table>
-<hr>
-<h3 id="煞車離合器打檔桿">煞車？離合器？打檔桿？</h3>
-<p>許多人搞不清楚「離合器」到底是什麼。<a href="https://zh.wikipedia.org/wiki/%E9%9B%A2%E5%90%88%E5%99%A8"><strong>離合器 (Clutch)</strong></a> 主要功能是用來控制將引擎動力傳遞至車軸的裝置，舉例機車的離合器來說，一般路上常見的<strong>速克達</strong>離合器是<strong>自動化</strong>讓<strong>車輛自行控制</strong> ，因此非常的方便，你只需要催油門就可以讓機車前進。</p>
-<p>但是檔車就不同了，因為<strong>檔車</strong>的離合器是<strong>手動控制</strong>的，因此檔車比起速克達多了一個「離合器控制的開關」，而這個開關通常就是設計在<strong>左邊手把前拉桿</strong> ，相當於是<strong>速克達的後煞車位置 (左煞)</strong> ，那<strong>檔車的後煞車</strong>跑去哪了？</p>
-<p><strong>檔車後煞車</strong>則是被改到了車體<strong>右方腳踏桿</strong> ，也就是說<strong>所有的煞車都在車體右方</strong> ，用<strong>右手</strong>、<strong>右腳</strong>去控制<strong>前煞車</strong>、<strong>後煞車</strong>。而<strong>左腳</strong>位置則是「 <strong>打檔桿</strong> 」，顧名思義就是配合左手的離合器用來更換檔位用的。</p>
-<hr>
-<center><b>
-<br>檔車: 左手離合器
-<p><img src="i5.jpg" alt="離合器" width="60%"></p>
-<p><br>檔車：右腳後煞車</p>
-<p><img src="i6.jpeg" alt="&quot;後煞車&quot;" width="60%"></p>
-<p><br>檔車：左腳打檔桿 升檔 (勾)</p>
-<p><img src="i7.jpeg" alt="&quot;打檔桿 升檔&quot;" width="60%"></p>
-<p><br>檔車：左腳打檔桿 降檔 (踩)</p>
-<p><img src="i8.jpeg" alt="&quot;打檔桿 降檔&quot;" width="60%"></p>
-<p></b></center></p>
-<hr>
-<h3 id="離合器-與-發動機">離合器 與 發動機</h3>
-<p>了解了以上檔車的基本控制項後，就可以來開始講解離合器的作用原理，以下附上我<s>精湛的畫技下</s>產出的圖文講解。</p>
-<img src="/2020/07/20/Motorcycle/1.png" class="">
-<p>當車子還未發動時，所有零件都處於靜止狀態 (<s>會自己動你就要擔心了</s>)，車子一檔發動後，此刻發動機開始轉動，但<strong>離合器還是按壓狀態</strong> ，就會形成最<strong>左邊那張分離狀態的圖</strong> ，發動機 (褐色) 雖然在運轉，但因為離合器 (灰色) 還沒與其接合，所以離合器目前尚未開始運轉。</p>
-<p>當慢慢鬆開離合器直到與發動機<strong>部份接合</strong>時，則會形成<strong>中間那張 &quot;半離合&quot; 狀態的圖</strong> ，此刻機車也因為離合器與發動機開始有了銜接，會開始慢慢往前移動，<strong>半離合</strong>的目的是要「 <strong>&quot;慢慢的&quot; 帶動離合器去適應發動機的轉速</strong> 」。如果在轉速靜止的狀態下，直接使離合器與發動機快速銜接 (離合器放太快)，跳過 &quot;半離合&quot; 狀態，基本上會直接<strong>熄火</strong> ，這也是大多數騎檔車的人會遇到的問題之一！因為運動定律的關係，<strong>運動中的發動機無法直接帶動靜止的離合器</strong> ，會導致<strong>轉速差太多</strong>而讓發動機卡住，進而停止運作。</p>
-<p>當在半離合狀態時，正常來說機車會開始慢慢向前移動，這時候離合器開始跟發動機的轉速做磨合，當本身有一定的轉速後，這時釋放離合器，形成最右邊那張 &quot;密合&quot; 狀態的圖時，此刻發動機則會自然的帶動離合器開始運轉，起步成功！</p>
-<hr>
-<p>以下是網路上其他大大分享的圖。（<a href="http://cclinsbackyard.blogspot.com/2010/03/blog-post_25.html"><strong>圖取自此網站</strong></a>）</p>
- <center><b>離合器直接透過鏈條 (黑色虛線) 帶動輪軸。<br>將離合器接上引擎以取得動力。</b></center> <img src="/2020/07/20/Motorcycle/2.jpg" class="">
-<hr>
-<p><br><center><b>離合器 與 發動機 轉速差</b></center><br> <img src="/2020/07/20/Motorcycle/3.jpg" class=""></p>
-<hr>
-<h3 id="打檔大齒輪-與-小齒輪">打檔｜大齒輪 與 小齒輪</h3>
-<p>在介紹打檔之前呢，必須要先說「 <strong>檔</strong> 」是用來幹麻的？</p>
-<p>前面說到，打檔機車不像速克達的傳動方式，<strong>速克達</strong>採用的是 &quot;<strong> 皮帶</strong> &quot; 死死拖著輪軸跑的方式前進，而<strong>打檔機車</strong>則是的使用 &quot;<strong> 鏈條</strong> &quot;。鏈條兩邊連接齒輪，位於<strong>後輪輪軸那邊的齒輪大小是固定的</strong> ，我們改變的是另一端<strong>離合器那邊的齒輪大小</strong> ，<strong>檔位越小齒輪越小</strong> ，<strong>檔位越大則齒輪越大</strong>。<br>
-說到這邊應該很多人會聯想到腳踏車…<br>
- 沒錯，基本上打檔機車換檔跟腳踏車換檔原理是一樣的 (只是腳踏車是更改後方齒輪)。</p>
-<hr>
-<p>兩個齒輪之間透過鏈條運作，當機車以「一檔」在工作時 (剛剛說的<strong>檔位越小齒輪越小</strong>)，是以<strong>離合器的小齒輪帶動後方輪軸的齒輪</strong> ，所以此刻是「 <strong>小齒輪帶大齒輪</strong> 」的狀況，說到這裡回想一下國小的物理課，當「小齒輪帶大齒輪」的情況下，<strong>小的齒輪轉一圈，帶動後方的齒輪可能只有 3 分之 1 圈</strong> ，但同時也比較<strong>輕鬆</strong> ，適合用在<strong>起步</strong>。而當行進中轉速夠快，已經快要在該檔位的極限時 (轉速高的狀態)，此時若是想要繼續提速，則需要做「 <strong>升檔</strong> 」的動作。</p>
-<p>檔位升高，齒輪變大，逐漸變成「 <strong>大齒輪帶小齒輪</strong> 」的狀況，此刻就是<strong>大的齒輪轉一圈，帶動後方齒輪可能一圈半</strong> ，處於<strong>帶動速度快</strong> ，但<strong>力量要求較大</strong> ，因此<strong>不適合使用高檔位起步</strong> ，容易因為<strong>力量要求過大</strong> ，<strong>扭力不夠</strong>的關係而<strong>熄火</strong>。而行徑中可以切換高檔位則是因為本身已經<strong>有一定的速度</strong> ，所以力量要求較大這點就可以被彌補。</p>
-<p>而「降檔」基本上就是相反，用來減速，或者需要扭力大的場合 (例如：起步、爬坡)，若新手不熟練也可以待車子停下後，在原地做降檔動作 (停下降檔是為了下一次起步的準備，剛剛說了起步適合用高扭力的低檔位)。</p>
-<hr>
-<p><b style="color: red;">※ 以下「回油」指「收油門」，「補油」指「催油門」。</b></p>
-<p><strong>升檔</strong>基本上操作為：</p>
-<p><strong> <code>回油 =&gt; 壓離合 =&gt; 升檔 =&gt; 半離合 =&gt; 放離合</code> </strong></p>
-<blockquote>
-<ul>
-<li>為什麼要先 <strong> <code>回油</code> </strong> ？
-<ul>
-<li>這是為了讓<strong>轉速下降</strong> ，以免換檔時<strong>轉速差太大</strong>。<br>
-例如<strong>一檔升二檔</strong>來說，應該是以<strong>一檔高轉</strong>接<strong>二檔低轉</strong> ，所以需要 <strong> <code>收油門</code> </strong> 來使轉速降低，也就是說這個 <strong> <code>回油</code> </strong> 是「為了下個檔位而準備」的。<br>
-若維持一樣的轉速升檔，則會變成<strong>一檔高轉</strong>接<strong>二檔高轉</strong> ，不僅會爆衝較危險以外，車體本身也會有明顯的頓挫，騎久了也很不舒服。</li>
-</ul>
-</li>
-<li>機車已經有足夠的動能了，還需要 <strong> <code>半離合</code> </strong> 嗎？
-<ul>
-<li>其實正確來說整體動作是一瞬間的，從 <strong> <code>回油</code> </strong> 到 <strong> <code>放離合</code> </strong> 完成升檔的過程只需要 <strong>0.5 秒</strong>！(如果可以盡量<strong>避免 <code>半離合</code> </strong> 時間過長，這會<strong>磨損離合器片</strong>)</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<p><strong>降檔</strong>基本上操作為：</p>
-<p><strong>中高速行徑中：</strong>  <strong> <code>回油 =&gt; 壓離合 =&gt; 降檔 =&gt; 半離合 =&gt; 補油 =&gt; 放離合</code> </strong></p>
-<p><strong>低速行徑中：</strong>  <strong> <code>回油 =&gt; 壓離合 =&gt; 降檔 =&gt; 半離合 =&gt; 放離合</code> </strong></p>
-<blockquote>
-<ul>
-<li>為什麼中<strong>高速行徑</strong>的情況下要 <strong> <code>補油</code> </strong> ？
-<ul>
-<li>這是因為在<strong>高檔位</strong>且<strong>具有一定的行徑速度</strong>時，<strong>後輪運轉速度快</strong> ，若是維持一樣的轉速 <strong> <code>降檔</code> </strong>  ，會造成<strong>後輪與發動機轉速差大</strong> (後輪快，發動機慢)。(退檔時避免轉速差大而 <strong> <code>補油</code> </strong>  ，就是常聽見的「<b style="color: red;">退檔補油</b>」)<br>
- 舉例<strong>二檔降一檔</strong> ，應該是以<strong>二檔中低轉</strong>接<strong>一檔中高轉</strong> ，若是沒有在降檔後補油，則會變成<strong>二檔中低轉</strong>接<strong>一檔中低轉</strong> ，行徑間，<strong>後輪速度還維持在二檔</strong> ，卻突然降回一檔，<strong>離合器與發動機轉速差大</strong> ，<strong>卡住了離合器</strong> ，透過鏈條間接<strong>阻擋了後輪的運轉</strong> ，除了會感覺到明顯的<strong>頓挫感</strong>外，嚴重可能會導致<strong>後輪鎖死、打滑</strong>。(此指的轉速差所造成的煞車稱為「<b style="color: red;">檔煞</b>」)</li>
-<li>但若是在<strong>低速</strong>的情況下則可以<strong>省略補油</strong>的動作，維持原速即可。</li>
-<li>若是要將機車停下，也可以在完全停止後才做降檔的動作。</li>
-</ul>
-</li>
-<li>為何不直接省略 <strong> <code>回油</code> </strong>  ，退檔後補更多的油不就好了？
-<ul>
-<li>當 <strong> <code>壓離合</code> </strong> 的時候，<strong>離合器</strong>與<strong>發動機</strong>的動能是<strong>分離</strong>的，若是固定一樣的油門，在分離的一瞬間<strong>轉速</strong>會<strong>飆高</strong> ，當然你可以在退檔後做<strong>退檔補油</strong>來配合轉速，但這不但較<strong>傷車</strong> ，也更容易發生因<strong>轉速配合不當</strong>而產生的<strong>轉速差意外</strong>。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>另外，與升檔一樣，<strong>降檔</strong>的動作從 <strong> <code>回油</code> </strong> 到 <strong> <code>放離合</code> </strong> 的過程是<strong>一瞬間</strong>的。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="檔位模式">檔位模式</h3>
-<p>懂了上述的原理後，來看看市面上的打檔模式吧。<br>
-基本上檔車打檔模式分為兩種 —「 <strong>循環檔</strong> 」、「 <strong>國際檔</strong> 」。</p>
-<hr>
-<p><b style="color: red;">※ 以下都以<strong> 5 檔</strong>車來解說。</b></p>
-<p>「 <strong>循環檔</strong> 」的檔位為<strong>迴圈式</strong>的：<br>
- <code>N &gt; 1 &gt; 2 &gt; 3 &gt; 4 &gt; 5 &gt; N &gt; 1 &gt; 2 ...</code></p>
-<blockquote>
-<ul>
-<li>欸？數字的部份大家應該都了解了，那「 <strong>N</strong> 」是什麼意思？
-<ul>
-<li><strong>N</strong> 就是「 <strong>空檔</strong> 」，空檔的時候，不管怎麼摧油門<strong>車子都是不會動的</strong> ，此刻的<strong>離合器齒輪與發動機齒輪是斷開的</strong>。基本用在要<strong>停車</strong>的時候。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<p>目前大多打檔機車為「 <strong>國際檔</strong> 」：<br>
- <code>1 &gt; N &gt; 2 &gt; 3 &gt; 4 &gt; 5</code></p>
-<blockquote>
-<p>這種設計可以清楚看到，並不像循環檔一樣有個迴圈。<br>
-有別於循環檔的地方還有，<strong>空檔是在 1 檔跟 2 檔</strong>「 <strong>中間</strong> 」，進空檔的方法則為「 <strong>小力踩</strong> 」或「 <strong>小力勾</strong> 」。</p>
-</blockquote>
-<p>以下是網路上其他大大分享的圖，看了相信會更明白的。（<a href="https://timmy.pixnet.net/blog/post/1617378-%E5%9C%8B%E9%9A%9B%E6%AA%94%E5%92%8C%E5%BE%AA%E7%92%B0%E6%AA%94%E7%9A%84%E5%B7%AE%E5%88%A5"><strong>圖取自此網站</strong></a>）</p>
-<img src="/2020/07/20/Motorcycle/4.gif" class="">
-<img src="/2020/07/20/Motorcycle/5.jpg" class="">
-<hr>
-<h3 id="珍奶跟雞排要放哪">珍奶跟雞排要放哪？</h3>
-<p>這也是檔車的一大痛點，因為檔車構造的緣故，大多數檔車是「 <strong>沒有車廂</strong> 」的！</p>
-<p>有些檔車雖然有提供置物箱，但容量嘛… 大約只能放的下手機，若想加大空間，可以考慮加裝「 <strong>漢堡包</strong> 」或「 <strong>側掛包</strong> 」，攜帶的物品不多的話，也可以自己背個<strong>隨身背包</strong>上路。</p>
-<p>(P.S. <strong>側掛包</strong>有個<strong>小缺點</strong> — 後座在上下車比較麻煩)</p>
-<p><img src="bike-and-boat-motorcycle-tours-cjoPD3VRHIA-unsplash.jpg" alt="" width="70%"></p>
-<hr>
-<h3 id="結語">結語</h3>
-<p>以上是我個人對於打檔機車的認知及觀念講解，若有錯誤請不吝嗇私訊通知。<br>
-當然還有很多細節沒有提到，真的有興趣的朋友請再自行研究，我就不在此多做贅述。</p>
-<p>另外我必須要說一件我個人覺得<strong>非常重要</strong>的心態：</p>
-<blockquote>
-<p>機車、汽車都一樣，別想說會駕駛就好，不必管原理。<br>
-當你騎乘一個時速可達 100 公里的機械在路上奔馳，而你對它的構造渾然不知時，這不是件很恐怖的事情嗎…?</p>
-</blockquote>
-<p>這篇文章如果有幫助你更認識打檔機車的話，也別忘記分享給你身邊喜愛檔車的朋友吧！</p>
-]]></content>
-      <categories>
-        <category>Trick (技術講解)</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>RC 語音 XSS 漏洞</title>
-    <url>/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<span id="more"></span>
-<img src="/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/title.jpeg" class="">
-<hr>
-<h3 id="id">ID</h3>
-<p>《ZDID》ZD-2017-00589</p>
-<hr>
-<h3 id="content">Content</h3>
-<p>受測單位：伊凡達科技股份有限公司<br>
-風險評估：中<br>
-漏洞類型：預存式跨站腳本攻擊 (Stored Cross-Site Scripting)<br>
- 通報時間：2017/10/16</p>
-<hr>
-<h3 id="describe">Describe</h3>
-<p>名稱欄位可以被執行腳本，沒有做到字元過濾的防護</p>
-<p>RC 語音的「名稱欄位」中，如果命名為 「 <strong> <code>&quot;&gt;&lt;script&gt;alert('1')&lt;/script&gt;</code> </strong> 」 再進去 &quot;秀場&quot; 系統，則會被執行名稱上的語法，在論壇中也有一樣的問題，甚至可以透過「 <strong> <code>&lt;!--</code> </strong> 」輕鬆註解論壇網頁。</p>
-<hr>
-<h3 id="repair">Repair</h3>
-<p>可禁用敏感字眼，並且最好能在輸出前轉換文字為 html 編碼，這可以大大減少 XSS 的發生。</p>
-<p>防護原則：</p>
-<p><a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet" target="_blank">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
-]]></content>
-      <categories>
-        <category>Security-Flaw (安全漏洞)</category>
-        <category>我的通報</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>ReportedFromMe (我的通報)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用手機賺 Pi 幣，趁現在還免費趕快挖！(詳細圖文教學)</title>
     <url>/2021/01/11/Pi-Coin-APP/</url>
     <content><![CDATA[<p>上一篇我們了解了什麼是 <strong>Pi Coin (Pi 幣)</strong> 也了解了 <strong>Pi Network</strong> 其運作政策及流程，這篇文章將教你如何<strong>實際入場</strong>！跟我一起踏入 Pi Coin 的市場吧！</p>
@@ -2862,6 +2830,100 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       <tags>
         <tag>Bitcoin (比特幣)</tag>
         <tag>Digital-Currency (數位貨幣)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Public-key Cryptography (非對稱加密)</title>
+    <url>/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/</url>
+    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Symmetric-key Algorithm (對稱加密)">Symmetric-key Algorithm (對稱加密)</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
+<hr>
+<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
+<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
+<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
+<hr>
+<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
+<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
+<ul>
+<li><strong>公鑰、私鑰</strong>
+<ul>
+<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
+<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
+</ul>
+</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
+<ul>
+<li><strong>釋出公鑰</strong><br>
+將公鑰交給對方，用於給對方在之後進行解密使用。</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
+<ul>
+<li><strong>加密、解密</strong>
+<ul>
+<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
+<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
+<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。</li>
+</ul>
+</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
+<ul>
+<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
+<hr>
+<h3 id="運用">運用</h3>
+<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
+<p>P.S. 非對稱加密中常見的加密演算法有：<br>
+<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
+有興趣的朋友可以點擊連結或自行上網研究。</p>
+]]></content>
+      <categories>
+        <category>Concept (概念分享)</category>
+        <category>Cryptography (密碼學)</category>
+      </categories>
+      <tags>
+        <tag>Cryptography (密碼學)</tag>
+        <tag>Public-key Cryptography (非對稱加密)</tag>
+        <tag>Digital Signature (數位簽章)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RC 語音 XSS 漏洞</title>
+    <url>/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<span id="more"></span>
+<img src="/2019/12/23/RC%E8%AA%9E%E9%9F%B3XSS%E6%BC%8F%E6%B4%9E/title.jpeg" class="">
+<hr>
+<h3 id="id">ID</h3>
+<p>《ZDID》ZD-2017-00589</p>
+<hr>
+<h3 id="content">Content</h3>
+<p>受測單位：伊凡達科技股份有限公司<br>
+風險評估：中<br>
+漏洞類型：預存式跨站腳本攻擊 (Stored Cross-Site Scripting)<br>
+ 通報時間：2017/10/16</p>
+<hr>
+<h3 id="describe">Describe</h3>
+<p>名稱欄位可以被執行腳本，沒有做到字元過濾的防護</p>
+<p>RC 語音的「名稱欄位」中，如果命名為 「 <strong> <code>&quot;&gt;&lt;script&gt;alert('1')&lt;/script&gt;</code> </strong> 」 再進去 &quot;秀場&quot; 系統，則會被執行名稱上的語法，在論壇中也有一樣的問題，甚至可以透過「 <strong> <code>&lt;!--</code> </strong> 」輕鬆註解論壇網頁。</p>
+<hr>
+<h3 id="repair">Repair</h3>
+<p>可禁用敏感字眼，並且最好能在輸出前轉換文字為 html 編碼，這可以大大減少 XSS 的發生。</p>
+<p>防護原則：</p>
+<p><a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet" target="_blank">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
+]]></content>
+      <categories>
+        <category>Security-Flaw (安全漏洞)</category>
+        <category>我的通報</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>ReportedFromMe (我的通報)</tag>
       </tags>
   </entry>
   <entry>
@@ -3069,6 +3131,91 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu 18 如何顯示電量百分比？</title>
+    <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
+    <content><![CDATA[<span id="more"></span>
+<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
+<hr>
+<h3 id="幹話">幹話</h3>
+<p>我本身是一位 Ubuntu 的愛好者，非常喜歡 Ubuntu 的美術設計。<br>
+尤其當我從 16 版更新至 18 版時，那個模板看了真的是非常舒服！</p>
+<p>當我興奮的開始觀察各個角落時，突然發現，畫面右上角好像怪怪的。<br>
+ㄟ不是！怎麼沒有顯示電量百分比！ <s>我一整個就不爽了。</s></p>
+<p>於是我開始查看設定，試圖尋找「顯示電池百分比」的相關設定項，但逛遍所有地方始終找不到，想到當初剛開始使用 Ubuntu 好像也遇過一次這樣的問題，模糊的印象中記得是要額外安裝個什麼的。<br>
+記得好像… 跟 gnome 有關？<br>
+：「喔，他媽的，想到了。」</p>
+<h3 id="正式開始">正式開始</h3>
+<p>更新套件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
+<p>歡迎今天的主角 — <strong>Gnome-Tweaks</strong>. 下載並啟動它</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install gnome-tweaks</span><br><span class="line">$ gnome-tweaks</span><br></pre></td></tr></table></figure>
+<p>看到界面之後點選左邊欄位的「頂端列」<br>
+裡面就可以開啟顯示電池百分比的設定啦！</p>
+<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(18+) Xvideos情色爬蟲 -「XD」</title>
+    <url>/2020/01/19/XD-XVideosDownloader/</url>
+    <content><![CDATA[<p>相信許多老司機對「<em><strong>Xvideos.com</strong></em>」這個網站應該不陌生，此專案「<strong>XD</strong>」全名為「<strong>Xvideos Downloader</strong>」，顧名思義就是下載 Xvideos 影片用的程式 (不需擁有 Xvideos 帳號)。同時，這也是我第一個 Python 專案。</p>
+<span id="more"></span>
+<img src="/2020/01/19/XD-XVideosDownloader/title.png" class="" title="Thank icon designer - mikicon for made the logo">
+<hr>
+<h3 id="前言-初次接觸python">前言 (初次接觸 Python)</h3>
+<p>近期突然想玩玩看<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E7%88%AC%E8%9F%B2"><strong>爬蟲 (Crawler)</strong></a>，也在此刻才開始接觸腳本語言 - <a href="https://zh.wikipedia.org/wiki/Python"><strong>Python (蟒蛇)</strong></a>。<br>
+其實早在兩三年前，友人「<strong>Honor</strong>」就推坑過我，可惜當時在我心中 C 語言的那種架構才是王道 <s>(其他都邪教)</s> ，所以我只接觸諸如<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF"><strong> C#</strong></a>、<a href="https://zh.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> 這類語言。至於爬蟲，基本上是 0 經驗，硬要說的話，只有以前高中做專題時，用 PHP 去抓 <a href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E8%B3%87%E6%96%99"><strong>OpenData</strong></a> 的資料來使用的經驗而已。</p>
+<p>而我必須說，Python 當初開發時的構想「易懂易學」真的做到了！<br>
+這個專案是我接觸 Python 兩個小時後就開始製作的，約不到兩天就成功產出。<br>
+建議還沒玩過 Python 的朋友們可以開始入坑了 (X</p>
+<hr>
+<h3 id="題材選擇-為什麼是xvideos">題材選擇 (為什麼是 Xvideos？)</h3>
+<div style="width:50%; margin:auto;">
+<img src="/2020/01/19/XD-XVideosDownloader/xvideos_logo.png" class="" title="Xvideos logo">
+</div>
+雖然說下定決心要學習並製作個爬蟲小工具，但我這是屬於為了「學」而「做」，而不像一般專案一樣，先有「目的」再來「做」跟「學」，所以我很煩惱...要爬什麼呢？
+我的理想是，這個專案必須是符合大眾族群，而不是單純針對工程師或者資訊領域的人，我也會希望當我把成品分享給身邊朋友們時，他們是感興趣的。
+<p>人的生理需求中，就有那麼一項可以當作題材 - 「<a href="https://zh.wikipedia.org/wiki/%E6%80%A7%E6%AC%B2"><strong>性</strong></a>」。<br>
+很多時候我會想，如果我要架服務，怎樣的服務賺錢最輕鬆？</p>
+<ul>
+<li>社交網站：使用者胃口永遠餵不飽，必須一直新增功能，太複雜。</li>
+<li>搜尋引擎：目前可以說 <a href="https://zh.wikipedia.org/wiki/Google">Google</a> 一家獨大，太競爭。</li>
+<li>影音平台：跟搜尋引擎的問題一樣，如何與 <a href="https://zh.wikipedia.org/wiki/YouTube">Youtube</a> 抗衡？</li>
+<li>色情網站：完美！</li>
+</ul>
+<p>雖然說 <a href="https://zh.wikipedia.org/wiki/Pornhub">Pornhub</a> 已經是主流，但「色情」不像 Google 跟 Youtube 這麼嚴重，只要有色的地方，就會有流量！今天不管世界上色情網站有多少個 (競爭者多)，但只要有新的一出現，一樣會有不少人潮來光顧 (人類本性)。<br>
+總有一部分的使用者，會因為網站風格、界面跟操作方式而被吸引成為常客、加入會員甚至使用付費服務。</p>
+<p>於是我開始嘗試製作 Pornhub 爬蟲，但最終還是放棄。<br>
+原因是，研究了半個小時過去，還是不明白哪裡可以爬，影片請求的部份有 <a href="https://zh.wikipedia.org/wiki/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8"><strong>Hash</strong></a> 驗證，在加上自己本身這方面知識不足，如果繼續研究太浪費時間了。<br>
+雖說登入會員就有資料可以給它 Hash ，但是既然都要登入會員了，那就用 Pornhub 自己提供的下載功能就好了… 而我也不可能創建公共帳號給各位去使用吧 <s>(奇特思路)</s>，畢竟「大多數人」看片是不註冊會員的，所以我想製作的爬蟲是不用登入也可以抓檔的。</p>
+<p>於是矛頭指向了同樣位於色情影片網站高地位的「<a href="https://zh.wikipedia.org/wiki/XVideos"><strong>Xvideos</strong></a>」。</p>
+<hr>
+<h3 id="我該如何使用">我該如何使用？</h3>
+<p>我已經將專案放在<a href="https://github.com/alpaca0x0/PyCrawler_XVideosDownloader/">我的 Github</a> 上了。<br>
+你可以透過 <strong>Python3 (或更高版)</strong> 運行目錄下的 <strong>main.py</strong> 來使用。<br>
+若你不清楚什麼是 Python 腳本，你可以在 <a href="https://zh.wikipedia.org/wiki/Python">Wiki</a> 得到答案，安裝方法也可以透過<a href="https://www.google.com/search?q=install+python"> Google 搜尋</a>輕鬆找到。<br>
+也推薦 Windows 用戶可以使用「<a href="https://pypi.org/project/PyInstaller/">PyInstaller</a>」來將 .py 打包成 windows 的 .exe 執行檔。</p>
+<p>這也算不上是什麼專案，應該說是我自己的「Python 爬蟲練習」而已，如果你不喜歡，那麼請看看就好，請勿使用。</p>
+<p>喔對了，你可以任意的<strong>修改</strong>、<strong>使用</strong>並<strong>發布更新</strong>，若你覺得不錯也可以轉傳給朋友們，但<strong>請聲明來源</strong>，這是一個對創作者的尊重。</p>
+]]></content>
+      <categories>
+        <category>Project (專案分享)</category>
+        <category>我的專案</category>
+      </categories>
+      <tags>
+        <tag>18+</tag>
+        <tag>MadeFromMe (我的專案)</tag>
+        <tag>Python</tag>
+        <tag>Crawler (爬蟲)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一招啟動 Windows 10 「終極效能」！讓你的電腦瞬間活起來！</title>
     <url>/2021/04/06/Windows10-Ultimate-Performance/</url>
     <content><![CDATA[你還不知道 Windows 10 的「終極效能」模式嗎？嫌電腦變慢不如試試這個！
@@ -3154,67 +3301,6 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </categories>
       <tags>
         <tag>Windows 10</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Public-key Cryptography (非對稱加密)</title>
-    <url>/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/</url>
-    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Symmetric-key Algorithm (對稱加密)">Symmetric-key Algorithm (對稱加密)</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
-<hr>
-<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
-<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
-<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
-<hr>
-<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
-<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
-<ul>
-<li><strong>公鑰、私鑰</strong>
-<ul>
-<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
-<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
-</ul>
-</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
-<ul>
-<li><strong>釋出公鑰</strong><br>
-將公鑰交給對方，用於給對方在之後進行解密使用。</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
-<ul>
-<li><strong>加密、解密</strong>
-<ul>
-<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
-<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
-<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。</li>
-</ul>
-</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
-<ul>
-<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
-<hr>
-<h3 id="運用">運用</h3>
-<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
-<p>P.S. 非對稱加密中常見的加密演算法有：<br>
-<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
-有興趣的朋友可以點擊連結或自行上網研究。</p>
-]]></content>
-      <categories>
-        <category>Concept (概念分享)</category>
-        <category>Cryptography (密碼學)</category>
-      </categories>
-      <tags>
-        <tag>Cryptography (密碼學)</tag>
-        <tag>Public-key Cryptography (非對稱加密)</tag>
-        <tag>Digital Signature (數位簽章)</tag>
       </tags>
   </entry>
   <entry>
@@ -3434,60 +3520,6 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
-    <title>(18+) Xvideos情色爬蟲 -「XD」</title>
-    <url>/2020/01/19/XD-XVideosDownloader/</url>
-    <content><![CDATA[<p>相信許多老司機對「<em><strong>Xvideos.com</strong></em>」這個網站應該不陌生，此專案「<strong>XD</strong>」全名為「<strong>Xvideos Downloader</strong>」，顧名思義就是下載 Xvideos 影片用的程式 (不需擁有 Xvideos 帳號)。同時，這也是我第一個 Python 專案。</p>
-<span id="more"></span>
-<img src="/2020/01/19/XD-XVideosDownloader/title.png" class="" title="Thank icon designer - mikicon for made the logo">
-<hr>
-<h3 id="前言-初次接觸python">前言 (初次接觸 Python)</h3>
-<p>近期突然想玩玩看<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E7%88%AC%E8%9F%B2"><strong>爬蟲 (Crawler)</strong></a>，也在此刻才開始接觸腳本語言 - <a href="https://zh.wikipedia.org/wiki/Python"><strong>Python (蟒蛇)</strong></a>。<br>
-其實早在兩三年前，友人「<strong>Honor</strong>」就推坑過我，可惜當時在我心中 C 語言的那種架構才是王道 <s>(其他都邪教)</s> ，所以我只接觸諸如<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF"><strong> C#</strong></a>、<a href="https://zh.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> 這類語言。至於爬蟲，基本上是 0 經驗，硬要說的話，只有以前高中做專題時，用 PHP 去抓 <a href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E8%B3%87%E6%96%99"><strong>OpenData</strong></a> 的資料來使用的經驗而已。</p>
-<p>而我必須說，Python 當初開發時的構想「易懂易學」真的做到了！<br>
-這個專案是我接觸 Python 兩個小時後就開始製作的，約不到兩天就成功產出。<br>
-建議還沒玩過 Python 的朋友們可以開始入坑了 (X</p>
-<hr>
-<h3 id="題材選擇-為什麼是xvideos">題材選擇 (為什麼是 Xvideos？)</h3>
-<div style="width:50%; margin:auto;">
-<img src="/2020/01/19/XD-XVideosDownloader/xvideos_logo.png" class="" title="Xvideos logo">
-</div>
-雖然說下定決心要學習並製作個爬蟲小工具，但我這是屬於為了「學」而「做」，而不像一般專案一樣，先有「目的」再來「做」跟「學」，所以我很煩惱...要爬什麼呢？
-我的理想是，這個專案必須是符合大眾族群，而不是單純針對工程師或者資訊領域的人，我也會希望當我把成品分享給身邊朋友們時，他們是感興趣的。
-<p>人的生理需求中，就有那麼一項可以當作題材 - 「<a href="https://zh.wikipedia.org/wiki/%E6%80%A7%E6%AC%B2"><strong>性</strong></a>」。<br>
-很多時候我會想，如果我要架服務，怎樣的服務賺錢最輕鬆？</p>
-<ul>
-<li>社交網站：使用者胃口永遠餵不飽，必須一直新增功能，太複雜。</li>
-<li>搜尋引擎：目前可以說 <a href="https://zh.wikipedia.org/wiki/Google">Google</a> 一家獨大，太競爭。</li>
-<li>影音平台：跟搜尋引擎的問題一樣，如何與 <a href="https://zh.wikipedia.org/wiki/YouTube">Youtube</a> 抗衡？</li>
-<li>色情網站：完美！</li>
-</ul>
-<p>雖然說 <a href="https://zh.wikipedia.org/wiki/Pornhub">Pornhub</a> 已經是主流，但「色情」不像 Google 跟 Youtube 這麼嚴重，只要有色的地方，就會有流量！今天不管世界上色情網站有多少個 (競爭者多)，但只要有新的一出現，一樣會有不少人潮來光顧 (人類本性)。<br>
-總有一部分的使用者，會因為網站風格、界面跟操作方式而被吸引成為常客、加入會員甚至使用付費服務。</p>
-<p>於是我開始嘗試製作 Pornhub 爬蟲，但最終還是放棄。<br>
-原因是，研究了半個小時過去，還是不明白哪裡可以爬，影片請求的部份有 <a href="https://zh.wikipedia.org/wiki/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8"><strong>Hash</strong></a> 驗證，在加上自己本身這方面知識不足，如果繼續研究太浪費時間了。<br>
-雖說登入會員就有資料可以給它 Hash ，但是既然都要登入會員了，那就用 Pornhub 自己提供的下載功能就好了… 而我也不可能創建公共帳號給各位去使用吧 <s>(奇特思路)</s>，畢竟「大多數人」看片是不註冊會員的，所以我想製作的爬蟲是不用登入也可以抓檔的。</p>
-<p>於是矛頭指向了同樣位於色情影片網站高地位的「<a href="https://zh.wikipedia.org/wiki/XVideos"><strong>Xvideos</strong></a>」。</p>
-<hr>
-<h3 id="我該如何使用">我該如何使用？</h3>
-<p>我已經將專案放在<a href="https://github.com/alpaca0x0/PyCrawler_XVideosDownloader/">我的 Github</a> 上了。<br>
-你可以透過 <strong>Python3 (或更高版)</strong> 運行目錄下的 <strong>main.py</strong> 來使用。<br>
-若你不清楚什麼是 Python 腳本，你可以在 <a href="https://zh.wikipedia.org/wiki/Python">Wiki</a> 得到答案，安裝方法也可以透過<a href="https://www.google.com/search?q=install+python"> Google 搜尋</a>輕鬆找到。<br>
-也推薦 Windows 用戶可以使用「<a href="https://pypi.org/project/PyInstaller/">PyInstaller</a>」來將 .py 打包成 windows 的 .exe 執行檔。</p>
-<p>這也算不上是什麼專案，應該說是我自己的「Python 爬蟲練習」而已，如果你不喜歡，那麼請看看就好，請勿使用。</p>
-<p>喔對了，你可以任意的<strong>修改</strong>、<strong>使用</strong>並<strong>發布更新</strong>，若你覺得不錯也可以轉傳給朋友們，但<strong>請聲明來源</strong>，這是一個對創作者的尊重。</p>
-]]></content>
-      <categories>
-        <category>Project (專案分享)</category>
-        <category>我的專案</category>
-      </categories>
-      <tags>
-        <tag>18+</tag>
-        <tag>MadeFromMe (我的專案)</tag>
-        <tag>Python</tag>
-        <tag>Crawler (爬蟲)</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>淺談AI人工智慧的深度學習概念 (新手也能理解的基礎)</title>
     <url>/2019/12/12/%E6%B7%BA%E8%AB%87AI%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><strong>人工智慧 (AI, Artificial Intelligence)</strong></a> 是目前被大眾探討的焦點話題之一，創造出具有 &quot;智能&quot; 的科技產品一直是人類夢寐以求的，在諸如 智慧冰箱、聲控音響及<a href="https://zh.wikipedia.org/wiki/%E8%98%8B%E6%9E%9C%E5%85%AC%E5%8F%B8"> Apple</a> 知名的智能助理 - <a href="https://zh.wikipedia.org/wiki/Siri"><strong>Siri</strong></a> 等產品，都能看到人類對於創造智能科技的渴望。<br>
@@ -3531,6 +3563,86 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
         <tag>Deep Learning (深度學習)</tag>
         <tag>Machine Learning (機器學習)</tag>
         <tag>Big Data (大數據)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>量子力學 (Quantum Mechanics)</title>
+    <url>/2020/01/27/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%B8%20(Quantum%20Mechanics)/</url>
+    <content><![CDATA[<p>量子力學？量子糾纏？<br>
+觀測時結果不同！？<br>
+無法掌握原理卻開始學著利用！</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<blockquote>
+<p>本文僅分享概念而<strong>非</strong>深入討論，並且為<strong>自身認知</strong>概念之分享。<br>
+<strong>非專業人士</strong>，內容粗糙且<strong>可能有誤</strong>，徵求完美者，請斟酌觀看。</p>
+</blockquote>
+<hr>
+<h3 id="量子-quantum-量子力學-quantum-mechanics">量子 (Quantum) ＆ 量子力學 (Quantum Mechanics)</h3>
+<p>「 <strong>量子</strong> 」一詞源自於拉丁語「 <strong>Quantum</strong> 」，意指「 <strong>有多少</strong> 」。<br>
+「 <strong>量子力學 (Quantum Mechanics)</strong> 」為物理學研究<strong>量子化</strong>的一個分支，屬於研究「 <strong>微觀世界</strong> 」的科學理論。</p>
+<p>其實就現今的發展而言，我們對於「 <strong>量子</strong> 」這東西其實還是存在許多未解之迷，對於它神奇的運作原理，目前只能暫且先不討論，我們現在需要做的是，認識它並懂的使用它。</p>
+<hr>
+<h3 id="宏觀-macrocosm-與-微觀-microcosm-世界"><strong>宏觀 (Macrocosm)</strong> 與 <strong>微觀 (Microcosm)</strong> 世界</h3>
+<blockquote>
+<ul>
+<li>宏觀 (Macrocosm)
+<ul>
+<li>肉眼所能看見的物體稱為「 <strong>宏觀物體</strong> 」，在宏觀的空間裡，發生的所有現象稱為「 <strong>宏觀現象</strong> 」，則「 <strong>宏觀世界</strong> 」為「 <strong>宏觀物體</strong> 」及「 <strong>宏觀現象</strong> 」之總稱。</li>
+</ul>
+</li>
+<li>微觀 (Microcosm)
+<ul>
+<li>渺小至肉眼所不能看見的物體稱為「 <strong>微觀物體</strong> 」，在微觀的空間裡，發生的所有現象稱為「 <strong>微觀現象</strong> 」，則「 <strong>微觀世界</strong> 」為「 <strong>微觀物體</strong> 」及「 <strong>微觀現象</strong> 」之總稱。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="量子糾纏-quantum-entanglement">量子糾纏 (Quantum Entanglement)</h3>
+<p>量子力學中，當幾個粒子在互相作用影響後，各個粒子的特性被綜合成整體性質，已經無法對粒子單獨描述其性質，僅能描述整體系統時，則此現象稱為「<a href="https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E7%BA%8F%E7%B5%90"><strong>量子糾纏 (Quantum Entanglement)</strong></a>」。</p>
+<p>並且神奇的是，在量子系統下的一對糾纏粒子<strong>不論相隔多遠</strong>，都能透過未知的方式<strong>互相連通、感應彼此</strong>。</p>
+<hr>
+<h3 id="雙縫實驗-double-slit-experiment">雙縫實驗 (Double-Slit Experiment)</h3>
+<p>下圖是雙縫實驗的示意圖 (來源 - <a href="https://zh.wikipedia.org/wiki/File:2slits_quantum.jpg">Wiki 維基百科</a>)。<br>
+在圖中可以看到將光打入一塊含有兩條縫隙的隔板中時，另一端會因為光源從兩個縫隙中跑出而分開，形成兩個分裂的光，並且在兩個光波互相干擾的情況下，牆上印照出數條明暗不一的光條。</p>
+<p><img src="2slits_quantum.jpg" alt="" title="雙縫實驗示意圖 - From Wiki" width="85%"></p>
+<hr>
+<h3 id="使用-單粒子-進行-雙縫實驗-double-slit-experiment">使用「 <strong>單粒子</strong> 」進行「 <strong>雙縫實驗 (Double-Slit Experiment)</strong> 」</h3>
+<p>我們知道「 <strong>光</strong> 」是由「 <strong>光子</strong> 」所組成，而光子是不可再被分割的。<br>
+使用「 <strong>光子</strong> 」進行「 <strong>雙縫實驗 (Double-Slit Experiment)</strong> 」的實驗結果是科學史上，一個極度違反我們所認知物理常識的實驗結果。</p>
+<p>一開始科學家使用光子進行雙縫實驗時，並無發現任何異狀，和預想的一樣，光子就是不可分裂的，因此在雙縫隔板中，光子一次只能穿越一條縫隙，若是同時打入多個光子分別穿越兩條縫隙，此時另一頭也會起到干擾作用，這也是必然的，畢竟光子與光子之間的波還是會互相干涉的。</p>
+<p>到上述實驗為止，一切皆為正常現象，但接下來的實驗才是令科學家們感到驚訝的。</p>
+<p>科學家嘗試在雙縫隔板中，一樣持續的打入光子並分別穿越兩條縫隙，但是這一次改成「 <strong>不同時</strong> 」，也就是說光子是輪流打入的，按理來說應該是不存在干涉情形的，一開始光子正常的<strong>看似</strong>沒受到干擾，但在持續的打入光子後，隔板的另一頭居然慢慢的形成與剛剛相似的「數條明暗不一的光條」。</p>
+<hr>
+<h3 id="波函式-wave-function">波函式 (Wave Function)</h3>
+<p>其實，在「隔板」與「印照光條的那面牆」中間，有著一張我們看不見的「網子」，這張網子能夠對於粒子起到<strong>有規律</strong>的干擾作用。每個粒子在打入縫隙，從另一頭出來後就開始接受干擾，並且隨機落在此干擾網所干擾後的範圍內，注意，此範圍是固定的，但有多個範圍，落點是隨機的，也就是說，「 <strong>範圍</strong> 」就是上述的「 <strong>數條明暗不一的光條</strong> 」中的「 <strong>光條</strong> 」，而此光條有數個，光條範圍內的每個點都有可能是光子在干擾網干擾後的落點，因此只要光子打入夠多的數量，就能顯現越清楚的「光條」，等到落點顯現的夠多夠明顯後，就是剛剛所說的「數條明暗不一的光條」。</p>
+<p>所以會不會有可能，在一開始的實驗中，同時打入光子至雙縫隔板而產生的數條光條，並非是隔板後兩個光子之間的波在互相干擾，而從頭到尾都是干擾波在干擾呢？</p>
+<p>科學家想更進一步的了解這張無形的干擾網，他們在「隔板」至「印出光條的牆」之間使用儀器去監控，打算靠這樣觀察到光子在受干擾時的軌跡，結果… 更神奇的事情發生了…</p>
+<hr>
+<h3 id="波粒二象性-wave-particle-duality">波粒二象性 (Wave-Particle Duality)</h3>
+<p>在儀器的監控下，光子打入雙縫隔板縫隙中，此時，在隔板後，牆上顯示的居然僅僅只是兩條大小一致的「 <strong>光的直射</strong> 」！ 等等，這跟未觀測時的結果不同啊！它就好像知道我們在看著它一樣。</p>
+<p><strong>未觀測</strong>與<strong>觀測</strong>的運行結果不同，在量子力學中，<br>
+這被稱作「 <strong>波粒二象性 (Wave-Particle Duality)</strong> 」。</p>
+<hr>
+<h3 id="波函式坍縮-wave-function-collapse">波函式坍縮 (Wave Function Collapse)</h3>
+<p>這張干擾網，好像就在我們觀測它的同時，就失去了干擾的作用。</p>
+<blockquote>
+<p>「<em><strong>某些量子力學體系與外界發生某些作用後波函數發生突變，變為其中一個本徵態或有限個具有相同本徵值的本徵態的線性組合的現象。</strong></em>」 - <a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9">Wiki 維基百科</a></p>
+</blockquote>
+<p>至於為什麼在被觀察時，會對 光子 (或其他受測粒子) 的運動軌跡造成改變，這點到目前還是個問號。</p>
+<hr>
+<h3 id="感想">感想</h3>
+<p>量子力學的技術若是能在日後成功掌握，這必將是人類科技發展的一大步！量子電腦的發展，超越超級電腦的運算速度，用在許多諸如醫學或者數學上的運算則會有極高的效率。<br>
+同時我也擔心該項技術被有心人士利用，例如利用量子電腦的運算速度實施「密碼爆破」。<br>
+不過想必該技術在普及之前，也一定會實施預防的相關方案… 吧？</p>
+]]></content>
+      <categories>
+        <category>Concept (概念分享)</category>
+      </categories>
+      <tags>
+        <tag>量子力學 (Quantum Mechanics)</tag>
       </tags>
   </entry>
   <entry>
@@ -3830,117 +3942,6 @@ MIT.edu、DOJ.gov、W3.gov 等相關網站相繼被駭客關閉。</li>
         <tag>Cryptography (密碼學)</tag>
         <tag>Public-key Cryptography (非對稱加密)</tag>
         <tag>Digital Signature (數位簽章)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 18 如何顯示電量百分比？</title>
-    <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
-    <content><![CDATA[<span id="more"></span>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
-<hr>
-<h3 id="幹話">幹話</h3>
-<p>我本身是一位 Ubuntu 的愛好者，非常喜歡 Ubuntu 的美術設計。<br>
-尤其當我從 16 版更新至 18 版時，那個模板看了真的是非常舒服！</p>
-<p>當我興奮的開始觀察各個角落時，突然發現，畫面右上角好像怪怪的。<br>
-ㄟ不是！怎麼沒有顯示電量百分比！ <s>我一整個就不爽了。</s></p>
-<p>於是我開始查看設定，試圖尋找「顯示電池百分比」的相關設定項，但逛遍所有地方始終找不到，想到當初剛開始使用 Ubuntu 好像也遇過一次這樣的問題，模糊的印象中記得是要額外安裝個什麼的。<br>
-記得好像… 跟 gnome 有關？<br>
-：「喔，他媽的，想到了。」</p>
-<h3 id="正式開始">正式開始</h3>
-<p>更新套件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
-<p>歡迎今天的主角 — <strong>Gnome-Tweaks</strong>. 下載並啟動它</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install gnome-tweaks</span><br><span class="line">$ gnome-tweaks</span><br></pre></td></tr></table></figure>
-<p>看到界面之後點選左邊欄位的「頂端列」<br>
-裡面就可以開啟顯示電池百分比的設定啦！</p>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
-]]></content>
-      <categories>
-        <category>Note (技巧分享)</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>量子力學 (Quantum Mechanics)</title>
-    <url>/2020/01/27/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%B8%20(Quantum%20Mechanics)/</url>
-    <content><![CDATA[<p>量子力學？量子糾纏？<br>
-觀測時結果不同！？<br>
-無法掌握原理卻開始學著利用！</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<blockquote>
-<p>本文僅分享概念而<strong>非</strong>深入討論，並且為<strong>自身認知</strong>概念之分享。<br>
-<strong>非專業人士</strong>，內容粗糙且<strong>可能有誤</strong>，徵求完美者，請斟酌觀看。</p>
-</blockquote>
-<hr>
-<h3 id="量子-quantum-量子力學-quantum-mechanics">量子 (Quantum) ＆ 量子力學 (Quantum Mechanics)</h3>
-<p>「 <strong>量子</strong> 」一詞源自於拉丁語「 <strong>Quantum</strong> 」，意指「 <strong>有多少</strong> 」。<br>
-「 <strong>量子力學 (Quantum Mechanics)</strong> 」為物理學研究<strong>量子化</strong>的一個分支，屬於研究「 <strong>微觀世界</strong> 」的科學理論。</p>
-<p>其實就現今的發展而言，我們對於「 <strong>量子</strong> 」這東西其實還是存在許多未解之迷，對於它神奇的運作原理，目前只能暫且先不討論，我們現在需要做的是，認識它並懂的使用它。</p>
-<hr>
-<h3 id="宏觀-macrocosm-與-微觀-microcosm-世界"><strong>宏觀 (Macrocosm)</strong> 與 <strong>微觀 (Microcosm)</strong> 世界</h3>
-<blockquote>
-<ul>
-<li>宏觀 (Macrocosm)
-<ul>
-<li>肉眼所能看見的物體稱為「 <strong>宏觀物體</strong> 」，在宏觀的空間裡，發生的所有現象稱為「 <strong>宏觀現象</strong> 」，則「 <strong>宏觀世界</strong> 」為「 <strong>宏觀物體</strong> 」及「 <strong>宏觀現象</strong> 」之總稱。</li>
-</ul>
-</li>
-<li>微觀 (Microcosm)
-<ul>
-<li>渺小至肉眼所不能看見的物體稱為「 <strong>微觀物體</strong> 」，在微觀的空間裡，發生的所有現象稱為「 <strong>微觀現象</strong> 」，則「 <strong>微觀世界</strong> 」為「 <strong>微觀物體</strong> 」及「 <strong>微觀現象</strong> 」之總稱。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="量子糾纏-quantum-entanglement">量子糾纏 (Quantum Entanglement)</h3>
-<p>量子力學中，當幾個粒子在互相作用影響後，各個粒子的特性被綜合成整體性質，已經無法對粒子單獨描述其性質，僅能描述整體系統時，則此現象稱為「<a href="https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E7%BA%8F%E7%B5%90"><strong>量子糾纏 (Quantum Entanglement)</strong></a>」。</p>
-<p>並且神奇的是，在量子系統下的一對糾纏粒子<strong>不論相隔多遠</strong>，都能透過未知的方式<strong>互相連通、感應彼此</strong>。</p>
-<hr>
-<h3 id="雙縫實驗-double-slit-experiment">雙縫實驗 (Double-Slit Experiment)</h3>
-<p>下圖是雙縫實驗的示意圖 (來源 - <a href="https://zh.wikipedia.org/wiki/File:2slits_quantum.jpg">Wiki 維基百科</a>)。<br>
-在圖中可以看到將光打入一塊含有兩條縫隙的隔板中時，另一端會因為光源從兩個縫隙中跑出而分開，形成兩個分裂的光，並且在兩個光波互相干擾的情況下，牆上印照出數條明暗不一的光條。</p>
-<p><img src="2slits_quantum.jpg" alt="" title="雙縫實驗示意圖 - From Wiki" width="85%"></p>
-<hr>
-<h3 id="使用-單粒子-進行-雙縫實驗-double-slit-experiment">使用「 <strong>單粒子</strong> 」進行「 <strong>雙縫實驗 (Double-Slit Experiment)</strong> 」</h3>
-<p>我們知道「 <strong>光</strong> 」是由「 <strong>光子</strong> 」所組成，而光子是不可再被分割的。<br>
-使用「 <strong>光子</strong> 」進行「 <strong>雙縫實驗 (Double-Slit Experiment)</strong> 」的實驗結果是科學史上，一個極度違反我們所認知物理常識的實驗結果。</p>
-<p>一開始科學家使用光子進行雙縫實驗時，並無發現任何異狀，和預想的一樣，光子就是不可分裂的，因此在雙縫隔板中，光子一次只能穿越一條縫隙，若是同時打入多個光子分別穿越兩條縫隙，此時另一頭也會起到干擾作用，這也是必然的，畢竟光子與光子之間的波還是會互相干涉的。</p>
-<p>到上述實驗為止，一切皆為正常現象，但接下來的實驗才是令科學家們感到驚訝的。</p>
-<p>科學家嘗試在雙縫隔板中，一樣持續的打入光子並分別穿越兩條縫隙，但是這一次改成「 <strong>不同時</strong> 」，也就是說光子是輪流打入的，按理來說應該是不存在干涉情形的，一開始光子正常的<strong>看似</strong>沒受到干擾，但在持續的打入光子後，隔板的另一頭居然慢慢的形成與剛剛相似的「數條明暗不一的光條」。</p>
-<hr>
-<h3 id="波函式-wave-function">波函式 (Wave Function)</h3>
-<p>其實，在「隔板」與「印照光條的那面牆」中間，有著一張我們看不見的「網子」，這張網子能夠對於粒子起到<strong>有規律</strong>的干擾作用。每個粒子在打入縫隙，從另一頭出來後就開始接受干擾，並且隨機落在此干擾網所干擾後的範圍內，注意，此範圍是固定的，但有多個範圍，落點是隨機的，也就是說，「 <strong>範圍</strong> 」就是上述的「 <strong>數條明暗不一的光條</strong> 」中的「 <strong>光條</strong> 」，而此光條有數個，光條範圍內的每個點都有可能是光子在干擾網干擾後的落點，因此只要光子打入夠多的數量，就能顯現越清楚的「光條」，等到落點顯現的夠多夠明顯後，就是剛剛所說的「數條明暗不一的光條」。</p>
-<p>所以會不會有可能，在一開始的實驗中，同時打入光子至雙縫隔板而產生的數條光條，並非是隔板後兩個光子之間的波在互相干擾，而從頭到尾都是干擾波在干擾呢？</p>
-<p>科學家想更進一步的了解這張無形的干擾網，他們在「隔板」至「印出光條的牆」之間使用儀器去監控，打算靠這樣觀察到光子在受干擾時的軌跡，結果… 更神奇的事情發生了…</p>
-<hr>
-<h3 id="波粒二象性-wave-particle-duality">波粒二象性 (Wave-Particle Duality)</h3>
-<p>在儀器的監控下，光子打入雙縫隔板縫隙中，此時，在隔板後，牆上顯示的居然僅僅只是兩條大小一致的「 <strong>光的直射</strong> 」！ 等等，這跟未觀測時的結果不同啊！它就好像知道我們在看著它一樣。</p>
-<p><strong>未觀測</strong>與<strong>觀測</strong>的運行結果不同，在量子力學中，<br>
-這被稱作「 <strong>波粒二象性 (Wave-Particle Duality)</strong> 」。</p>
-<hr>
-<h3 id="波函式坍縮-wave-function-collapse">波函式坍縮 (Wave Function Collapse)</h3>
-<p>這張干擾網，好像就在我們觀測它的同時，就失去了干擾的作用。</p>
-<blockquote>
-<p>「<em><strong>某些量子力學體系與外界發生某些作用後波函數發生突變，變為其中一個本徵態或有限個具有相同本徵值的本徵態的線性組合的現象。</strong></em>」 - <a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9">Wiki 維基百科</a></p>
-</blockquote>
-<p>至於為什麼在被觀察時，會對 光子 (或其他受測粒子) 的運動軌跡造成改變，這點到目前還是個問號。</p>
-<hr>
-<h3 id="感想">感想</h3>
-<p>量子力學的技術若是能在日後成功掌握，這必將是人類科技發展的一大步！量子電腦的發展，超越超級電腦的運算速度，用在許多諸如醫學或者數學上的運算則會有極高的效率。<br>
-同時我也擔心該項技術被有心人士利用，例如利用量子電腦的運算速度實施「密碼爆破」。<br>
-不過想必該技術在普及之前，也一定會實施預防的相關方案… 吧？</p>
-]]></content>
-      <categories>
-        <category>Concept (概念分享)</category>
-      </categories>
-      <tags>
-        <tag>量子力學 (Quantum Mechanics)</tag>
       </tags>
   </entry>
   <entry>
