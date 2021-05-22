@@ -609,9 +609,8 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
-        <category>Trick (技術講解)</category>
+        <category>Learning (學習筆記)</category>
         <category>Web</category>
-        <category>Pen-Test</category>
         <category>XSS (Cross-Site-Scripting)</category>
       </categories>
       <tags>
@@ -724,14 +723,58 @@ function my_script(){
 <p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
 ]]></content>
       <categories>
-        <category>Trick (技術講解)</category>
+        <category>Learning (學習筆記)</category>
         <category>Web</category>
-        <category>Pen-Test</category>
         <category>XSS (Cross-Site-Scripting)</category>
       </categories>
       <tags>
         <tag>XSS (Cross-Site-Scripting)</tag>
         <tag>SecurityFlaw (安全漏洞)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>資料庫概念 DB、DBMS、SQL 之間的關係</title>
+    <url>/2021/05/22/DB-DBMS-SQL/</url>
+    <content><![CDATA[資料庫早已被大量使用，如果還分不清楚 Database 與 DBMS 及 SQL 的關係，那還真是場災難呢！
+<span id="more"></span>
+<hr>
+<h2 id="database-資料庫">Database (資料庫)</h2>
+<p><strong> <code>Database (資料庫)</code> </strong> 簡稱「<strong> <code>DB</code> </strong>」。就如同名稱般，是存放資料的地方。<br>
+如果放在傳統的「<strong>資料庫</strong>」來說，可以單指<strong>堆滿文件</strong>的倉庫，或者一間<strong>圖書館</strong>。</p>
+<p>但在現今所聽到的「<strong>資料庫</strong>」多半是指「<strong> <code>數位化</code> </strong>」的資料庫，存放在<strong>計算機上</strong>的。</p>
+<p>是否有想過，你在網站上的<strong>帳號</strong>、<strong>密碼</strong>，或者<strong>社群</strong>上的<strong>圖片</strong>、<strong>貼文</strong>等，這些資料是存放在哪裡？這麼一想就不難發現 Database 的重要性！</p>
+<hr>
+<h2 id="dbms-資料庫管理系統">DBMS (資料庫管理系統)</h2>
+<p>「<strong> <code>DBMS</code> </strong>」全名「<strong> <code>Database Management System</code> </strong>」，中文為「<strong> <code>資料庫管理系統</code> </strong>」。</p>
+<p>存放多筆數據的資料庫，不易被管理。<br>
+設想一下若圖書館內<strong>沒有電腦的管理系統</strong>協助查詢，要找一本書需要花多久的時間？</p>
+<p>但有了管理系統，你只需要到櫃台請工作人員 <code>查詢書名</code> ，便可以在短短幾秒內知道這本書的 <code>作者</code> 、 <code>出版日期</code> … 等資訊，另外也可以知道這本書在該圖書館的 <code>數量</code> 、 <code>類別</code> 、 <code>位置</code> 等。</p>
+<p>而上述這一切僅發生在工作人員按下執行查詢工作的<strong>一瞬間</strong>。<br>
+這就是 <strong>DBMS (資料庫管理系統)</strong> 的效率。</p>
+<p>當前常見的 DBMS 有 <a href="https://zh.wikipedia.org/wiki/MySQL">MySQL</a>、<a href="https://zh.wikipedia.org/wiki/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93">Oracle Database</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_SQL_Server">Microsoft SQL Server</a>、<a href="https://zh.wikipedia.org/wiki/MariaDB">MariaDB</a>、<a href="https://zh.wikipedia.org/wiki/SQLite">SQLite</a>、<a href="https://zh.wikipedia.org/wiki/IBM_DB2">IBM DB2</a>、<a href="https://zh.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>、<a href="https://zh.wikipedia.org/wiki/MongoDB">MongoDB</a> 等。</p>
+<hr>
+<h2 id="什麼是-sql-結構化查詢語言">什麼是 SQL (結構化查詢語言) ？</h2>
+<p>「<strong> <code>SQL</code> </strong>」全名「<strong> <code>Structured Query Language</code> </strong>」，中文為「<strong> <code>結構化查詢語言</code> </strong>」。</p>
+<p>用來操作 DBMS 的查詢語言。<br>
+不過稍微科普一下，通常 SQL 語法是寫在程式碼中，使程式可以自動化發送請求。<br>
+在企業中較少提供管理員手動輸入 SQL 語法查詢的情境，因為人為失誤可能導致嚴重的後果。(通常是提供後台管理的操作頁面操作 Database)</p>
+<hr>
+<h2 id="整合">整合</h2>
+<p>為了方便了解，我製作了這張圖給各位參考：</p>
+<p><img src="SQL-DBMS-DB.jpg" alt="SQL、DBMS、DB 之間的關係"></p>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>《Wiki 維基百科 - SQL》<a href="https://zh.wikipedia.org/wiki/SQL">https://zh.wikipedia.org/wiki/SQL</a><br>
+《Wiki 維基百科 - 資料庫管理系統》<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">https://zh.wikipedia.org/wiki/ 数据库管理系统</a><br>
+《Wiki 維基百科 - SQL 語法》<a href="https://zh.wikipedia.org/wiki/SQL%E8%AF%AD%E6%B3%95">https://zh.wikipedia.org/wiki/SQL 语法</a></p>
+]]></content>
+      <categories>
+        <category>Learning (學習筆記)</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database (資料庫)</tag>
       </tags>
   </entry>
   <entry>
@@ -2134,7 +2177,7 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
       </tags>
   </entry>
   <entry>
-    <title>打檔機車 原理簡單講解｜看完馬上了解打檔車原理！</title>
+    <title>打檔機車 原理解說｜看完馬上了解打檔車原理！</title>
     <url>/2020/07/20/Motorcycle/</url>
     <content><![CDATA[<p>檔車很帥沒錯，這也是許多人入坑的原因，但是對沒接觸過的新手來說，真的很頭痛！<br>
 以下盤點許多關於檔車新手會有的疑問…</p>
@@ -2302,7 +2345,7 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
 <p>這篇文章如果有幫助你更認識打檔機車的話，也別忘記分享給你身邊喜愛檔車的朋友吧！</p>
 ]]></content>
       <categories>
-        <category>Trick (技術講解)</category>
+        <category>Popular-Science (科普)</category>
       </categories>
   </entry>
   <entry>
@@ -3063,6 +3106,37 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu 18 如何顯示電量百分比？</title>
+    <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
+    <content><![CDATA[<span id="more"></span>
+<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
+<hr>
+<h3 id="幹話">幹話</h3>
+<p>我本身是一位 Ubuntu 的愛好者，非常喜歡 Ubuntu 的美術設計。<br>
+尤其當我從 16 版更新至 18 版時，那個模板看了真的是非常舒服！</p>
+<p>當我興奮的開始觀察各個角落時，突然發現，畫面右上角好像怪怪的。<br>
+ㄟ不是！怎麼沒有顯示電量百分比！ <s>我一整個就不爽了。</s></p>
+<p>於是我開始查看設定，試圖尋找「顯示電池百分比」的相關設定項，但逛遍所有地方始終找不到，想到當初剛開始使用 Ubuntu 好像也遇過一次這樣的問題，模糊的印象中記得是要額外安裝個什麼的。<br>
+記得好像… 跟 gnome 有關？<br>
+：「喔，他媽的，想到了。」</p>
+<h3 id="正式開始">正式開始</h3>
+<p>更新套件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
+<p>歡迎今天的主角 — <strong>Gnome-Tweaks</strong>. 下載並啟動它</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install gnome-tweaks</span><br><span class="line">$ gnome-tweaks</span><br></pre></td></tr></table></figure>
+<p>看到界面之後點選左邊欄位的「頂端列」<br>
+裡面就可以開啟顯示電池百分比的設定啦！</p>
+<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
+]]></content>
+      <categories>
+        <category>Note (技巧分享)</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Symmetric-key Algorithm (對稱加密)</title>
     <url>/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/</url>
     <content><![CDATA[<p>大家對於「<strong>密碼</strong>」並不陌生，生活中總是遇到許多場合需要用到密碼，然而「<strong>加密</strong>」的原理似乎相對的卻不是那麼的備受關注。</p>
@@ -3128,37 +3202,6 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       <tags>
         <tag>Cryptography (密碼學)</tag>
         <tag>Symmetric-key Algorithm (對稱加密)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 18 如何顯示電量百分比？</title>
-    <url>/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/</url>
-    <content><![CDATA[<span id="more"></span>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/title.png" class="">
-<hr>
-<h3 id="幹話">幹話</h3>
-<p>我本身是一位 Ubuntu 的愛好者，非常喜歡 Ubuntu 的美術設計。<br>
-尤其當我從 16 版更新至 18 版時，那個模板看了真的是非常舒服！</p>
-<p>當我興奮的開始觀察各個角落時，突然發現，畫面右上角好像怪怪的。<br>
-ㄟ不是！怎麼沒有顯示電量百分比！ <s>我一整個就不爽了。</s></p>
-<p>於是我開始查看設定，試圖尋找「顯示電池百分比」的相關設定項，但逛遍所有地方始終找不到，想到當初剛開始使用 Ubuntu 好像也遇過一次這樣的問題，模糊的印象中記得是要額外安裝個什麼的。<br>
-記得好像… 跟 gnome 有關？<br>
-：「喔，他媽的，想到了。」</p>
-<h3 id="正式開始">正式開始</h3>
-<p>更新套件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
-<p>歡迎今天的主角 — <strong>Gnome-Tweaks</strong>. 下載並啟動它</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install gnome-tweaks</span><br><span class="line">$ gnome-tweaks</span><br></pre></td></tr></table></figure>
-<p>看到界面之後點選左邊欄位的「頂端列」<br>
-裡面就可以開啟顯示電池百分比的設定啦！</p>
-<img src="/2019/12/20/Ubuntu%E9%A1%AF%E7%A4%BA%E9%9B%BB%E9%87%8F%E7%99%BE%E5%88%86%E6%AF%94/setting.png" class="" title="Gnome-Tweaks">
-]]></content>
-      <categories>
-        <category>Note (技巧分享)</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
