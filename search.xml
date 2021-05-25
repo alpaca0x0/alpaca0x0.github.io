@@ -2970,6 +2970,674 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
       </tags>
   </entry>
   <entry>
+    <title>《SQL 基礎 01》創建、新增</title>
+    <url>/2021/05/25/SQL-Basic-01/</url>
+    <content><![CDATA[一些基礎常見的 SQL 語法。
+<span id="more"></span>
+<hr>
+<h2 id="創建">創建</h2>
+<h3 id="創建資料庫">創建資料庫</h3>
+<p>創建使用的是「<strong> <code>CREATE</code> </strong>」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE `資料庫名稱`;</span><br></pre></td></tr></table></figure>
+<h3 id="創建資料表及欄位">創建資料表及欄位</h3>
+<p>由於要先指定資料庫才能使用裡面的資料表，所以先選擇資料庫：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE `資料庫名稱`;</span><br></pre></td></tr></table></figure>
+<p>之後創建資料表，創建格式如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `資料表名稱`(</span><br><span class="line">	`欄位<span class="number">1</span>名稱` 資料型態(長度) 屬性<span class="number">1</span> 屬性<span class="number">2.</span>..,</span><br><span class="line">	`欄位<span class="number">2</span>名稱` 資料型態(長度) 屬性<span class="number">1</span> 屬性<span class="number">2.</span>..,</span><br><span class="line">	...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="範例">範例</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `資料表名稱`(</span><br><span class="line">	`id` <span class="type">int</span> AUTO_INCREMENT <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">	`phone` <span class="type">char</span>(<span class="number">10</span>),</span><br><span class="line">	`name` <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;Anonymous&#x27;</span>,</span><br><span class="line">	`age` <span class="type">int</span>(<span class="number">3</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="語法說明">語法說明</h3>
+<p>欄位格式為「<strong> <code>欄位名稱</code>   <code>資料類別(長度)</code>   <code>屬性1</code>   <code>屬性2...</code> </strong>」。每筆資料以「<strong> <code>,</code> </strong>」區隔。</p>
+<ul>
+<li>
+<p>欄位「 <code>id</code> 」為「 <code>int</code> 」表示「 <code>整數</code> 」，範圍為「 <code>-2,147,483,648</code>  ~  <code>2,147,483,647</code> 」。<br>
+屬性 「 <code>PRIMARY KEY</code> 」則表示  <code>主鍵</code> ，同時加上「 <code>AUTO_INCREMENT</code> 」使其能在新增一筆新資料時，<strong>自動累加</strong> id 以確保資料筆之間的 id 值唯一。</p>
+</li>
+<li>
+<p>欄位「 <code>phone</code> 」為「 <code>char</code> 」表示「 <code>字元</code> 」，最大字元長度為「 <code>255</code> 」。在後方有「 <code>(10)</code> 」則限制其長度為 10 。(ps. 若長度 <code>不足</code>  10 則會自動補足 10，總之在儲存上 <code>佔用的容量是固定的</code> )</p>
+</li>
+<li>
+<p>而「 <code>name</code> 」欄位同樣是字元，但寫作「 <code>varchar</code> 」，最大字元長度為「 <code>65535</code> 」，差別在於資料儲存上，若字元長度不足 20 ，則只會佔用 <code>資料的字元長度大小</code> ，相較於「 <code>char</code> 」更為彈性，通常建議使用這個類別而非「 <code>char</code> 」。<br>
+屬性「 <code>DEFAULT</code> 」意思為「 <code>預設</code> 」。在新增資料筆時，若沒有指定該欄位的情況下，會自動寫入預設值，舉上述例子，當沒有指定「 <code>name</code> 」欄位寫入時，該欄位將自動寫入「 <code>Anonymous</code> 」。</p>
+</li>
+<li>
+<p>最後的「 <code>age</code> 」欄位屬性「 <code>NOT NULL</code> 」表示該欄位 <code>不能為空值</code> 。<br>
+若要表示該資料可以為空，則使用「 <code>NULL</code> 」屬性。<br>
+若沒有特別指定，則使用系統預設，通常為「 <code>NULL</code> 」屬性。<br>
+(ps.  <code>id</code>  雖然沒有該屬性，但  <code>PRIMARY KEY</code>  屬性本身就自帶  <code>NOT NULL</code>  了)</p>
+</li>
+</ul>
+<p>另外，你也可以將欄位格式寫好後，在最後才將其定義為主鍵：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `資料表名稱` (</span><br><span class="line">	`id` <span class="type">int</span> AUTO_INCREMENT,</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">PRIMARY</span> KEY(`id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="新增">新增</h2>
+<p>想要在資料表內新增資料筆，則需要用到「<strong> <code>INSERT</code> </strong>」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `資料表名稱`(`欄位<span class="number">1</span>`, `欄位<span class="number">2</span>`,...)</span><br><span class="line"><span class="keyword">VALUES</span> (欄位<span class="number">1</span>的值, 欄位<span class="number">2</span>的值...);</span><br></pre></td></tr></table></figure>
+<p>填寫<strong>值的順序</strong>是對應前面<strong>欄位順序</strong>的。</p>
+<p>這邊要特別注意的是，兩行之間並<strong>沒有</strong>「 <code>,</code> 」或「 <code>;</code> 」區隔。<br>
+本質上它算是一行，只是為了提高 <code>可讀性</code> ，所以習慣寫作兩行或以上。</p>
+<p>(ps. 另外，舉上述例子，我們不需要在新增時手動寫入「 <code>id</code> 」欄位，因為「 <code>AUTO_INCREMENT</code> 」會自動寫入。)</p>
+<h3 id="範例-2">範例</h3>
+<p>舉上述 <code>創建</code> 例子中的資料表為例：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `資料表名稱`(`phone`, `name`, `age`)</span><br><span class="line"><span class="keyword">VALUES</span> (&quot;0123456789&quot;, &quot;新之助&quot;, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>會寫入以下資料：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+</tbody>
+</table>
+<p>再寫入一筆，但這次只指定必要的欄位「 <code>age</code> 」：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `資料表名稱`(`age`)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="number">19</span>);</span><br></pre></td></tr></table></figure>
+<p>目前資料為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>由於  <code>id</code>  欄位的「 <code>AUTO_INCREMENT</code> 」屬性，所以自動累加上一筆資料的  <code>id</code> 。</li>
+<li>欄位  <code>phone</code>  並未指定，而又不存在預設值，因此為 <code>NULL (空值)</code> 。</li>
+<li>欄位  <code>name</code>  並未指定，但存在預設值「 <code>Anonymous</code> 」，因此寫入預設值。</li>
+<li>欄位  <code>age</code>  指定為  <code>19</code>  。</li>
+</ul>
+<p>但如果這麼寫：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `資料表名稱`(`name`, `phone`)</span><br><span class="line"><span class="keyword">VALUES</span> (&quot;小葵&quot;, &quot;0987654321&quot;);</span><br></pre></td></tr></table></figure>
+<p><strong>會發生什麼事情？</strong></p>
+<p>答案是噴一個錯誤 -  <code>Field 'age' doesn't have a default value</code> <br>
+ 還記得剛剛創建資料表時，設置了  <code>age</code>  欄位為「 <code>NOT NULL</code> 」屬性嗎？<br>
+而在此並未給予  <code>age</code>  值，而  <code>age</code>  又不存在「 <code>DEFAULT</code> 」預設值，因此出錯。</p>
+]]></content>
+      <categories>
+        <category>Learning (學習筆記)</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database (資料庫)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《SQL 基礎 02》查詢、模糊比對</title>
+    <url>/2021/05/25/SQL-Basic-02/</url>
+    <content><![CDATA[一些基礎常見的 SQL 語法。
+<span id="more"></span>
+<hr>
+<h2 id="查詢">查詢</h2>
+<p>要在資料表內查詢資料筆，則需要用到「<strong> <code>SELECT</code> </strong>」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `查詢欄位<span class="number">1</span>`,`查詢欄位<span class="number">2.</span>..` <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> 查詢條件;</span><br></pre></td></tr></table></figure>
+<p>而查詢的欄位也可以填入「<strong> <code>*</code> </strong>」來表示查詢「 <code>全部欄位</code> 」：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `資料表名稱 <span class="keyword">WHERE</span> `查詢條件`;</span><br></pre></td></tr></table></figure>
+<p>至於條件… 各種寫法，常見的寫法為  <code>比對資料值相符與否</code> 。</p>
+<h3 id="範例-比對數字">範例 - 比對數字</h3>
+<p>利用上一篇文章「<a href="/2021/05/25/SQL-Basic-01/" title="《SQL 基礎 01》創建、新增">《SQL 基礎 01》創建、新增</a>」中所說的語法，陸續寫入幾筆資料後，目前的資料表內容為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<p>輸入查詢語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `id`, `name`, `age` <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `age` <span class="operator">&gt;</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<p>因為  <code>WHERE</code>  後方所寫的查詢條件為「 <code>age</code> 」的值須 <code>大於</code> 「10」，<br>
+因此  <code>age</code>  小於等於 10 的資料筆將不顯示。</p>
+<p><code>大於</code> 使用「 <code>&gt;</code> 」； <code>小於</code> 使用「 <code>&lt;</code> 」；<br>
+ <code>等於</code> 使用「 <code>=</code> 」； <code>不等於</code> 使用「 <code>!=</code> 」或「 <code>&lt;&gt;</code> 」；<br>
+ <code>大於等於</code> 使用「 <code>&gt;=</code> 」； <code>小於等於</code> 使用「 <code>&lt;=</code> 」；</p>
+<p>ps. 若不指定查詢條件，則表示查詢全部：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `id`, `name`, `age` <span class="keyword">FROM</span> `資料表名稱`;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<h3 id="範例-比對字串">範例 - 比對字串</h3>
+<p>輸入查詢語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `id`, `name` <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `name` <span class="operator">=</span> &quot;新之助&quot;;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+</tr>
+</tbody>
+</table>
+<p>不等於的字串查詢：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `id`, `name` <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `name` <span class="operator">!=</span> &quot;Anonymous&quot;;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">向日葵</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">美冴</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">廣志</td>
+</tr>
+</tbody>
+</table>
+<h3 id="範例-模糊比對">範例 - 模糊比對</h3>
+<p>當有時候我們<strong>不確定</strong>目標欄位的<strong>值</strong>時，我們可以用<strong>部份特徵</strong>來比對。<br>
+要模糊查詢則是使用「 <code>LIKE</code> 」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `phone` <span class="keyword">LIKE</span> &quot;01%&quot;;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+</tbody>
+</table>
+<p>百分號「 <code>%</code> 」表示任意字元比對  <code>0</code>  次或  <code>0 次以上</code> 。<br>
+該語法的意思是，查詢  <code>phone</code>  的值為  <code>01 開頭</code>  的資料筆。<br>
+所以假設「 <code>蘋果%</code> 」可以配對「 <code>蘋果</code> 」、「 <code>蘋果汁</code> 」、「 <code>蘋果派不好吃</code> 」，但 <code>不</code> 能配對「 <code>青蘋果</code> 」，因為「 <code>青蘋果</code> 」開頭並非是「 <code>蘋果</code> 」，若要配對它，則可以寫成「 <code>%蘋果%</code> 」。</p>
+<p>如果輸入以下語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `age` <span class="keyword">LIKE</span> &quot;_9&quot;;</span><br></pre></td></tr></table></figure>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+</tbody>
+</table>
+<p>底線「 <code>_</code> 」表示任意字元比對  <code>1</code>  次。<br>
+該語法表示，查詢  <code>age</code>  欄位「 <code>第二字為 9</code> 」的結果。<br>
+所以「 <code>_9</code> 」可以配對「 <code>39</code> 」、「 <code>59</code> 」但不能配對「 <code>22</code> 」、「 <code>9</code> 」，當然也不能配對「 <code>193</code> 」，如果要配對「 <code>193</code> 」則須寫做「 <code>_9_</code> 」或者「 <code>_9%</code> 」。</p>
+]]></content>
+      <categories>
+        <category>Learning (學習筆記)</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database (資料庫)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《SQL 基礎 03》修改、刪除</title>
+    <url>/2021/05/25/SQL-Basic-03/</url>
+    <content><![CDATA[一些基礎常見的 SQL 語法。
+<span id="more"></span>
+<hr>
+<h2 id="示範的資料">示範的資料</h2>
+<p>目前資料表內有以下資料：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<p>如果可以的話也試著一起做做看。</p>
+<hr>
+<h2 id="修改">修改</h2>
+<h3 id="修改資料筆">修改資料筆</h3>
+<p>修改資料筆需要使用「 <code>UPDATE</code> 」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE `資料表名稱` </span><br><span class="line"><span class="keyword">SET</span> `欄位<span class="number">1</span>` <span class="operator">=</span> 欄位<span class="number">1</span>新的值, `欄位<span class="number">2</span>` <span class="operator">=</span> 欄位<span class="number">2</span>新的值...</span><br><span class="line"><span class="keyword">WHERE</span> 修改條件;</span><br></pre></td></tr></table></figure>
+<h3 id="範例-修改資料筆">範例 - 修改資料筆</h3>
+<p>輸入語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE `資料表名稱` </span><br><span class="line"><span class="keyword">SET</span> `name` <span class="operator">=</span> &quot;小白&quot;, `age` <span class="operator">=</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">WHERE</span> `name` <span class="keyword">LIKE</span> <span class="string">&#x27;%onym%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>原資料：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+</tbody>
+</table>
+<p>被更改為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">小白</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>條件「<strong>`name` LIKE  <code>'%onym%'</code> </strong>」表示模糊查詢  <code>name</code>  欄位「 <code>含有 &quot;onym&quot;</code> 」的資料筆。<br>
+ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
+所有資料的欄位  <code>name</code>  會變「 <code>小白</code> 」，欄位  <code>age</code>  會變「 <code>0</code> 」…</p>
+<h3 id="修改欄位">修改欄位</h3>
+<h4 id="新增欄位">新增欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> `欄位名稱` 資料型態(長度) 屬性<span class="number">1</span> 屬性<span class="number">2.</span>..;</span><br></pre></td></tr></table></figure>
+<h4 id="範例-新增欄位">範例 - 新增欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> `name_jp` <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>資料表欄位多出「 <code>name_jp</code> 」：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+<th style="text-align:left">jp_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">小白</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="修改欄位-2">修改欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` CHANGE <span class="keyword">COLUMN</span> `舊欄位名稱`</span><br><span class="line">`新欄位名稱` 新資料形態(長度) 屬性<span class="number">1</span> 屬性<span class="number">2.</span>..;</span><br></pre></td></tr></table></figure>
+<h4 id="範例-修改欄位">範例 - 修改欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` CHANGE <span class="keyword">COLUMN</span> `phone`</span><br><span class="line">`phone` <span class="type">varchar</span>(<span class="number">11</span>) <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>則資料欄位  <code>phone</code>  由型態「 <code>char(10)</code> 」更改至「 <code>varchar(11)</code> 」。</p>
+<h4 id="刪除欄位">刪除欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> `欄位名稱`;</span><br></pre></td></tr></table></figure>
+<h4 id="範例-刪除欄位">範例 - 刪除欄位</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> `資料表名稱` <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> `age`;</span><br></pre></td></tr></table></figure>
+<p>欄位「 <code>age</code> 」被刪除了：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">jp_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">小白</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="刪除">刪除</h2>
+<h3 id="刪除資料筆">刪除資料筆</h3>
+<p>刪除資料筆使用的語法為「 <code>DELETE</code> 」：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> 刪除條件</span><br></pre></td></tr></table></figure>
+<h3 id="範例-刪除資料筆">範例 - 刪除資料筆</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> `資料表名稱` <span class="keyword">WHERE</span> `phone` <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br></pre></td></tr></table></figure>
+<p>ps. 「<strong> <code>IS NULL</code> </strong>」這個寫法表示比對值為  <code>NULL (空值)</code> ，等同於「<strong>`phone`  <code>= &quot;&quot;</code> </strong>」。</p>
+<p>原資料為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">jp_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">小白</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p>刪除後：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">jp_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left"><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+<p>當然，如同  <code>UPDATE</code>  語法一樣，<strong>沒有</strong>指定  <code>WHERE</code>  刪除條件，則會 <code>刪除全部</code> ！</p>
+<h3 id="刪除資料表">刪除資料表</h3>
+<p>刪除資料表使用的是「 <code>DROP</code> 」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> `資料表名稱`;</span><br></pre></td></tr></table></figure>
+<h3 id="刪除資料庫">刪除資料庫</h3>
+<p>刪除資料庫一樣使用「 <code>DROP</code> 」語法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE `資料庫名稱`;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Learning (學習筆記)</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database (資料庫)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Edward Joseph Snowden (愛德華·約瑟夫·史諾登)｜賭上自己的一生，只為揭露政府祕密監控人民的醜聞！</title>
     <url>/2020/02/27/Snowden/</url>
     <content><![CDATA[<p>「 <em><strong>你不關心隱私權，因為你沒有什麼可隱瞞，這和說你不關心言論自由沒什麼不同，因為你無話可說。</strong></em> 」</p>
@@ -3254,7 +3922,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <p>但注意！這時候 <code>還沒啟動</code> 它。</p>
 <p>如果系統沒有回應該訊息，那或許是 <strong> <code>指令輸入錯誤</code> </strong> ，請再確認輸入是否正確。<br>
 並且請確認 <strong> <code>Power Shell</code> </strong> 是以 <strong> <code>管理員身份開啟</code> </strong> 。<br>
-如果以上都做到了，還是不能，那很有可能是<strong>電腦版本不支援</strong>這個模式，前面有說到，電腦的版本必須是 <strong> <code>1803 以上</code> </strong> 。</p>
+如果以上都做到了，還是不能，那很有可能是<strong>電腦版本不支援</strong>這個模式，前面有說到，Windows 的版本必須是 <strong> <code>1803 以上</code> </strong> 。</p>
 <hr>
 <h3 id="step3-啟動-ultimate-performance-終極效能">Step.3 啟動 <strong>Ultimate Performance (終極效能)</strong></h3>
 <ol>
