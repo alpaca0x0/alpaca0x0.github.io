@@ -348,7 +348,8 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 <img src="/2020/02/08/Coulrophobia-%E5%B0%8F%E4%B8%91%E6%81%90%E6%87%BC%E7%97%87/03.jpg" class="" title="Sophia 人工智慧機器人">
 ]]></content>
       <categories>
-        <category>Popular-Science (科普)</category>
+        <category>Learning (學習筆記)</category>
+        <category>Psychology</category>
       </categories>
       <tags>
         <tag>18+</tag>
@@ -609,8 +610,7 @@ P.S. 1041279065871998535982789873959431895640\4425106955675643739226952372682423
 我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>Web</category>
         <category>XSS (Cross-Site-Scripting)</category>
       </categories>
@@ -724,8 +724,7 @@ function my_script(){
 <p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>Web</category>
         <category>XSS (Cross-Site-Scripting)</category>
       </categories>
@@ -771,8 +770,7 @@ function my_script(){
 《Wiki 維基百科 - SQL 語法》<a href="https://zh.wikipedia.org/wiki/SQL%E8%AF%AD%E6%B3%95">https://zh.wikipedia.org/wiki/SQL 语法</a></p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>SQL</category>
       </categories>
       <tags>
@@ -1193,6 +1191,7 @@ b.  <code>sudo yum install git2u</code></p>
 <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
 ]]></content>
       <categories>
+        <category>Computer Science</category>
         <category>Security-Flaw (安全漏洞)</category>
         <category>我的通報</category>
       </categories>
@@ -1527,8 +1526,7 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
 <p>《Hexo Documentation》<a href="https://hexo.io/docs/">https://hexo.io/docs/</a></p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
       </categories>
       <tags>
         <tag>Github</tag>
@@ -2083,7 +2081,8 @@ Node.js 為大多數平台提供了官方的 <a href="https://nodejs.org/en/down
 <p>《Wiki 維基百科 - 需求層級理論》<a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">https://zh.wikipedia.org/wiki/ 需求层次理论</a></p>
 ]]></content>
       <categories>
-        <category>Popular-Science (科普)</category>
+        <category>Learning (學習筆記)</category>
+        <category>Management Science</category>
       </categories>
       <tags>
         <tag>Psychology (心理學)</tag>
@@ -3028,6 +3027,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 <p><a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet" target="_blank">https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a></p>
 ]]></content>
       <categories>
+        <category>Computer Science</category>
         <category>Security-Flaw (安全漏洞)</category>
         <category>我的通報</category>
       </categories>
@@ -3147,8 +3147,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 而在此並未給予  <code>age</code>  值，而  <code>age</code>  又不存在「 <code>DEFAULT</code> 」預設值，因此出錯。</p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>SQL</category>
       </categories>
       <tags>
@@ -3392,8 +3391,7 @@ L：欸不是，我說你啊… 別看不起國小生，學習、能力跟年紀
 所以「 <code>_9</code> 」可以配對「 <code>39</code> 」、「 <code>59</code> 」但不能配對「 <code>22</code> 」、「 <code>9</code> 」，當然也不能配對「 <code>193</code> 」，如果要配對「 <code>193</code> 」則須寫做「 <code>_9_</code> 」或者「 <code>_9%</code> 」。</p>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>SQL</category>
       </categories>
       <tags>
@@ -3698,8 +3696,7 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE `資料庫名稱`;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Learning (學習筆記)</category>
-        <category>IT</category>
+        <category>Computer Science</category>
         <category>SQL</category>
       </categories>
       <tags>
