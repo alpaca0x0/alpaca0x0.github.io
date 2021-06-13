@@ -6,7 +6,7 @@
   <link href="https://blog.alpaca0x0.com/atom.xml" rel="self"/>
   
   <link href="https://blog.alpaca0x0.com/"/>
-  <updated>2021-06-09T13:05:11.762Z</updated>
+  <updated>2021-06-13T09:22:59.561Z</updated>
   <id>https://blog.alpaca0x0.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>八二法則 真正的意義是什麼？</title>
+    <link href="https://blog.alpaca0x0.com/2021/06/13/Pareto-Principle/"/>
+    <id>https://blog.alpaca0x0.com/2021/06/13/Pareto-Principle/</id>
+    <published>2021-06-13T09:23:15.000Z</published>
+    <updated>2021-06-13T09:22:59.561Z</updated>
+    
+    <content type="html"><![CDATA[在許多地方都能看見八二法則，但你可能不明白它所表達的含意。重點不在八與二，重點在於找出關鍵。<span id="more"></span><hr><h2 id="pareto-principle">Pareto Principle</h2><p>義大利的 <code>經濟學</code> 家「<a href="https://zh.wikipedia.org/zh-tw/%E7%BB%B4%E5%B0%94%E5%BC%97%E9%9B%B7%E5%A4%9A%C2%B7%E5%B8%95%E7%B4%AF%E6%89%98"> <code>Vilfredo Federico Damaso Pareto (維爾弗雷多·柏拉圖)</code> </a>」偶然的發現，在義大利  <code>80%</code>  的土地為  <code>20%</code>  的所有者掌控。隨著觀察的事物越多，越是發現遵循該比例的事件也越多。<br>後人將其稱作「 <code>Pareto Principle</code> 」中文為「 <code>柏拉圖法則</code> 」，也被稱作「 <code>八二法則</code> 」、「 <code>80/20 法則</code> 」、「 <code>關鍵少數原則</code> 」。</p><hr><h2 id="被-20-的變因操縱著-80-大局">被 20% 的變因，操縱著 80% 大局</h2><p><img src="01.jpg" alt=""><br> <code>8：2</code>  是個神奇的比例。<br>約  <code>8 成</code> 的<strong>財富</strong>被  <code>2 成</code> 的<strong>富人</strong>掌握；<br>約  <code>8 成</code> 的<strong>土地</strong>歸  <code>2 成</code> 的<strong>地主</strong>所管；<br>約  <code>8 成</code> 的<strong>公司利潤</strong>來自  <code>2成</code> 的<strong>顧客</strong>；<br>甚至是<strong>人體</strong>中水分約佔  <code>8 成</code> ，其餘約  <code>2 成</code> 。</p><p>該論點所貫徹的重點在於，大部分的事物中，找出關鍵的因素，則通常 <code>重要的因素</code> 為 <code>少數</code> ， <code>不重要的因素</code> 為 <code>多數</code> 。因此， <code>控制</code> 那 <code>少數的重要因素</code> 成了 <code>核心的關鍵</code> 。</p><p>許多時候，掌握少數的重要因素，比起掌握多數的不重要因素來的更加重要。</p><hr><h2 id="管理學-教你用人使用八二法則">管理學 教你用人使用八二法則</h2><p><code>管理者</code> 會希望 <code>部屬</code> 的 <code>工作能力</code> 要好，做事的 <code>效率</code> 越高越好。<br>但準確的說，應該是， <code>管理者</code> 希望在 <code>付出相同薪資</code> 的情況下， <code>部屬</code> 的 <code>工作效率</code> 高過其他員工。一旦部屬的 <code>工作效率</code> 從茫茫人海中脫穎而出，這時候 <code>八二法則</code> 就會讓 <code>管理者</code> 了解了 <code>八成</code> 與 <code>兩成</code> 的人在哪。</p><hr><h2 id="經濟學-這麼說">經濟學 這麼說</h2><p>若以 <code>經濟學</code> 的角度來解釋 <code>八二法則</code> 的話，通常會以「 <code>如何以最少的付出，獲取最大的利益</code> 」來當作核心話題討論。<br>比他人 <code>少量</code> 的 <code>付出</code> ， <code>賺取</code> 與他人 <code>相同甚至更多</code> 的 <code>利益</code> 。<br>一個企業家如何抓住 <code>兩成</code> 的 <code>大商機</code> ？<br>放眼望去的 <code>客群</code> ，只有 <code>兩成</code> 可能成為你的 <code>顧客</code> ，怎麼找出這 <code>兩成</code> ？</p><hr><h2 id="計算機科學-debug">計算機科學 Debug</h2><p>系統中所存在的 <a href="https://zh.wikipedia.org/zh-tw/%E7%A8%8B%E5%BA%8F%E9%94%99%E8%AF%AF"> <code>Bug</code> </a> 中，許多時候是因為 <code>連鎖反應</code> 形成的，若能找出 <code>關鍵的錯誤</code> ，優先解決主要的 <code>兩成</code> ，剩下 <code>八成</code> 出現錯誤的地方也將迎刃而解。</p><hr><h2 id="反向思考">反向思考</h2><p>前面都只是在說，如何以掌握 <code>兩成</code> 的關鍵因素來獲得利益，但反觀若是為了 <code>改善負面影響</code> 而用八二法則，那麼也是行得通的。<br>簡單的舉例，一個人在某方面的 <code>處事</code> 非常 <code>失敗</code> ，可能的 <code>原因</code> 有 <code>很多種</code> ，若要短時間內 <code>改善所有原因</code> 可能十分困難。 <code>八二法則</code> 讓他知道，他需要找出那 <code>兩成</code> 造成 <code>失敗的最大主因</code> ，其餘的 <code>八成</code> 相對上並沒有那麼重要，這才是解決問題的思考方向。</p><hr><h2 id="你也應該使用">你也應該使用</h2><p>千萬不要覺得這些與你的生活無關！<br> <code>八二法則</code> 真正希望人們 <code>學習</code> 的是，「如何找出那<strong>兩成</strong>」的 <code>思考過程</code> 。<br>說是 <code>理論</code> ，更多的是在說處事的 <code>態度</code> 。</p><p>試著在日常生活中多運用<strong>八二法則</strong>，深入的了解說不定對你的人生有著未知的改變。</p><p><img src="02.jpg" alt=""></p><hr><h2 id="參考資料">參考資料</h2><ul><li>《Wiki - 柏拉圖法則》<a href="https://zh.wikipedia.org/zh-tw/%E5%B8%95%E7%B4%AF%E6%89%98%E6%B3%95%E5%88%99">https://zh.wikipedia.org/zh-tw/ 帕累托法则</a></li></ul>]]></content>
+    
+    
+    <summary type="html">在許多地方都能看見八二法則，但你可能不明白它所表達的含意。重點不在八與二，重點在於找出關鍵。</summary>
+    
+    
+    
+    <category term="Concept (概念分享)" scheme="https://blog.alpaca0x0.com/categories/Concept-%E6%A6%82%E5%BF%B5%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>「𝝿」是什麼？度、弧度又是...？</title>
@@ -450,27 +469,6 @@
     <category term="Cyber Security (網絡安全)" scheme="https://blog.alpaca0x0.com/tags/Cyber-Security-%E7%B6%B2%E7%B5%A1%E5%AE%89%E5%85%A8/"/>
     
     <category term="Hacker (駭客)" scheme="https://blog.alpaca0x0.com/tags/Hacker-%E9%A7%AD%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>匿名安全的通訊 - 「XMPP」</title>
-    <link href="https://blog.alpaca0x0.com/2020/09/04/XMPP/"/>
-    <id>https://blog.alpaca0x0.com/2020/09/04/XMPP/</id>
-    <published>2020-09-04T14:07:10.000Z</published>
-    <updated>2021-06-09T18:38:49.506Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>駭客猖獗</strong>的網絡世界，<strong>匿名</strong>、<strong>安全</strong>成了<strong>通訊</strong>不可或缺的必要條件！本文將為你介紹安全性極高的協定 - 「 <strong>XMPP</strong> 」</p><span id="more"></span><img src="/2020/09/04/XMPP/cover.jpg" class=""><hr><h3 id="xmpp-是什麼">XMPP 是什麼？</h3><p>「 <strong>XMPP</strong> 」全名「 <strong>Extensible Messaging and Presence Protocol</strong> 」，中譯「 <strong>可延伸訊息與存在協定</strong> 」，前稱為「 <strong>Jabber</strong> 」，是一種基於 <a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F"><strong>TCP/IP</strong></a> 且為<a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6"><strong>開源</strong></a>形式組織產生的<strong>網路即時通信協定</strong>，而<strong>非</strong>應用程式。</p><hr><h3 id="起源">起源</h3><ul><li><strong>1998 年</strong>「<a href="https://en.wikipedia.org/wiki/Jeremie_Miller"><strong>Jeremie Miller</strong></a>」開始了第一個 <strong>XMPP</strong> 伺服器端軟體「 <strong>jabberd</strong> 」的專案。</li><li><strong>2000 年 05 月</strong> 發行第一個公開版本。</li><li><strong>2004 年 10 月</strong> <strong>Jabber</strong> 已經由 <a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E5%B7%A5%E7%A8%8B%E4%BB%BB%E5%8A%A1%E7%BB%84"><strong>IETF</strong></a>（<strong>RFC3920</strong>）<a href="https://zh.wikipedia.org/wiki/%E6%A0%87%E5%87%86%E5%8C%96"><strong>標準化</strong></a>。</li></ul><p>來自世界各地的開發者正為 XMPP 技術而努力。<br>今日的網際網路上有著數以<strong>萬</strong>計的 <strong>XMPP 伺服器</strong>正在運作著，並有數以<strong>百萬</strong>計的人們使用 <strong>XMPP 即時傳訊軟體</strong>。</p><hr><h3 id="架構">架構</h3><p><strong>XMPP</strong> 通訊上主要利用常見的 <strong>Client (客戶端)</strong> 、 <strong>Server (伺服器)</strong> 外，還多新增了 <strong>Gateway (閘道器)</strong> 。<br>傳輸的內容格式則為 <a href="https://zh.wikipedia.org/wiki/XML"><strong>XML</strong></a>。</p><blockquote><ul><li><strong>Server (伺服端)</strong><ul><li>處理<strong>與 Client 的連接</strong>及直接與之<strong>互相溝通</strong></li><li>與<strong>其他 XMPP Server</strong> <strong>互相溝通</strong></li><li>處理 <strong>Client 註冊、認證、現狀資訊、好友名單</strong>以及<strong>離線訊息儲存</strong>等等功能。</li></ul></li><li><strong>Client (客戶端)</strong><ul><li>與 <strong>XMPP Server</strong> <strong>建立溝通連線</strong></li><li>解析 <strong>XML Stream</strong></li><li>確認 <strong>XMPP 核心資料型態</strong></li></ul></li></ul></blockquote><hr><h3 id="運用">運用</h3><p>每個 XMPP 的用戶，都有一個獨立的 <strong>Jabber ID (JID)</strong> ，並且使用「 <strong> <code>@</code> </strong> 」連接著 <strong> <code>domain</code> </strong> 。<br>例如 ID 為「 <strong> <code>alpaca</code> </strong> 」， <strong> <code>Domain</code> </strong> 為「 <strong> <code>xmpp.com</code> </strong> 」，則 <strong> <code>JID</code> </strong> 為「 <strong> <code>alpaca@xmpp.com</code> </strong> 」。<br>不僅僅是看起來，就連網路架構都與<a href="https://zh.wikipedia.org/wiki/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><strong>電子郵件</strong></a>相似。</p><p><strong>XMPP 協議</strong>是<strong>自由</strong>、<strong>開放</strong>、<strong>公開</strong>的。<br>在<strong>客戶端</strong>、<strong>伺服器</strong>、<strong>元件</strong>、<strong>原始碼庫</strong>等方面，都已經各自有多種實作。</p><p>除了可用在<strong>即時通訊</strong>的應用程式，還能用在<strong>網路管理</strong>、<strong>內容供稿</strong>、<strong>協同工具</strong>、<strong>檔案共享</strong>、<strong>遊戲</strong>、<strong>遠端系統監控</strong>等。</p><hr><h3 id="安全性">安全性</h3><p><strong>XMPP 核心協定通信方式</strong>是先建立一個 <strong>Stream</strong>，以 <strong>TCP</strong> 傳遞 <strong>XML 資料流</strong>。不存在<strong>中央主伺服器</strong>，每個人皆可運行自己的 <strong>XMPP Server</strong>。</p><p><strong>XMPP 協定</strong>的<strong>伺服器</strong>可以<strong>獨立於公眾 XMPP 網路</strong>（例如在企業內部網路中），而使用 <a href="https://zh.wikipedia.org/wiki/%E7%AE%80%E5%8D%95%E8%AE%A4%E8%AF%81%E4%B8%8E%E5%AE%89%E5%85%A8%E5%B1%82"><strong>SASL</strong></a> 及 <a href="https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A"><strong>TLS</strong></a> 等技術的可靠安全性，已<strong>內建</strong>於核心 XMPP 技術規格中。</p><p>用 XMPP 技術開發軟體，<strong>資源</strong>及<strong>支援</strong>的來源是多樣的，這能避免發生因不明軟體背後的運作而遭到軟體挾持的困境。</p><hr><h3 id="主要參考資料">主要參考資料</h3><ul><li><strong>IETF</strong> - <a href="//tools.ietf.org"><strong>tools.ietf.org</strong></a></li><li><strong>Wiki</strong> - <a href="//zh.wikipedia.org/wiki/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%B6%88%E6%81%AF%E4%B8%8E%E5%AD%98%E5%9C%A8%E5%8D%8F%E8%AE%AE"><strong>wikipedia.org</strong></a></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;駭客猖獗&lt;/strong&gt;的網絡世界，&lt;strong&gt;匿名&lt;/strong&gt;、&lt;strong&gt;安全&lt;/strong&gt;成了&lt;strong&gt;通訊&lt;/strong&gt;不可或缺的必要條件！本文將為你介紹安全性極高的協定 - 「 &lt;strong&gt;XMPP&lt;/strong&gt; 」&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Concept (概念分享)" scheme="https://blog.alpaca0x0.com/categories/Concept-%E6%A6%82%E5%BF%B5%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="Cyber Security (網絡安全)" scheme="https://blog.alpaca0x0.com/tags/Cyber-Security-%E7%B6%B2%E7%B5%A1%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
