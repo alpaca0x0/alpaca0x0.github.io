@@ -128,7 +128,7 @@ gpg --export-secret-keys --armor 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 <span 
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --send-keys 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
 <span class="token comment"># 可以使用「--keyserver」參數指定上傳的伺服器</span>
 gpg --send-keys --keyserver <span class="token operator">&lt;</span>Server<span class="token operator">></span> 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>這邊要特別注意的是，大多數時候，在 <Key-ID> 的前方要加上「 <code>0x</code> 」(Hexadecimal)。</p>
+<p>這邊要特別注意的是，大多數時候，在  <code>&lt;Key-ID&gt;</code>  的前方要加上「 <code>0x</code> 」(Hexadecimal)。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
 gpg --send-keys --keyserver pgp.mit.edu 0x36EECBC209A936F5AF9B25A469219C5CB53AF7C3
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -139,14 +139,14 @@ gpg --send-keys --keyserver pgp.mit.edu 0x36EECBC209A936F5AF9B25A469219C5CB53AF7
 <span class="token comment"># e.g.</span>
 gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>但當我們執行時，會發現終端返回這則訊息：</p>
-<pre class="line-numbers language-none"><code class="language-none">gpg: there is a secret key for public key &quot;36EECBC209A936F5AF9B25A469219C5CB53AF7C3&quot;!
-gpg: use option &quot;--delete-secret-keys&quot; to delete it first.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg: there is a secret key <span class="token keyword">for</span> public key <span class="token string">"36EECBC209A936F5AF9B25A469219C5CB53AF7C3"</span><span class="token operator">!</span>
+gpg: use option <span class="token string">"--delete-secret-keys"</span> to delete it first.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>這是因為你還留有該 <code>公鑰</code> 的 <code>私鑰</code> ，所以先刪除 <code>私鑰</code> ，再刪除 <code>公鑰</code> ：</p>
-<pre class="line-numbers language-none"><code class="language-none"># Delete secret keys
-gpg --delete-secret-keys &lt;Key-ID&gt;
-# Delete public keys
-gpg --delete-keys &lt;Key-ID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># e.g.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Delete secret keys</span>
+gpg --delete-secret-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
+<span class="token comment"># Delete public keys</span>
+gpg --delete-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
 gpg --delete-secret-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3
 gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>或者使用「 <code>--delete-secret-and-public-keys</code> 」一次刪除 <code>公私鑰</code> ：</p>
