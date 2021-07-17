@@ -1566,6 +1566,67 @@ deploy:
       </tags>
   </entry>
   <entry>
+    <title>Public-key Cryptography</title>
+    <url>/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/</url>
+    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
+<hr>
+<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
+<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
+<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
+<hr>
+<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
+<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
+<ul>
+<li><strong>公鑰、私鑰</strong>
+<ul>
+<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
+<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
+</ul>
+</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
+<ul>
+<li><strong>釋出公鑰</strong><br>
+將公鑰交給對方，用於給對方在之後進行解密使用。</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
+<ul>
+<li><strong>加密、解密</strong>
+<ul>
+<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
+<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
+<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。</li>
+</ul>
+</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
+<ul>
+<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
+</ul>
+<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
+<hr>
+<h3 id="運用">運用</h3>
+<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
+<p>P.S. 非對稱加密中常見的加密演算法有：<br>
+<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
+有興趣的朋友可以點擊連結或自行上網研究。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>Cryptography</category>
+      </categories>
+      <tags>
+        <tag>Cryptography</tag>
+        <tag>Public-key Cryptography</tag>
+        <tag>Digital Signature</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《SQL 基礎 01》創建、新增</title>
     <url>/2021/05/25/SQL-Basic-01/</url>
     <content><![CDATA[一些基礎常見的 SQL 語法。
@@ -1699,67 +1760,6 @@ deploy:
       <tags>
         <tag>SQL</tag>
         <tag>Database</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Public-key Cryptography</title>
-    <url>/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/</url>
-    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm(%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
-<hr>
-<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
-<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
-<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
-<hr>
-<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
-<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
-<ul>
-<li><strong>公鑰、私鑰</strong>
-<ul>
-<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
-<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
-</ul>
-</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/02.png" class="" title="雙方生成公私鑰">
-<ul>
-<li><strong>釋出公鑰</strong><br>
-將公鑰交給對方，用於給對方在之後進行解密使用。</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/03.png" class="" title="雙方交換公鑰">
-<ul>
-<li><strong>加密、解密</strong>
-<ul>
-<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
-<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
-<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。</li>
-</ul>
-</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/04.png" class="" title="加密解密">
-<ul>
-<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
-</ul>
-<img src="/2020/02/16/Public-keyCryptography(%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%8A%A0%E5%AF%86)/05.png" class="" title="辨識身份">
-<hr>
-<h3 id="運用">運用</h3>
-<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
-<p>P.S. 非對稱加密中常見的加密演算法有：<br>
-<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
-有興趣的朋友可以點擊連結或自行上網研究。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>Cryptography</category>
-      </categories>
-      <tags>
-        <tag>Cryptography</tag>
-        <tag>Public-key Cryptography</tag>
-        <tag>Digital Signature</tag>
       </tags>
   </entry>
   <entry>
