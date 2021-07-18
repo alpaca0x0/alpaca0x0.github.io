@@ -653,6 +653,9 @@ gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="tru
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --delete-secret-and-public-keys &lt;Key-ID></span>
 <span class="token comment"># e.g.</span>
 gpg --delete-secret-and-public-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="reference">Reference</h2>
+<p>《GnuPG documentation》<a href="https://gnupg.org/documentation/manpage.html">https://gnupg.org/documentation/manpage.html</a></p>
 ]]></content>
       <categories>
         <category>Tools</category>
