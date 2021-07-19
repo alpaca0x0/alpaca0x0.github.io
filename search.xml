@@ -886,12 +886,13 @@ gpg --decrypt hello.txt.asc
 gpg --armor --encrypt --recipient 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 hello.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>p.s. 參數「 <code>--recipient, -r</code> 」為指定對象，如例子中指定要執行 <code>encrypt</code>  的公鑰，即「 <code>36EECBC209A936F5AF9B25A469219C5CB53AF7C3</code> 」。</p>
 <hr>
-<h2 id="encrypting-to">Encrypting to…</h2>
-<p>在使用「 <code>--sign</code> 」簽名時，可以搭配「 <code>--encrypt-to</code> 」指定要將該檔案 (或訊息) <code>簽名後加密</code> 給誰。</p>
-<p>舉例，今天我要將檔案「 <code>hello.txt</code> 」簽名，並且我希望僅能由我的好友 Bob 接收該檔案，因此我使用 Bob 提供給我的公鑰「 <code>CEE24977933B19A42EEA8CB96DC577B036FDDE87</code> 」來將簽名後的檔案加密：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --armor --encrypt-to &lt;Recipient-Public-Key-ID> --encrypt --recipient &lt;Your-Private-Key-ID> &lt;File-Name></span>
-gpg --armor --encrypt-to CEE24977933B19A42EEA8CB96DC577B036FDDE87 --encrypt --recipient 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 hello.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="sign-and-encrypt">Sign and Encrypt</h2>
+<p>在使用「 <code>--sign</code> 」簽名時，可以搭配「 <code>--encrypt</code> 」使用。</p>
+<p>若我要將檔案「 <code>hello.txt</code> 」簽名，並且我希望僅能由我的好友 Bob 接收該檔案，因此我使用 Bob 提供給我的公鑰「 <code>CEE24977933B19A42EEA8CB96DC577B036FDDE87</code> 」來<strong>將簽名後的檔案加密</strong>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --armor --sign --encrypt --sign-with &lt;Your-Private-Key-ID> --recipient &lt;Recipient-Public-Key-ID> --encrypt &lt;File-Name></span>
+gpg --armor --sign --sign-with 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 --recipient CEE24977933B19A42EEA8CB96DC577B036FDDE87 hello.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>則檔案「 <code>hello.txt.asc</code> 」僅能讓<strong>同時擁有</strong>  <code>我的公鑰</code>  及  <code>Bob 的私鑰</code>  兩把鑰匙的人解密。</p>
+<p>p.s. 用「 <code>--recipient, -r</code> 」參數來指定 <code>--encrypt</code>  的對象，也就是欲用來加密的公鑰。</p>
 <hr>
 <h2 id="reference">Reference</h2>
 <p>《GnuPG documentation》<a href="https://gnupg.org/documentation/manpage.html">https://gnupg.org/documentation/manpage.html</a></p>
