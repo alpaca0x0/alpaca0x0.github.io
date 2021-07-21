@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>What is CTF？</title>
-    <url>/2020/10/20/CTF/</url>
+    <url>/posts/CTF/</url>
     <content><![CDATA[<p>一個讓<strong>駭客</strong>及<strong>資安人員</strong>都<strong>熱血沸騰</strong>的競賽</p>
 <span id="more"></span>
 <hr>
@@ -27,12 +27,12 @@
   </entry>
   <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
-    <url>/2020/01/24/Cross-Site-Scripting(Advanced)/</url>
-    <content><![CDATA[<p>上一篇「 <strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
+    <url>/posts/Cross-Site-Scripting(Advanced)/</url>
+    <content><![CDATA[<p>上一篇「 <strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
 <span id="more"></span>
 <hr>
 <h3 id="前言">前言</h3>
-<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/2020/01/24/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
+<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
 <p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
 <p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
 <hr>
@@ -127,7 +127,7 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
   </entry>
   <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
-    <url>/2020/01/24/Cross-Site-Scripting/</url>
+    <url>/posts/Cross-Site-Scripting/</url>
     <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
 <span id="more"></span>
 <hr>
@@ -257,7 +257,7 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
 <h3 id="總結">總結</h3>
 <p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
 透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
-<p>而更進階的 XSS 技巧請看下一篇「<a href="/2020/01/24/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
+<p>而更進階的 XSS 技巧請看下一篇「<a href="/posts/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
 ]]></content>
       <categories>
         <category>Computer Science</category>
@@ -271,7 +271,7 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
   </entry>
   <entry>
     <title>資料庫概念 DB、DBMS、SQL 之間的關係</title>
-    <url>/2021/05/22/DB-DBMS-SQL/</url>
+    <url>/posts/DB-DBMS-SQL/</url>
     <content><![CDATA[資料庫早已被大量使用，如果還分不清楚 Database 與 DBMS 及 SQL 的關係，那還真是場災難呢！
 <span id="more"></span>
 <hr>
@@ -316,7 +316,7 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
   </entry>
   <entry>
     <title>Encode、Encrypt and Hash are different！</title>
-    <url>/2021/04/20/Encode-Encrypt-Hash/</url>
+    <url>/posts/Encode-Encrypt-Hash/</url>
     <content><![CDATA[Encode (編碼)、Encrypt (加密)、Hash (雜湊) 一直令許多新手們搞混，雖然說可能運算後的結果看起來都是一串亂碼，但原理及使用場合卻天差地遠，千萬不要再分不清處了！
 <hr>
 <h2 id="encode-編碼">Encode (編碼)</h2>
@@ -501,7 +501,7 @@ ka8Z9KLt&#x2F;N0ziabBexAw
   </entry>
   <entry>
     <title>Github 檔案太大無法推送！？安裝「Git-LFS」馬上解決！</title>
-    <url>/2021/03/28/Git-LFS/</url>
+    <url>/posts/Git-LFS/</url>
     <content><![CDATA[<p>使用 git push 推送檔案到 Github 上時，被告知<strong>檔案太大</strong>無法推送！？馬上教你怎麼解決！</p>
 <span id="more"></span>
 <hr>
@@ -594,7 +594,7 @@ b.  <code>sudo yum install git2u</code></p>
   </entry>
   <entry>
     <title>How to use GnuPG to generate PGP key？</title>
-    <url>/2021/07/16/GnuPG-Generating-PGP-Key/</url>
+    <url>/posts/GnuPG-Generating-PGP-Key/</url>
     <content><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/GnuPG#/media/File:Gnupg_logo.svg"><img src="cover.jpg" alt="GnuPG Logo, 圖源於 Wiki 維基百科"></a></p>
 怎麼使用 GnuPG 生成 PGP 金鑰？
 <span id="more"></span>
@@ -767,13 +767,13 @@ gpg --keyserver keyserver.ubuntu.com --search-key 0xA91A9E8A0EE6BAB3742464861DF3
   </entry>
   <entry>
     <title>How to use GnuPG to sign files and messages？</title>
-    <url>/2021/07/19/GnuPG-Signing-Files-and-Messages/</url>
+    <url>/posts/GnuPG-Signing-Files-and-Messages/</url>
     <content><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/GnuPG#/media/File:Gnupg_logo.svg"><img src="cover.jpg" alt="GnuPG Logo, 圖源於 Wiki 維基百科"></a></p>
 用 GnuPG 簽署、驗證、加密、解密 你的檔案及訊息。
 <span id="more"></span>
 <hr>
 <h2 id="how-to-get-the-keypair">How to get the keypair?</h2>
-<p>可以看看上一篇文章「<a href="/2021/07/16/GnuPG-Generating-PGP-Key/" title="How to use GnuPG to generate PGP key？">How to use GnuPG to generate PGP key？</a>」。</p>
+<p>可以看看上一篇文章「<a href="/posts/GnuPG-Generating-PGP-Key/" title="How to use GnuPG to generate PGP key？">How to use GnuPG to generate PGP key？</a>」。</p>
 <hr>
 <h2 id="signing-files">Signing files</h2>
 <p>假設要簽章的文件「 <code>hello.txt</code> 」其內容為：</p>
@@ -907,7 +907,7 @@ gpg --armor --sign --sign-with 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 --recipi
   </entry>
   <entry>
     <title>進階 Google 搜尋技巧 - Google Hacking</title>
-    <url>/2021/03/05/Google-Hacking/</url>
+    <url>/posts/Google-Hacking/</url>
     <content><![CDATA[<p>這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
 <span id="more"></span>
 <hr>
@@ -1020,7 +1020,7 @@ gpg --armor --sign --sign-with 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 --recipi
   </entry>
   <entry>
     <title>如何使用 Hexo 在 Github Pages 上部署部落格？</title>
-    <url>/2021/05/15/How-to-deploy-Hexo-on-Github-Pages/</url>
+    <url>/posts/How-to-deploy-Hexo-on-Github-Pages/</url>
     <content><![CDATA[想要創建部落格，但又不想要一堆複雜又用不到的功能，輕盈的靜態頁面及 Git 版本控制，使用 Markdown 來撰寫文章，用 Hexo 架設部落格並發布在 Github Pages 這一切就是那麼容易且方便。
 <span id="more"></span>
 <hr>
@@ -1259,7 +1259,7 @@ deploy:
   </entry>
   <entry>
     <title>《Management 02》管理原則、角色分配｜管理的運作架構</title>
-    <url>/2020/10/23/Management-Science-02/</url>
+    <url>/posts/Management-Science-02/</url>
     <content><![CDATA[<p>負責管理真的比較<strong>輕鬆</strong>嗎？<strong>責任</strong>與<strong>壓力</strong>不是人人都可以<strong>承擔</strong>的。</p>
 <span id="more"></span>
 <hr>
@@ -1437,7 +1437,7 @@ deploy:
   </entry>
   <entry>
     <title>《Management 01》組織、管理者、四大功能｜管理 與 被管理</title>
-    <url>/2020/10/22/Management-Science/</url>
+    <url>/posts/Management-Science/</url>
     <content><![CDATA[<p>為什麼學習<strong>管理學</strong>？因為在這個<strong>社會</strong>，你不是<strong>管理別人</strong>、就是<strong>被人管理</strong>！你打算怎麼選擇？</p>
 <span id="more"></span>
 <hr>
@@ -1611,7 +1611,7 @@ deploy:
   </entry>
   <entry>
     <title>Maslow&#39;s Hierarchy Of Needs</title>
-    <url>/2021/03/17/Maslow-s-Hierarchy-Of-Needs/</url>
+    <url>/posts/Maslow-s-Hierarchy-Of-Needs/</url>
     <content><![CDATA[<p>Maslow 將心理需求與生理需求分成了五個層級來探討…</p>
 <span id="more"></span>
 <hr>
@@ -1687,7 +1687,7 @@ deploy:
   </entry>
   <entry>
     <title>Monty-Hall Problem (三門問題)｜選擇的順序改變了機率？並非如此！</title>
-    <url>/2021/03/04/MontyHall-Problem/</url>
+    <url>/posts/MontyHall-Problem/</url>
     <content><![CDATA[<p><strong>三分之一</strong>的機率中，可以透過<strong>更換選擇</strong>來<strong>提高機率</strong>，這是曾經讓許多人摸不著頭緒的 Monty-Hall Problem (三門問題)，你能參透其中的答案嗎？</p>
 <span id="more"></span>
 <hr>
@@ -1771,7 +1771,7 @@ deploy:
   </entry>
   <entry>
     <title>「𝝿」是什麼？度、弧度又是...？</title>
-    <url>/2021/06/09/PI/</url>
+    <url>/posts/PI/</url>
     <content><![CDATA[圓周率「𝝿」是什麼？而熟悉的一圈為 360度 是怎麼被訂定的？ 弧度又是什麼？
 <span id="more"></span>
 <hr>
@@ -1841,17 +1841,17 @@ deploy:
   </entry>
   <entry>
     <title>Public-key Cryptography</title>
-    <url>/2020/02/16/Public-keyCryptography/</url>
+    <url>/posts/Public-keyCryptography/</url>
     <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
 <span id="more"></span>
 <hr>
 <h3 id="前言">前言</h3>
-<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/2020/02/10/Symmetric-keyAlgorithm/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
+<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/posts/Symmetric-keyAlgorithm/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
 <hr>
 <h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
 <p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
 <p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<img src="/2020/02/16/Public-keyCryptography/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
+<img src="/posts/Public-keyCryptography/01.png" class="" title="B群組成員偽造A群組身份發送訊息">
 <hr>
 <h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
 <p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
@@ -1863,12 +1863,12 @@ deploy:
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography/02.png" class="" title="雙方生成公私鑰">
+<img src="/posts/Public-keyCryptography/02.png" class="" title="雙方生成公私鑰">
 <ul>
 <li><strong>釋出公鑰</strong><br>
 將公鑰交給對方，用於給對方在之後進行解密使用。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography/03.png" class="" title="雙方交換公鑰">
+<img src="/posts/Public-keyCryptography/03.png" class="" title="雙方交換公鑰">
 <ul>
 <li><strong>加密、解密</strong>
 <ul>
@@ -1878,11 +1878,11 @@ deploy:
 </ul>
 </li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography/04.png" class="" title="加密解密">
+<img src="/posts/Public-keyCryptography/04.png" class="" title="加密解密">
 <ul>
 <li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
 </ul>
-<img src="/2020/02/16/Public-keyCryptography/05.png" class="" title="辨識身份">
+<img src="/posts/Public-keyCryptography/05.png" class="" title="辨識身份">
 <hr>
 <h3 id="運用">運用</h3>
 <p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
@@ -1902,7 +1902,7 @@ deploy:
   </entry>
   <entry>
     <title>《SQL Basics-01》CREATE、INSERT</title>
-    <url>/2021/05/25/SQL-Basic-01/</url>
+    <url>/posts/SQL-Basic-01/</url>
     <content><![CDATA[一些基礎常見的 SQL 語法。
 <span id="more"></span>
 <hr>
@@ -2039,7 +2039,7 @@ deploy:
   </entry>
   <entry>
     <title>《SQL Basics-02》SELECT、LIKE</title>
-    <url>/2021/05/25/SQL-Basic-02/</url>
+    <url>/posts/SQL-Basic-02/</url>
     <content><![CDATA[一些基礎常見的 SQL 語法。
 <span id="more"></span>
 <hr>
@@ -2050,7 +2050,7 @@ deploy:
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱 <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>查詢條件<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>至於條件… 各種寫法，常見的寫法為  <code>比對資料值相符與否</code> 。</p>
 <h3 id="範例-比對數字">範例 - 比對數字</h3>
-<p>利用上一篇文章「<a href="/2021/05/25/SQL-Basic-01/" title="《SQL Basics-01》CREATE、INSERT">《SQL Basics-01》CREATE、INSERT</a>」中所說的語法，陸續寫入幾筆資料後，目前的資料表內容為：</p>
+<p>利用上一篇文章「<a href="/posts/SQL-Basic-01/" title="《SQL Basics-01》CREATE、INSERT">《SQL Basics-01》CREATE、INSERT</a>」中所說的語法，陸續寫入幾筆資料後，目前的資料表內容為：</p>
 <table>
 <thead>
 <tr>
@@ -2284,7 +2284,7 @@ deploy:
   </entry>
   <entry>
     <title>《SQL Basics-03》UPDATE、ALTER、DROP</title>
-    <url>/2021/05/25/SQL-Basic-03/</url>
+    <url>/posts/SQL-Basic-03/</url>
     <content><![CDATA[一些基礎常見的 SQL 語法。
 <span id="more"></span>
 <hr>
@@ -2596,7 +2596,7 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
   </entry>
   <entry>
     <title>Symmetric-key Algorithm</title>
-    <url>/2020/02/10/Symmetric-keyAlgorithm/</url>
+    <url>/posts/Symmetric-keyAlgorithm/</url>
     <content><![CDATA[<p>大家對於「<strong>密碼</strong>」並不陌生，生活中總是遇到許多場合需要用到密碼，然而「<strong>加密</strong>」的原理似乎相對的卻不是那麼的備受關注。</p>
 <span id="more"></span>
 <hr>
@@ -2642,13 +2642,13 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
 <strong> C 小姐</strong>在收到密文後，使用同一把密鑰「 <strong>2</strong> 」解密，<strong>加密</strong>為<strong>往後推移</strong>，<strong>解密</strong>則為<strong>往前推移</strong>，因此密文「 <strong>Jgnnq, 345</strong> 」在被<strong> C 小姐</strong>往前推移<strong> 2 次</strong>後，解密回明文的「 <strong>Hello, 123</strong> 」。</li>
 </ul>
 </blockquote>
-<img src="/2020/02/10/Symmetric-keyAlgorithm/01.png" class="" title="流程">
+<img src="/posts/Symmetric-keyAlgorithm/01.png" class="" title="流程">
 <p>這其中包含一個問題，為什麼<strong> A 先生</strong>與<strong> C 小姐</strong>知道怎麼使用該密鑰加密與解密，是誰規定「加密為往後推移密鑰數」及「解密為往前推移密鑰數」？</p>
 <p>其實這些密鑰的「 <strong>使用規則</strong> 」被稱作「 <strong>加密演算法 (Encryption)</strong> 」或稱「 <strong>加密法</strong> 」，<strong>加密演算法</strong>也正是決定該加密安全性的關鍵之一。因此其實在<strong> A 先生</strong>將密鑰交給<strong> C 小姐</strong>時，有偷偷說了要使用哪種加密法，這樣雙方才能正確的運用密鑰進行運算來達到加密及解密的效果。</p>
 <hr>
 <h3 id="總結">總結</h3>
 <p>當然，上面的情境只是舉例，僅僅是為了讓大家方便理解而虛構的場景，一般常見的加密演算法不會設計的這麼弱，也更不應該出現密鑰只有一個數字這種誇張的狀況，而密文通常也並不會與明文有著如此明顯的結構關係，通常只是亂碼，例如「 <strong>Hello, 123</strong> 」加密後的結果可能會長這樣「 <strong>1d5F68ghY8Xa59U6</strong> 」而不是「 <strong>Jgnnq, 345</strong> 」。</p>
-<p>有興趣的朋友也可以看看下一篇延伸對稱加密更進階的文章「<strong><a href="/2020/02/16/Public-keyCryptography/" title="Public-key Cryptography">Public-key Cryptography</a></strong>」。</p>
+<p>有興趣的朋友也可以看看下一篇延伸對稱加密更進階的文章「<strong><a href="/posts/Public-keyCryptography/" title="Public-key Cryptography">Public-key Cryptography</a></strong>」。</p>
 <p>P.S. <strong>對稱加密中</strong>常見的<strong>加密演算法</strong>有：<br>
 <a href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96"><strong>DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/3DES"><strong>3DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86"><strong>AES</strong></a>、<a href="https://zh.wikipedia.org/wiki/Blowfish_(%E5%AF%86%E7%A0%81%E5%AD%A6)"><strong>Blowfish</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>IDEA</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC5"><strong>RC5</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC6"><strong>RC6</strong></a>。<br>
 有興趣的朋友可以點擊連結或自行上網研究。</p>
@@ -2664,7 +2664,7 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
   </entry>
   <entry>
     <title>Hacker 駭客的定義｜白帽？黑帽？灰帽？｜各種帽子顏色所代表的含意</title>
-    <url>/2020/10/20/hacker/</url>
+    <url>/posts/hacker/</url>
     <content><![CDATA[<p>時常在<a href="https://zh.wikipedia.org/wiki/%E5%A5%BD%E8%8E%B1%E5%9D%9E"><strong>好萊塢</strong></a>電影中看到駭客的身影，他們給人的形象往往都是<strong>負面</strong>、<strong>惡意</strong>且具有<strong>強烈人格特質</strong>的，這不僅讓人被那獨特的魅力吸引，更多的是那讓人<strong>想一探究竟卻又不敢接近的神秘</strong>，因此「<strong>駭客</strong>」一詞也常受到大家<strong>尊敬</strong>及<strong>崇拜</strong>。</p>
 <span id="more"></span>
 <hr>
