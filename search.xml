@@ -126,6 +126,51 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
       </tags>
   </entry>
   <entry>
+    <title>資料庫概念 DB、DBMS、SQL 之間的關係</title>
+    <url>/posts/DB-DBMS-SQL/</url>
+    <content><![CDATA[資料庫早已被大量使用，如果還分不清楚 Database 與 DBMS 及 SQL 的關係，那還真是場災難呢！
+<span id="more"></span>
+<hr>
+<h2 id="database-資料庫">Database (資料庫)</h2>
+<p><strong> <code>Database (資料庫)</code> </strong> 簡稱「<strong> <code>DB</code> </strong>」。就如同名稱般，是存放資料的地方。<br>
+如果放在傳統的「<strong>資料庫</strong>」來說，可以單指<strong>堆滿文件</strong>的倉庫，或者一間<strong>圖書館</strong>。</p>
+<p>但在現今所聽到的「<strong>資料庫</strong>」多半是指「<strong> <code>數位化</code> </strong>」的資料庫，存放在<strong>計算機上</strong>的。</p>
+<p>是否有想過，你在網站上的<strong>帳號</strong>、<strong>密碼</strong>，或者<strong>社群</strong>上的<strong>圖片</strong>、<strong>貼文</strong>等，這些資料是存放在哪裡？這麼一想就不難發現 Database 的重要性！</p>
+<hr>
+<h2 id="dbms-資料庫管理系統">DBMS (資料庫管理系統)</h2>
+<p>「<strong> <code>DBMS</code> </strong>」全名「<strong> <code>Database Management System</code> </strong>」，中文為「<strong> <code>資料庫管理系統</code> </strong>」。</p>
+<p>存放多筆數據的資料庫，不易被管理。<br>
+設想一下若圖書館內<strong>沒有電腦的管理系統</strong>協助查詢，要找一本書需要花多久的時間？</p>
+<p>但有了管理系統，你只需要到櫃台請工作人員 <code>查詢書名</code> ，便可以在短短幾秒內知道這本書的 <code>作者</code> 、 <code>出版日期</code> … 等資訊，另外也可以知道這本書在該圖書館的 <code>數量</code> 、 <code>類別</code> 、 <code>位置</code> 等。</p>
+<p>而上述這一切僅發生在工作人員按下執行查詢工作的<strong>一瞬間</strong>。<br>
+這就是 <strong>DBMS (資料庫管理系統)</strong> 的效率。</p>
+<p>當前常見的 DBMS 有 <a href="https://zh.wikipedia.org/wiki/MySQL">MySQL</a>、<a href="https://zh.wikipedia.org/wiki/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93">Oracle Database</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_SQL_Server">Microsoft SQL Server</a>、<a href="https://zh.wikipedia.org/wiki/MariaDB">MariaDB</a>、<a href="https://zh.wikipedia.org/wiki/SQLite">SQLite</a>、<a href="https://zh.wikipedia.org/wiki/IBM_DB2">IBM DB2</a>、<a href="https://zh.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>、<a href="https://zh.wikipedia.org/wiki/MongoDB">MongoDB</a> 等。</p>
+<hr>
+<h2 id="什麼是-sql-結構化查詢語言">什麼是 SQL (結構化查詢語言) ？</h2>
+<p>「<strong> <code>SQL</code> </strong>」全名「<strong> <code>Structured Query Language</code> </strong>」，中文為「<strong> <code>結構化查詢語言</code> </strong>」。</p>
+<p>用來操作 DBMS 的查詢語言。<br>
+不過稍微科普一下，通常 SQL 語法是寫在程式碼中，使程式可以自動化發送請求。<br>
+在企業中較少提供管理員手動輸入 SQL 語法查詢的情境，因為人為失誤可能導致嚴重的後果。(通常是提供後台管理的操作頁面操作 Database)</p>
+<hr>
+<h2 id="統整">統整</h2>
+<p>為了方便了解，我製作了這張圖給各位參考：</p>
+<p><img src="SQL-DBMS-DB.jpg" alt="SQL、DBMS、DB 之間的關係"></p>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>《Wiki 維基百科 - SQL》<a href="https://zh.wikipedia.org/wiki/SQL">https://zh.wikipedia.org/wiki/SQL</a><br>
+《Wiki 維基百科 - 資料庫管理系統》<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">https://zh.wikipedia.org/wiki/ 数据库管理系统</a><br>
+《Wiki 維基百科 - SQL 語法》<a href="https://zh.wikipedia.org/wiki/SQL%E8%AF%AD%E6%B3%95">https://zh.wikipedia.org/wiki/SQL 语法</a></p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
     <url>/posts/Cross-Site-Scripting/</url>
     <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
@@ -452,51 +497,6 @@ ka8Z9KLt&#x2F;N0ziabBexAw
         <tag>Cryptography</tag>
         <tag>Public-key Cryptography</tag>
         <tag>Digital Signature</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>資料庫概念 DB、DBMS、SQL 之間的關係</title>
-    <url>/posts/DB-DBMS-SQL/</url>
-    <content><![CDATA[資料庫早已被大量使用，如果還分不清楚 Database 與 DBMS 及 SQL 的關係，那還真是場災難呢！
-<span id="more"></span>
-<hr>
-<h2 id="database-資料庫">Database (資料庫)</h2>
-<p><strong> <code>Database (資料庫)</code> </strong> 簡稱「<strong> <code>DB</code> </strong>」。就如同名稱般，是存放資料的地方。<br>
-如果放在傳統的「<strong>資料庫</strong>」來說，可以單指<strong>堆滿文件</strong>的倉庫，或者一間<strong>圖書館</strong>。</p>
-<p>但在現今所聽到的「<strong>資料庫</strong>」多半是指「<strong> <code>數位化</code> </strong>」的資料庫，存放在<strong>計算機上</strong>的。</p>
-<p>是否有想過，你在網站上的<strong>帳號</strong>、<strong>密碼</strong>，或者<strong>社群</strong>上的<strong>圖片</strong>、<strong>貼文</strong>等，這些資料是存放在哪裡？這麼一想就不難發現 Database 的重要性！</p>
-<hr>
-<h2 id="dbms-資料庫管理系統">DBMS (資料庫管理系統)</h2>
-<p>「<strong> <code>DBMS</code> </strong>」全名「<strong> <code>Database Management System</code> </strong>」，中文為「<strong> <code>資料庫管理系統</code> </strong>」。</p>
-<p>存放多筆數據的資料庫，不易被管理。<br>
-設想一下若圖書館內<strong>沒有電腦的管理系統</strong>協助查詢，要找一本書需要花多久的時間？</p>
-<p>但有了管理系統，你只需要到櫃台請工作人員 <code>查詢書名</code> ，便可以在短短幾秒內知道這本書的 <code>作者</code> 、 <code>出版日期</code> … 等資訊，另外也可以知道這本書在該圖書館的 <code>數量</code> 、 <code>類別</code> 、 <code>位置</code> 等。</p>
-<p>而上述這一切僅發生在工作人員按下執行查詢工作的<strong>一瞬間</strong>。<br>
-這就是 <strong>DBMS (資料庫管理系統)</strong> 的效率。</p>
-<p>當前常見的 DBMS 有 <a href="https://zh.wikipedia.org/wiki/MySQL">MySQL</a>、<a href="https://zh.wikipedia.org/wiki/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93">Oracle Database</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Access">Microsoft Access</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_SQL_Server">Microsoft SQL Server</a>、<a href="https://zh.wikipedia.org/wiki/MariaDB">MariaDB</a>、<a href="https://zh.wikipedia.org/wiki/SQLite">SQLite</a>、<a href="https://zh.wikipedia.org/wiki/IBM_DB2">IBM DB2</a>、<a href="https://zh.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>、<a href="https://zh.wikipedia.org/wiki/MongoDB">MongoDB</a> 等。</p>
-<hr>
-<h2 id="什麼是-sql-結構化查詢語言">什麼是 SQL (結構化查詢語言) ？</h2>
-<p>「<strong> <code>SQL</code> </strong>」全名「<strong> <code>Structured Query Language</code> </strong>」，中文為「<strong> <code>結構化查詢語言</code> </strong>」。</p>
-<p>用來操作 DBMS 的查詢語言。<br>
-不過稍微科普一下，通常 SQL 語法是寫在程式碼中，使程式可以自動化發送請求。<br>
-在企業中較少提供管理員手動輸入 SQL 語法查詢的情境，因為人為失誤可能導致嚴重的後果。(通常是提供後台管理的操作頁面操作 Database)</p>
-<hr>
-<h2 id="統整">統整</h2>
-<p>為了方便了解，我製作了這張圖給各位參考：</p>
-<p><img src="SQL-DBMS-DB.jpg" alt="SQL、DBMS、DB 之間的關係"></p>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<p>《Wiki 維基百科 - SQL》<a href="https://zh.wikipedia.org/wiki/SQL">https://zh.wikipedia.org/wiki/SQL</a><br>
-《Wiki 維基百科 - 資料庫管理系統》<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F">https://zh.wikipedia.org/wiki/ 数据库管理系统</a><br>
-《Wiki 維基百科 - SQL 語法》<a href="https://zh.wikipedia.org/wiki/SQL%E8%AF%AD%E6%B3%95">https://zh.wikipedia.org/wiki/SQL 语法</a></p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-        <tag>Database</tag>
       </tags>
   </entry>
   <entry>
@@ -2684,9 +2684,9 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
         <category>Computer Science</category>
       </categories>
       <tags>
-        <tag>Social-Engineering (社交工程)</tag>
-        <tag>Psychology (心理學)</tag>
-        <tag>Phishing (釣魚攻擊)</tag>
+        <tag>Psychology</tag>
+        <tag>Social-Engineering</tag>
+        <tag>Phishing</tag>
       </tags>
   </entry>
   <entry>
