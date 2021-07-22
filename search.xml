@@ -26,106 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
-    <url>/posts/Cross-Site-Scripting(Advanced)/</url>
-    <content><![CDATA[<p>上一篇「 <strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
-<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
-<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
-<hr>
-<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
-<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
-加強上次模擬的貼文系統：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- index.html --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">// post.php</span>
-<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
-<span class="token variable">$content</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token variable">$connection</span><span class="token operator">=</span><span class="token function">mysql_connect</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"root"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">mysql_select_db</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"post"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO `post` (`title`, `content`)
-VALUES('<span class="token interpolation"><span class="token variable">$title</span></span>', '<span class="token interpolation"><span class="token variable">$content</span></span>');"</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">mysql_query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$connection</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">echo</span> <span class="token string double-quoted-string">"貼文成功！"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
-有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
-很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
-<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
-「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
-<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
-利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$title</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
-<hr>
-<h3 id="自動觸發-onload">自動觸發 Onload</h3>
-<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
-例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Click Me!<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
-<input type="button" onclick="alert(1)" value="Click Me!"><br>
-在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
-<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
-<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
-的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
-<p>那就在推薦各位幾個常見的方式。</p>
-<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
-<hr>
-<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
-<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
-<p>理論上… 沒錯。<br>
-但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
-<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
-很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
-例如你運行該語法：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token comment">&lt;!-- something --></span>
-    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
-而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
-現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>xss</span> <span class="token special-attr"><span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
-而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
-<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
-這就是 HTML 的容錯性！</p>
-<hr>
-<h3 id="那該如何預防">那該如何預防！？</h3>
-<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
-<p>另外，在此呼籲一個重要的觀念！<br>
-請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
-這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
-因為要擋的東西太多了！<br>
-如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
-我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>Web</category>
-        <category>XSS (Cross-Site-Scripting)</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>Security Flaw</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
     <url>/posts/Cross-Site-Scripting/</url>
     <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
@@ -258,6 +158,106 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
 <p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
 透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
 <p>而更進階的 XSS 技巧請看下一篇「<a href="/posts/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>Web</category>
+        <category>XSS (Cross-Site-Scripting)</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>Security Flaw</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
+    <url>/posts/Cross-Site-Scripting(Advanced)/</url>
+    <content><![CDATA[<p>上一篇「 <strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
+<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
+<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
+<hr>
+<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
+<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
+加強上次模擬的貼文系統：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- index.html --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">// post.php</span>
+<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
+<span class="token variable">$content</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$connection</span><span class="token operator">=</span><span class="token function">mysql_connect</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"root"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">mysql_select_db</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"post"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO `post` (`title`, `content`)
+VALUES('<span class="token interpolation"><span class="token variable">$title</span></span>', '<span class="token interpolation"><span class="token variable">$content</span></span>');"</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">mysql_query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$connection</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">echo</span> <span class="token string double-quoted-string">"貼文成功！"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
+有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
+很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
+<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
+「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
+<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
+利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$title</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
+<hr>
+<h3 id="自動觸發-onload">自動觸發 Onload</h3>
+<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
+例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Click Me!<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
+<input type="button" onclick="alert(1)" value="Click Me!"><br>
+在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
+<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
+<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
+的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
+<p>那就在推薦各位幾個常見的方式。</p>
+<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
+<hr>
+<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
+<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
+<p>理論上… 沒錯。<br>
+但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
+<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
+很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
+例如你運行該語法：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- something --></span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
+而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
+現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>xss</span> <span class="token special-attr"><span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
+而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
+<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
+這就是 HTML 的容錯性！</p>
+<hr>
+<h3 id="那該如何預防">那該如何預防！？</h3>
+<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
+<p>另外，在此呼籲一個重要的觀念！<br>
+請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
+這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
+因為要擋的東西太多了！<br>
+如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
+我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
         <category>Computer Science</category>
