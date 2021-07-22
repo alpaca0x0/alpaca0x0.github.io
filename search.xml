@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>What is CTF？</title>
+    <url>/posts/CTF/</url>
+    <content><![CDATA[<p>一個讓<strong>駭客</strong>及<strong>資安人員</strong>都<strong>熱血沸騰</strong>的競賽</p>
+<span id="more"></span>
+<hr>
+<h3 id="ctf-capture-the-flag">CTF (Capture The Flag)</h3>
+<p><strong>CTF</strong> 全名 <strong>Capture The Flag</strong>，又稱<strong>奪旗賽</strong>，起源於 <strong>1996</strong> 年 <strong>DEFCON 世界駭客大賽</strong>，是一種基於<strong>網絡安全</strong>技術下的競技項目。<br>
+該競技主要玩家多半為<strong>網絡安全技術人員</strong>、<strong>駭客</strong>等擁有對計算機安全相關知識感興趣的人。</p>
+<hr>
+<h3 id="ctf-都在做些什麼">CTF 都在做些什麼？</h3>
+<p>如同名稱一般，是一種<strong>奪旗纇競賽</strong>。雙方或多方玩家需要拿下對手的「旗子」，率先奪旗成功方即獲勝 (不同賽式規則不同，但大同小異)。</p>
+<p>這個「<strong>旗子</strong>」通常是一串<strong>亂數</strong>或<strong>不易被猜中的文字</strong>。<br>
+你必須<strong>保護</strong>好自己隊伍的旗子以防被對手竊取，同時想辦法<strong>獲得</strong>對手的旗子，這其實有點像駭客在攻擊目標的模擬情境，其競賽目的意在「提升自我的<strong>網絡安全意識</strong>及學習如何<strong>保護自己的計算機不被駭客攻擊</strong>」。</p>
+<p>畢竟，要<strong>預防駭客</strong>，那麼你就得懂<strong>駭客的思路</strong>，若要深入的了解，「<strong>成為</strong>」是最有效的方法之一。</p>
+<p>CTF 的題目非常多元，有著眾多的領域及複雜的內容，不論是<strong>密碼學</strong>、<strong>數學</strong>、<strong>軟體工具應用</strong>及各種<strong>計算機知識</strong>都是 CTF 的家常便飯。</p>
+]]></content>
+      <categories>
+        <category>Popular-Science</category>
+      </categories>
+      <tags>
+        <tag>Cyber Security</tag>
+        <tag>Hacker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
+    <url>/posts/Cross-Site-Scripting(Advanced)/</url>
+    <content><![CDATA[<p>上一篇「 <strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
+<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
+<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
+<hr>
+<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
+<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
+加強上次模擬的貼文系統：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- index.html --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">// post.php</span>
+<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
+<span class="token variable">$content</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$connection</span><span class="token operator">=</span><span class="token function">mysql_connect</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"root"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">mysql_select_db</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"post"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO `post` (`title`, `content`)
+VALUES('<span class="token interpolation"><span class="token variable">$title</span></span>', '<span class="token interpolation"><span class="token variable">$content</span></span>');"</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">mysql_query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$connection</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">echo</span> <span class="token string double-quoted-string">"貼文成功！"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
+有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
+很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
+<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
+「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
+<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
+利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$title</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
+<hr>
+<h3 id="自動觸發-onload">自動觸發 Onload</h3>
+<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
+例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Click Me!<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
+<input type="button" onclick="alert(1)" value="Click Me!"><br>
+在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
+<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
+<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
+的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
+<p>那就在推薦各位幾個常見的方式。</p>
+<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
+<hr>
+<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
+<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
+<p>理論上… 沒錯。<br>
+但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
+<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
+很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
+例如你運行該語法：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- something --></span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
+而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
+現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>xss</span> <span class="token special-attr"><span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
+而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
+<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
+這就是 HTML 的容錯性！</p>
+<hr>
+<h3 id="那該如何預防">那該如何預防！？</h3>
+<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
+<p>另外，在此呼籲一個重要的觀念！<br>
+請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
+這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
+因為要擋的東西太多了！<br>
+如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
+我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>Web</category>
+        <category>XSS (Cross-Site-Scripting)</category>
+      </categories>
+      <tags>
+        <tag>XSS (Cross-Site-Scripting)</tag>
+        <tag>Security Flaw</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</title>
     <url>/posts/Cross-Site-Scripting/</url>
     <content><![CDATA[<p>常常聽到有人說網站出現「 <strong>XSS 漏洞</strong> 」，那這所謂的 XSS 到底是什麼？其可怕之處又為何？以下，帶你淺談 <strong>XSS (跨站運行腳本)</strong> 原理及背後<s>齷齪骯髒</s>的技巧。</p>
@@ -133,106 +258,6 @@ VALUES('<span class="token interpolation"><span class="token variable">$title</s
 <p>上述這些這顯然不是設計師希望我們做的，標籤植入越權思路這就是 XSS 的基本原理。<br>
 透過與網頁所設計的功能互動，而將標籤透過巧思植入網頁並使其觸發。</p>
 <p>而更進階的 XSS 技巧請看下一篇「<a href="/posts/Cross-Site-Scripting(Advanced)/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</a>」。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>Web</category>
-        <category>XSS (Cross-Site-Scripting)</category>
-      </categories>
-      <tags>
-        <tag>XSS (Cross-Site-Scripting)</tag>
-        <tag>Security Flaw</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (下) 進階思路解說</title>
-    <url>/posts/Cross-Site-Scripting(Advanced)/</url>
-    <content><![CDATA[<p>上一篇「 <strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong> 」中提到了基礎的 XSS 原理，這次要來介紹更深入更進階的思路了。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>如果你不清楚什麼是 XSS ，可以先觀看我上一篇貼文「<strong><a href="/posts/Cross-Site-Scripting/" title="網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說">網頁漏洞 XSS (Cross-Site-Scripting) 攻擊 (上) 基礎原理解說</a></strong>」。</p>
-<p>( <strong>提醒您，本文技巧請勿用於非法用途，一切行為請自行負責，與本站無關。本站僅作為學術研討用途。</strong> )</p>
-<p>上一篇文章中所模擬的環境是比較誇張的狀況，任何參數都沒過濾這種事情不大可能發生 (還是頗多，只是比例上來說少)，大多數網站多少都會有過濾機制，但是有設計過濾機制難道就安全了嗎？這其中許多過濾是不完全的，只要花點小巧思就能繞過！你需要的是「創意」。</p>
-<hr>
-<h3 id="script標籤失效">&lt;script&gt; 標籤失效！？</h3>
-<p>上篇中說過，我們可以透過輸入「 <strong> <code>abc123&lt;/p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;p&gt;</code> </strong> 」來觸發 &lt;script&gt; 標籤來執行 Javascript 語法，可是當該網站過濾一切的「 <strong>&lt;script&gt;</strong> 」時呢？<br>
-加強上次模擬的貼文系統：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- index.html --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">// post.php</span>
-<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
-<span class="token variable">$content</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//過濾&lt;script>標籤</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token variable">$connection</span><span class="token operator">=</span><span class="token function">mysql_connect</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"root"</span><span class="token punctuation">,</span><span class="token string double-quoted-string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">mysql_select_db</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"post"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO `post` (`title`, `content`)
-VALUES('<span class="token interpolation"><span class="token variable">$title</span></span>', '<span class="token interpolation"><span class="token variable">$content</span></span>');"</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">mysql_query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$connection</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">echo</span> <span class="token string double-quoted-string">"貼文成功！"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>「 <strong>既然 <code>&lt;script&gt;</code>  這麼危險，那我過濾掉不就好了。</strong> 」<br>
-有些網站認為，只要過濾 <code>&lt;script&gt;</code>  標籤就安全了。<br>
-很多人不知道，這種過濾方法是有漏洞的！可以使用「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」來繞過此過濾方法。</p>
-<p>因為當「 <strong> <code>&lt;sc&lt;script&gt;ript&gt;</code> </strong> 」輸入時，中間的 <strong> <code>&lt;script&gt;</code> </strong> 被過濾掉後會…<br>
-「<font style="color: green;"><strong>&lt;sc</strong></font><font style="color: red;"><strong>&lt;script&gt;</strong></font><font style="color: green;"><strong>ript&gt;</strong></font>」 =&gt; 「<font style="color: green;"> <strong>&lt;script&gt;</strong></font>」</p>
-<p>雖然說<strong>不建議</strong>，但若是真的必須要用這種方式過濾某個字串，可以使用迴圈。<br>
-利用 <strong> <code>strpos()</code> </strong> 來檢查字串中是否含有「 <strong> <code>&lt;script&gt;</code> </strong> 」，若是存在就使用 <strong> <code>str_replace()</code> </strong> 過濾：</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token variable">$title</span><span class="token operator">=</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"&lt;script>"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">,</span> <span class="token variable">$title</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>實際上，執行 Javascript 語法的方式有千千萬萬種，考驗的只是駭客們的創意，以下提供常見的幾種進階技巧給各位參考。</p>
-<hr>
-<h3 id="自動觸發-onload">自動觸發 Onload</h3>
-<p>其實在 HTML 語言中，有許多標籤的屬性及事件是可以觸發 Javascript 的，因為那些本身就是 Javascript 下去運作的。<br>
-例如標籤 <code>&lt;input type=&quot;button&quot;&gt;</code>  中的 onclick：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Click Me!<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>我們在 onclick 中加入語法「 <code>alert(1)</code> 」是可以被執行的，像這樣：<br>
-<input type="button" onclick="alert(1)" value="Click Me!"><br>
-在 onclick 中不需要特別加上 &lt;script&gt; 標籤聲明是 Javascript。</p>
-<p>有時候我自己在滲透網站時，更偏好使用這樣的方法，而不是直接塞入 &lt;script&gt; 標籤，一方面 &lt; script &gt; 標籤被過濾的機率太高了，另一方面可以讓攻擊語法顯的比較優雅 (X。</p>
-<p>有些人可能會說：「這必須要點擊才能觸發，不點不就沒事了。」<br>
-的確，「onclick」需要透過點擊才能觸發內容，總不能要求使用者去點擊你植入的按鈕吧。</p>
-<p>那就在推薦各位幾個常見的方式。</p>
-<p>同樣是「input」標籤，我們可以透過「 <strong> <code>onload</code> </strong> 」，「 <code>onload</code> 」事件是指當該物件「 <strong>載入完成後</strong> 」觸發。例如我們可以使用該語法來植入：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>這麼一來，就會在此標籤載入完成後自動觸發「alert (1)」了！</p>
-<hr>
-<h3 id="想看圖片我給你看alert">想看圖片？我給你看 Alert！</h3>
-<p>這時候可能你又會想，那把雙引號「&quot;」也過濾基本上任何屬性跟事件不就不能觸發了！？</p>
-<p>理論上… 沒錯。<br>
-但也僅僅只是理論上，別忽略 HTML 的一個大特點 - <strong>極高的彈性</strong>。</p>
-<p>HTML 提供極高的「 <strong>容錯性</strong> 」。<br>
-很多時候不需要照著 HTML 原本的寫法，只要「意思」到了，就可以執行！<br>
-例如你運行該語法：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token comment">&lt;!-- something --></span>
-    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>正常來說，沒有將 &lt;body&gt; 標籤結尾應該是個錯誤的寫法，可是如果你運行這段語法你會發現，瀏覽器幫你加上了！<br>
-而 HTML 的高容錯特性則可以用在 XSS 的創意上。<br>
-現在要介紹的這是透過「&lt;img&gt;」標籤來觸發。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>xss</span> <span class="token special-attr"><span class="token attr-name">onerror</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span></span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>簡單說明下，「 <strong>onerror</strong> 」是指當此圖片未能正常顯示時而觸發的事件，<br>
-而因為「 <strong>src</strong> 」所指定的目錄並無名為「 <strong>xss</strong> 」的檔案，所以必定會因為 <strong>not found error</strong> 而觸發「 <strong>onerror</strong> 」事件。</p>
-<p>去除了雙引號「&quot;」，但該語法是可以正常運作的！<br>
-這就是 HTML 的容錯性！</p>
-<hr>
-<h3 id="那該如何預防">那該如何預防！？</h3>
-<p>其實在 PHP 裡，有一個函式可以防止 XSS，這個函式是「 <strong>htmlentities()</strong> 」，它並不是著重在存入資料庫時的過濾，而是在「輸出時防止」，他的作用是將敏感符號轉換成 html 編碼，這可以有效的防止語法被解釋成標籤的問題。</p>
-<p>另外，在此呼籲一個重要的觀念！<br>
-請善用「 <strong>白名單</strong> 」而非「 <strong>黑名單</strong> 」！<br>
-這個意思是說，與其限制使用者「 <strong>不能輸入什麼</strong> 」，不如限制「 <strong>只能輸入什麼</strong> 」。<br>
-因為要擋的東西太多了！<br>
-如果你使用黑名單的方式可能是永遠都擋不完的，並且你的程式碼將會很長很亂。<br>
-我喜歡使用<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><strong>正規表達法</strong></a>，或者乾脆把一些文字經過「<a href="https://zh.wikipedia.org/wiki/Base64"><strong>base64 編碼</strong></a>」後再餵進資料庫。</p>
 ]]></content>
       <categories>
         <category>Computer Science</category>
@@ -468,10 +493,10 @@ ka8Z9KLt&#x2F;N0ziabBexAw
         <category>Computer Science</category>
       </categories>
       <tags>
+        <tag>Cyber Security</tag>
         <tag>Cryptography</tag>
         <tag>Public-key Cryptography</tag>
         <tag>Digital Signature</tag>
-        <tag>Cyber Security</tag>
       </tags>
   </entry>
   <entry>
@@ -565,6 +590,179 @@ b.  <code>sudo yum install git2u</code></p>
       </categories>
       <tags>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to use GnuPG to generate PGP key？</title>
+    <url>/posts/GnuPG-Generating-PGP-Key/</url>
+    <content><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/GnuPG#/media/File:Gnupg_logo.svg"><img src="cover.jpg" alt="GnuPG Logo, 圖源於 Wiki 維基百科"></a></p>
+怎麼使用 GnuPG 生成 PGP 金鑰？
+<span id="more"></span>
+<hr>
+<h2 id="what-is-gnupg">What is GnuPG？</h2>
+<p><code>GNU Privacy Guard</code>  簡稱  <code>GnuPG</code> 、 <code>GPG</code> ，主要是用於數位 <code>加密</code> 、 <code>簽章</code> 的軟體。(<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86"> <code>Asymmetric cryptography</code> </a> 金鑰的管理)</p>
+<p>更詳細介紹請見《<a href="https://zh.wikipedia.org/zh-tw/GnuPG">Wiki 維基百科 - GnuPG</a>》</p>
+<hr>
+<h2 id="install">Install</h2>
+<p>Ubuntu</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> gnupg2
+<span class="token comment"># OR</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> gnupg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Mac</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> gnupg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<h2 id="generating-a-new-keypair">Generating a new keypair</h2>
+<ul>
+<li>如果你想 <code>簡單快速</code> 的 <code>生成金鑰</code> ，可以使用指令：</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --gen-key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>想 <code>手動選擇</code> 更完整的選項可以使用指令：</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --full-gen-key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<p>如果是  <code>--full-gen-key</code>  則會顯示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Please <span class="token keyword">select</span> what kind of key you want:
+   <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> RSA and RSA <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+   <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> DSA and Elgamal
+   <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> DSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
+   <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> RSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span> Existing key from card
+Your selection?<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>輸入數字選擇自己要的 <code>加密演算法類型</code> ，或者直接按下 Enter 使用預設。</p>
+<p>接著是輸入 <code>金鑰的長度</code> 及 <code>金鑰時效</code> 設定：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">RSA keys may be between <span class="token number">1024</span> and <span class="token number">4096</span> bits long.
+What keysize <span class="token keyword">do</span> you want? <span class="token punctuation">(</span><span class="token number">3072</span><span class="token punctuation">)</span> <span class="token comment"># 輸入金鑰位元長度，1024 ～ 4096 之間</span>
+Requested keysize is <span class="token number">3072</span> bits<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Please specify how long the key should be valid.
+         <span class="token number">0</span> <span class="token operator">=</span> key does not expire
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>  <span class="token operator">=</span> key expires <span class="token keyword">in</span> n days
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>w <span class="token operator">=</span> key expires <span class="token keyword">in</span> n weeks
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>m <span class="token operator">=</span> key expires <span class="token keyword">in</span> n months
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>y <span class="token operator">=</span> key expires <span class="token keyword">in</span> n years
+Key is valid for? <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 選擇金鑰過期設定</span>
+Key does not expire at all
+Is this correct? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span> y <span class="token comment"># 輸入「y」確認</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接著就是輸入主要的資訊了 (使用  <code>--gen-key</code>  參數會直接跳到這)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Terminal</span>
+Real name: Alpaca0x0 <span class="token comment"># 你的名稱</span>
+Email address: alpaca0x0@example.com <span class="token comment"># 你的 Email</span>
+Comment: My First PGP Key. <span class="token comment"># 註釋 (使用 full-gen-key 參數才會顯示)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最後確認資訊<br>
+若有誤可以輸入「 <code>N</code> 」修改 <code>名稱</code> ，輸入「 <code>E</code> 」修改  <code>Email</code> 。</p>
+<p>輸入「 <code>O</code> 」進行確認</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">You selected this <span class="token environment constant">USER</span>-ID:
+    <span class="token string">"Alpaca0x0 &lt;alpaca0x0@example.com>"</span>
+
+Change <span class="token punctuation">(</span>N<span class="token punctuation">)</span>ame, <span class="token punctuation">(</span>E<span class="token punctuation">)</span>mail, or <span class="token punctuation">(</span>O<span class="token punctuation">)</span>kay/<span class="token punctuation">(</span>Q<span class="token punctuation">)</span>uit? O<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>之後會要求你輸入密碼，可以設定也可以留空。</p>
+<p>完成後會顯示該金鑰的資訊：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span>
+      36EECBC209A936F5AF9B25A469219C5CB53AF7C3
+uid                      Alpaca0x0 <span class="token operator">&lt;</span>alpaca0x0@example.com<span class="token operator">></span>
+sub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>E<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>「 <code>rsa3072</code> 」指的是「 <code>RSA</code> 」算法，金鑰長度「 <code>3072</code> 」位元</li>
+<li>「 <code>36EECBC209A936F5AF9B25A469219C5CB53AF7C3</code> 」就是  <code>Key ID</code></li>
+</ul>
+<hr>
+<h2 id="displaying-keys">Displaying keys</h2>
+<h3 id="displaying-public-keys">Displaying public keys</h3>
+<p>要 <code>查看</code> 已有的 <code>公鑰</code> ，使用指令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --list-public-keys
+<span class="token comment"># OR</span>
+gpg --list-keys
+<span class="token comment"># OR</span>
+gpg -k<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>顯示</code> 已有的 <code>公鑰</code> ：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span>
+      36EECBC209A936F5AF9B25A469219C5CB53AF7C3
+uid           <span class="token punctuation">[</span>ultimate<span class="token punctuation">]</span> Alpaca0x0 <span class="token operator">&lt;</span>alpaca0x0@example.com<span class="token operator">></span>
+sub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>E<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以在後方加上 <code>關鍵字</code>  ( <code>名稱</code> 、 <code>Email</code> )：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --list-keys &lt;Keyword></span>
+gpg --list-keys alpaca0x0
+<span class="token comment"># OR</span>
+gpg --list-keys alpaca
+<span class="token comment"># OR</span>
+gpg --list-keys example.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="displaying-secret-keys">Displaying secret keys</h3>
+<p><code>查看</code> 已有的 <code>私鑰</code> ，使用指令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --list-secret-keys <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>與  <code>--list-public-keys</code>  用法類似，一樣可以加入關鍵字查詢：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --list-secret-keys &lt;Keyword></span>
+gpg --list-secret-keys alpaca0x0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="exporting-key">Exporting key</h2>
+<h3 id="exporting-public-key">Exporting public key</h3>
+<p>若要 <code>導出公鑰</code> ，則使用指令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --export <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但這樣導出的密鑰是  <code>binary format</code> ，所以使用參數「 <code>--armor, -a</code> 」來使其輸出為  <code>ASCII-Code format</code> 。<br>
+使用「 <code>--output, -o</code> 」或者「 <code>&gt;</code> 」將輸出結果寫入檔案：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --export --armor &lt;Key-ID> > &lt;Output-File-Name></span>
+<span class="token comment"># gpg --export --armor --output &lt;Output-File-Name> &lt;Key-ID></span>
+gpg --export --armor --output public_key.pub 36EECBC209A936F5AF9B25A469219C5CB53AF7C3
+<span class="token comment"># OR</span>
+gpg --export --armor 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 <span class="token operator">></span> public_key.pub
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="exporting-secret-key">Exporting secret key</h3>
+<p><code>導出私鑰</code> 使用指令：</p>
+<pre class="line-numbers language-none"><code class="language-none">gpg --export-secret-keys &lt;Key-ID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>與  <code>--export</code>  用法相同<br>
+ p.s. 若是當初生成鑰匙時有輸入密碼，則導出時也需要輸入驗證。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
+gpg --export-secret-keys --armor 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 <span class="token operator">></span> secret_key.asc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="sending-the-key-to-the-key-server">Sending the key to the key server</h2>
+<p><code>公鑰</code> 可以上傳至公開的  <code>Keyserver</code>  上讓他人能方便下載你的公鑰。<br>
+上傳的指令是：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --send-keys 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
+<span class="token comment"># 可以使用「--keyserver」參數指定上傳的伺服器</span>
+gpg --send-keys --keyserver <span class="token operator">&lt;</span>Server<span class="token operator">></span> 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>這邊要特別注意的是，大多數時候，在  <code>&lt;Key-ID&gt;</code>  的前方要加上「 <code>0x</code> 」(Hexadecimal)。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
+gpg --send-keys --keyserver pgp.mit.edu 0x36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="deleting-key">Deleting key</h2>
+<p><code>刪除</code> 本地的 <code>公鑰</code> ，使用指令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --delete-key &lt;Key-ID></span>
+gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>但當我們執行時，會發現終端返回這則訊息：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg: there is a secret key <span class="token keyword">for</span> public key <span class="token string">"36EECBC209A936F5AF9B25A469219C5CB53AF7C3"</span><span class="token operator">!</span>
+gpg: use option <span class="token string">"--delete-secret-keys"</span> to delete it first.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>這是因為你還留有該 <code>公鑰</code> 的 <code>私鑰</code> ，所以先刪除 <code>私鑰</code> ，再刪除 <code>公鑰</code> ：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Delete secret keys</span>
+gpg --delete-secret-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
+<span class="token comment"># Delete public keys</span>
+gpg --delete-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
+gpg --delete-secret-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3
+gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>或者使用「 <code>--delete-secret-and-public-keys</code> 」一次刪除 <code>公私鑰</code> ：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --delete-secret-and-public-keys &lt;Key-ID></span>
+gpg --delete-secret-and-public-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="importing-key">Importing key</h2>
+<p>要匯入金鑰主要有兩種方式</p>
+<p>從檔案匯入 (本地端匯入)：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --import &lt;Key-File></span>
+gpg --import Private_OR_Public.key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>從 Key-Server 上匯入 (遠端匯入)：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --keyserver &lt;Server> --recv-key 0x&lt;Key-ID></span>
+gpg --keyserver keyserver.ubuntu.com --recv-key 0xA91A9E8A0EE6BAB3742464861DF369D42499F3F1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果要查詢該 Key-Server 上的鑰匙資訊，可以使用指令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --keyserver &lt;Server> --search-key &lt;Key-ID></span>
+gpg --keyserver keyserver.ubuntu.com --search-key 0xA91A9E8A0EE6BAB3742464861DF369D42499F3F1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="reference">Reference</h2>
+<p>《GnuPG documentation》<a href="https://gnupg.org/documentation/manpage.html">https://gnupg.org/documentation/manpage.html</a></p>
+]]></content>
+      <categories>
+        <category>Tools Using</category>
+      </categories>
+      <tags>
+        <tag>Cryptography</tag>
+        <tag>PGP</tag>
       </tags>
   </entry>
   <entry>
@@ -705,6 +903,119 @@ gpg --armor --sign --sign-with 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 --recipi
       <tags>
         <tag>Cryptography</tag>
         <tag>PGP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>進階 Google 搜尋技巧 - Google Hacking</title>
+    <url>/posts/Google-Hacking/</url>
+    <content><![CDATA[<p>這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
+<span id="more"></span>
+<hr>
+<h2 id="search-engine">Search Engine</h2>
+<p>搜尋引擎是利用 <strong>Web-Crawler (網絡爬蟲)</strong> 技術為基礎所製作的一種工具，其目的顧名思義就是用來搜索資料。</p>
+<p>搜索引擎是現代人不可沒有的一項發明，成堆的檔案、照片、音樂總是讓人需要花大把時間將其分類，一陣子沒注意，下一次在找檔案時可能就要花許多時間，直到搜尋引擎的出現。</p>
+<p>其中， Google 的搜索引擎最為出名且被廣泛運用，由於非常強大，身為<strong>名詞</strong>的「Google」如今在許多地方已經被當作<strong>動詞</strong>使用，舉例來說，現在的人總是將「<strong>上網找資料</strong>」直接稱作「<strong>上網 Google</strong>」，這也間接說明了 Google 搜索引擎的影響力。</p>
+<p>以下為你介紹關於 Google　搜尋引擎，你所可能不知道的技巧。</p>
+<hr>
+<h2 id="基礎技巧-應該很多人都知道了">基礎技巧 (應該很多人都知道了)</h2>
+<blockquote>
+<h3 id="過舊的資訊過濾">過舊的資訊過濾</h3>
+<p>在 Google 搜索引擎上，位於搜尋欄位右下角的「 <code>工具</code> 」按鈕，透過設定時間，可以過濾掉許多老舊、雜亂的資訊，讓你能更快速找到你要的資料。</p>
+<p><img src="01.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="精準搜尋圖片">精準搜尋圖片</h3>
+<p>在圖片搜索後，按下搜索欄位旁的「 <code>設定</code>  &gt;  <code>進階搜尋</code> 」即可過濾不必要的關鍵字，甚至可以選擇圖片<strong>比例</strong>、<strong>格式</strong>、<strong>地區</strong>、<strong>使用權</strong>等。</p>
+<p><img src="02.png" alt=""><br>
+<img src="02-1.png" alt=""><br>
+<img src="02-2.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="以圖搜圖">以圖搜圖</h3>
+<p>這個相信比較多人知道，不過為了還不知道的朋友還是說一下。<br>
+一般來說我們搜尋圖片都是以「<strong>關鍵字</strong>」搜尋後得到結果，但 Google 允許你使用「<strong>圖片</strong>」進行搜索。許多人盜用網美照行騙，在過去可能很難查證照片真偽，現在則只需要將圖丟上網以圖搜圖，立刻抓包！<br>
+點選圖片搜尋欄位的右方 <code>相機圖示</code> ，即可選擇要搜尋的圖片，可以使用<strong>網址</strong>或者<strong>本地上傳</strong>。</p>
+<p><img src="03.png" alt=""><br>
+<img src="03-1.png" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="進階技巧-google-hacking">進階技巧 - Google Hacking</h2>
+<p><strong>Google Hacking</strong> 又稱 <strong>Google Dorking</strong>，是一種利用 Google 內建的搜尋功能來找到安全漏洞或敏感資訊的技巧。許多人並不知道，Google 是可以透過許多內建的過濾器來更精準的搜索資訊的，而這些技巧也很常被用於<strong>肉搜</strong>。</p>
+<blockquote>
+<h3 id="特定標題">特定標題</h3>
+<p>可以透過「intitle:“<strong>標題</strong>” <strong>關鍵字</strong>」來搜索特定標題的網站。<br>
+舉例「intitle:“<strong>新北市</strong>” <strong>反毒</strong>」可以用來搜尋<strong>標題</strong>含有「 <code>新北市</code> 」且<strong>內容</strong>含有「 <code>反毒</code> 」的相關資訊</p>
+<p><img src="04.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="網頁內容含有特定文字">網頁內容含有特定文字</h3>
+<p>可以透過「intext:“<strong>文字</strong>”」來搜索含有特定文字的網站。<br>
+舉例「intext:“<strong>麥當勞活動</strong>”」可以用來搜尋<strong>網站內容</strong>中含有「 <code>麥當勞活動</code> 」文字的頁面。(並<strong>非</strong>只是關鍵字，而是更加精確的特定文字)</p>
+<p><img src="07.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="特定網域">特定網域</h3>
+<p>透過「site:“<strong>網域</strong>” <strong>關鍵字</strong>」來搜尋基於該網域下關於該關鍵字的搜尋結果。<br>
+舉例「site:“www.dcard.tw” <strong>情侶 吵架</strong>」可以搜尋「 <code>www.dcard.tw</code> 」網站中<strong>內容</strong>含有「 <code>情侶 吵架</code> 」相關的頁面。</p>
+<p><img src="05.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="含有特定文字的網址">含有特定文字的網址</h3>
+<p>可以透過「inurl:<strong> 文字</strong>」來搜索含有該字串的網址。<br>
+舉例「inurl:<strong>login</strong>」可以用來搜尋「 <code>網址</code> 」中含有「 <code>login</code> 」的結果。</p>
+<p><img src="09.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="特定檔案格式">特定檔案格式</h3>
+<p>查詢特定檔案格式可以用「filetype:<strong> 格式</strong> <strong>關鍵字</strong>」來搜尋。<br>
+舉例「filetype:<strong>doc</strong> <strong>統一超商 財務報表</strong>」可以搜尋與「 <code>統一超商 財務報表</code> 」有關且為「 <code>.doc</code> 」的文件。也可以使用「ext:<strong>doc</strong>」來精確搜尋副檔名。</p>
+<p><img src="06.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="網頁在-google-的-cache-快取">網頁在 Google 的 Cache (快取)</h3>
+<p>可以透過「cache:“<strong>網域</strong>”」來搜索網站在 Google 中的緩存。<br>
+舉例「cache:“<strong>reddit.com</strong>”」可以用來搜尋「 <code>reddit.com</code> 」在 Google 中的緩存。</p>
+<p><img src="08.png" alt=""></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="單字的解釋-定義">單字的解釋、定義</h3>
+<p>可以透過「define:<strong> 單字</strong>」來搜索關於該單字的解釋、定義。(前提是 Google 要有收入該單字)<br>
+ 舉例「define:<strong> 科普</strong>」可以用來搜尋「 <code>科普</code> 」在 Google 中解釋、定義。</p>
+<p><img src="10.png" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="其他運用">其他運用</h2>
+<h3 id="混合查詢">混合查詢</h3>
+<p>舉例「site:“<strong>i.4cdn.org</strong>” filetype:<strong>pdf</strong> intitle:<strong>test</strong>」。<br>
+<img src="11.png" alt=""></p>
+<hr>
+<h3 id="強調搜尋-排除搜尋">強調搜尋、排除搜尋</h3>
+<p>關鍵字前加上「<strong>+</strong>」可以強調搜尋，加上「<strong>-</strong>」則排除相關資訊。<br>
+舉例以下搜尋結果會顯示關於「 <code>台灣風景</code> 」的資訊，尤其「 <code>台南</code> 」，並且排除關於「 <code>台北</code> 」關鍵字的資訊。<br>
+<img src="12.png" alt=""></p>
+<hr>
+<h3 id="精確搜尋">精確搜尋</h3>
+<p>用雙引號「<strong>&quot;</strong>」將關鍵字框起可以更加精確的搜尋。<br>
+舉例將搜尋「<strong>台大醫院</strong>」改為「<strong>“台大醫院”</strong>」<br>
+<img src="13.png" alt=""></p>
+<hr>
+<h3 id="更多用法請自行上網搜尋">更多用法請自行上網搜尋</h3>
+<p>以下附上網路上其他人製作的表格：</p>
+<p><a href="https://i.imgur.com/MesRgnG.png"><img src="14.png" alt="圖源: imgur.com"></a></p>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -1125,606 +1436,6 @@ deploy:
       </tags>
   </entry>
   <entry>
-    <title>What is CTF？</title>
-    <url>/posts/CTF/</url>
-    <content><![CDATA[<p>一個讓<strong>駭客</strong>及<strong>資安人員</strong>都<strong>熱血沸騰</strong>的競賽</p>
-<span id="more"></span>
-<hr>
-<h3 id="ctf-capture-the-flag">CTF (Capture The Flag)</h3>
-<p><strong>CTF</strong> 全名 <strong>Capture The Flag</strong>，又稱<strong>奪旗賽</strong>，起源於 <strong>1996</strong> 年 <strong>DEFCON 世界駭客大賽</strong>，是一種基於<strong>網絡安全</strong>技術下的競技項目。<br>
-該競技主要玩家多半為<strong>網絡安全技術人員</strong>、<strong>駭客</strong>等擁有對計算機安全相關知識感興趣的人。</p>
-<hr>
-<h3 id="ctf-都在做些什麼">CTF 都在做些什麼？</h3>
-<p>如同名稱一般，是一種<strong>奪旗纇競賽</strong>。雙方或多方玩家需要拿下對手的「旗子」，率先奪旗成功方即獲勝 (不同賽式規則不同，但大同小異)。</p>
-<p>這個「<strong>旗子</strong>」通常是一串<strong>亂數</strong>或<strong>不易被猜中的文字</strong>。<br>
-你必須<strong>保護</strong>好自己隊伍的旗子以防被對手竊取，同時想辦法<strong>獲得</strong>對手的旗子，這其實有點像駭客在攻擊目標的模擬情境，其競賽目的意在「提升自我的<strong>網絡安全意識</strong>及學習如何<strong>保護自己的計算機不被駭客攻擊</strong>」。</p>
-<p>畢竟，要<strong>預防駭客</strong>，那麼你就得懂<strong>駭客的思路</strong>，若要深入的了解，「<strong>成為</strong>」是最有效的方法之一。</p>
-<p>CTF 的題目非常多元，有著眾多的領域及複雜的內容，不論是<strong>密碼學</strong>、<strong>數學</strong>、<strong>軟體工具應用</strong>及各種<strong>計算機知識</strong>都是 CTF 的家常便飯。</p>
-]]></content>
-      <categories>
-        <category>Popular-Science</category>
-      </categories>
-      <tags>
-        <tag>Cyber Security</tag>
-        <tag>Hacker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>進階 Google 搜尋技巧 - Google Hacking</title>
-    <url>/posts/Google-Hacking/</url>
-    <content><![CDATA[<p>這個被稱作「<strong>Google Hacking</strong>」的技巧，不僅可以快速找到你要的資料，甚至常被拿來… <strong>肉搜</strong>。</p>
-<span id="more"></span>
-<hr>
-<h2 id="search-engine">Search Engine</h2>
-<p>搜尋引擎是利用 <strong>Web-Crawler (網絡爬蟲)</strong> 技術為基礎所製作的一種工具，其目的顧名思義就是用來搜索資料。</p>
-<p>搜索引擎是現代人不可沒有的一項發明，成堆的檔案、照片、音樂總是讓人需要花大把時間將其分類，一陣子沒注意，下一次在找檔案時可能就要花許多時間，直到搜尋引擎的出現。</p>
-<p>其中， Google 的搜索引擎最為出名且被廣泛運用，由於非常強大，身為<strong>名詞</strong>的「Google」如今在許多地方已經被當作<strong>動詞</strong>使用，舉例來說，現在的人總是將「<strong>上網找資料</strong>」直接稱作「<strong>上網 Google</strong>」，這也間接說明了 Google 搜索引擎的影響力。</p>
-<p>以下為你介紹關於 Google　搜尋引擎，你所可能不知道的技巧。</p>
-<hr>
-<h2 id="基礎技巧-應該很多人都知道了">基礎技巧 (應該很多人都知道了)</h2>
-<blockquote>
-<h3 id="過舊的資訊過濾">過舊的資訊過濾</h3>
-<p>在 Google 搜索引擎上，位於搜尋欄位右下角的「 <code>工具</code> 」按鈕，透過設定時間，可以過濾掉許多老舊、雜亂的資訊，讓你能更快速找到你要的資料。</p>
-<p><img src="01.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="精準搜尋圖片">精準搜尋圖片</h3>
-<p>在圖片搜索後，按下搜索欄位旁的「 <code>設定</code>  &gt;  <code>進階搜尋</code> 」即可過濾不必要的關鍵字，甚至可以選擇圖片<strong>比例</strong>、<strong>格式</strong>、<strong>地區</strong>、<strong>使用權</strong>等。</p>
-<p><img src="02.png" alt=""><br>
-<img src="02-1.png" alt=""><br>
-<img src="02-2.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="以圖搜圖">以圖搜圖</h3>
-<p>這個相信比較多人知道，不過為了還不知道的朋友還是說一下。<br>
-一般來說我們搜尋圖片都是以「<strong>關鍵字</strong>」搜尋後得到結果，但 Google 允許你使用「<strong>圖片</strong>」進行搜索。許多人盜用網美照行騙，在過去可能很難查證照片真偽，現在則只需要將圖丟上網以圖搜圖，立刻抓包！<br>
-點選圖片搜尋欄位的右方 <code>相機圖示</code> ，即可選擇要搜尋的圖片，可以使用<strong>網址</strong>或者<strong>本地上傳</strong>。</p>
-<p><img src="03.png" alt=""><br>
-<img src="03-1.png" alt=""></p>
-</blockquote>
-<hr>
-<h2 id="進階技巧-google-hacking">進階技巧 - Google Hacking</h2>
-<p><strong>Google Hacking</strong> 又稱 <strong>Google Dorking</strong>，是一種利用 Google 內建的搜尋功能來找到安全漏洞或敏感資訊的技巧。許多人並不知道，Google 是可以透過許多內建的過濾器來更精準的搜索資訊的，而這些技巧也很常被用於<strong>肉搜</strong>。</p>
-<blockquote>
-<h3 id="特定標題">特定標題</h3>
-<p>可以透過「intitle:“<strong>標題</strong>” <strong>關鍵字</strong>」來搜索特定標題的網站。<br>
-舉例「intitle:“<strong>新北市</strong>” <strong>反毒</strong>」可以用來搜尋<strong>標題</strong>含有「 <code>新北市</code> 」且<strong>內容</strong>含有「 <code>反毒</code> 」的相關資訊</p>
-<p><img src="04.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="網頁內容含有特定文字">網頁內容含有特定文字</h3>
-<p>可以透過「intext:“<strong>文字</strong>”」來搜索含有特定文字的網站。<br>
-舉例「intext:“<strong>麥當勞活動</strong>”」可以用來搜尋<strong>網站內容</strong>中含有「 <code>麥當勞活動</code> 」文字的頁面。(並<strong>非</strong>只是關鍵字，而是更加精確的特定文字)</p>
-<p><img src="07.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="特定網域">特定網域</h3>
-<p>透過「site:“<strong>網域</strong>” <strong>關鍵字</strong>」來搜尋基於該網域下關於該關鍵字的搜尋結果。<br>
-舉例「site:“www.dcard.tw” <strong>情侶 吵架</strong>」可以搜尋「 <code>www.dcard.tw</code> 」網站中<strong>內容</strong>含有「 <code>情侶 吵架</code> 」相關的頁面。</p>
-<p><img src="05.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="含有特定文字的網址">含有特定文字的網址</h3>
-<p>可以透過「inurl:<strong> 文字</strong>」來搜索含有該字串的網址。<br>
-舉例「inurl:<strong>login</strong>」可以用來搜尋「 <code>網址</code> 」中含有「 <code>login</code> 」的結果。</p>
-<p><img src="09.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="特定檔案格式">特定檔案格式</h3>
-<p>查詢特定檔案格式可以用「filetype:<strong> 格式</strong> <strong>關鍵字</strong>」來搜尋。<br>
-舉例「filetype:<strong>doc</strong> <strong>統一超商 財務報表</strong>」可以搜尋與「 <code>統一超商 財務報表</code> 」有關且為「 <code>.doc</code> 」的文件。也可以使用「ext:<strong>doc</strong>」來精確搜尋副檔名。</p>
-<p><img src="06.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="網頁在-google-的-cache-快取">網頁在 Google 的 Cache (快取)</h3>
-<p>可以透過「cache:“<strong>網域</strong>”」來搜索網站在 Google 中的緩存。<br>
-舉例「cache:“<strong>reddit.com</strong>”」可以用來搜尋「 <code>reddit.com</code> 」在 Google 中的緩存。</p>
-<p><img src="08.png" alt=""></p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="單字的解釋-定義">單字的解釋、定義</h3>
-<p>可以透過「define:<strong> 單字</strong>」來搜索關於該單字的解釋、定義。(前提是 Google 要有收入該單字)<br>
- 舉例「define:<strong> 科普</strong>」可以用來搜尋「 <code>科普</code> 」在 Google 中解釋、定義。</p>
-<p><img src="10.png" alt=""></p>
-</blockquote>
-<hr>
-<h2 id="其他運用">其他運用</h2>
-<h3 id="混合查詢">混合查詢</h3>
-<p>舉例「site:“<strong>i.4cdn.org</strong>” filetype:<strong>pdf</strong> intitle:<strong>test</strong>」。<br>
-<img src="11.png" alt=""></p>
-<hr>
-<h3 id="強調搜尋-排除搜尋">強調搜尋、排除搜尋</h3>
-<p>關鍵字前加上「<strong>+</strong>」可以強調搜尋，加上「<strong>-</strong>」則排除相關資訊。<br>
-舉例以下搜尋結果會顯示關於「 <code>台灣風景</code> 」的資訊，尤其「 <code>台南</code> 」，並且排除關於「 <code>台北</code> 」關鍵字的資訊。<br>
-<img src="12.png" alt=""></p>
-<hr>
-<h3 id="精確搜尋">精確搜尋</h3>
-<p>用雙引號「<strong>&quot;</strong>」將關鍵字框起可以更加精確的搜尋。<br>
-舉例將搜尋「<strong>台大醫院</strong>」改為「<strong>“台大醫院”</strong>」<br>
-<img src="13.png" alt=""></p>
-<hr>
-<h3 id="更多用法請自行上網搜尋">更多用法請自行上網搜尋</h3>
-<p>以下附上網路上其他人製作的表格：</p>
-<p><a href="https://i.imgur.com/MesRgnG.png"><img src="14.png" alt="圖源: imgur.com"></a></p>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Google</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Maslow&#39;s Hierarchy Of Needs</title>
-    <url>/posts/Maslow-s-Hierarchy-Of-Needs/</url>
-    <content><![CDATA[<p>Maslow 將心理需求與生理需求分成了五個層級來探討…</p>
-<span id="more"></span>
-<hr>
-<h2 id="起源">起源</h2>
-<p><strong>Maslow’s Hierarchy Of Needs (馬斯洛 需求層次理論)</strong> 是由一名美國心理學家 <a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%C2%B7%E9%A9%AC%E6%96%AF%E6%B4%9B"><strong>Abraham Harold Maslow</strong></a> 於 <strong>1943</strong> 年《<strong>心理學評論</strong>》的論文〈<strong>人類動機的理論 (A Theory of Human Motivation)</strong>〉 中所提出的理論。該理論屬於<strong>心理健康</strong>的理論，主張認為人類天生的需求是首先要被滿足的，隨後更進一步滿足自己，最後達成自我實現。</p>
-<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
-<hr>
-<h2 id="需求比較">需求比較</h2>
-<p>凡是人便有需求，<strong>食衣住行娛樂</strong>皆是。<br>
-而這些需求有<strong>輕重緩急</strong>之分，舉例「 <code>食</code> 」相較「 <code>娛樂</code> 」來的更重要，因此在滿足「 <code>食</code> 」的需求之前，「 <code>娛樂</code> 」先放一旁。又好比說「 <code>安全</code> 」與「 <code>理想</code> 」來說，當一個人面臨<strong>威脅自身安全</strong>的處境而又<strong>無法解決</strong>時，是<strong>沒</strong>有心思去<strong>思考自己的理想</strong>的，安全相對是更重要的，也正是大家常聽到的「<strong>安全第一</strong>」。</p>
-<p>Maslow 將這些需求進行<strong>排列</strong>、<strong>分級</strong>就形成了著名的「<strong>需求層級圖</strong>」。</p>
-<hr>
-<h2 id="需求層級">需求層級</h2>
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
-<p>這些需求被以<strong>優先需要的程度</strong> <code>高至低</code> 分別為 <code>下到上</code> 分級，及形成上圖的<strong>需求層級金字塔</strong>。<br>
-以下為生理層面的需求：</p>
-<blockquote>
-<h3 id="physiological-needs-生理需求">Physiological Needs (生理需求)</h3>
-<p>級別最低，在整個需求層級金字塔最底部，也就是<strong>最優先需要</strong>的層級。<br>
-其中就包括 <code>空氣</code> 、 <code>食物</code> 、 <code>水</code> 、 <code>睡眠</code> 、 <code>性</code> 等。<br>
-這些是使人能存活下去的主要條件。當不被滿足時，其他層級的需求相對不再重要，甚至可能被捨棄，像是「<a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">烏拉圭空軍 571 號班機空難</a>」事件中，遇難的 45 人中，只剩 16 名生還者，使這些生還者能夠生存的關鍵在於，他們選擇<strong>吃了其他同伴的遺體</strong>，聽起來殘忍，但也正是因為這個選擇滿足了生理需求才能活下來。</p>
-</blockquote>
-<blockquote>
-<p>「<em>倖存者的食物很少：幾塊巧克力、什錦點心和幾瓶紅酒。墜機後的幾天裡，眾人將食物分成很少的量，以免把他們微薄的補給用盡。費托還設計一種把雪融成水的辦法，他把雪放上金屬座位。用陽光把雪融掉後滴入空酒瓶。即便分配很嚴格，他們的食物還是很快地減少。白雪皚皚的山上不會有天然植物或動物存活。眾人作出集體決定，吃死去戰友的屍體。這個決定不是輕易做出的，因為大多死難者都是親密的朋友和同學。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">Wiki 維基百科</a></p>
-</blockquote>
-<blockquote>
-<h3 id="safety-needs-安全需求">Safety Needs (安全需求)</h3>
-<p>為次要需求層級，在滿足了 <strong>Physiological (生理)</strong> 層面的需求後，生物的基本生存條件就被鞏固了，但以群觀視角來說，依舊無法滿足真正「<strong>穩定的生存</strong>」。<br>
-對一般動物而言，身處的<strong>環境</strong>及自己處在<a href="https://zh.wikipedia.org/wiki/%E9%A3%9F%E7%89%A9%E9%8F%88">食物鏈</a>的哪一環決定了自己的安全條件如何。而人類不只是如此，人類還必須得面臨在人類社會中的 <code>經濟</code> 問題。<br>
-諸如 <code>人身安全</code> 、 <code>生活安穩</code> 、 <code>疾病或痛苦</code> 、 <code>威脅</code> 等，只要是影響到<strong>自身生命安全</strong>的因素，皆是屬於該層級。</p>
-</blockquote>
-<hr>
-<p>以上皆是為了「生存」的生理需求，<br>
-從這裡才開始有了心理需求：</p>
-<blockquote>
-<h3 id="love-and-belonging-needs-愛與歸屬感需求">Love And Belonging Needs (愛與歸屬感需求)</h3>
-<p>又稱「<strong>社交需求</strong>」。既然是「<strong>社交</strong>」就<strong>不</strong>會只有<strong>自己</strong>。<br>
-<strong>生理需求</strong>中所作的一切都只是<strong>為了自己</strong>，讓自己能夠活下去，但在此層級中，開始會<strong>為他人著想</strong>、<strong>付出</strong>。<br>
-開始有了 <code>親情</code> 、 <code>友誼</code> 、 <code>愛情</code> 等需求，可以為了愛付出貢獻，甚至是無私的奉獻。</p>
-</blockquote>
-<blockquote>
-<h3 id="esteem-needs-尊嚴需求">Esteem Needs (尊嚴需求)</h3>
-<p>屬於高級需求。在文明社會中，大家所追求的基本上就是該層級的相關內容。<br>
-尊嚴不只是<strong>他人對自己</strong>，也包括<strong>自己對自己</strong>，分別又稱<strong>外部尊重</strong>及<strong>內部尊重</strong>。<br>
-舉例 <code>社會地位</code> 、 <code>成就</code> 、 <code>名聲</code> 、 <code>被他人認同</code> 、 <code>被他人尊重</code> 屬於<strong>外部尊重</strong>；<br>
- <code>自我認知價值</code> 、 <code>自信(自我肯定)</code> 、 <code>自尊</code> 則屬於<strong>內部尊重</strong>。</p>
-</blockquote>
-<blockquote>
-<h3 id="need-for-self-actualization-自我實現需求">Need For Self-Actualization (自我實現需求)</h3>
-<p>為最高層級的需求。主要是指獲得更高<strong>人生境界</strong>的需求。<br>
-像是<strong>發覺自我潛能</strong>、<strong>做到自我實現</strong>等。<br>
-聽起來很複雜，但例子就在生活周遭： <code>愛護動物而選擇吃素</code> 、 <code>運動國手勤奮訓練為了超越自己</code> 、 <code>為了幫助弱勢族群而捐款</code> ，是一種衍生性需求。</p>
-</blockquote>
-<hr>
-<blockquote>
-<h3 id="over-actualization-超自我實現">Over Actualization (超自我實現)</h3>
-<p>Maslow 在晚期提出的延伸理論。<br>
-當人們充分的滿足 <strong>Need For Self-Actualization (自我實現需求)</strong> 時，所出現短暫的「<strong>高峰體驗</strong>」。<br>
-可能是 <code>成就感</code> 或 <code>某種體悟</code> ，通常都是在進行或完成一件事情時，<strong>深刻體驗</strong>到的感覺，通常<strong>藝術家</strong>或是<strong>音樂家</strong>較常體會到。<br>
-「<em>一位音樂家，在演奏音樂時，所感受到的一股「忘我」的體驗。一位藝術家在畫圖時，感受不到時間的消逝，他在畫圖的每一分鐘，對他來說跟一秒一樣快，但每一秒卻活的比一個禮拜還充實。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">Wiki 維基百科</a></p>
-</blockquote>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<p>《Wiki 維基百科 - 需求層級理論》<a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">https://zh.wikipedia.org/wiki/ 需求层次理论</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Management Science</category>
-      </categories>
-      <tags>
-        <tag>Psychology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to use GnuPG to generate PGP key？</title>
-    <url>/posts/GnuPG-Generating-PGP-Key/</url>
-    <content><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/GnuPG#/media/File:Gnupg_logo.svg"><img src="cover.jpg" alt="GnuPG Logo, 圖源於 Wiki 維基百科"></a></p>
-怎麼使用 GnuPG 生成 PGP 金鑰？
-<span id="more"></span>
-<hr>
-<h2 id="what-is-gnupg">What is GnuPG？</h2>
-<p><code>GNU Privacy Guard</code>  簡稱  <code>GnuPG</code> 、 <code>GPG</code> ，主要是用於數位 <code>加密</code> 、 <code>簽章</code> 的軟體。(<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86"> <code>Asymmetric cryptography</code> </a> 金鑰的管理)</p>
-<p>更詳細介紹請見《<a href="https://zh.wikipedia.org/zh-tw/GnuPG">Wiki 維基百科 - GnuPG</a>》</p>
-<hr>
-<h2 id="install">Install</h2>
-<p>Ubuntu</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> gnupg2
-<span class="token comment"># OR</span>
-<span class="token function">apt-get</span> <span class="token function">install</span> gnupg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>Mac</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> gnupg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<hr>
-<h2 id="generating-a-new-keypair">Generating a new keypair</h2>
-<ul>
-<li>如果你想 <code>簡單快速</code> 的 <code>生成金鑰</code> ，可以使用指令：</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --gen-key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>想 <code>手動選擇</code> 更完整的選項可以使用指令：</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --full-gen-key<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<hr>
-<p>如果是  <code>--full-gen-key</code>  則會顯示：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Please <span class="token keyword">select</span> what kind of key you want:
-   <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> RSA and RSA <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
-   <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> DSA and Elgamal
-   <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> DSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
-   <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> RSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span> Existing key from card
-Your selection?<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>輸入數字選擇自己要的 <code>加密演算法類型</code> ，或者直接按下 Enter 使用預設。</p>
-<p>接著是輸入 <code>金鑰的長度</code> 及 <code>金鑰時效</code> 設定：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">RSA keys may be between <span class="token number">1024</span> and <span class="token number">4096</span> bits long.
-What keysize <span class="token keyword">do</span> you want? <span class="token punctuation">(</span><span class="token number">3072</span><span class="token punctuation">)</span> <span class="token comment"># 輸入金鑰位元長度，1024 ～ 4096 之間</span>
-Requested keysize is <span class="token number">3072</span> bits<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Please specify how long the key should be valid.
-         <span class="token number">0</span> <span class="token operator">=</span> key does not expire
-      <span class="token operator">&lt;</span>n<span class="token operator">></span>  <span class="token operator">=</span> key expires <span class="token keyword">in</span> n days
-      <span class="token operator">&lt;</span>n<span class="token operator">></span>w <span class="token operator">=</span> key expires <span class="token keyword">in</span> n weeks
-      <span class="token operator">&lt;</span>n<span class="token operator">></span>m <span class="token operator">=</span> key expires <span class="token keyword">in</span> n months
-      <span class="token operator">&lt;</span>n<span class="token operator">></span>y <span class="token operator">=</span> key expires <span class="token keyword">in</span> n years
-Key is valid for? <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 選擇金鑰過期設定</span>
-Key does not expire at all
-Is this correct? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span> y <span class="token comment"># 輸入「y」確認</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>接著就是輸入主要的資訊了 (使用  <code>--gen-key</code>  參數會直接跳到這)</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Terminal</span>
-Real name: Alpaca0x0 <span class="token comment"># 你的名稱</span>
-Email address: alpaca0x0@example.com <span class="token comment"># 你的 Email</span>
-Comment: My First PGP Key. <span class="token comment"># 註釋 (使用 full-gen-key 參數才會顯示)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>最後確認資訊<br>
-若有誤可以輸入「 <code>N</code> 」修改 <code>名稱</code> ，輸入「 <code>E</code> 」修改  <code>Email</code> 。</p>
-<p>輸入「 <code>O</code> 」進行確認</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">You selected this <span class="token environment constant">USER</span>-ID:
-    <span class="token string">"Alpaca0x0 &lt;alpaca0x0@example.com>"</span>
-
-Change <span class="token punctuation">(</span>N<span class="token punctuation">)</span>ame, <span class="token punctuation">(</span>E<span class="token punctuation">)</span>mail, or <span class="token punctuation">(</span>O<span class="token punctuation">)</span>kay/<span class="token punctuation">(</span>Q<span class="token punctuation">)</span>uit? O<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>之後會要求你輸入密碼，可以設定也可以留空。</p>
-<p>完成後會顯示該金鑰的資訊：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span>
-      36EECBC209A936F5AF9B25A469219C5CB53AF7C3
-uid                      Alpaca0x0 <span class="token operator">&lt;</span>alpaca0x0@example.com<span class="token operator">></span>
-sub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>E<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>「 <code>rsa3072</code> 」指的是「 <code>RSA</code> 」算法，金鑰長度「 <code>3072</code> 」位元</li>
-<li>「 <code>36EECBC209A936F5AF9B25A469219C5CB53AF7C3</code> 」就是  <code>Key ID</code></li>
-</ul>
-<hr>
-<h2 id="displaying-keys">Displaying keys</h2>
-<h3 id="displaying-public-keys">Displaying public keys</h3>
-<p>要 <code>查看</code> 已有的 <code>公鑰</code> ，使用指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --list-public-keys
-<span class="token comment"># OR</span>
-gpg --list-keys
-<span class="token comment"># OR</span>
-gpg -k<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>顯示</code> 已有的 <code>公鑰</code> ：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span>
-      36EECBC209A936F5AF9B25A469219C5CB53AF7C3
-uid           <span class="token punctuation">[</span>ultimate<span class="token punctuation">]</span> Alpaca0x0 <span class="token operator">&lt;</span>alpaca0x0@example.com<span class="token operator">></span>
-sub   rsa3072 <span class="token number">2021</span>-07-16 <span class="token punctuation">[</span>E<span class="token punctuation">]</span> <span class="token punctuation">[</span>expires: <span class="token number">2023</span>-07-16<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>也可以在後方加上 <code>關鍵字</code>  ( <code>名稱</code> 、 <code>Email</code> )：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --list-keys &lt;Keyword></span>
-gpg --list-keys alpaca0x0
-<span class="token comment"># OR</span>
-gpg --list-keys alpaca
-<span class="token comment"># OR</span>
-gpg --list-keys example.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="displaying-secret-keys">Displaying secret keys</h3>
-<p><code>查看</code> 已有的 <code>私鑰</code> ，使用指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --list-secret-keys <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>與  <code>--list-public-keys</code>  用法類似，一樣可以加入關鍵字查詢：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --list-secret-keys &lt;Keyword></span>
-gpg --list-secret-keys alpaca0x0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="exporting-key">Exporting key</h2>
-<h3 id="exporting-public-key">Exporting public key</h3>
-<p>若要 <code>導出公鑰</code> ，則使用指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --export <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>但這樣導出的密鑰是  <code>binary format</code> ，所以使用參數「 <code>--armor, -a</code> 」來使其輸出為  <code>ASCII-Code format</code> 。<br>
-使用「 <code>--output, -o</code> 」或者「 <code>&gt;</code> 」將輸出結果寫入檔案：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --export --armor &lt;Key-ID> > &lt;Output-File-Name></span>
-<span class="token comment"># gpg --export --armor --output &lt;Output-File-Name> &lt;Key-ID></span>
-gpg --export --armor --output public_key.pub 36EECBC209A936F5AF9B25A469219C5CB53AF7C3
-<span class="token comment"># OR</span>
-gpg --export --armor 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 <span class="token operator">></span> public_key.pub
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="exporting-secret-key">Exporting secret key</h3>
-<p><code>導出私鑰</code> 使用指令：</p>
-<pre class="line-numbers language-none"><code class="language-none">gpg --export-secret-keys &lt;Key-ID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>與  <code>--export</code>  用法相同<br>
- p.s. 若是當初生成鑰匙時有輸入密碼，則導出時也需要輸入驗證。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
-gpg --export-secret-keys --armor 36EECBC209A936F5AF9B25A469219C5CB53AF7C3 <span class="token operator">></span> secret_key.asc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="sending-the-key-to-the-key-server">Sending the key to the key server</h2>
-<p><code>公鑰</code> 可以上傳至公開的  <code>Keyserver</code>  上讓他人能方便下載你的公鑰。<br>
-上傳的指令是：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg --send-keys 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
-<span class="token comment"># 可以使用「--keyserver」參數指定上傳的伺服器</span>
-gpg --send-keys --keyserver <span class="token operator">&lt;</span>Server<span class="token operator">></span> 0x<span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>這邊要特別注意的是，大多數時候，在  <code>&lt;Key-ID&gt;</code>  的前方要加上「 <code>0x</code> 」(Hexadecimal)。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
-gpg --send-keys --keyserver pgp.mit.edu 0x36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="deleting-key">Deleting key</h2>
-<p><code>刪除</code> 本地的 <code>公鑰</code> ，使用指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --delete-key &lt;Key-ID></span>
-gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>但當我們執行時，會發現終端返回這則訊息：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpg: there is a secret key <span class="token keyword">for</span> public key <span class="token string">"36EECBC209A936F5AF9B25A469219C5CB53AF7C3"</span><span class="token operator">!</span>
-gpg: use option <span class="token string">"--delete-secret-keys"</span> to delete it first.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>這是因為你還留有該 <code>公鑰</code> 的 <code>私鑰</code> ，所以先刪除 <code>私鑰</code> ，再刪除 <code>公鑰</code> ：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Delete secret keys</span>
-gpg --delete-secret-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span>
-<span class="token comment"># Delete public keys</span>
-gpg --delete-keys <span class="token operator">&lt;</span>Key-ID<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># e.g.</span>
-gpg --delete-secret-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3
-gpg --delete-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>或者使用「 <code>--delete-secret-and-public-keys</code> 」一次刪除 <code>公私鑰</code> ：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --delete-secret-and-public-keys &lt;Key-ID></span>
-gpg --delete-secret-and-public-keys 36EECBC209A936F5AF9B25A469219C5CB53AF7C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="importing-key">Importing key</h2>
-<p>要匯入金鑰主要有兩種方式</p>
-<p>從檔案匯入 (本地端匯入)：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --import &lt;Key-File></span>
-gpg --import Private_OR_Public.key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>從 Key-Server 上匯入 (遠端匯入)：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --keyserver &lt;Server> --recv-key 0x&lt;Key-ID></span>
-gpg --keyserver keyserver.ubuntu.com --recv-key 0xA91A9E8A0EE6BAB3742464861DF369D42499F3F1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>如果要查詢該 Key-Server 上的鑰匙資訊，可以使用指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gpg --keyserver &lt;Server> --search-key &lt;Key-ID></span>
-gpg --keyserver keyserver.ubuntu.com --search-key 0xA91A9E8A0EE6BAB3742464861DF369D42499F3F1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="reference">Reference</h2>
-<p>《GnuPG documentation》<a href="https://gnupg.org/documentation/manpage.html">https://gnupg.org/documentation/manpage.html</a></p>
-]]></content>
-      <categories>
-        <category>Tools Using</category>
-      </categories>
-      <tags>
-        <tag>Cryptography</tag>
-        <tag>PGP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Monty-Hall Problem 三門問題｜選擇的順序改變了機率？並非如此！</title>
-    <url>/posts/MontyHall-Problem/</url>
-    <content><![CDATA[<p><strong>三分之一</strong>的機率中，可以透過<strong>更換選擇</strong>來<strong>提高機率</strong>，這是曾經讓許多人摸不著頭緒的 Monty-Hall Problem (三門問題)，你能參透其中的答案嗎？</p>
-<span id="more"></span>
-<hr>
-<h2 id="起源">起源</h2>
-<p><strong>Monty-Hall Problem</strong> 又稱<strong>三門問題</strong>、<strong>山羊問題</strong>、<strong>蒙提霍爾問題</strong>。<br>
-起源是一個源自<a href="https://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88%E8%AE%BA"><strong> Game Theory (博奕論)</strong></a> 的數學遊戲問題，最早推測可能出自 1963 年的一個美國電視遊戲節目 - 「<strong>Let’s Make a Deal (讓我們一起交易)</strong>」，其中該節目的主人名為「<strong>Monty Hall</strong>」，故稱做「<strong>Monty-Hall Problem</strong>」。</p>
-<hr>
-<h2 id="三門遊戲">三門遊戲</h2>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src="01.png" alt="圖源: Wiki 維基百科"></a></p>
-<p>在節目中，參賽者的面前會有<strong>三道關閉的門</strong>，其中一道門後有著一輛<strong>汽車</strong>，其餘兩道門後則是<strong>山羊</strong> (我也不知道為啥是山羊…)，若是參賽者選中門後為汽車的門，那麼即可贏得汽車。</p>
-<p>遊戲開始後，主持人會要求參賽者<strong>選擇一道門</strong>，不論這道門後是<strong>汽車</strong>或者<strong>山羊</strong>，主持人都會開啟 <code>參賽者所選的門之外，其餘兩道門中含有山羊的那道門</code>  (主持人是知道門後狀況的)。</p>
-<p>舉例，三道門分別為  <code>A</code> 、 <code>B</code> 、 <code>C</code>  ，參賽者選擇了  <code>C</code>  ，若是  <code>B</code> 、 <code>C</code>  門後皆為 <code>山羊</code> ，那麼主持人則會開啟  <code>B</code>  門；若是  <code>A</code> 、 <code>B</code>  門後為山羊，那麼主持人隨機選擇開啟  <code>A</code>  或  <code>B</code>  門。</p>
-<p>到目前為止沒什麼太大問題，這時候我們探討的核心問題是…<br>
-「在主持人打開一道背後是山羊的門後，會詢問參賽者<strong>是否要更換剛剛所選的門</strong>，若是選擇換門，那麼參賽者贏得汽車的的<strong>機率是否會增加</strong>？」</p>
-<p>聽起來很荒謬對吧！換不換門，其實對於結果並不會改變才對。<br>
-但若是我告訴你，這的確會使得贏得汽車的機率提高至 <strong>1/2</strong> 呢？</p>
-<hr>
-<h2 id="驗證">驗證</h2>
-<p>為了方便探討機率，我們實際列舉所有可能性:</p>
-<blockquote>
-<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code></p>
-<ul>
-<li>不換門
-<ul>
-<li>參賽者堅持選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者堅持選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者堅持選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-</ul>
-</li>
-</ul>
-<p>由此可知，贏得 <code>汽車</code> 機率為  <code>1/3</code></p>
-<ul>
-<li>換門
-<ul>
-<li>參賽者選擇  <code>A</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>參賽者選擇  <code>B</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>參賽者選擇  <code>C</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>參賽者選擇  <code>C</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>A</code>  門，獲得 <code>山羊</code></li>
-</ul>
-</li>
-</ul>
-<p>欸？贏得 <code>汽車</code> 的機率變成  <code>1/2</code>  ！？</p>
-</blockquote>
-<p>這太不符合常理了，怎麼可能在選擇過後機率發生改變！？<br>
-別擔心，帶你繼續看下去。<br>
-但在解答之前，喜歡解題的朋友，可以先停在這邊好好思考一下。</p>
-<hr>
-<h2 id="解答">解答</h2>
-<p>其實，機率是沒有變的，一直都是  <code>1/2</code> ！<br>
-在一開始的選擇當中，三道門選一道的機率確實是  <code>1/3</code> ，但在主持人開啟一道門後 (後面是山羊的門)，這等於刪除了一道門，此刻若是再給參賽者一次選擇，這次的選擇機率將會是  <code>1/2</code> ，重點在於，我們必須將前後兩次選擇視為 <strong> <code>獨立事件</code> </strong>，真正影響參賽者贏得汽車機率的關鍵在於<strong>第二次</strong>的選擇。</p>
-<p>我們再來重新列舉一次可能性:</p>
-<blockquote>
-<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code> <br>
-並且 主持人已經開啟一道門 ( <code>第一次</code> 選擇不重要，此指的選擇是 <code>第二次</code> 選擇)</p>
-<ul>
-<li>不換門
-<ul>
-<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
-<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
-<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
-</ul>
-</li>
-</ul>
-<p>機率為  <code>1/2</code></p>
-</blockquote>
-<p>沒錯，這道陷阱題使人容易忽略了參賽者選擇汽車那道門時，主人持人選擇刪除門的可能性是有<strong>兩種</strong>的。</p>
-<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
-<hr>
-<h2 id="結論">結論</h2>
-<p>這麼一來你知道為什麼了嗎？(如果還是很矇，可以再重頭看一次 XD)<br>
- 有時候看一件事物時， <strong>第一直覺</strong> 有可能會是 <strong>錯</strong> 的，當你深信自己的第一直覺而不求證時，很容易造成如同該題目一般的狀況，一直反覆的問自己為什麼，總是不能理解為什麼機率為 <strong>1/2</strong> 。<br>
-那是因為題目一開始就告訴你機率是 <strong>1/3</strong> ，而我們在看到題目是「<strong>三道門選一道</strong>」的時候，就對此深信不已。</p>
-]]></content>
-      <categories>
-        <category>Interesting</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Public-key Cryptography</title>
-    <url>/posts/Public-key%20Cryptography/</url>
-    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
-<span id="more"></span>
-<hr>
-<h3 id="前言">前言</h3>
-<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/posts/Symmetric-key%20Algorithm/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
-<hr>
-<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
-<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
-<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
-<p><img src="01.png" alt="B 群組成員偽造 A 群組身份發送訊息"></p>
-<hr>
-<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
-<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
-<ul>
-<li><strong>公鑰、私鑰</strong>
-<ul>
-<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
-<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
-</ul>
-</li>
-</ul>
-<p><img src="02.png" alt="雙方生成公私鑰"></p>
-<ul>
-<li><strong>釋出公鑰</strong><br>
-將公鑰交給對方，用於給對方在之後進行解密使用。</li>
-</ul>
-<p><img src="03.png" alt="雙方交換公鑰"></p>
-<ul>
-<li><strong>加密、解密</strong>
-<ul>
-<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
-<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
-<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。<br>
-<img src="04.png" alt="加密解密"></li>
-<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
-</ul>
-</li>
-</ul>
-<p><img src="05.png" alt="辨識身份"></p>
-<hr>
-<h3 id="運用">運用</h3>
-<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
-<p>P.S. 非對稱加密中常見的加密演算法有：<br>
-<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
-有興趣的朋友可以點擊連結或自行上網研究。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>Cryptography</category>
-      </categories>
-      <tags>
-        <tag>Cryptography</tag>
-        <tag>Public-key Cryptography</tag>
-        <tag>Digital Signature</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「𝝿」到底是什麼？度、弧度又是...？</title>
-    <url>/posts/PI/</url>
-    <content><![CDATA[圓周率「𝝿」是什麼？而熟悉的一圈為 360度 是怎麼被訂定的？ 弧度又是什麼？
-<span id="more"></span>
-<hr>
-<h2 id="圓周率π">圓周率「𝝿」</h2>
-<p>圓周率<strong>約</strong>為「 <code>3.1415926</code> 」，它被歸類在<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%B8%B8%E6%95%B0"><strong>常數</strong></a>中，且是<a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%90%86%E6%95%B8"><strong>無理數</strong></a>，是個 <code>無限不循環小數</code> 同時也是一個<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E8%B6%8A%E6%95%B8"> <code>超越數</code> </a>，數學用小寫希臘字母「 <code>𝝿</code> 」符號表示，發音相似於「 <code>pie</code> 」，源自希臘語「 <code>περίμετρος</code> ( <code>周長</code> )」的首字母。</p>
-<hr>
-<h2 id="圓周率的意思是">圓周率的意思是？</h2>
-<p>圓周率讓人感覺很抽象，但其實就只是指「<strong>一半的圓周</strong>與<strong>半徑</strong>之<strong>比</strong>」，又或者可以說是「<strong>圓周</strong>與<strong>直徑</strong>之<strong>比</strong>」。也就是代表一圓的 <code>周長</code> 與 <code>直徑</code> 的 <code>比例關係</code>  ( <code>比值</code> )。</p>
-<p>由於 <code>周長</code> 是該圓 <code>直徑</code> 的 <code>3.1415926....</code>  倍，因此將這個無理數定義成「 <code>𝝿</code> 」符號，命名為 <code>圓周率</code> 。所以才會出現 <code>周長</code> 算 <code>圓周長</code> 的公式「 <code>2r 𝝿</code> 」。( <code>r</code>  為半徑)</p>
-<hr>
-<h2 id="degree-與-radian">degree 與 radian</h2>
-<p><code>degree</code>  與  <code>radian</code>  都是表示 <code>角</code> 的大小，將其 <code>單位量化</code> 後的表示方式。</p>
-<p>其中較常被使用的是「 <code>degree</code> 」也就是所謂的「 <code>度</code> 度量」，簡稱「 <code>deg</code> 」。(e.g. 一圈等於 360 deg)<br>
- 而「 <code>radian</code> 」中文翻譯為「 <code>弧度</code> 」或者「 <code>弳度</code> 」，簡稱「 <code>rad</code> 」。<br>
-其中「 <code>弳</code> 」這個字很有趣，它是<strong>弧度</strong>的「 <code>弧</code> 」與<strong>半徑</strong>的「 <code>徑</code> 」取字旁而選的字。</p>
-<hr>
-<h2 id="圓弧-產生出-角度單位">圓弧 產生出 角度單位</h2>
-<p>一開始的圓在訂定角度單位之前，先稱某角為  <code>theta</code> ，該圓半徑為  <code>r</code> ，而  <code>theta</code>  與某弧長  <code>S</code>  與  <code>r</code>  有絕對的 <code>比例關係</code> ，這個才是一切的<strong>重點</strong>…</p>
-<p>「角  <code>theta</code>  對  <code>S</code>  與  <code>r</code>  之間的 <code>比例關係</code> 」才是這些<strong>角度單位</strong>的指標。(當 <code>半徑 r 相同</code> ，且 <code>弧長 S 越長</code> ，則  <code>角 theta 越大</code> )</p>
-<blockquote>
-<ul>
-<li><strong>弳 (radian, rad)</strong><br>
- 得到了比例「 <code>S / r</code> 」後… 欸等等！這麼一來不就是一個 <code>單位量</code> 了嗎？<br>
-對的，這個 <code>單位量</code> 就命名做「 <code>radian</code> 」簡稱「 <code>rad</code> 」中文稱作「 <code>弳</code> 」。<br>
-因此 <code>角 theta</code>  可以表示成「 <code>theta = S / r</code> 」即是使用 <code>弳度</code> 表示該  <code>theta</code>  角的大小。<br>
-就這樣，現在大家所使用的「 <code>弧度</code> 」被定義了， <code>弧</code> 衍生出了表示 <code>角大小</code> 的 <code>單位量</code> 。</li>
-</ul>
-<p>若定義 <code>圓弧 S</code>  為 <code>圓周長</code> ，可以寫成「 <code>S = 2r 𝝿</code> 」。<br>
-因此將表示 <code>角大小</code> 的 <code>弳度</code> 式子「 <code>theta = S / r</code> 」寫作「 <code>theta = (2r 𝝿) / r</code> 」化簡得「 <code>theta = 2 𝝿</code> 」。因此 <code>一周角</code> 相當於「 <code>2 𝝿</code> 」單位  <code>rad</code>  。</p>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>度 (degree, deg)</strong><br>
- 若我們將 <code>圓周長 S</code>  劃分成  <code>360 等分</code> <br>
-並且將其中 <code>一等份</code> 所對應的 <code>角度大小</code> 當作一個 <code>單位</code> ，這單位就叫做 <code>degree</code>  簡稱 <code>deg</code> ，也就是大家目前常用的 <code>度</code> 度量。<br>
- <code>1 deg</code>  也可以寫作 「 <code>1°</code> 」，所對應的弧長為  <code>(2 𝝿 / 360) / r</code> 。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="補充">補充</h2>
-<blockquote>
-<h4 id="梯度-gradian-grad">梯度 (Gradian, GRAD)</h4>
-<p>這也是一個單位，其定義為 <code>一圓周長</code> 平均分為  <code>400</code>  等分，每一等份為  <code>1 grad</code>  。<br>
-由於寫在這是因為，這東西真的比較少人在用，就不聚焦在這了。</p>
-</blockquote>
-<blockquote>
-<h4 id="換算">換算</h4>
-<p><strong> <code>一周角</code> </strong> = <strong> <code>360 deg</code> </strong> = <strong> <code>2 𝝿 rad</code> </strong> = <strong> <code>400 grad</code> </strong></p>
-</blockquote>
-<blockquote>
-<h4 id="無單位">無單位</h4>
-<p>有些人不能理解為什麼說  <code>deg</code>  與  <code>rad</code>  是 <code>無單位</code> 的… (<s>對就是我</s>)<br>
- 就好比常見的寬螢幕 <code>長寬比</code> 為「 <code>16:9</code> 」，試問  <code>16</code>  與  <code>9</code>  的單位是什麼一樣。<br>
-「 <code>S / r</code> 」該算式只是用來表示 <code>圓周長</code> 與 <code>半徑</code> 之間的比例關係，自然就不需要有 <code>單位</code> 。</p>
-</blockquote>
-<hr>
-<h2 id="參考資料">參考資料</h2>
-<p>《Wiki 維基百科 - 圓周率》<a href="https://zh.wikipedia.org/wiki/%E5%9C%93%E5%91%A8%E7%8E%87">https://zh.wikipedia.org/wiki/ 圓周率</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《Management 01》組織、管理者、四大功能｜管理 與 被管理</title>
     <url>/posts/Management-Science/</url>
     <content><![CDATA[<p>為什麼學習<strong>管理學</strong>？因為在這個<strong>社會</strong>，你不是<strong>管理別人</strong>、就是<strong>被人管理</strong>！你打算怎麼選擇？</p>
@@ -1896,6 +1607,677 @@ gpg --keyserver keyserver.ubuntu.com --search-key 0xA91A9E8A0EE6BAB3742464861DF3
       </categories>
       <tags>
         <tag>Management-Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maslow&#39;s Hierarchy Of Needs</title>
+    <url>/posts/Maslow-s-Hierarchy-Of-Needs/</url>
+    <content><![CDATA[<p>Maslow 將心理需求與生理需求分成了五個層級來探討…</p>
+<span id="more"></span>
+<hr>
+<h2 id="起源">起源</h2>
+<p><strong>Maslow’s Hierarchy Of Needs (馬斯洛 需求層次理論)</strong> 是由一名美國心理學家 <a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%AF%E6%8B%89%E7%BD%95%C2%B7%E9%A9%AC%E6%96%AF%E6%B4%9B"><strong>Abraham Harold Maslow</strong></a> 於 <strong>1943</strong> 年《<strong>心理學評論</strong>》的論文〈<strong>人類動機的理論 (A Theory of Human Motivation)</strong>〉 中所提出的理論。該理論屬於<strong>心理健康</strong>的理論，主張認為人類天生的需求是首先要被滿足的，隨後更進一步滿足自己，最後達成自我實現。</p>
+<p><a href="https://upload.wikimedia.org/wikipedia/zh/e/e0/Abraham_Maslow.jpg"><img src="Abraham_Maslow.jpg" alt="Abraham Harold Maslow (圖源: Wiki 維基百科)"></a></p>
+<hr>
+<h2 id="需求比較">需求比較</h2>
+<p>凡是人便有需求，<strong>食衣住行娛樂</strong>皆是。<br>
+而這些需求有<strong>輕重緩急</strong>之分，舉例「 <code>食</code> 」相較「 <code>娛樂</code> 」來的更重要，因此在滿足「 <code>食</code> 」的需求之前，「 <code>娛樂</code> 」先放一旁。又好比說「 <code>安全</code> 」與「 <code>理想</code> 」來說，當一個人面臨<strong>威脅自身安全</strong>的處境而又<strong>無法解決</strong>時，是<strong>沒</strong>有心思去<strong>思考自己的理想</strong>的，安全相對是更重要的，也正是大家常聽到的「<strong>安全第一</strong>」。</p>
+<p>Maslow 將這些需求進行<strong>排列</strong>、<strong>分級</strong>就形成了著名的「<strong>需求層級圖</strong>」。</p>
+<hr>
+<h2 id="需求層級">需求層級</h2>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1280px-Maslow%27s_Hierarchy_of_Needs.svg.png"><img src="1280px-Maslow's_Hierarchy_of_Needs.svg.png.jpg" alt="需求層級圖 (圖源: Wiki 維基百科)"></a></p>
+<p>這些需求被以<strong>優先需要的程度</strong> <code>高至低</code> 分別為 <code>下到上</code> 分級，及形成上圖的<strong>需求層級金字塔</strong>。<br>
+以下為生理層面的需求：</p>
+<blockquote>
+<h3 id="physiological-needs-生理需求">Physiological Needs (生理需求)</h3>
+<p>級別最低，在整個需求層級金字塔最底部，也就是<strong>最優先需要</strong>的層級。<br>
+其中就包括 <code>空氣</code> 、 <code>食物</code> 、 <code>水</code> 、 <code>睡眠</code> 、 <code>性</code> 等。<br>
+這些是使人能存活下去的主要條件。當不被滿足時，其他層級的需求相對不再重要，甚至可能被捨棄，像是「<a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">烏拉圭空軍 571 號班機空難</a>」事件中，遇難的 45 人中，只剩 16 名生還者，使這些生還者能夠生存的關鍵在於，他們選擇<strong>吃了其他同伴的遺體</strong>，聽起來殘忍，但也正是因為這個選擇滿足了生理需求才能活下來。</p>
+</blockquote>
+<blockquote>
+<p>「<em>倖存者的食物很少：幾塊巧克力、什錦點心和幾瓶紅酒。墜機後的幾天裡，眾人將食物分成很少的量，以免把他們微薄的補給用盡。費托還設計一種把雪融成水的辦法，他把雪放上金屬座位。用陽光把雪融掉後滴入空酒瓶。即便分配很嚴格，他們的食物還是很快地減少。白雪皚皚的山上不會有天然植物或動物存活。眾人作出集體決定，吃死去戰友的屍體。這個決定不是輕易做出的，因為大多死難者都是親密的朋友和同學。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E7%83%8F%E6%8B%89%E5%9C%AD%E7%A9%BA%E8%BB%8D571%E8%99%9F%E7%8F%AD%E6%A9%9F%E7%A9%BA%E9%9B%A3">Wiki 維基百科</a></p>
+</blockquote>
+<blockquote>
+<h3 id="safety-needs-安全需求">Safety Needs (安全需求)</h3>
+<p>為次要需求層級，在滿足了 <strong>Physiological (生理)</strong> 層面的需求後，生物的基本生存條件就被鞏固了，但以群觀視角來說，依舊無法滿足真正「<strong>穩定的生存</strong>」。<br>
+對一般動物而言，身處的<strong>環境</strong>及自己處在<a href="https://zh.wikipedia.org/wiki/%E9%A3%9F%E7%89%A9%E9%8F%88">食物鏈</a>的哪一環決定了自己的安全條件如何。而人類不只是如此，人類還必須得面臨在人類社會中的 <code>經濟</code> 問題。<br>
+諸如 <code>人身安全</code> 、 <code>生活安穩</code> 、 <code>疾病或痛苦</code> 、 <code>威脅</code> 等，只要是影響到<strong>自身生命安全</strong>的因素，皆是屬於該層級。</p>
+</blockquote>
+<hr>
+<p>以上皆是為了「生存」的生理需求，<br>
+從這裡才開始有了心理需求：</p>
+<blockquote>
+<h3 id="love-and-belonging-needs-愛與歸屬感需求">Love And Belonging Needs (愛與歸屬感需求)</h3>
+<p>又稱「<strong>社交需求</strong>」。既然是「<strong>社交</strong>」就<strong>不</strong>會只有<strong>自己</strong>。<br>
+<strong>生理需求</strong>中所作的一切都只是<strong>為了自己</strong>，讓自己能夠活下去，但在此層級中，開始會<strong>為他人著想</strong>、<strong>付出</strong>。<br>
+開始有了 <code>親情</code> 、 <code>友誼</code> 、 <code>愛情</code> 等需求，可以為了愛付出貢獻，甚至是無私的奉獻。</p>
+</blockquote>
+<blockquote>
+<h3 id="esteem-needs-尊嚴需求">Esteem Needs (尊嚴需求)</h3>
+<p>屬於高級需求。在文明社會中，大家所追求的基本上就是該層級的相關內容。<br>
+尊嚴不只是<strong>他人對自己</strong>，也包括<strong>自己對自己</strong>，分別又稱<strong>外部尊重</strong>及<strong>內部尊重</strong>。<br>
+舉例 <code>社會地位</code> 、 <code>成就</code> 、 <code>名聲</code> 、 <code>被他人認同</code> 、 <code>被他人尊重</code> 屬於<strong>外部尊重</strong>；<br>
+ <code>自我認知價值</code> 、 <code>自信(自我肯定)</code> 、 <code>自尊</code> 則屬於<strong>內部尊重</strong>。</p>
+</blockquote>
+<blockquote>
+<h3 id="need-for-self-actualization-自我實現需求">Need For Self-Actualization (自我實現需求)</h3>
+<p>為最高層級的需求。主要是指獲得更高<strong>人生境界</strong>的需求。<br>
+像是<strong>發覺自我潛能</strong>、<strong>做到自我實現</strong>等。<br>
+聽起來很複雜，但例子就在生活周遭： <code>愛護動物而選擇吃素</code> 、 <code>運動國手勤奮訓練為了超越自己</code> 、 <code>為了幫助弱勢族群而捐款</code> ，是一種衍生性需求。</p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="over-actualization-超自我實現">Over Actualization (超自我實現)</h3>
+<p>Maslow 在晚期提出的延伸理論。<br>
+當人們充分的滿足 <strong>Need For Self-Actualization (自我實現需求)</strong> 時，所出現短暫的「<strong>高峰體驗</strong>」。<br>
+可能是 <code>成就感</code> 或 <code>某種體悟</code> ，通常都是在進行或完成一件事情時，<strong>深刻體驗</strong>到的感覺，通常<strong>藝術家</strong>或是<strong>音樂家</strong>較常體會到。<br>
+「<em>一位音樂家，在演奏音樂時，所感受到的一股「忘我」的體驗。一位藝術家在畫圖時，感受不到時間的消逝，他在畫圖的每一分鐘，對他來說跟一秒一樣快，但每一秒卻活的比一個禮拜還充實。</em>」 - <a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">Wiki 維基百科</a></p>
+</blockquote>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>《Wiki 維基百科 - 需求層級理論》<a href="https://zh.wikipedia.org/wiki/%E9%9C%80%E6%B1%82%E5%B1%82%E6%AC%A1%E7%90%86%E8%AE%BA">https://zh.wikipedia.org/wiki/ 需求层次理论</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Management Science</category>
+      </categories>
+      <tags>
+        <tag>Psychology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Monty-Hall Problem 三門問題｜選擇的順序改變了機率？並非如此！</title>
+    <url>/posts/MontyHall-Problem/</url>
+    <content><![CDATA[<p><strong>三分之一</strong>的機率中，可以透過<strong>更換選擇</strong>來<strong>提高機率</strong>，這是曾經讓許多人摸不著頭緒的 Monty-Hall Problem (三門問題)，你能參透其中的答案嗎？</p>
+<span id="more"></span>
+<hr>
+<h2 id="起源">起源</h2>
+<p><strong>Monty-Hall Problem</strong> 又稱<strong>三門問題</strong>、<strong>山羊問題</strong>、<strong>蒙提霍爾問題</strong>。<br>
+起源是一個源自<a href="https://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88%E8%AE%BA"><strong> Game Theory (博奕論)</strong></a> 的數學遊戲問題，最早推測可能出自 1963 年的一個美國電視遊戲節目 - 「<strong>Let’s Make a Deal (讓我們一起交易)</strong>」，其中該節目的主人名為「<strong>Monty Hall</strong>」，故稱做「<strong>Monty-Hall Problem</strong>」。</p>
+<hr>
+<h2 id="三門遊戲">三門遊戲</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E6%8F%90%E9%9C%8D%E7%88%BE%E5%95%8F%E9%A1%8C#/media/File:Monty_open_door.svg"><img src="01.png" alt="圖源: Wiki 維基百科"></a></p>
+<p>在節目中，參賽者的面前會有<strong>三道關閉的門</strong>，其中一道門後有著一輛<strong>汽車</strong>，其餘兩道門後則是<strong>山羊</strong> (我也不知道為啥是山羊…)，若是參賽者選中門後為汽車的門，那麼即可贏得汽車。</p>
+<p>遊戲開始後，主持人會要求參賽者<strong>選擇一道門</strong>，不論這道門後是<strong>汽車</strong>或者<strong>山羊</strong>，主持人都會開啟 <code>參賽者所選的門之外，其餘兩道門中含有山羊的那道門</code>  (主持人是知道門後狀況的)。</p>
+<p>舉例，三道門分別為  <code>A</code> 、 <code>B</code> 、 <code>C</code>  ，參賽者選擇了  <code>C</code>  ，若是  <code>B</code> 、 <code>C</code>  門後皆為 <code>山羊</code> ，那麼主持人則會開啟  <code>B</code>  門；若是  <code>A</code> 、 <code>B</code>  門後為山羊，那麼主持人隨機選擇開啟  <code>A</code>  或  <code>B</code>  門。</p>
+<p>到目前為止沒什麼太大問題，這時候我們探討的核心問題是…<br>
+「在主持人打開一道背後是山羊的門後，會詢問參賽者<strong>是否要更換剛剛所選的門</strong>，若是選擇換門，那麼參賽者贏得汽車的的<strong>機率是否會增加</strong>？」</p>
+<p>聽起來很荒謬對吧！換不換門，其實對於結果並不會改變才對。<br>
+但若是我告訴你，這的確會使得贏得汽車的機率提高至 <strong>1/2</strong> 呢？</p>
+<hr>
+<h2 id="驗證">驗證</h2>
+<p>為了方便探討機率，我們實際列舉所有可能性:</p>
+<blockquote>
+<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code></p>
+<ul>
+<li>不換門
+<ul>
+<li>參賽者堅持選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者堅持選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者堅持選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+</ul>
+</li>
+</ul>
+<p>由此可知，贏得 <code>汽車</code> 機率為  <code>1/3</code></p>
+<ul>
+<li>換門
+<ul>
+<li>參賽者選擇  <code>A</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>參賽者選擇  <code>B</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>參賽者選擇  <code>C</code>  門，主持人開  <code>A</code>  門，參賽者換  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>參賽者選擇  <code>C</code>  門，主持人開  <code>B</code>  門，參賽者換  <code>A</code>  門，獲得 <code>山羊</code></li>
+</ul>
+</li>
+</ul>
+<p>欸？贏得 <code>汽車</code> 的機率變成  <code>1/2</code>  ！？</p>
+</blockquote>
+<p>這太不符合常理了，怎麼可能在選擇過後機率發生改變！？<br>
+別擔心，帶你繼續看下去。<br>
+但在解答之前，喜歡解題的朋友，可以先停在這邊好好思考一下。</p>
+<hr>
+<h2 id="解答">解答</h2>
+<p>其實，機率是沒有變的，一直都是  <code>1/2</code> ！<br>
+在一開始的選擇當中，三道門選一道的機率確實是  <code>1/3</code> ，但在主持人開啟一道門後 (後面是山羊的門)，這等於刪除了一道門，此刻若是再給參賽者一次選擇，這次的選擇機率將會是  <code>1/2</code> ，重點在於，我們必須將前後兩次選擇視為 <strong> <code>獨立事件</code> </strong>，真正影響參賽者贏得汽車機率的關鍵在於<strong>第二次</strong>的選擇。</p>
+<p>我們再來重新列舉一次可能性:</p>
+<blockquote>
+<p>先假設  <code>A</code> 、 <code>B</code>  門後是 <code>山羊</code> ，而  <code>C</code>  門後則是 <code>汽車</code> <br>
+並且 主持人已經開啟一道門 ( <code>第一次</code> 選擇不重要，此指的選擇是 <code>第二次</code> 選擇)</p>
+<ul>
+<li>不換門
+<ul>
+<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>A</code>  門，獲得 <code>山羊</code></li>
+<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>B</code>  門，獲得 <code>山羊</code></li>
+<li>主持人刪除  <code>A</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+<li>主持人刪除  <code>B</code>  門，參賽者仍選擇  <code>C</code>  門，獲得 <code>汽車</code></li>
+</ul>
+</li>
+</ul>
+<p>機率為  <code>1/2</code></p>
+</blockquote>
+<p>沒錯，這道陷阱題使人容易忽略了參賽者選擇汽車那道門時，主人持人選擇刪除門的可能性是有<strong>兩種</strong>的。</p>
+<p><a href="https://zh.wikipedia.org/wiki/File:Monty_tree_door1.svg"><img src="02.jpg" alt="圖源:  Wiki 維基百科"></a></p>
+<hr>
+<h2 id="結論">結論</h2>
+<p>這麼一來你知道為什麼了嗎？(如果還是很矇，可以再重頭看一次 XD)<br>
+ 有時候看一件事物時， <strong>第一直覺</strong> 有可能會是 <strong>錯</strong> 的，當你深信自己的第一直覺而不求證時，很容易造成如同該題目一般的狀況，一直反覆的問自己為什麼，總是不能理解為什麼機率為 <strong>1/2</strong> 。<br>
+那是因為題目一開始就告訴你機率是 <strong>1/3</strong> ，而我們在看到題目是「<strong>三道門選一道</strong>」的時候，就對此深信不已。</p>
+]]></content>
+      <categories>
+        <category>Interesting</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「𝝿」到底是什麼？度、弧度又是...？</title>
+    <url>/posts/PI/</url>
+    <content><![CDATA[圓周率「𝝿」是什麼？而熟悉的一圈為 360度 是怎麼被訂定的？ 弧度又是什麼？
+<span id="more"></span>
+<hr>
+<h2 id="圓周率π">圓周率「𝝿」</h2>
+<p>圓周率<strong>約</strong>為「 <code>3.1415926</code> 」，它被歸類在<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%B8%B8%E6%95%B0"><strong>常數</strong></a>中，且是<a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%90%86%E6%95%B8"><strong>無理數</strong></a>，是個 <code>無限不循環小數</code> 同時也是一個<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E8%B6%8A%E6%95%B8"> <code>超越數</code> </a>，數學用小寫希臘字母「 <code>𝝿</code> 」符號表示，發音相似於「 <code>pie</code> 」，源自希臘語「 <code>περίμετρος</code> ( <code>周長</code> )」的首字母。</p>
+<hr>
+<h2 id="圓周率的意思是">圓周率的意思是？</h2>
+<p>圓周率讓人感覺很抽象，但其實就只是指「<strong>一半的圓周</strong>與<strong>半徑</strong>之<strong>比</strong>」，又或者可以說是「<strong>圓周</strong>與<strong>直徑</strong>之<strong>比</strong>」。也就是代表一圓的 <code>周長</code> 與 <code>直徑</code> 的 <code>比例關係</code>  ( <code>比值</code> )。</p>
+<p>由於 <code>周長</code> 是該圓 <code>直徑</code> 的 <code>3.1415926....</code>  倍，因此將這個無理數定義成「 <code>𝝿</code> 」符號，命名為 <code>圓周率</code> 。所以才會出現 <code>周長</code> 算 <code>圓周長</code> 的公式「 <code>2r 𝝿</code> 」。( <code>r</code>  為半徑)</p>
+<hr>
+<h2 id="degree-與-radian">degree 與 radian</h2>
+<p><code>degree</code>  與  <code>radian</code>  都是表示 <code>角</code> 的大小，將其 <code>單位量化</code> 後的表示方式。</p>
+<p>其中較常被使用的是「 <code>degree</code> 」也就是所謂的「 <code>度</code> 度量」，簡稱「 <code>deg</code> 」。(e.g. 一圈等於 360 deg)<br>
+ 而「 <code>radian</code> 」中文翻譯為「 <code>弧度</code> 」或者「 <code>弳度</code> 」，簡稱「 <code>rad</code> 」。<br>
+其中「 <code>弳</code> 」這個字很有趣，它是<strong>弧度</strong>的「 <code>弧</code> 」與<strong>半徑</strong>的「 <code>徑</code> 」取字旁而選的字。</p>
+<hr>
+<h2 id="圓弧-產生出-角度單位">圓弧 產生出 角度單位</h2>
+<p>一開始的圓在訂定角度單位之前，先稱某角為  <code>theta</code> ，該圓半徑為  <code>r</code> ，而  <code>theta</code>  與某弧長  <code>S</code>  與  <code>r</code>  有絕對的 <code>比例關係</code> ，這個才是一切的<strong>重點</strong>…</p>
+<p>「角  <code>theta</code>  對  <code>S</code>  與  <code>r</code>  之間的 <code>比例關係</code> 」才是這些<strong>角度單位</strong>的指標。(當 <code>半徑 r 相同</code> ，且 <code>弧長 S 越長</code> ，則  <code>角 theta 越大</code> )</p>
+<blockquote>
+<ul>
+<li><strong>弳 (radian, rad)</strong><br>
+ 得到了比例「 <code>S / r</code> 」後… 欸等等！這麼一來不就是一個 <code>單位量</code> 了嗎？<br>
+對的，這個 <code>單位量</code> 就命名做「 <code>radian</code> 」簡稱「 <code>rad</code> 」中文稱作「 <code>弳</code> 」。<br>
+因此 <code>角 theta</code>  可以表示成「 <code>theta = S / r</code> 」即是使用 <code>弳度</code> 表示該  <code>theta</code>  角的大小。<br>
+就這樣，現在大家所使用的「 <code>弧度</code> 」被定義了， <code>弧</code> 衍生出了表示 <code>角大小</code> 的 <code>單位量</code> 。</li>
+</ul>
+<p>若定義 <code>圓弧 S</code>  為 <code>圓周長</code> ，可以寫成「 <code>S = 2r 𝝿</code> 」。<br>
+因此將表示 <code>角大小</code> 的 <code>弳度</code> 式子「 <code>theta = S / r</code> 」寫作「 <code>theta = (2r 𝝿) / r</code> 」化簡得「 <code>theta = 2 𝝿</code> 」。因此 <code>一周角</code> 相當於「 <code>2 𝝿</code> 」單位  <code>rad</code>  。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>度 (degree, deg)</strong><br>
+ 若我們將 <code>圓周長 S</code>  劃分成  <code>360 等分</code> <br>
+並且將其中 <code>一等份</code> 所對應的 <code>角度大小</code> 當作一個 <code>單位</code> ，這單位就叫做 <code>degree</code>  簡稱 <code>deg</code> ，也就是大家目前常用的 <code>度</code> 度量。<br>
+ <code>1 deg</code>  也可以寫作 「 <code>1°</code> 」，所對應的弧長為  <code>(2 𝝿 / 360) / r</code> 。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="補充">補充</h2>
+<blockquote>
+<h4 id="梯度-gradian-grad">梯度 (Gradian, GRAD)</h4>
+<p>這也是一個單位，其定義為 <code>一圓周長</code> 平均分為  <code>400</code>  等分，每一等份為  <code>1 grad</code>  。<br>
+由於寫在這是因為，這東西真的比較少人在用，就不聚焦在這了。</p>
+</blockquote>
+<blockquote>
+<h4 id="換算">換算</h4>
+<p><strong> <code>一周角</code> </strong> = <strong> <code>360 deg</code> </strong> = <strong> <code>2 𝝿 rad</code> </strong> = <strong> <code>400 grad</code> </strong></p>
+</blockquote>
+<blockquote>
+<h4 id="無單位">無單位</h4>
+<p>有些人不能理解為什麼說  <code>deg</code>  與  <code>rad</code>  是 <code>無單位</code> 的… (<s>對就是我</s>)<br>
+ 就好比常見的寬螢幕 <code>長寬比</code> 為「 <code>16:9</code> 」，試問  <code>16</code>  與  <code>9</code>  的單位是什麼一樣。<br>
+「 <code>S / r</code> 」該算式只是用來表示 <code>圓周長</code> 與 <code>半徑</code> 之間的比例關係，自然就不需要有 <code>單位</code> 。</p>
+</blockquote>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<p>《Wiki 維基百科 - 圓周率》<a href="https://zh.wikipedia.org/wiki/%E5%9C%93%E5%91%A8%E7%8E%87">https://zh.wikipedia.org/wiki/ 圓周率</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Public-key Cryptography</title>
+    <url>/posts/Public-key%20Cryptography/</url>
+    <content><![CDATA[<p>這次提到的概念是比上次的「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」來的更進階的「 <strong>Public-key Cryptography (非對稱加密)</strong> 」，其概念被廣泛運用在<strong>數位簽章</strong>。</p>
+<span id="more"></span>
+<hr>
+<h3 id="前言">前言</h3>
+<p>若你還不了解「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」是什麼，建議在閱讀本文前，先看看我前一篇文章「<strong><a href="/posts/Symmetric-key%20Algorithm/" title="Symmetric-key Algorithm">Symmetric-key Algorithm</a></strong>」，否則可能會搞不清楚在本篇中，基於上一篇介紹裡所使用的單字意思。</p>
+<hr>
+<h3 id="對稱加密所無法解決的難題"><strong>對稱加密</strong>所無法解決的難題</h3>
+<p>在上一篇的對稱加密概念介紹中，其作法可以有效的使多方溝通之間存在更高的安全性，但<strong>共享密鑰</strong>也同時意味著「 <strong>對方有與你相同的權限</strong> 」，你能加密訊息後發布，對方也能，你能透過密鑰解密，對方也能。</p>
+<p>在很多時候，A 方與 B 方雖然需要加密溝通，但卻必須<strong>分清楚雙方身份</strong>，否則可能存在<strong>偽造的風險</strong>，注意，這邊所說的 A、B 方並不一定是<strong>單一</strong>的，他可以是<strong>群體</strong>，也就是說有某一群人稱為<strong> A</strong>，某另一群人稱為<strong> B</strong>，而雙方都有著相同的密鑰可以用來加密及解密訊息，這兩群人透過<strong>對稱加密</strong>來加密訊息並溝通，但這僅能保護雙方在溝通時，不被<strong>非 A、B 兩方的人</strong>了解密文意思而已，並不能驗證該訊息的發送者身份是 A 還是 B，因為雙方的密鑰是相同的，因此萬一有某人為 B 方，而他卻聲稱自己是 A 方的人，並且使用密鑰加密訊息發給 B 方，那 B 方又該如何驗證該人的身份？</p>
+<p><img src="01.png" alt="B 群組成員偽造 A 群組身份發送訊息"></p>
+<hr>
+<h3 id="public-key-cryptography-非對稱加密">Public-key Cryptography (非對稱加密)</h3>
+<p>為了解決上述問題，我們必須改成「 <strong>加密與解密使用不同密鑰</strong> 」，於是「 <strong>Public-key Cryptography (非對稱加密)</strong> 」誕生了。</p>
+<ul>
+<li><strong>公鑰、私鑰</strong>
+<ul>
+<li>由於加密與解密需要使用不同密鑰，因此若是要達到雙方可以溝通的效果，至少需要要 4 把鑰匙，在一開始的時候，雙方各別生產<strong>一對</strong>密鑰，這一對密鑰一把當公鑰，一把當私鑰，注意，這兩把密鑰並<strong>不是分開獨立生成</strong>的，<strong>它們之間有著數學關連</strong>，至於分成公、私鑰是做什麼的，等等會解釋，目前只要先記得，這兩把鑰匙是<strong>一對</strong>，不可被拆散的。</li>
+<li>在這邊提醒一個<strong>重點</strong>，雖然說一對公鑰與私鑰之間有著關聯，可是並<strong>不能透過單一一把鑰匙推算出另一把鑰匙</strong>，也就是說，今天就算別人知道你的公鑰，對方也是<strong>無法</strong>破解出該公鑰所對應的私鑰。</li>
+</ul>
+</li>
+</ul>
+<p><img src="02.png" alt="雙方生成公私鑰"></p>
+<ul>
+<li><strong>釋出公鑰</strong><br>
+將公鑰交給對方，用於給對方在之後進行解密使用。</li>
+</ul>
+<p><img src="03.png" alt="雙方交換公鑰"></p>
+<ul>
+<li><strong>加密、解密</strong>
+<ul>
+<li>接下來就是非對稱加密的特殊之處了，這時候雙方手上都持有<strong>自己的私鑰</strong>及<strong>對方的公鑰</strong>，「 <strong>自己的私鑰</strong> 」用於「 <strong>加密</strong> 」，「 <strong>對方的公鑰</strong> 」用於「 <strong>解密</strong> 」。</li>
+<li>下方示意圖是<strong> B 方</strong>傳送訊息給<strong> A 方</strong>的情境，<strong>B 方</strong>運用<strong>自己的私鑰</strong>加密後傳送給<strong> A 方</strong>，而<strong> A 方</strong>則使用<strong> B 方的公鑰</strong>進行解密。</li>
+<li>運用私鑰所加密的訊息只有該私鑰所對應的公鑰才能解密。<br>
+<img src="04.png" alt="加密解密"></li>
+<li>所以萬一有人想偽造身份，除非是偷到密鑰，否則是不可行的。</li>
+</ul>
+</li>
+</ul>
+<p><img src="05.png" alt="辨識身份"></p>
+<hr>
+<h3 id="運用">運用</h3>
+<p>非對稱加密被運用在許多地方，而常見的 <strong>數位簽章 (Digital Signature)</strong> 也是利用此概念來達到辨識身份及加密的原理。另外，許多標榜像是加密傳輸、加密聊天等應用，也都看得到非對稱加密的蹤影，只要私鑰不洩漏，基本上不會有第二則密文可以被該公鑰解密成有意義的明文。</p>
+<p>P.S. 非對稱加密中常見的加密演算法有：<br>
+<a href="https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>RSA</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>DH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A9%A2%E5%9C%93%E6%9B%B2%E7%B7%9A%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E9%87%91%E9%91%B0%E4%BA%A4%E6%8F%9B"><strong>ECDH</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><strong>ECDSA (橢圓曲線數字簽名算法)</strong></a>、<a href="https://zh.wikipedia.org/wiki/ElGamal%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><strong>ElGamal</strong></a>、<a href="https://zh.wikipedia.org/wiki/SM2"><strong>SM2</strong></a>。<br>
+有興趣的朋友可以點擊連結或自行上網研究。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>Cryptography</category>
+      </categories>
+      <tags>
+        <tag>Cryptography</tag>
+        <tag>Public-key Cryptography</tag>
+        <tag>Digital Signature</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《SQL Basics-01》CREATE、INSERT</title>
+    <url>/posts/SQL-Basic-01/</url>
+    <content><![CDATA[一些基礎常見的 SQL 語法。
+<span id="more"></span>
+<hr>
+<h2 id="創建">創建</h2>
+<h3 id="創建資料庫">創建資料庫</h3>
+<p>創建使用的是「<strong> <code>CREATE</code> </strong>」語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">`</span>資料庫名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="創建資料表及欄位">創建資料表及欄位</h3>
+<p>由於要先指定資料庫才能使用裡面的資料表，所以先選擇資料庫：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> <span class="token punctuation">`</span>資料庫名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之後創建資料表，創建格式如下：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span>
+	<span class="token punctuation">`</span>欄位<span class="token number">1</span>名稱<span class="token punctuation">`</span> 資料型態<span class="token punctuation">(</span>長度<span class="token punctuation">)</span> 屬性<span class="token number">1</span> 屬性<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+	<span class="token punctuation">`</span>欄位<span class="token number">2</span>名稱<span class="token punctuation">`</span> 資料型態<span class="token punctuation">(</span>長度<span class="token punctuation">)</span> 屬性<span class="token number">1</span> 屬性<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="範例">範例</h3>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span>
+	<span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+	<span class="token punctuation">`</span>phone<span class="token punctuation">`</span> <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'Anonymous'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="語法說明">語法說明</h3>
+<p>欄位格式為「<strong> <code>欄位名稱</code>   <code>資料類別(長度)</code>   <code>屬性1</code>   <code>屬性2...</code> </strong>」。每筆資料以「<strong> <code>,</code> </strong>」區隔。</p>
+<ul>
+<li>
+<p>欄位「 <code>id</code> 」為「 <code>int</code> 」表示「 <code>整數</code> 」，範圍為「 <code>-2,147,483,648</code>  ~  <code>2,147,483,647</code> 」。<br>
+屬性 「 <code>PRIMARY KEY</code> 」則表示  <code>主鍵</code> ，同時加上「 <code>AUTO_INCREMENT</code> 」使其能在新增一筆新資料時，<strong>自動累加</strong> id 以確保資料筆之間的 id 值唯一。</p>
+</li>
+<li>
+<p>欄位「 <code>phone</code> 」為「 <code>char</code> 」表示「 <code>字元</code> 」，最大字元長度為「 <code>255</code> 」。在後方有「 <code>(10)</code> 」則限制其長度為 10 。(ps. 若長度 <code>不足</code>  10 則會自動補足 10，總之在儲存上 <code>佔用的容量是固定的</code> )</p>
+</li>
+<li>
+<p>而「 <code>name</code> 」欄位同樣是字元，但寫作「 <code>varchar</code> 」，最大字元長度為「 <code>65535</code> 」，差別在於資料儲存上，若字元長度不足 20 ，則只會佔用 <code>資料的字元長度大小</code> ，相較於「 <code>char</code> 」更為彈性，通常建議使用這個類別而非「 <code>char</code> 」。<br>
+屬性「 <code>DEFAULT</code> 」意思為「 <code>預設</code> 」。在新增資料筆時，若沒有指定該欄位的情況下，會自動寫入預設值，舉上述例子，當沒有指定「 <code>name</code> 」欄位寫入時，該欄位將自動寫入「 <code>Anonymous</code> 」。</p>
+</li>
+<li>
+<p>最後的「 <code>age</code> 」欄位屬性「 <code>NOT NULL</code> 」表示該欄位 <code>不能為空值</code> 。<br>
+若要表示該資料可以為空，則使用「 <code>NULL</code> 」屬性。<br>
+若沒有特別指定，則使用系統預設，通常為「 <code>NULL</code> 」屬性。<br>
+(ps.  <code>id</code>  雖然沒有該屬性，但  <code>PRIMARY KEY</code>  屬性本身就自帶  <code>NOT NULL</code>  了)</p>
+</li>
+</ul>
+<p>另外，你也可以將欄位格式寫好後，在最後才將其定義為主鍵：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+	<span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="新增">新增</h2>
+<p>想要在資料表內新增資料筆，則需要用到「<strong> <code>INSERT</code> </strong>」語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>欄位<span class="token number">1</span><span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>欄位<span class="token number">2</span><span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>欄位<span class="token number">1</span>的值<span class="token punctuation">,</span> 欄位<span class="token number">2</span>的值<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>填寫<strong>值的順序</strong>是對應前面<strong>欄位順序</strong>的。</p>
+<p>這邊要特別注意的是，兩行之間並<strong>沒有</strong>「 <code>,</code> 」或「 <code>;</code> 」區隔。<br>
+本質上它算是一行，只是為了提高 <code>可讀性</code> ，所以習慣寫作兩行或以上。</p>
+<p>(ps. 另外，舉上述例子，我們不需要在新增時手動寫入「 <code>id</code> 」欄位，因為「 <code>AUTO_INCREMENT</code> 」會自動寫入。)</p>
+<h3 id="範例-2">範例</h3>
+<p>舉上述 <code>創建</code> 例子中的資料表為例：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>phone<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">"0123456789"</span><span class="token punctuation">,</span> <span class="token string">"新之助"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>會寫入以下資料：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+</tbody>
+</table>
+<p>再寫入一筆，但這次只指定必要的欄位「 <code>age</code> 」：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>age<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>目前資料為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>由於  <code>id</code>  欄位的「 <code>AUTO_INCREMENT</code> 」屬性，所以自動累加上一筆資料的  <code>id</code> 。</li>
+<li>欄位  <code>phone</code>  並未指定，而又不存在預設值，因此為 <code>NULL (空值)</code> 。</li>
+<li>欄位  <code>name</code>  並未指定，但存在預設值「 <code>Anonymous</code> 」，因此寫入預設值。</li>
+<li>欄位  <code>age</code>  指定為  <code>19</code>  。</li>
+</ul>
+<p>但如果這麼寫：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>phone<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">"小葵"</span><span class="token punctuation">,</span> <span class="token string">"0987654321"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>會發生什麼事情？</strong></p>
+<p>答案是噴一個錯誤 -  <code>Field 'age' doesn't have a default value</code> <br>
+ 還記得剛剛創建資料表時，設置了  <code>age</code>  欄位為「 <code>NOT NULL</code> 」屬性嗎？<br>
+而在此並未給予  <code>age</code>  值，而  <code>age</code>  又不存在「 <code>DEFAULT</code> 」預設值，因此出錯。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>SQL</category>
+        <category>Basics of SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《SQL Basics-02》SELECT、LIKE</title>
+    <url>/posts/SQL-Basic-02/</url>
+    <content><![CDATA[一些基礎常見的 SQL 語法。
+<span id="more"></span>
+<hr>
+<h2 id="查詢">查詢</h2>
+<p>要在資料表內查詢資料筆，則需要用到「<strong> <code>SELECT</code> </strong>」語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>查詢欄位<span class="token number">1</span><span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>查詢欄位<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> 查詢條件<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>而查詢的欄位也可以填入「<strong> <code>*</code> </strong>」來表示查詢「 <code>全部欄位</code> 」：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱 <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>查詢條件<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>至於條件… 各種寫法，常見的寫法為  <code>比對資料值相符與否</code> 。</p>
+<h3 id="範例-比對數字">範例 - 比對數字</h3>
+<p>利用上一篇文章「<a href="/posts/SQL-Basic-01/" title="《SQL Basics-01》CREATE、INSERT">《SQL Basics-01》CREATE、INSERT</a>」中所說的語法，陸續寫入幾筆資料後，目前的資料表內容為：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">0444555666</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<p>輸入查詢語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<p>因為  <code>WHERE</code>  後方所寫的查詢條件為「 <code>age</code> 」的值須 <code>大於</code> 「10」，<br>
+因此  <code>age</code>  小於等於 10 的資料筆將不顯示。</p>
+<p><code>大於</code> 使用「 <code>&gt;</code> 」； <code>小於</code> 使用「 <code>&lt;</code> 」；<br>
+ <code>等於</code> 使用「 <code>=</code> 」； <code>不等於</code> 使用「 <code>!=</code> 」或「 <code>&lt;&gt;</code> 」；<br>
+ <code>大於等於</code> 使用「 <code>&gt;=</code> 」； <code>小於等於</code> 使用「 <code>&lt;=</code> 」；</p>
+<p>ps. 若不指定查詢條件，則表示查詢全部：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">向日葵</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">廣志</td>
+<td style="text-align:left">35</td>
+</tr>
+</tbody>
+</table>
+<h3 id="範例-比對字串">範例 - 比對字串</h3>
+<p>輸入查詢語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token operator">=</span> <span class="token string">"新之助"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+</tr>
+</tbody>
+</table>
+<p>不等於的字串查詢：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token operator">!=</span> <span class="token string">"Anonymous"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">新之助</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">向日葵</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">美冴</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">廣志</td>
+</tr>
+</tbody>
+</table>
+<h3 id="範例-模糊比對">範例 - 模糊比對</h3>
+<p>當有時候我們<strong>不確定</strong>目標欄位的<strong>值</strong>時，我們可以用<strong>部份特徵</strong>來比對。<br>
+要模糊查詢則是使用「 <code>LIKE</code> 」語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>phone<span class="token punctuation">`</span> <span class="token operator">LIKE</span> <span class="token string">"01%"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0123456789</td>
+<td style="text-align:left">新之助</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+</tbody>
+</table>
+<p>百分號「 <code>%</code> 」表示任意字元比對  <code>0</code>  次或  <code>0 次以上</code> 。<br>
+該語法的意思是，查詢  <code>phone</code>  的值為  <code>01 開頭</code>  的資料筆。<br>
+所以假設「 <code>蘋果%</code> 」可以配對「 <code>蘋果</code> 」、「 <code>蘋果汁</code> 」、「 <code>蘋果派不好吃</code> 」，但 <code>不</code> 能配對「 <code>青蘋果</code> 」，因為「 <code>青蘋果</code> 」開頭並非是「 <code>蘋果</code> 」，若要配對它，則可以寫成「 <code>%蘋果%</code> 」。</p>
+<p>如果輸入以下語法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token operator">LIKE</span> <span class="token string">"_9"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Database Server 返回以下結果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id</th>
+<th style="text-align:left">phone</th>
+<th style="text-align:left">name</th>
+<th style="text-align:left">age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><em>NULL</em></td>
+<td style="text-align:left">Anonymous</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0111222333</td>
+<td style="text-align:left">美冴</td>
+<td style="text-align:left">29</td>
+</tr>
+</tbody>
+</table>
+<p>底線「 <code>_</code> 」表示任意字元比對  <code>1</code>  次。<br>
+該語法表示，查詢  <code>age</code>  欄位「 <code>第二字為 9</code> 」的結果。<br>
+所以「 <code>_9</code> 」可以配對「 <code>39</code> 」、「 <code>59</code> 」但不能配對「 <code>22</code> 」、「 <code>9</code> 」，當然也不能配對「 <code>193</code> 」，如果要配對「 <code>193</code> 」則須寫做「 <code>_9_</code> 」或者「 <code>_9%</code> 」。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>SQL</category>
+        <category>Basics of SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>Database</tag>
       </tags>
   </entry>
   <entry>
@@ -2308,6 +2690,74 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
       </tags>
   </entry>
   <entry>
+    <title>Symmetric-key Algorithm</title>
+    <url>/posts/Symmetric-key%20Algorithm/</url>
+    <content><![CDATA[<p>大家對於「<strong>密碼</strong>」並不陌生，生活中總是遇到許多場合需要用到密碼，然而「<strong>加密</strong>」的原理似乎相對的卻不是那麼的備受關注。</p>
+<span id="more"></span>
+<hr>
+<h3 id="encrypt-加密">Encrypt (加密)</h3>
+<p>從古至今，人們總是在<strong>通訊</strong>、<strong>隱私</strong>上想盡各種方法來提供擁有一定安全性的保護，例如戰國時期<strong>傳送密報</strong>，為了防止可能含有機密的信件被敵軍攔截，因此需要將內容給<strong>加密</strong>，這麼一來即使信件落入敵軍手中，也<strong>不能被解讀</strong>。<br>
+在<strong>隱私</strong>上，相信大家也不陌生，現在網上許多服務都需要<strong>註冊會員</strong>，帳戶就需要設定<strong>密碼</strong>來<strong>驗證使用者的身份</strong>。</p>
+<blockquote>
+<ul>
+<li><strong>加密 (Encrypt)</strong><br>
+ 以加密訊息為例，<strong>尚未加密</strong>的訊息，也就是一般<strong>可以被大家讀懂</strong>的訊息，我們稱作「 <strong>明文 (Plaintext)</strong> 」，而在經過 <strong>演算法加密 (鑰匙)</strong> 後所產出的結果，也就是<strong>不可被其他人解讀</strong>的加密訊息，則稱作「 <strong>密文 (Ciphertext)</strong> 」，並且上述這整個過程稱為「 <strong>加密 (Encrypt)</strong> 」。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>解密 (Decrypt)</strong><br>
+ 正常來說，明文使用「鑰匙」加密成密文，而密文也必須是擁有相對應鑰匙的人才能解讀內容，這邊所說的「 <strong>鑰匙</strong> 」並非是指現實中常見的那種開鎖的鑰匙，此指的鑰匙通常是一個<strong>數學算式</strong>或是<strong>一段文字</strong>，而這個鑰匙則是解開密文的關鍵，且該鑰匙我們稱作「 <strong>密鑰 (Key)</strong> 」，利用該密鑰來將密文還原成明文的過程則稱作「 <strong>解密 (Decrypt)</strong> 」。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="symmetric-key-algorithm-對稱加密">Symmetric-key Algorithm (對稱加密)</h3>
+<p>「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」為一種常見且原理簡單的<strong>加密思維</strong>，注意，它並<strong>不</strong>是<strong>加密法</strong>，它只是一個<strong>思維</strong>，在<strong>對稱加密中</strong>，上述的「 <strong>密鑰</strong> 」有個特點，就是<strong>加密跟解密的密鑰為同一把鑰匙</strong>，這邊使用情境來說明下什麼叫做「同一把鑰匙」：</p>
+<blockquote>
+<ul>
+<li><strong>假設情境</strong><br>
+<strong> A 先生</strong>因為某些原因，經常需要請<strong> B 先生</strong>代傳訊息給<strong> C 小姐</strong>，但同時<strong> A 先生</strong>又不希望<strong> B 先生</strong>知道該訊息的內容，因此<strong> A 先生</strong>決定使用<strong>對稱加密</strong>來傳送訊息。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>定義密鑰 並 共享</strong><br>
+首先，<strong>A 先生</strong>需要設計至少一個密鑰，他將密鑰設定成數字「 <strong>2</strong> 」，並且在一開始的時候<strong> A 先生</strong>需要想辦法將該<strong>密鑰</strong>親手交給<strong> C 小姐</strong>，並且自己也保留一把<strong>一樣的密鑰</strong>。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>加密 並 傳送</strong><br>
+前置作業完成後，接著<strong> A 先生</strong>想傳送一則訊息，其內容為「 <strong>Hello, 123</strong> 」，他將該明文使用密鑰加密，加密方法為將文字<strong>往後推移密鑰數</strong>，例如該情境中，密鑰為「 <strong>2</strong> 」，則英文「 <strong>A</strong> 」往後推<strong> 2 次</strong>變成「 <strong>C</strong> 」，數字「 <strong>3</strong> 」往後推<strong> 2 次</strong>則是「 <strong>5</strong> 」，以此類推，因此明文「 <strong>Hello, 123</strong> 」加密後會變成「 <strong>Jgnnq, 345</strong> 」，他將該密文請<strong> B 先生</strong>代傳給<strong> C 小姐</strong>，由於<strong> B 先生</strong>沒有密鑰「 <strong>2</strong> 」因而不懂該密文的含意。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>接收 並 解密</strong><br>
+<strong> C 小姐</strong>在收到密文後，使用同一把密鑰「 <strong>2</strong> 」解密，<strong>加密</strong>為<strong>往後推移</strong>，<strong>解密</strong>則為<strong>往前推移</strong>，因此密文「 <strong>Jgnnq, 345</strong> 」在被<strong> C 小姐</strong>往前推移<strong> 2 次</strong>後，解密回明文的「 <strong>Hello, 123</strong> 」。</li>
+</ul>
+</blockquote>
+<p><img src="01.png" alt=""></p>
+<p>這其中包含一個問題，為什麼<strong> A 先生</strong>與<strong> C 小姐</strong>知道怎麼使用該密鑰加密與解密，是誰規定「加密為往後推移密鑰數」及「解密為往前推移密鑰數」？</p>
+<p>其實這些密鑰的「 <strong>使用規則</strong> 」被稱作「 <strong>加密演算法 (Encryption)</strong> 」或稱「 <strong>加密法</strong> 」，<strong>加密演算法</strong>也正是決定該加密安全性的關鍵之一。因此其實在<strong> A 先生</strong>將密鑰交給<strong> C 小姐</strong>時，有偷偷說了要使用哪種加密法，這樣雙方才能正確的運用密鑰進行運算來達到加密及解密的效果。</p>
+<hr>
+<h3 id="總結">總結</h3>
+<p>當然，上面的情境只是舉例，僅僅是為了讓大家方便理解而虛構的場景，一般常見的加密演算法不會設計的這麼弱，也更不應該出現密鑰只有一個數字這種誇張的狀況，而密文通常也並不會與明文有著如此明顯的結構關係，通常只是亂碼，例如「 <strong>Hello, 123</strong> 」加密後的結果可能會長這樣「 <strong>1d5F68ghY8Xa59U6</strong> 」而不是「 <strong>Jgnnq, 345</strong> 」。</p>
+<p>有興趣的朋友也可以看看下一篇延伸對稱加密更進階的文章「<strong><a href="/posts/Public-key%20Cryptography/" title="Public-key Cryptography">Public-key Cryptography</a></strong>」。</p>
+<p>P.S. <strong>對稱加密中</strong>常見的<strong>加密演算法</strong>有：<br>
+<a href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96"><strong>DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/3DES"><strong>3DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86"><strong>AES</strong></a>、<a href="https://zh.wikipedia.org/wiki/Blowfish_(%E5%AF%86%E7%A0%81%E5%AD%A6)"><strong>Blowfish</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>IDEA</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC5"><strong>RC5</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC6"><strong>RC6</strong></a>。<br>
+有興趣的朋友可以點擊連結或自行上網研究。</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+        <category>Cryptography</category>
+      </categories>
+      <tags>
+        <tag>Cryptography</tag>
+        <tag>Symmetric-key Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hacker 駭客的定義｜白帽？黑帽？灰帽？｜各種帽子顏色所代表的含意</title>
     <url>/posts/hacker/</url>
     <content><![CDATA[<p>時常在<a href="https://zh.wikipedia.org/wiki/%E5%A5%BD%E8%8E%B1%E5%9D%9E"><strong>好萊塢</strong></a>電影中看到駭客的身影，他們給人的形象往往都是<strong>負面</strong>、<strong>惡意</strong>且具有<strong>強烈人格特質</strong>的，這不僅讓人被那獨特的魅力吸引，更多的是那讓人<strong>想一探究竟卻又不敢接近的神秘</strong>，因此「<strong>駭客</strong>」一詞也常受到大家<strong>尊敬</strong>及<strong>崇拜</strong>。</p>
@@ -2410,456 +2860,6 @@ ps. 若沒有寫  <code>WHERE</code>  條件，則會更改所有資料。<br>
       <tags>
         <tag>Cyber Security</tag>
         <tag>Hacker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《SQL Basics-01》CREATE、INSERT</title>
-    <url>/posts/SQL-Basic-01/</url>
-    <content><![CDATA[一些基礎常見的 SQL 語法。
-<span id="more"></span>
-<hr>
-<h2 id="創建">創建</h2>
-<h3 id="創建資料庫">創建資料庫</h3>
-<p>創建使用的是「<strong> <code>CREATE</code> </strong>」語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">`</span>資料庫名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="創建資料表及欄位">創建資料表及欄位</h3>
-<p>由於要先指定資料庫才能使用裡面的資料表，所以先選擇資料庫：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> <span class="token punctuation">`</span>資料庫名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>之後創建資料表，創建格式如下：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span>
-	<span class="token punctuation">`</span>欄位<span class="token number">1</span>名稱<span class="token punctuation">`</span> 資料型態<span class="token punctuation">(</span>長度<span class="token punctuation">)</span> 屬性<span class="token number">1</span> 屬性<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
-	<span class="token punctuation">`</span>欄位<span class="token number">2</span>名稱<span class="token punctuation">`</span> 資料型態<span class="token punctuation">(</span>長度<span class="token punctuation">)</span> 屬性<span class="token number">1</span> 屬性<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="範例">範例</h3>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span>
-	<span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
-	<span class="token punctuation">`</span>phone<span class="token punctuation">`</span> <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-	<span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'Anonymous'</span><span class="token punctuation">,</span>
-	<span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="語法說明">語法說明</h3>
-<p>欄位格式為「<strong> <code>欄位名稱</code>   <code>資料類別(長度)</code>   <code>屬性1</code>   <code>屬性2...</code> </strong>」。每筆資料以「<strong> <code>,</code> </strong>」區隔。</p>
-<ul>
-<li>
-<p>欄位「 <code>id</code> 」為「 <code>int</code> 」表示「 <code>整數</code> 」，範圍為「 <code>-2,147,483,648</code>  ~  <code>2,147,483,647</code> 」。<br>
-屬性 「 <code>PRIMARY KEY</code> 」則表示  <code>主鍵</code> ，同時加上「 <code>AUTO_INCREMENT</code> 」使其能在新增一筆新資料時，<strong>自動累加</strong> id 以確保資料筆之間的 id 值唯一。</p>
-</li>
-<li>
-<p>欄位「 <code>phone</code> 」為「 <code>char</code> 」表示「 <code>字元</code> 」，最大字元長度為「 <code>255</code> 」。在後方有「 <code>(10)</code> 」則限制其長度為 10 。(ps. 若長度 <code>不足</code>  10 則會自動補足 10，總之在儲存上 <code>佔用的容量是固定的</code> )</p>
-</li>
-<li>
-<p>而「 <code>name</code> 」欄位同樣是字元，但寫作「 <code>varchar</code> 」，最大字元長度為「 <code>65535</code> 」，差別在於資料儲存上，若字元長度不足 20 ，則只會佔用 <code>資料的字元長度大小</code> ，相較於「 <code>char</code> 」更為彈性，通常建議使用這個類別而非「 <code>char</code> 」。<br>
-屬性「 <code>DEFAULT</code> 」意思為「 <code>預設</code> 」。在新增資料筆時，若沒有指定該欄位的情況下，會自動寫入預設值，舉上述例子，當沒有指定「 <code>name</code> 」欄位寫入時，該欄位將自動寫入「 <code>Anonymous</code> 」。</p>
-</li>
-<li>
-<p>最後的「 <code>age</code> 」欄位屬性「 <code>NOT NULL</code> 」表示該欄位 <code>不能為空值</code> 。<br>
-若要表示該資料可以為空，則使用「 <code>NULL</code> 」屬性。<br>
-若沒有特別指定，則使用系統預設，通常為「 <code>NULL</code> 」屬性。<br>
-(ps.  <code>id</code>  雖然沒有該屬性，但  <code>PRIMARY KEY</code>  屬性本身就自帶  <code>NOT NULL</code>  了)</p>
-</li>
-</ul>
-<p>另外，你也可以將欄位格式寫好後，在最後才將其定義為主鍵：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token punctuation">(</span>
-	<span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">int</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-	<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="新增">新增</h2>
-<p>想要在資料表內新增資料筆，則需要用到「<strong> <code>INSERT</code> </strong>」語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>欄位<span class="token number">1</span><span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>欄位<span class="token number">2</span><span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
-<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>欄位<span class="token number">1</span>的值<span class="token punctuation">,</span> 欄位<span class="token number">2</span>的值<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>填寫<strong>值的順序</strong>是對應前面<strong>欄位順序</strong>的。</p>
-<p>這邊要特別注意的是，兩行之間並<strong>沒有</strong>「 <code>,</code> 」或「 <code>;</code> 」區隔。<br>
-本質上它算是一行，只是為了提高 <code>可讀性</code> ，所以習慣寫作兩行或以上。</p>
-<p>(ps. 另外，舉上述例子，我們不需要在新增時手動寫入「 <code>id</code> 」欄位，因為「 <code>AUTO_INCREMENT</code> 」會自動寫入。)</p>
-<h3 id="範例-2">範例</h3>
-<p>舉上述 <code>創建</code> 例子中的資料表為例：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>phone<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span><span class="token punctuation">)</span>
-<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">"0123456789"</span><span class="token punctuation">,</span> <span class="token string">"新之助"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>會寫入以下資料：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">phone</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0123456789</td>
-<td style="text-align:left">新之助</td>
-<td style="text-align:left">5</td>
-</tr>
-</tbody>
-</table>
-<p>再寫入一筆，但這次只指定必要的欄位「 <code>age</code> 」：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>age<span class="token punctuation">`</span><span class="token punctuation">)</span>
-<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>目前資料為：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">phone</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0123456789</td>
-<td style="text-align:left">新之助</td>
-<td style="text-align:left">5</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left"><em>NULL</em></td>
-<td style="text-align:left">Anonymous</td>
-<td style="text-align:left">19</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>由於  <code>id</code>  欄位的「 <code>AUTO_INCREMENT</code> 」屬性，所以自動累加上一筆資料的  <code>id</code> 。</li>
-<li>欄位  <code>phone</code>  並未指定，而又不存在預設值，因此為 <code>NULL (空值)</code> 。</li>
-<li>欄位  <code>name</code>  並未指定，但存在預設值「 <code>Anonymous</code> 」，因此寫入預設值。</li>
-<li>欄位  <code>age</code>  指定為  <code>19</code>  。</li>
-</ul>
-<p>但如果這麼寫：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">(</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>phone<span class="token punctuation">`</span><span class="token punctuation">)</span>
-<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">"小葵"</span><span class="token punctuation">,</span> <span class="token string">"0987654321"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>會發生什麼事情？</strong></p>
-<p>答案是噴一個錯誤 -  <code>Field 'age' doesn't have a default value</code> <br>
- 還記得剛剛創建資料表時，設置了  <code>age</code>  欄位為「 <code>NOT NULL</code> 」屬性嗎？<br>
-而在此並未給予  <code>age</code>  值，而  <code>age</code>  又不存在「 <code>DEFAULT</code> 」預設值，因此出錯。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>SQL</category>
-        <category>Basics of SQL</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-        <tag>Database</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《SQL Basics-02》SELECT、LIKE</title>
-    <url>/posts/SQL-Basic-02/</url>
-    <content><![CDATA[一些基礎常見的 SQL 語法。
-<span id="more"></span>
-<hr>
-<h2 id="查詢">查詢</h2>
-<p>要在資料表內查詢資料筆，則需要用到「<strong> <code>SELECT</code> </strong>」語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>查詢欄位<span class="token number">1</span><span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>查詢欄位<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> 查詢條件<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>而查詢的欄位也可以填入「<strong> <code>*</code> </strong>」來表示查詢「 <code>全部欄位</code> 」：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱 <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>查詢條件<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>至於條件… 各種寫法，常見的寫法為  <code>比對資料值相符與否</code> 。</p>
-<h3 id="範例-比對數字">範例 - 比對數字</h3>
-<p>利用上一篇文章「<a href="/posts/SQL-Basic-01/" title="《SQL Basics-01》CREATE、INSERT">《SQL Basics-01》CREATE、INSERT</a>」中所說的語法，陸續寫入幾筆資料後，目前的資料表內容為：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">phone</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0123456789</td>
-<td style="text-align:left">新之助</td>
-<td style="text-align:left">5</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left"><em>NULL</em></td>
-<td style="text-align:left">Anonymous</td>
-<td style="text-align:left">19</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left"><em>NULL</em></td>
-<td style="text-align:left">向日葵</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">0111222333</td>
-<td style="text-align:left">美冴</td>
-<td style="text-align:left">29</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">0444555666</td>
-<td style="text-align:left">廣志</td>
-<td style="text-align:left">35</td>
-</tr>
-</tbody>
-</table>
-<p>輸入查詢語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Anonymous</td>
-<td style="text-align:left">19</td>
-</tr>
-<tr>
-<td style="text-align:left">美冴</td>
-<td style="text-align:left">29</td>
-</tr>
-<tr>
-<td style="text-align:left">廣志</td>
-<td style="text-align:left">35</td>
-</tr>
-</tbody>
-</table>
-<p>因為  <code>WHERE</code>  後方所寫的查詢條件為「 <code>age</code> 」的值須 <code>大於</code> 「10」，<br>
-因此  <code>age</code>  小於等於 10 的資料筆將不顯示。</p>
-<p><code>大於</code> 使用「 <code>&gt;</code> 」； <code>小於</code> 使用「 <code>&lt;</code> 」；<br>
- <code>等於</code> 使用「 <code>=</code> 」； <code>不等於</code> 使用「 <code>!=</code> 」或「 <code>&lt;&gt;</code> 」；<br>
- <code>大於等於</code> 使用「 <code>&gt;=</code> 」； <code>小於等於</code> 使用「 <code>&lt;=</code> 」；</p>
-<p>ps. 若不指定查詢條件，則表示查詢全部：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">新之助</td>
-<td style="text-align:left">5</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">Anonymous</td>
-<td style="text-align:left">19</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">向日葵</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">美冴</td>
-<td style="text-align:left">29</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">廣志</td>
-<td style="text-align:left">35</td>
-</tr>
-</tbody>
-</table>
-<h3 id="範例-比對字串">範例 - 比對字串</h3>
-<p>輸入查詢語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token operator">=</span> <span class="token string">"新之助"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">新之助</td>
-</tr>
-</tbody>
-</table>
-<p>不等於的字串查詢：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span> <span class="token operator">!=</span> <span class="token string">"Anonymous"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">新之助</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">向日葵</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">美冴</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">廣志</td>
-</tr>
-</tbody>
-</table>
-<h3 id="範例-模糊比對">範例 - 模糊比對</h3>
-<p>當有時候我們<strong>不確定</strong>目標欄位的<strong>值</strong>時，我們可以用<strong>部份特徵</strong>來比對。<br>
-要模糊查詢則是使用「 <code>LIKE</code> 」語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>phone<span class="token punctuation">`</span> <span class="token operator">LIKE</span> <span class="token string">"01%"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">phone</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0123456789</td>
-<td style="text-align:left">新之助</td>
-<td style="text-align:left">5</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">0111222333</td>
-<td style="text-align:left">美冴</td>
-<td style="text-align:left">29</td>
-</tr>
-</tbody>
-</table>
-<p>百分號「 <code>%</code> 」表示任意字元比對  <code>0</code>  次或  <code>0 次以上</code> 。<br>
-該語法的意思是，查詢  <code>phone</code>  的值為  <code>01 開頭</code>  的資料筆。<br>
-所以假設「 <code>蘋果%</code> 」可以配對「 <code>蘋果</code> 」、「 <code>蘋果汁</code> 」、「 <code>蘋果派不好吃</code> 」，但 <code>不</code> 能配對「 <code>青蘋果</code> 」，因為「 <code>青蘋果</code> 」開頭並非是「 <code>蘋果</code> 」，若要配對它，則可以寫成「 <code>%蘋果%</code> 」。</p>
-<p>如果輸入以下語法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token punctuation">`</span>資料表名稱<span class="token punctuation">`</span> <span class="token keyword">WHERE</span> <span class="token punctuation">`</span>age<span class="token punctuation">`</span> <span class="token operator">LIKE</span> <span class="token string">"_9"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Database Server 返回以下結果：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">phone</th>
-<th style="text-align:left">name</th>
-<th style="text-align:left">age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left"><em>NULL</em></td>
-<td style="text-align:left">Anonymous</td>
-<td style="text-align:left">19</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">0111222333</td>
-<td style="text-align:left">美冴</td>
-<td style="text-align:left">29</td>
-</tr>
-</tbody>
-</table>
-<p>底線「 <code>_</code> 」表示任意字元比對  <code>1</code>  次。<br>
-該語法表示，查詢  <code>age</code>  欄位「 <code>第二字為 9</code> 」的結果。<br>
-所以「 <code>_9</code> 」可以配對「 <code>39</code> 」、「 <code>59</code> 」但不能配對「 <code>22</code> 」、「 <code>9</code> 」，當然也不能配對「 <code>193</code> 」，如果要配對「 <code>193</code> 」則須寫做「 <code>_9_</code> 」或者「 <code>_9%</code> 」。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>SQL</category>
-        <category>Basics of SQL</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-        <tag>Database</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Symmetric-key Algorithm</title>
-    <url>/posts/Symmetric-key%20Algorithm/</url>
-    <content><![CDATA[<p>大家對於「<strong>密碼</strong>」並不陌生，生活中總是遇到許多場合需要用到密碼，然而「<strong>加密</strong>」的原理似乎相對的卻不是那麼的備受關注。</p>
-<span id="more"></span>
-<hr>
-<h3 id="encrypt-加密">Encrypt (加密)</h3>
-<p>從古至今，人們總是在<strong>通訊</strong>、<strong>隱私</strong>上想盡各種方法來提供擁有一定安全性的保護，例如戰國時期<strong>傳送密報</strong>，為了防止可能含有機密的信件被敵軍攔截，因此需要將內容給<strong>加密</strong>，這麼一來即使信件落入敵軍手中，也<strong>不能被解讀</strong>。<br>
-在<strong>隱私</strong>上，相信大家也不陌生，現在網上許多服務都需要<strong>註冊會員</strong>，帳戶就需要設定<strong>密碼</strong>來<strong>驗證使用者的身份</strong>。</p>
-<blockquote>
-<ul>
-<li><strong>加密 (Encrypt)</strong><br>
- 以加密訊息為例，<strong>尚未加密</strong>的訊息，也就是一般<strong>可以被大家讀懂</strong>的訊息，我們稱作「 <strong>明文 (Plaintext)</strong> 」，而在經過 <strong>演算法加密 (鑰匙)</strong> 後所產出的結果，也就是<strong>不可被其他人解讀</strong>的加密訊息，則稱作「 <strong>密文 (Ciphertext)</strong> 」，並且上述這整個過程稱為「 <strong>加密 (Encrypt)</strong> 」。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>解密 (Decrypt)</strong><br>
- 正常來說，明文使用「鑰匙」加密成密文，而密文也必須是擁有相對應鑰匙的人才能解讀內容，這邊所說的「 <strong>鑰匙</strong> 」並非是指現實中常見的那種開鎖的鑰匙，此指的鑰匙通常是一個<strong>數學算式</strong>或是<strong>一段文字</strong>，而這個鑰匙則是解開密文的關鍵，且該鑰匙我們稱作「 <strong>密鑰 (Key)</strong> 」，利用該密鑰來將密文還原成明文的過程則稱作「 <strong>解密 (Decrypt)</strong> 」。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="symmetric-key-algorithm-對稱加密">Symmetric-key Algorithm (對稱加密)</h3>
-<p>「 <strong>Symmetric-key Algorithm (對稱加密)</strong> 」為一種常見且原理簡單的<strong>加密思維</strong>，注意，它並<strong>不</strong>是<strong>加密法</strong>，它只是一個<strong>思維</strong>，在<strong>對稱加密中</strong>，上述的「 <strong>密鑰</strong> 」有個特點，就是<strong>加密跟解密的密鑰為同一把鑰匙</strong>，這邊使用情境來說明下什麼叫做「同一把鑰匙」：</p>
-<blockquote>
-<ul>
-<li><strong>假設情境</strong><br>
-<strong> A 先生</strong>因為某些原因，經常需要請<strong> B 先生</strong>代傳訊息給<strong> C 小姐</strong>，但同時<strong> A 先生</strong>又不希望<strong> B 先生</strong>知道該訊息的內容，因此<strong> A 先生</strong>決定使用<strong>對稱加密</strong>來傳送訊息。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>定義密鑰 並 共享</strong><br>
-首先，<strong>A 先生</strong>需要設計至少一個密鑰，他將密鑰設定成數字「 <strong>2</strong> 」，並且在一開始的時候<strong> A 先生</strong>需要想辦法將該<strong>密鑰</strong>親手交給<strong> C 小姐</strong>，並且自己也保留一把<strong>一樣的密鑰</strong>。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>加密 並 傳送</strong><br>
-前置作業完成後，接著<strong> A 先生</strong>想傳送一則訊息，其內容為「 <strong>Hello, 123</strong> 」，他將該明文使用密鑰加密，加密方法為將文字<strong>往後推移密鑰數</strong>，例如該情境中，密鑰為「 <strong>2</strong> 」，則英文「 <strong>A</strong> 」往後推<strong> 2 次</strong>變成「 <strong>C</strong> 」，數字「 <strong>3</strong> 」往後推<strong> 2 次</strong>則是「 <strong>5</strong> 」，以此類推，因此明文「 <strong>Hello, 123</strong> 」加密後會變成「 <strong>Jgnnq, 345</strong> 」，他將該密文請<strong> B 先生</strong>代傳給<strong> C 小姐</strong>，由於<strong> B 先生</strong>沒有密鑰「 <strong>2</strong> 」因而不懂該密文的含意。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>接收 並 解密</strong><br>
-<strong> C 小姐</strong>在收到密文後，使用同一把密鑰「 <strong>2</strong> 」解密，<strong>加密</strong>為<strong>往後推移</strong>，<strong>解密</strong>則為<strong>往前推移</strong>，因此密文「 <strong>Jgnnq, 345</strong> 」在被<strong> C 小姐</strong>往前推移<strong> 2 次</strong>後，解密回明文的「 <strong>Hello, 123</strong> 」。</li>
-</ul>
-</blockquote>
-<p><img src="01.png" alt=""></p>
-<p>這其中包含一個問題，為什麼<strong> A 先生</strong>與<strong> C 小姐</strong>知道怎麼使用該密鑰加密與解密，是誰規定「加密為往後推移密鑰數」及「解密為往前推移密鑰數」？</p>
-<p>其實這些密鑰的「 <strong>使用規則</strong> 」被稱作「 <strong>加密演算法 (Encryption)</strong> 」或稱「 <strong>加密法</strong> 」，<strong>加密演算法</strong>也正是決定該加密安全性的關鍵之一。因此其實在<strong> A 先生</strong>將密鑰交給<strong> C 小姐</strong>時，有偷偷說了要使用哪種加密法，這樣雙方才能正確的運用密鑰進行運算來達到加密及解密的效果。</p>
-<hr>
-<h3 id="總結">總結</h3>
-<p>當然，上面的情境只是舉例，僅僅是為了讓大家方便理解而虛構的場景，一般常見的加密演算法不會設計的這麼弱，也更不應該出現密鑰只有一個數字這種誇張的狀況，而密文通常也並不會與明文有著如此明顯的結構關係，通常只是亂碼，例如「 <strong>Hello, 123</strong> 」加密後的結果可能會長這樣「 <strong>1d5F68ghY8Xa59U6</strong> 」而不是「 <strong>Jgnnq, 345</strong> 」。</p>
-<p>有興趣的朋友也可以看看下一篇延伸對稱加密更進階的文章「<strong><a href="/posts/Public-key%20Cryptography/" title="Public-key Cryptography">Public-key Cryptography</a></strong>」。</p>
-<p>P.S. <strong>對稱加密中</strong>常見的<strong>加密演算法</strong>有：<br>
-<a href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96"><strong>DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/3DES"><strong>3DES</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86"><strong>AES</strong></a>、<a href="https://zh.wikipedia.org/wiki/Blowfish_(%E5%AF%86%E7%A0%81%E5%AD%A6)"><strong>Blowfish</strong></a>、<a href="https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95"><strong>IDEA</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC5"><strong>RC5</strong></a>、<a href="https://zh.wikipedia.org/wiki/RC6"><strong>RC6</strong></a>。<br>
-有興趣的朋友可以點擊連結或自行上網研究。</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-        <category>Cryptography</category>
-      </categories>
-      <tags>
-        <tag>Cryptography</tag>
-        <tag>Symmetric-key Algorithm</tag>
       </tags>
   </entry>
 </search>
