@@ -231,13 +231,13 @@
     <category term="Computer Science" scheme="https://alpaca0x0.github.io/categories/Computer-Science/"/>
     
     
-    <category term="Cyber Security" scheme="https://alpaca0x0.github.io/tags/Cyber-Security/"/>
-    
     <category term="Cryptography" scheme="https://alpaca0x0.github.io/tags/Cryptography/"/>
     
     <category term="Public-key Cryptography" scheme="https://alpaca0x0.github.io/tags/Public-key-Cryptography/"/>
     
     <category term="Digital Signature" scheme="https://alpaca0x0.github.io/tags/Digital-Signature/"/>
+    
+    <category term="Cyber Security" scheme="https://alpaca0x0.github.io/tags/Cyber-Security/"/>
     
   </entry>
   
